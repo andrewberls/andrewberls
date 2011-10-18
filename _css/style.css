@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0;}
+img, a img {border: none;}
+/*.clearfix {clear: both;}*/
+
+body {
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 16px;
+	text-align: center;	
+}
