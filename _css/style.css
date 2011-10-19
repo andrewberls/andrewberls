@@ -5,36 +5,50 @@
 img, a img {
   border: none; }
 
-/*.clearfix {clear: both;}*/
 body {
   font-family: Arial, Geneva, sans-serif;
   font-size: 16px;
   text-align: center; }
 
+section {
+  /*clear: both;*/
+  border-bottom: 1px solid #0d0d0d;
+  border-top: 1px solid #CCC;
+  overflow: hidden;
+  position: relative; }
+
 #header {
   background-color: #363636;
+  border-bottom: 1px solid #0d0d0d;
   height: 140px; }
 
-#content {
+#portfolio {
   background-color: #2AABE1;
+  height: 760px; }
+
+#about {
+  background-color: #87B608;
   height: 760px; }
 
 #footer {
   background-color: #363636;
   height: 200px; }
 
-.content-container {
+.wrapper {
   /*background-color: red;*/
-  border: 1px solid red;
+  border-style: solid;
+  border-left-width: 1px;
+  border-left-color: red;
+  border-right-width: 1px;
+  border-right-color: red;
   margin: 0 auto;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   padding: 10px 0;
   text-align: left;
   width: 972px; }
-
-.content-container h1 {
-  border: 1px solid green;
-  color: white;
-  font-size: 3.5em;
-  font-weight: bold; }
+  .wrapper h1 {
+    border: 1px solid green;
+    color: white;
+    font-size: 3.5em;
+    font-weight: bold; }
