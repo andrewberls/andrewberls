@@ -1,45 +1,41 @@
-* {
-  margin: 0;
-  padding: 0; }
-
-img, a img {
-  border: none; }
-
 body {
   font-family: Arial, Geneva, sans-serif;
   font-size: 16px;
   text-align: center; }
 
 section {
-  /*clear: both;*/
+  clear: both;
   border-bottom: 1px solid #0d0d0d;
-  border-top: 1px solid #CCC;
+  border-top: 1px solid #cccccc;
   overflow: hidden;
   position: relative; }
 
 ul.nav {
-  background-color: red;
-  margin-top: 30px; }
+  margin-top: 30px;
+  overflow: auto; }
   ul.nav li {
-    background-color: #0FC;
+    border-radius: 6px;
     float: left;
     margin-right: 10px; }
     ul.nav li a {
-      color: orange;
+      background-color: #666;
+      border-radius: 5px;
+      color: white;
       display: block;
-      padding: 5px 10px; }
+      padding: 4px 10px;
+      text-decoration: none; }
       ul.nav li a:hover, ul.nav li a:active {
-        background-color: green;
-        color: red; }
+        background-color: #A1A19C;
+        -webkit-transition: all 0.25s ease-out; }
 
 #header {
-  /*background: #363636 url(../_images/header_bg2.jpg) repeat-x;*/
-  background-color: #363636;
+  background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#525252), to(#363636));
   border-bottom: 1px solid #0d0d0d;
   height: 140px; }
 
 #portfolio {
-  background-color: #2AABE1;
+  /*background-color: #2AABE1;*/
+  background: url(../_images/beige_paper.png);
   height: 760px; }
 
 #about {
@@ -51,19 +47,16 @@ ul.nav {
   height: 200px; }
 
 .wrapper {
-  border-style: solid;
   border-left-width: 1px;
-  border-left-color: red;
   border-right-width: 1px;
-  border-right-color: red;
-  margin: 0 auto;
   height: 100%;
+  margin: 0 auto;
   overflow: hidden;
   padding: 10px 0;
   text-align: left;
   width: 972px; }
   .wrapper h1 {
-    border: 1px solid green;
     color: white;
     font-size: 3.5em;
-    font-weight: bold; }
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #1d1d1d; }
