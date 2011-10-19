@@ -1,6 +1,10 @@
-$dark_gray: #363636;
-$border_bottom: #0D0D0D;
+//$dark_gray: #363636;
+$dark_gray: #38393D;
+//$border_bottom: #0D0D0D;
+$border-bottom: #3F4044;
+//$border_bottom: #B4B4B4; //FOR CONCRETE/STUCCO
 $border_top: #CCCCCC;
+//$border_top: #FFFFFF; //FOR CONCRETE/STUCCO
 
 body {
   font-family: Arial, Geneva, sans-serif;
@@ -18,7 +22,7 @@ section {
 
 ul.nav {
   //border: 1px solid yellow;
-  margin-top: 30px;
+  margin-top: 7px;
   overflow: auto;
     
   li {
@@ -43,39 +47,71 @@ ul.nav {
 }
 
 #header {
-  //background: #363636 url(../_images/rubber_grip.png);
-  //background-color: $dark_gray;
-  background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#525252), to(#363636));
-  
+  background-color: $dark_gray;
+  background: -webkit-gradient(linear, 0% 0%, 0% 30%, from(#434343), to(#38393D));
   border-bottom: 1px solid $border_bottom;
-  height: 140px; 
+  height: 110px; 
 }
 
 #portfolio {
-  /*background-color: #2AABE1;*/
-  background: url(../_images/beige_paper.png);
-  height: 760px; 
+  //background-color: #2AABE1;
+  background-color: #5EC4F0;
+  //background: url(../_images/stucco.png);    
+  height: 860px; 
 }
 #about {
   background-color: #87B608;
-  height: 760px; 
+  //background: url(../_images/concrete_wall_3.png);
+  height: 860px; 
 }
 
 #footer {
   background-color: $dark_gray;
-  height: 200px; 
+  height: 200px;
+  
+  .column {
+    //background-color: purple;
+    float: left;
+    margin: 10px;    
+    min-height: 100px;
+    padding: 0 2px;
+    //width: 150px;
+    
+    ul {
+      list-style: none;
+      
+      li {
+        margin-top: 5px;
+        
+        a {
+        color: white;
+        font-size: 1em;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      }
+      
+    }
+    h3 {
+      color: white;
+      font-size: 1.5em;
+      ext-shadow:1px 1px 1px #1d1d1d;
+    }
+  }
 }
 
 .wrapper {
   border: {
-    //style: solid;
+    style: solid;
     left: {
       width: 1px;
-      //color: red;
+      color: red;
     }
     right: {
       width: 1px;
-      //color: red;
+      color: red;
     }
   }
   height: 100%;
