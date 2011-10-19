@@ -20,7 +20,31 @@ section {
   overflow: hidden;
   position: relative;
 }
+
+ul.nav {
+  background-color: red;
+  margin-top: 30px;
+  
+  li {
+    background-color: #0FC;
+    float: left;
+    margin-right: 10px;
+    
+    a {
+      color: orange;;
+      display: block;
+      padding: 5px 10px;
+      
+      &:hover, &:active {
+        background-color: green;
+        color: red;
+      }
+    }
+  }
+}
+
 #header {
+  /*background: #363636 url(../_images/header_bg2.jpg) repeat-x;*/
   background-color: #363636;
   
   border-bottom: 1px solid #0d0d0d;
@@ -43,7 +67,6 @@ section {
 }
 
 .wrapper {
-  /*background-color: red;*/
   border: {
     style: solid;
     left: {
