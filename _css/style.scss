@@ -21,9 +21,9 @@ section {
 }
 
 ul.nav {
-  //border: 1px solid yellow;
-  margin-top: 7px;
-  overflow: auto;
+  border: 1px solid yellow;
+  margin-top: 30px; //7px for sleek header, 30 for 140px
+  overflow: auto;  
     
   li {
     border-radius: 6px;
@@ -48,19 +48,24 @@ ul.nav {
 
 #header {
   background-color: $dark_gray;
+  background: -moz-linear-gradient(0% 30% 90deg,#434343, #38393D);
   background: -webkit-gradient(linear, 0% 0%, 0% 30%, from(#434343), to(#38393D));
   border-bottom: 1px solid $border_bottom;
-  height: 110px; 
+  height: 140px; //110: sleek
 }
 
+#home {
+  background-color: #5EC4F0;
+  height: 860px;
+}
 #portfolio {
   //background-color: #2AABE1;
-  background-color: #5EC4F0;
+  background-color: #87B608;
   //background: url(../_images/stucco.png);    
   height: 860px; 
 }
 #about {
-  background-color: #87B608;
+  background-color: #5EC4F0;
   //background: url(../_images/concrete_wall_3.png);
   height: 860px; 
 }
@@ -72,13 +77,13 @@ ul.nav {
   .column {
     //background-color: purple;
     float: left;
-    margin: 10px;    
+    margin: 15px;    
     min-height: 100px;
     padding: 0 2px;
     //width: 150px;
     
     ul {
-      list-style: none;
+      list-style: none;      
       
       li {
         margin-top: 5px;
@@ -97,7 +102,7 @@ ul.nav {
     h3 {
       color: white;
       font-size: 1.5em;
-      ext-shadow:1px 1px 1px #1d1d1d;
+      text-shadow:1px 1px 1px #1d1d1d;
     }
   }
 }
@@ -118,13 +123,14 @@ ul.nav {
   margin: 0 auto;  
   overflow: hidden;
   padding: 10px 0;
+  position: relative;
   text-align: left;
   width: 972px; 
   
   h1 {
     //border: 1px solid green;
     color: white;
-    font-size: 3.5em;
+    font-size: 3.5em; //3.5em hello world
     font-weight: bold;
     text-shadow:1px 1px 1px #1d1d1d;
   }  

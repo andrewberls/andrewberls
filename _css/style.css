@@ -11,7 +11,8 @@ section {
   position: relative; }
 
 ul.nav {
-  margin-top: 7px;
+  border: 1px solid yellow;
+  margin-top: 30px;
   overflow: auto; }
   ul.nav li {
     border-radius: 6px;
@@ -30,16 +31,21 @@ ul.nav {
 
 #header {
   background-color: #38393d;
+  background: -moz-linear-gradient(0% 30% 90deg, #434343, #38393d);
   background: -webkit-gradient(linear, 0% 0%, 0% 30%, from(#434343), to(#38393d));
   border-bottom: 1px solid #3f4044;
-  height: 110px; }
+  height: 140px; }
 
-#portfolio {
+#home {
   background-color: #5EC4F0;
   height: 860px; }
 
-#about {
+#portfolio {
   background-color: #87B608;
+  height: 860px; }
+
+#about {
+  background-color: #5EC4F0;
   height: 860px; }
 
 #footer {
@@ -47,7 +53,7 @@ ul.nav {
   height: 200px; }
   #footer .column {
     float: left;
-    margin: 10px;
+    margin: 15px;
     min-height: 100px;
     padding: 0 2px; }
     #footer .column ul {
@@ -63,7 +69,7 @@ ul.nav {
     #footer .column h3 {
       color: white;
       font-size: 1.5em;
-      ext-shadow: 1px 1px 1px #1d1d1d; }
+      text-shadow: 1px 1px 1px #1d1d1d; }
 
 .wrapper {
   border-style: solid;
@@ -75,6 +81,7 @@ ul.nav {
   margin: 0 auto;
   overflow: hidden;
   padding: 10px 0;
+  position: relative;
   text-align: left;
   width: 972px; }
   .wrapper h1 {
