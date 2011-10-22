@@ -1,27 +1,59 @@
-//$dark_gray: #363636;
-$dark_gray: #38393D;
-//$border_bottom: #0D0D0D;
-$border-bottom: #3F4044;
-//$border_bottom: #B4B4B4; //FOR CONCRETE/STUCCO
-$border_top: #CCCCCC;
-//$border_top: #FFFFFF; //FOR CONCRETE/STUCCO
+$dark_gray: #38393D; //#363636
+$divider_bottom: #3F4044; //#0D0D0D or #B4B4B4 for stucco bg
+$divider_top: #CCCCCC; //#FFFFFF for stucco bg
+$blue: #5EC4F0;
+$green: #87B608;
+
 
 body {
-  font-family: Arial, Geneva, sans-serif;
+  font-family: Arial, Verdana, Geneva, sans-serif;
   font-size: 16px;
   text-align: center; 
 }
-  
+
+/*
+ * ----------- GLOBAL TYPOGRAPHY STYLING 
+ * */
+h1 {  
+  color: white;
+  font-size: 3.5em;
+  font-weight: bold;
+  text-shadow:1px 1px 1px #1d1d1d;
+}  
+h2 {
+  font-size: 3em;
+}
+h3{
+  font-size: 2.5em;
+}
+h4 {
+  font-size: 2em;
+}
+h5 {
+  font-size: 1.5em;
+}
+h6 {
+  font-size: 1em;  
+}
+p {
+  line-height: 24px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+
 section {
   clear: both;
-  border-bottom: 1px solid $border_bottom;
-  border-top: 1px solid $border_top;
+  border-bottom: 1px solid $divider_bottom;
+  border-top: 1px solid $divider_top;
   overflow: hidden;
+  //padding: 10px 0;
   position: relative;
 }
 
 ul.nav {
-  border: 1px solid yellow;
+  //border: 1px solid yellow;
   margin-top: 30px; //7px for sleek header, 30 for 140px
   overflow: auto;  
     
@@ -50,29 +82,31 @@ ul.nav {
   background-color: $dark_gray;
   background: -moz-linear-gradient(0% 30% 90deg,#434343, #38393D);
   background: -webkit-gradient(linear, 0% 0%, 0% 30%, from(#434343), to(#38393D));
-  border-bottom: 1px solid $border_bottom;
+  border-bottom: 1px solid $divider_bottom;
   height: 140px; //110: sleek
 }
 
 #home {
-  background-color: #5EC4F0;
-  height: 860px;
+  background-color: $blue;
+  //height: 860px;
 }
 #portfolio {
   //background-color: #2AABE1;
-  background-color: #87B608;
-  //background: url(../_images/stucco.png);    
+  background-color: $green; 
   height: 860px; 
 }
 #about {
-  background-color: #5EC4F0;
-  //background: url(../_images/concrete_wall_3.png);
+  background-color: $blue;  
   height: 860px; 
 }
-
+#contact {
+  background-color: $green;  
+  height: 860px; 
+}
 #footer {
   background-color: $dark_gray;
   height: 200px;
+  position: relative;
   
   .column {
     //background-color: purple;
@@ -89,13 +123,13 @@ ul.nav {
         margin-top: 5px;
         
         a {
-        color: white;
-        font-size: 1em;
-        text-decoration: none;
-        &:hover {
-          text-decoration: underline;
+          color: white;
+          font-size: 1em;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
         }
-      }
       }
       
     }
@@ -108,7 +142,7 @@ ul.nav {
 }
 
 .wrapper {
-  border: {
+  /*border: {
     style: solid;
     left: {
       width: 1px;
@@ -118,47 +152,69 @@ ul.nav {
       width: 1px;
       color: red;
     }
-  }
+  }*/
   height: 100%;
   margin: 0 auto;  
   overflow: hidden;
-  padding: 10px 0;
-  position: relative;
+  padding: 15px 0 30px;
+  //position: relative;
   text-align: left;
   width: 972px; 
-  
-  h1 {
-    //border: 1px solid green;
-    color: white;
-    font-size: 3.5em; //3.5em hello world
-    font-weight: bold;
-    text-shadow:1px 1px 1px #1d1d1d;
-  }  
 }
 
 form {
-  background-color: #e6e6e6;
-  border-radius: 15px;
+  //font-family: Arial, Verdana, Geneva, sans-serif;
+  background-color: #F9F9F9; //fff--------------------------------------#e6e6e6
+  //border-radius: 15px;
   -moz-box-shadow: 0px 0px 6px #000;
   -webkit-box-shadow: 0px 0px 6px #000;
   box-shadow: 0px 0px 6px #252525;
   overflow: hidden;
   margin: 0 auto;
-  padding: 60px 40px;
+  padding: 50px 40px 60px;
   width: 415px;
   
+  h2 {
+    font-size: 2.5em;
+    color: $dark_gray;
+  }
+  p {
+    color: $dark_gray;
+    font-size: 1em;
+    margin: 0.5em 0;
+  }
   label {
-    clear: both;
-    float: left;
-    margin-top: 10px;
+    display: none;
+    //clear: both;
+    //float: left;
+    //margin-top: 10px;
   }
   input, textarea {
-    border: none;    
-    border-radius: 5px;
+    font-family: Arial, Verdana, Geneva, sans-serif;
+    font-size: 1em;
+    background-color: #FFF; //f2f2f2----------------------e4e4e4
+    border: 1px dashed #D4D4D4; //d4d4d4
+    //border-radius: 5px;
     clear: both;
+    color: #B4B4B4;
     float: left;
     margin-top: 10px;
     padding: 5px;
     width: 400px;
+    
+    &:focus {
+      border: 1px solid $blue;
+      color: $dark_gray;
+      outline: none;
+    }
+    
+    .partial {
+      color: red;
+    }
+  }
+  
+  
+  .fieldActive {
+    
   }
 }
