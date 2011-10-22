@@ -40,6 +40,7 @@ p {
 }
 a {
   color: white;
+  outline: none;
   text-decoration: none;
 }
 
@@ -194,7 +195,6 @@ form {
     font-size: 1em;
     background-color: #FFF; //f2f2f2----------------------e4e4e4
     border: 1px dashed #D4D4D4; //d4d4d4
-    //border-radius: 5px;
     clear: both;
     color: #B4B4B4;
     float: left;
@@ -207,14 +207,30 @@ form {
       color: $dark_gray;
       outline: none;
     }
-    
-    .partial {
-      color: red;
+    &#submit {
+      background: #89B908;
+      background-image: -webkit-gradient(linear,left top,left bottom,from(#8aba08),to(#6e9700));
+      background-image: -moz-linear-gradient(top,#8aba08,#6e9700);
+      border: none;
+      border-radius: 5px;
+      color: #FFF;
+      cursor: pointer;
+      padding: 5px 15px;
+      width: 78px;
+      
+      &:hover {
+        background: #89B908;
+        background-image: -webkit-gradient(linear,left top,left bottom,from(#8aba08),to(#87B608));
+        background-image: -moz-linear-gradient(top,#8aba08,#87B608);
+      }
+      &:active {
+        background: #597803;
+        background-image: -webkit-gradient(linear,left top,left bottom,from(#8aba08),to(#597803));
+        background-image: -moz-linear-gradient(top,#8aba08,#597803);
+        color: #FFF;
+      }
     }
+        
   }
   
-  
-  .fieldActive {
-    
-  }
 }
