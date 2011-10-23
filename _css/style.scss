@@ -230,6 +230,16 @@ form {
       font-size: 1.5em;
       text-shadow:1px 1px 1px #1d1d1d;
     }
+    
+    &:first-child {
+      //background-color: green;
+      padding: 0 20px 0 0;
+    }
+    &:last-child {
+      //background-color: orange;
+      float: right;
+      padding: 0 0 0 20px;
+    }
   }
   
   $border_light:#626262;
@@ -237,7 +247,7 @@ form {
   
   .borderRight {
     border-right: 1px solid $border_light;
-    padding: 0 20px 0 0;
+    
   }
   .borderBoth {
     border-left: 1px solid $border_dark;
@@ -264,10 +274,11 @@ form {
   }
   
   a {
-    color: #707070;
+    color: #c6c6c6; //707070
     //text-decoration: underline;
     &:hover {
       color: $blue;
+      //text-decoration: none;
     }
   }
   
