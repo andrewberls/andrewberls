@@ -10,10 +10,6 @@ body {
   font-size: 16px;
   text-align: center; 
 }
-
-/*
- * ----------- GLOBAL TYPOGRAPHY STYLING 
- * */
 h1 {  
   color: white;
   font-size: 3.5em;
@@ -49,13 +45,12 @@ section {
   border-bottom: 1px solid $divider_bottom;
   border-top: 1px solid $divider_top;
   overflow: hidden;
-  //padding: 10px 0;
   position: relative;
 }
 
 ul.nav {
   //border: 1px solid yellow;
-  margin-top: 30px; //7px for sleek header, 30 for 140px
+  margin-top: 30px;
   overflow: auto;  
     
   li {
@@ -92,7 +87,6 @@ ul.nav {
   //height: 860px;
 }
 #portfolio {
-  //background-color: #2AABE1;
   background-color: $green; 
   height: 860px; 
 }
@@ -104,69 +98,18 @@ ul.nav {
   background-color: $green;  
   height: 860px; 
 }
-#footer {
-  background-color: $dark_gray;
-  height: 200px;
-  position: relative;
-  
-  .column {
-    //background-color: purple;
-    float: left;
-    margin: 15px;    
-    min-height: 100px;
-    padding: 0 2px;
-    //width: 150px;
-    
-    ul {
-      list-style: none;      
-      
-      li {
-        margin-top: 5px;
-        
-        a {
-          color: white;
-          font-size: 1em;
-          text-decoration: none;
-          &:hover {
-            text-decoration: underline;
-          }
-        }
-      }
-      
-    }
-    h3 {
-      color: white;
-      font-size: 1.5em;
-      text-shadow:1px 1px 1px #1d1d1d;
-    }
-  }
-}
-
 .wrapper {
-  /*border: {
-    style: solid;
-    left: {
-      width: 1px;
-      color: red;
-    }
-    right: {
-      width: 1px;
-      color: red;
-    }
-  }*/
+  //border-left: 1px solid red; border-right: 1px solid red;
   height: 100%;
   margin: 0 auto;  
   overflow: hidden;
   padding: 15px 0 30px;
-  //position: relative;
   text-align: left;
   width: 972px; 
 }
 
 form {
-  //font-family: Arial, Verdana, Geneva, sans-serif;
-  background-color: #F9F9F9; //fff--------------------------------------#e6e6e6
-  //border-radius: 15px;
+  background-color: #F9F9F9;
   -moz-box-shadow: 0px 0px 6px #000;
   -webkit-box-shadow: 0px 0px 6px #000;
   box-shadow: 0px 0px 6px #252525;
@@ -186,15 +129,12 @@ form {
   }
   label {
     display: none;
-    //clear: both;
-    //float: left;
-    //margin-top: 10px;
   }
   input, textarea {
     font-family: Arial, Verdana, Geneva, sans-serif;
     font-size: 1em;
-    background-color: #FFF; //f2f2f2----------------------e4e4e4
-    border: 1px dashed #D4D4D4; //d4d4d4
+    background-color: #FFF;
+    border: 1px dashed #D4D4D4;
     clear: both;
     color: #B4B4B4;
     float: left;
@@ -232,5 +172,57 @@ form {
     }
         
   }
-  
 }
+#footer {
+  background-color: $dark_gray;
+  height: 200px;
+  position: relative;
+  padding-bottom: 10px;
+ 
+  .column {
+    //background-color: purple;
+    float: left;
+    height: 80%;
+    padding: 0 20px;
+    
+    ul {
+      list-style: none;      
+      
+      li {
+        margin-top: 5px;
+        
+        a {
+          color: white;
+          font-size: 1em;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      
+    }
+    h3 {
+      color: white;
+      font-size: 1.5em;
+      text-shadow:1px 1px 1px #1d1d1d;
+    }
+  }
+  
+  $border_light:#626262;
+  $border_dark:#0D0D0D;
+  
+  .borderRight {
+    border-right: 1px solid $border_light;
+    padding: 0 20px 0 0;
+  }
+  .borderBoth {
+    border-left: 1px solid $border_dark;
+    border-right: 1px solid $border_dark;
+  }
+  .borderLeft {
+    border-left: 1px solid $border_light;
+  }
+}
+
+
