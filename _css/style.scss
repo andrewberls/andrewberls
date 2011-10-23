@@ -204,6 +204,7 @@ form {
   padding-bottom: 10px;
  
   .column {
+    color: white;
     float: left;
     height: 80%;
     padding: 0 20px;
@@ -232,13 +233,11 @@ form {
     }
     
     &:first-child {
-      //background-color: green;
       padding: 0 20px 0 0;
     }
     &:last-child {
-      //background-color: orange;
-      float: right;
-      padding: 0 0 0 20px;
+      //float: right;
+      //padding: 0 0 0 20px;
     }
   }
   
@@ -274,11 +273,9 @@ form {
   }
   
   a {
-    color: #c6c6c6; //707070
-    //text-decoration: underline;
+    color: #c6c6c6;
     &:hover {
       color: $blue;
-      //text-decoration: none;
     }
   }
   
