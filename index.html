@@ -7,10 +7,12 @@
 	<link rel="stylesheet" href="_css/style.css" />
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script type="text/javascript">
+		// Manages scrolling for header navigation
 		function scrollTo(id) {		 	    		
 			$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
 		}
 	
+		// Handle contact form focus/blur
 		$(document).ready(function() {
 		$('input,textarea').focus(function() {
 	        if (this.value == this.defaultValue){
@@ -26,6 +28,14 @@
 		    });
 		});
 	</script>
+	
+	<script type="text/javascript">
+		//Get size of the image, how many images there are, then determine the size of the image reel.
+				
+		//Adjust the image reel to its new size
+		
+	</script>
+	
 </head>
 
 <body>
@@ -34,6 +44,9 @@
 		<div class="wrapper">
 			<h1>Hello World!</h1>
 			<ul class="nav">
+				
+				<!--FIX TO REMOVE JS:VOID AND WORK USING NAMED ANCHORS WITHOUT JS-->
+				
 				<li><a href="javascript:void(0)"   onclick="scrollTo('portfolio')">portfolio</a></li> <!-- href home, no onclick -->
 				<li><a href="javascript:void(0)"   onclick="scrollTo('about')">about me</a></li>
 				<li><a href="javascript:void(0)"   onclick="scrollTo('contact')">get in touch</a></li>
@@ -70,7 +83,45 @@
 	</section>
 	
 	<section id="portfolio">
-		<div class="wrapper"></div>
+		<div class="wrapper">
+			
+			
+			<div class="slider">
+				<div class="window">
+					<div class="reel">
+						<div class="frame"><p>Lorem ipsum</p></div> <!-- #FRAME NECESSARY? -->
+						<div class="frame"><p>HAHA this is frame two</p></div>					
+					</div>
+				</div>
+				<div class="thumb active"></div>
+				<div class="thumb"></div>
+				<div class="thumb"></div>
+			</div>
+			
+			
+			
+			
+			<!--<div id="portfolio_slider">
+				<div class="window">
+					<div class="image_reel">
+						<a href="#"><img src="reel_1.jpg" alt="" /></a>
+						<a href="#"><img src="reel_2.jpg" alt="" /></a>
+						<a href="#"><img src="reel_3.jpg" alt="" /></a>
+						<a href="#"><img src="reel_4.jpg" alt="" /></a>	
+					</div>
+					<div class="paging">
+						<a href="#" rel="1">1</a>
+						<a href="#" rel="2">2</a>
+						<a href="#" rel="3">3</a>
+						<a href="#" rel="4">4</a>
+					</div>
+				</div>											
+			</div>-->
+			
+			
+			
+			
+		</div>
 	</section>
 	
 	<section id="about">

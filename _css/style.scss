@@ -7,10 +7,12 @@ $green: #87B608;
 
 //---------- TEMPORARY DEV
 
-//.wrapper {border-left: 1px solid red; border-right: 1px solid red;}
+.wrapper {border-left: 1px solid red; border-right: 1px solid red;}
 //h1 {border: 1px solid green;}
 //ul.nav {border: 1px solid yellow;}
 //.column {background-color: purple;border:1px solid yellow;}
+.slider {background-color: #0FC;}
+.thumb {background-color: purple;}
 
 //---------- END TEMPORARY DEV
 
@@ -113,8 +115,45 @@ ul.nav {
 }
 #portfolio {
   background-color: $green; 
-  height: 860px; 
+  height: 860px;
 }
+
+
+.slider {
+  //float: left;
+  position: relative; //NECESSARY?
+  
+  .window {
+    height: 445px;
+    overflow: hidden;
+    position: relative;
+    
+    .reel {
+      position: absolute;
+      top: 0; left: 0;
+      
+     .frame {
+       
+       img {
+        float: left;
+       }
+      } 
+    }    
+  }
+  
+  .thumb {    
+    float: left;
+    height: 200px; 
+    margin: 20px 30px 0 0;
+    width: 275px; //238.5 grid
+    
+    &.active {
+      background-color: red;
+    }  
+  }
+}
+
+
 #about {
   background-color: $blue;  
   height: 860px; 
