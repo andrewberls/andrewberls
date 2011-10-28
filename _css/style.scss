@@ -146,8 +146,7 @@ ul.nav {
   //height: 860px;
 }
 #portfolio {
-  background-color: $bg_2;
-  //background-color: #F9F9F9; 
+  background-color: $bg_2;  
   //height: 860px;
 }
 
@@ -159,26 +158,48 @@ ul.nav {
   
   .window {
     height: 450px; //425
-    overflow: hidden;
-    
+    //overflow: hidden;
+    overflow: scroll;    
     position: relative;
+    width: 972px;
     
     .reel {      
       position: absolute;
       top: 0; left: 0;
       
      .frame {
-       height: 100%;
+       clear: both;
+       height: 425px;
        padding: 15px;
-       width: 100%;
+       width: 942px;
            
        img {
-        -moz-box-shadow:-2px 2px 6px 1px #a3a3a3;
-        -webkit-box-shadow:-2px 2px 6px 1px #a3a3a3;
-        box-shadow:-2px 2px 6px 1px #a3a3a3; //a3a3a3
-        filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#a3a3a3');
-        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=2, Direction=225, Color='#a3a3a3')";
+         //float: left;
+        //-moz-box-shadow:-2px 2px 6px 1px #a3a3a3;
+        //-webkit-box-shadow:-2px 2px 6px 1px #a3a3a3;
+        //box-shadow:-2px 2px 6px 1px #a3a3a3; //a3a3a3
+        //filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#a3a3a3');
+        //-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=2, Direction=225, Color='#a3a3a3')";
        }
+       
+       .text {
+        float: right;
+        background-color: purple;
+        margin-right: 53px;
+        height: 425px;
+        width: 450px; 
+         
+         h3 {
+           //float: right;
+           //margin-right: 250px;
+           margin-bottom: 10px;
+         }
+         p {
+           //float: left;
+           //margin-right: 250px;
+         }
+       }
+       
       } 
     }    
   }
