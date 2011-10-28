@@ -1,18 +1,28 @@
-$dark_gray: #38393D; //#363636
+$dark_gray: #38393D;
 $divider_bottom: #3F4044; //#0D0D0D or #B4B4B4 for stucco bg
 $divider_top: #CCCCCC; //#FFFFFF for stucco bg
-$blue: #5EC4F0;
-$green: #87B608;
+
+//$bg_1: #5EC4F0; // orig blue
+$bg_1: #65C3EC; //lighter blue
+
+//$bg_2: #87B608; //orig green
+$bg_2: #91C20D; //lighter green
+
 
 
 //---------- TEMPORARY DEV
 
-.wrapper {border-left: 1px solid red; border-right: 1px solid red;}
+//.wrapper {border-left: 1px solid red; border-right: 1px solid red;}
 //h1 {border: 1px solid green;}
 //ul.nav {border: 1px solid yellow;}
 //.column {background-color: purple;border:1px solid yellow;}
-.slider {background-color: #0FC;}
-.thumb {background-color: purple;}
+//#portfolio {background-color: white !important;}
+
+//.slider    {background-color: red;}
+//.window    {background-color: orange;}
+//.reel      {background-color: yellow;}
+//.frame     {background-color: green;}
+//.thumb     {background-color: blue;}
 
 //---------- END TEMPORARY DEV
 
@@ -61,7 +71,29 @@ a {
 // ----------
 .left {float: left;}
 .right {float: right;}
-
+.cta {
+  background: #89B908;
+  background: -webkit-gradient(linear,left top,left bottom,from(#8aba08),to(#6e9700));
+  background: -moz-linear-gradient(top,#8aba08,#6e9700);
+  border: none;
+  border-radius: 5px;
+  color: #FFF;
+  cursor: pointer;
+  padding: 5px 15px;
+}
+.msgBad, .msgGood {
+  margin: 0 auto 30px;
+  padding: 5px;
+  width: 70%;
+}
+.msgBad {
+  background-color: #ffa3a3;
+  border: 3px solid #FF1919;  
+}
+.msgGood {
+  background-color: #B3CC6F;
+  border: 3px solid #587605;  
+}
 
 // ----------
 // - LAYOUT 
@@ -110,57 +142,82 @@ ul.nav {
 }
 
 #home {
-  background-color: $blue;
+  background-color: $bg_1;
   //height: 860px;
 }
 #portfolio {
-  background-color: $green; 
+  background-color: $bg_2;
+  //background-color: #F9F9F9; 
   //height: 860px;
 }
 
 
 .slider {
-  //float: left;
+  float: left;  
+  //padding: 5px; //15
   position: relative; //NECESSARY?
   
   .window {
-    height: 425px;
+    height: 450px; //425
     overflow: hidden;
+    
     position: relative;
     
-    .reel {
+    .reel {      
       position: absolute;
       top: 0; left: 0;
       
      .frame {
-       
+       height: 100%;
+       padding: 15px;
+       width: 100%;
+           
        img {
-        float: left;
+        -moz-box-shadow:-2px 2px 6px 1px #a3a3a3;
+        -webkit-box-shadow:-2px 2px 6px 1px #a3a3a3;
+        box-shadow:-2px 2px 6px 1px #a3a3a3; //a3a3a3
+        filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#a3a3a3');
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=2, Direction=225, Color='#a3a3a3')";
        }
       } 
     }    
   }
   
-  .thumb {    
+  .thumb {
+    border: 3px solid #C4C4C4;  
     float: left;
     height: 200px; 
-    margin: 20px 30px 0 0;
-    width: 275px; //238.5 grid
+    margin: 20px 15px 0 15px;
+    width: 275px;
+    -moz-box-shadow:-2px 2px 6px 1px #a3a3a3;
+    -webkit-box-shadow:-2px 2px 6px 1px #a3a3a3;
+    box-shadow:-2px 2px 6px 1px #a3a3a3;
+    filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#a3a3a3');
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=2, Direction=225, Color='#a3a3a3')";
     
     &.active {
-      background-color: red;
-    }  
+      border: 3px solid $bg_1;
+    }
+    
   }
 }
 
 
 #about {
-  background-color: $blue;  
-  height: 860px; 
+  background-color: $bg_1;  
+  //height: 860px;
+  height: 250px;
 }
 #contact {
-  background-color: $green;  
-  height: 860px; 
+  //background-color: $bg_2;
+  background-color: $bg_1;
+  
+  //height: 860px; 
+  //height: 250px;
+  
+  .wrapper {
+    padding: 50px 0;
+  }
 }
 .wrapper {
   height: 100%;
@@ -206,19 +263,15 @@ form {
     width: 400px;
     
     &:focus {
-      border: 1px solid $blue;
+      border: 1px solid $bg_1;
       color: $dark_gray;
       outline: none;
     }
-    &#submit {
-      background: #89B908;
-      background-image: -webkit-gradient(linear,left top,left bottom,from(#8aba08),to(#6e9700));
-      background-image: -moz-linear-gradient(top,#8aba08,#6e9700);
-      border: none;
-      border-radius: 5px;
-      color: #FFF;
-      cursor: pointer;
-      padding: 5px 15px;
+    
+    &.valid {
+      color: $dark_gray;
+    }
+    &#submit {      
       width: 78px;
       
       &:hover {
@@ -314,7 +367,7 @@ form {
   a {
     color: #c6c6c6;
     &:hover {
-      color: $blue;
+      color: $bg_1;
     }
   }
   
