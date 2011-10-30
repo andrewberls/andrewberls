@@ -14,7 +14,7 @@
 	<section id="header">
 		<div class="wrapper">
 			<!--<h1>Hello World!</h1>-->
-			<h2>Andrew <span style="color: #5EC4F0">Berls</span></h2>
+			<h2>Andrew <span style="color: #39A6E2">Berls</span></h2>
 			<ul class="nav">
 				
 				<!--FIX TO REMOVE JS:VOID AND WORK USING NAMED ANCHORS WITHOUT JS-->
@@ -45,7 +45,7 @@
 					<div class="reel">
 						
 						<div class="frame">
-							<a href=""><img src="_images/sexinfo_large1.jpg" alt="" /></a>
+							<a href="#"><img src="_images/sexinfo_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>SexInfoOnline.com</h3>
 								<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
@@ -54,7 +54,7 @@
 						</div>
 						
 						<div class="frame">
-							<a href=""><img src="_images/bruceb_large1.jpg" alt="" /></a>
+							<a href="#"><img src="_images/bruceb_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>Bruceb Consulting</h3>
 								<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
@@ -62,24 +62,24 @@
 						</div>
 						
 						<div class="frame">
-							<a href=""><img src="_images/rha_large1.jpg" alt="" /></a>
+							<a href="#"><img src="_images/rha_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>UCSB RHA</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>								
+								<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>					
 							</div>
 						</div>	
 														
 					</div> <!-- .reel -->				
 				</div> <!-- .reel -->
 				
-				<div class="thumb active">
-					<a href=""><img src="_images/sexinfo_thumb1.jpg" alt="" /></a>
+				<div class="thumb">
+					<a class="active" href="#" rel="1"><img src="_images/sexinfo_thumb1.jpg" alt="" /></a>
 				</div>
 				<div class="thumb">
-					<a href=""><img src="_images/bruceb_thumb1.jpg" alt="" /></a>
+					<a class="" href="#" rel="2"><img src="_images/bruceb_thumb1.jpg" alt="" /></a>
 				</div>
 				<div class="thumb">
-					<a href=""><img src="_images/rha_thumb1.jpg" alt="" /></a>
+					<a class="" href="#" rel="3"><img src="_images/rha_thumb1.jpg" alt="" /></a>
 				</div>
 			</div> <!-- .slider -->
 			
@@ -187,66 +187,41 @@
     	}	    	
 	    });
 	});
-</script>
-	
-<script type="text/javascript">
-	$('.window').css('overflow', 'hidden');
 
-	//alert('test');
-	
-	$('.thumb').hover(
-		// Mouseover
-		function() {
-			if ($(this).hasClass('active')) {
-				return false;
-			}
-			$(this).css({
-				'border'            : '3px solid #666',
-			 	'-moz-transition'   : 'all 0.12s ease-out',
-		        '-o-transition'     : 'all 0.12s ease-out',
-				'-webkit-transition': 'all 0.12s ease-out' 
-			});
-		},
-		// Mouseleave
-		function() {
-			if ($(this).hasClass('active')) {
-				return false;
-			}
-			$(this).css({
-				'border'            : '3px solid #C4C4C4',
-				'-moz-transition'   : 'all 0.12s ease-out',
-		        '-o-transition'     : 'all 0.12s ease-out',
-		        '-webkit-transition': 'all 0.12s ease-out' 
-			});
-		});
+	$('.thumb a').click(function() {
+		$(this).addClass('active');
+		//scrollTo('portfolio');
+	});
 		
-		
+	//-- IMAGE SLIDER
+	//-- Overflow scrolls by default - hide with JS
+	$('.window').css('overflow', 'hidden');
 	
-	//Get size of the image, how many images there are, then determine the size of the image reel.
+	//Get width of the image, how many images there are, then determine the size of the image reel.
 	var imageWidth = $('.window').width();
 	var numImages = $('.reel img').size();
 	var reelWidth = imageWidth * numImages;
-		
+	var active = 1;
+	
 	//Adjust the image reel to its new size
 	$('.reel').css({'width' : reelWidth});
 	
-	/*function rotate() {
-		var triggerID = $active.attr('rel') - 1; //# of times to slide
-		var reel_position = triggerId * imageWidth; // how far the reel needs to slide
-		$('.thumb').removeClass('active'); // remove all active classes
-		$active.addClass('active'); // add the active clas ($active declared in rotateSwitch)
-		
-		// Slider Animation
+	function rotate(id) {		
+		var offset = Math.abs(id-active);		
+		var distance = imageWidth * offset;		
 		$('.reel').animate({
-			left: -reel_position;
-		}, 500);
+			left: -distance
+		}, 550);
 	}
 	
 	$('.thumb a').click(function() {
-		$active = $(this);
-		return false;
-	});*/
-
+		$('.thumb a').removeClass('active');		
+		$(this).addClass("active");
+		var id = $(this).attr('rel');
+		rotate(id);		
+		return false; //Prevent browser jump to link anchor
+	});
+	
 </script>
 
 <script type="text/javascript">
