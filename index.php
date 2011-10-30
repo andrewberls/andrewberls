@@ -16,13 +16,20 @@
 			<!--<h1>Hello World!</h1>-->
 			<h2>Andrew <span style="color: #39A6E2">Berls</span></h2>
 			<ul class="nav">
+								
+				<!--
+					portfolio
+					resources
+					experiments
+					about
+					contact
+					tumblr
+				-->
 				
-				<!--FIX TO REMOVE JS:VOID AND WORK USING NAMED ANCHORS WITHOUT JS-->
-				
-				<li><a href="javascript:void(0)"   onclick="scrollTo('portfolio')">portfolio</a></li> <!-- href home, no onclick -->
-				<!--<li><a href="javascript:void(0)"   onclick="scrollTo('about')">about me</a></li>-->
-				<li><a href="javascript:void(0)"   onclick="scrollTo('contact')">get in touch</a></li>
-				<li><a href="javascript:void(0)"   onclick="scrollTo('footer')">resources</a></li>
+				<li><a href="#portfolio" class="portfolio">portfolio</a></li>
+				<!--<li><a href="#about" class="about">about me</a></li>-->
+				<li><a href="#contact"   class="contact">get in touch</a></li>
+				<li><a href="#footer"    class="footer">resources</a></li>
 			</ul>
 		</div>
 	</section>
@@ -32,7 +39,6 @@
 		
 			<!--<h1>Welcome!</h1>-->
 			<p>This site is still very much a work in progress, but feel free to poke around and <a href="javascript:void(0)" onclick="scrollTo('footer')">check out our resources.</a></p>			
-			
 		</div>
 	</section>
 	
@@ -141,6 +147,8 @@
 					<li><a href="http://www.aptana.com/">Aptana Studio</a></li>
 				</ul>
 			</div>
+			
+			<!-- FOR OPTIONAL RIGHT DETAIL COLUMN - ENABLE RULE IN CSS -->
 			<!--<div class="column">
 				<h3>Details</h3>
 				<ul>
@@ -165,12 +173,18 @@
 	
 	
 <script type="text/javascript">
-	// Manages scrolling for header navigation
+	//----- SCROLLING FOR HEADER NAVIGATION ---//
 	function scrollTo(id) {		 	    		
 		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
 	}
 
-	// Handle contact form focus/blur
+	$('.nav a').click(function() {		
+		var id = $(this).attr('class');
+		scrollTo(id);
+		return false;
+	});
+
+	//----- CONTACT FORM FOCUS/BLUR ---//
 	$(document).ready(function() {
 	$('input,textarea').focus(function() {
         if (this.value == this.defaultValue){
@@ -192,8 +206,9 @@
 		$(this).addClass('active');
 		//scrollTo('portfolio');
 	});
-		
-	//-- IMAGE SLIDER
+	
+	
+	//----- IMAGE SLIDER ---//
 	//-- Overflow scrolls by default - hide with JS
 	$('.window').css('overflow', 'hidden');
 	
