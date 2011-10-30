@@ -7,40 +7,14 @@
 	<link rel="stylesheet" href="_css/style.css" />
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	
-	<script type="text/javascript">
-		// Manages scrolling for header navigation
-		function scrollTo(id) {		 	    		
-			$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
-		}
-	
-		// Handle contact form focus/blur
-		$(document).ready(function() {
-		$('input,textarea').focus(function() {
-	        if (this.value == this.defaultValue){
-	        	this.value = '';
-	    	}	        
-	    });
-	    $('input,textarea').blur(function() {
-	        if (this.value == ''){	        	
-	        	this.value = this.defaultValue;
-	        	$(this).removeClass('valid');
-	    	} else {
-	    		this.value = this.value;
-	    		$(this).addClass('valid');
-	    	}	    	
-		    });
-		});
-	</script>
-		
-	
-	
 </head>
 
 <body>
 	
 	<section id="header">
 		<div class="wrapper">
-			<h1>Hello World!</h1>
+			<!--<h1>Hello World!</h1>-->
+			<h2>Andrew <span style="color: #5EC4F0">Berls</span></h2>
 			<ul class="nav">
 				
 				<!--FIX TO REMOVE JS:VOID AND WORK USING NAMED ANCHORS WITHOUT JS-->
@@ -56,7 +30,7 @@
 	<section id="home">
 		<div class="wrapper">
 		
-			<h1>Welcome!</h1>
+			<!--<h1>Welcome!</h1>-->
 			<p>This site is still very much a work in progress, but feel free to poke around and <a href="javascript:void(0)" onclick="scrollTo('footer')">check out our resources.</a></p>			
 			
 		</div>
@@ -70,7 +44,7 @@
 				<div class="window">
 					<div class="reel">
 						
-						<div class="frame" style="background-color: red;">
+						<div class="frame">
 							<a href=""><img src="_images/sexinfo_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>SexInfoOnline.com</h3>
@@ -79,21 +53,19 @@
 																								
 						</div>
 						
-						<div class="frame" style="background-color: orange;">
+						<div class="frame">
 							<a href=""><img src="_images/bruceb_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>Bruceb Consulting</h3>
 								<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
 							</div>
 						</div>
 						
-						<div class="frame" style="background-color: yellow;">
+						<div class="frame">
 							<a href=""><img src="_images/rha_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>UCSB RHA</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								
+								<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>								
 							</div>
 						</div>	
 														
@@ -192,39 +164,90 @@
 	</section>
 	
 	
-	<script type="text/javascript">
-		$('.thumb').hover(
-			// Mouseover
-			function() {
-				if ($(this).hasClass('active')) {
-					return false;
-				}
-				$(this).css({
-					'border'            : '3px solid #666',
-					'-moz-transition'   : 'all 0.12s ease-out',
-			        '-o-transition'     : 'all 0.12s ease-out',
-			        '-webkit-transition': 'all 0.12s ease-out' 
-				});
-			},
-			// Mouseleave
-			function() {
-				if ($(this).hasClass('active')) {
-					return false;
-				}
-				$(this).css({
-					'border'            : '3px solid #C4C4C4',
-					'-moz-transition'   : 'all 0.12s ease-out',
-			        '-o-transition'     : 'all 0.12s ease-out',
-			        '-webkit-transition': 'all 0.12s ease-out' 
-				});
+<script type="text/javascript">
+	// Manages scrolling for header navigation
+	function scrollTo(id) {		 	    		
+		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
+	}
+
+	// Handle contact form focus/blur
+	$(document).ready(function() {
+	$('input,textarea').focus(function() {
+        if (this.value == this.defaultValue){
+        	this.value = '';
+    	}	        
+    });
+    $('input,textarea').blur(function() {
+        if (this.value == ''){	        	
+        	this.value = this.defaultValue;
+        	$(this).removeClass('valid');
+    	} else {
+    		this.value = this.value;
+    		$(this).addClass('valid');
+    	}	    	
+	    });
+	});
+</script>
+	
+<script type="text/javascript">
+	$('.window').css('overflow', 'hidden');
+
+	//alert('test');
+	
+	$('.thumb').hover(
+		// Mouseover
+		function() {
+			if ($(this).hasClass('active')) {
+				return false;
+			}
+			$(this).css({
+				'border'            : '3px solid #666',
+			 	'-moz-transition'   : 'all 0.12s ease-out',
+		        '-o-transition'     : 'all 0.12s ease-out',
+				'-webkit-transition': 'all 0.12s ease-out' 
 			});
-			
-		//Get size of the image, how many images there are, then determine the size of the image reel.
-		//var imageSize = $('.window').width();
-			//alert(imageSize);
-		//Adjust the image reel to its new size
-		$('.window').css('overflow', 'hidden');
-	</script>
+		},
+		// Mouseleave
+		function() {
+			if ($(this).hasClass('active')) {
+				return false;
+			}
+			$(this).css({
+				'border'            : '3px solid #C4C4C4',
+				'-moz-transition'   : 'all 0.12s ease-out',
+		        '-o-transition'     : 'all 0.12s ease-out',
+		        '-webkit-transition': 'all 0.12s ease-out' 
+			});
+		});
+		
+		
+	
+	//Get size of the image, how many images there are, then determine the size of the image reel.
+	var imageWidth = $('.window').width();
+	var numImages = $('.reel img').size();
+	var reelWidth = imageWidth * numImages;
+		
+	//Adjust the image reel to its new size
+	$('.reel').css({'width' : reelWidth});
+	
+	/*function rotate() {
+		var triggerID = $active.attr('rel') - 1; //# of times to slide
+		var reel_position = triggerId * imageWidth; // how far the reel needs to slide
+		$('.thumb').removeClass('active'); // remove all active classes
+		$active.addClass('active'); // add the active clas ($active declared in rotateSwitch)
+		
+		// Slider Animation
+		$('.reel').animate({
+			left: -reel_position;
+		}, 500);
+	}
+	
+	$('.thumb a').click(function() {
+		$active = $(this);
+		return false;
+	});*/
+
+</script>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
