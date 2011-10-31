@@ -62,7 +62,7 @@ p {
   line-height: 24px;
 }
 a {    
-  color: #1487D4;  
+  color: #1487D4;
   text-decoration: none;
   
   &:visited {
@@ -73,6 +73,10 @@ a {
   &:hover {
     color: $dark_gray;
     text-decoration: underline;
+  }
+  
+  &:focus {
+    outline: none;
   }
 }
 
