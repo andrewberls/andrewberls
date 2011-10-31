@@ -19,11 +19,11 @@ $bg_2: #EAEAEA;
 
 //---------- TEMPORARY DEV
 
-//.wrapper {border-left: 1px solid red; border-right: 1px solid red;}
-//h1,h2 {border: 1px solid green;}
-//ul.nav {border: 1px solid yellow;}
-//.column {background-color: purple;border:1px solid yellow;}
-//#portfolio {background-color: white !important;}
+.wrapper   {border-left: 1px solid red; border-right: 1px solid red;}
+h1,h2      {border: 1px solid green;}
+ul.nav     {border: 1px solid yellow;}
+.column    {border:1px solid yellow;}
+#portfolio {background-color: white !important;}
 
 //.slider    {background-color: red;}
 //.window    {background-color: orange;}
@@ -143,10 +143,12 @@ section {
   background: linear-gradient(#2c2c2c, #1C1B1B);
   border-top: none;
   border-bottom: 1px solid $divider_bottom;
-  height: 120px; //140
+  //height: 120px; //140
+  min-height: 120px;
   
   h2 {
     color: #D7D7D7;
+    width: 51.440329%; // 500 / 972 = 51.440329%
     
      span {
       color: #39A6E2;
@@ -321,7 +323,7 @@ section {
   padding: 60px 0 100px;  
   text-align: left;
   //width: 972px;
-  max-width: 60.75em; // 972 / 16 = 60.75 
+  max-width: 60.75em // 972 / 16 = 60.75 
 }
 
 form {
@@ -332,7 +334,9 @@ form {
   overflow: hidden;
   margin: 0 auto;
   padding: 50px 40px 60px;
-  width: 415px;
+  //padding: 12.04819% 9.63855% 14.4578%;
+  //width: 415px;
+  width: 42.695%;
   
   h2 {
     font-size: 2.5em;   
@@ -359,7 +363,8 @@ form {
     float: left;
     margin-top: 10px;
     padding: 5px;
-    width: 400px;
+    //width: 400px;
+    width:96.3855%;
     
     &:focus {
       border: 1px solid $blue;      
