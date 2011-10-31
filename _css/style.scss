@@ -1,6 +1,7 @@
 //-- LIB COLORS
 $dark_gray: #222;
-$gray_text: #333;
+//$gray_text: #333;
+$gray_text: #434343;
 $blue: #5EC4F0;
 $dark_blue: #1f769c;
 $med_blue: #1487D4;
@@ -42,11 +43,9 @@ body {
   text-align: center; 
 }
 h1, h2, h3, h4, h5, h6 {
-  color: $gray_text;
+  color: $gray_text;  
 }
-h1 {  
-  //color: white;
-  color: $gray_text;
+h1 {      
   font-size: 3.5em;
   font-weight: bold;
   text-shadow: 1px 1px 1px #1d1d1d;
@@ -75,9 +74,6 @@ a {
     color: $dark_gray;
     text-decoration: underline;
   }
-  /*&:focus {
-    outline: none;
-  }*/
 }
 
 
@@ -111,12 +107,10 @@ a {
   width: 70%;
 }
 .msgBad {
-  //background-color: #ffa3a3;
   background-color: #FFAFAF;
   border: 2px solid #FF1919;  
 }
 .msgGood {
-  //background-color: #B3CC6F;
   background-color: #C2D983;
   border: 2px solid #587605;  
 }
@@ -143,16 +137,19 @@ section {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2c2c2c', endColorstr='#1C1B1B');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#2c2c2c', endColorstr='#1C1B1B')";
   background: linear-gradient(#2c2c2c, #1C1B1B);
-  
-  
-  
   border-top: none;
   border-bottom: 1px solid $divider_bottom;
   height: 120px; //140
   
   h2 {
-    color: #D7D7D7;    
+    color: #D7D7D7;
+    
+     span {
+      color: #39A6E2;
+    }  
   }
+  
+  
   
   .wrapper {
     padding: 10px 0 30px;
@@ -162,14 +159,12 @@ section {
   margin-top: 15px;
   overflow: auto;  
     
-    li {
-      //border-radius: 6px;
+    li {      
       float: left;
       margin-right: 10px;
       
       a {      
-        background-color: #525252;
-        //border-radius: 5px;      
+        background-color: #525252;           
         color: #D7D7D7;
         display: block;
         font-size: 1.1em;
@@ -189,21 +184,42 @@ section {
 }
 
 #home {
-  background-color: $bg_1;
-  background: -moz-linear-gradient(0% 50% 90deg,#e8e8e8, #efefef);
-  background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#e8e8e8), to(#efefef)); 
+  background-color: #F5F5F5;
+  background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#F5F5F5), to(#EFEFEF));    
+  background: -moz-linear-gradient(0% 50% 90deg,#F5F5F5, #EFEFEF);  
   
-  height: 400px;
+  .wrapper {    
+    text-align: center;
+  }
+  
+  p {
+    color: #525252;
+    font-weight: bold;
+    line-height: 28px;
+       
+    span {
+     color: #000;       
+   }
+            
+    &.title {       
+        font-weight: bold;
+        font-size: 2em;
+        line-height: 35px;
+        margin-bottom: 10px;
+        
+        span {
+          color: #1487D4;
+        }
+     }
+     
+     
+  }
+  
 }
 #portfolio {
   background-color: $bg_2;
   background: -moz-linear-gradient(0% 40% 90deg,#DBDBDB, #D5D5D5); //EFEEEE - DBDBDB
-  background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#DBDBDB), to(#D5D5D5));   
-  
-  .wrapper {
-    //padding: 50px 0 100px;
-    padding: 60px 0 100px;
-  } 
+  background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#DBDBDB), to(#D5D5D5));     
 }
 
 
@@ -212,8 +228,7 @@ section {
   position: relative;
   
   .window {    
-    height: 450px;
-    //overflow: hidden;
+    height: 450px;    
     overflow-x: hidden;
     overflow-y: scroll;  
     position: relative;
@@ -260,8 +275,7 @@ section {
     width: 275px;    
     
     a {
-      border: 3px solid #C4C4C4;  
-      //display: block;
+      border: 3px solid #C4C4C4;      
       float: left;
       height: 200px;
       width: 275px;      
@@ -293,17 +307,14 @@ section {
   height: 250px;
 }
 #contact {  
-  background-color: $bg_1;  
-  
-  .wrapper {
-    padding: 50px 0;
-  }
+  background-color: $bg_1;     
 }
 .wrapper {
   height: 100%;
   margin: 0 auto;  
   overflow: hidden;
-  padding: 20px 0 30px;  
+  //padding: 20px 0 30px;
+  padding: 60px 0 100px;  
   text-align: left;
   width: 972px; 
 }
@@ -386,6 +397,9 @@ form {
   position: relative;
   padding-bottom: 10px;
  
+  .wrapper {
+    padding: 20px 0 30px;
+  }
   .column {
     color: white;
     float: left;

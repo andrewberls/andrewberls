@@ -14,9 +14,8 @@
 	<section id="header">
 		<div class="wrapper">
 			<!--<h1>Hello World!</h1>-->
-			<h2>Andrew <span style="color: #39A6E2">Berls</span></h2>
-			<ul class="nav">
-								
+			<h2>Andrew <span>Berls</span></h2>
+			<ul class="nav">							
 				<!--
 					portfolio
 					resources
@@ -24,8 +23,7 @@
 					about
 					contact
 					tumblr
-				-->
-				
+				-->				
 				<li><a href="#portfolio" class="portfolio">portfolio</a></li>
 				<!--<li><a href="#about" class="about">about me</a></li>-->
 				<li><a href="#contact"   class="contact">get in touch</a></li>
@@ -38,7 +36,10 @@
 		<div class="wrapper">
 		
 			<!--<h1>Welcome!</h1>-->
-			<p>This site is still very much a work in progress, but feel free to poke around and <a href="javascript:void(0)" onclick="scrollTo('footer')">check out our resources.</a></p>			
+			<!--<p>This site is still very much a work in progress, but feel free to poke around and <a href="javascript:void(0)" onclick="scrollTo('footer')">check out our resources.</a></p>-->
+			<p class="title">Hello and welcome! My name is <span>Andrew Berls</span> and I really enjoy making websites.</p>
+			<p>Ever since I started working with the web I've been fascinated by <span>minimalist design</span>, <span>elegant code</span>, and <span>natural user experiences</span>.</p>
+			<p>I'm constantly working to improve my skills, and I love working with others to produce clean, effective, and standards-compliant sites for any range of needs. You can check out some of my best work <a class="portfolio" href="#portfolio">here</a>, or feel free to <a class ="contact" href="#contact">shoot me an email!</a></p>			
 		</div>
 	</section>
 	
@@ -178,11 +179,11 @@
 		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
 	}
 
-	$('.nav a').click(function() {		
+	$('.nav a, #home a').click(function() {		
 		var id = $(this).attr('class');
 		scrollTo(id);
 		return false;
-	});
+	});	
 
 	//----- CONTACT FORM FOCUS/BLUR ---//
 	$(document).ready(function() {
