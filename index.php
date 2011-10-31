@@ -5,6 +5,7 @@
 	<title>AndrewBerls.com</title>	
 	<link rel="stylesheet" href="_css/reset.css" />
 	<link rel="stylesheet" href="_css/style.css" />
+	<link rel="stylesheet" type="text/css" media="screen and (max-device-width: 480px)" href="_css/small.css"/>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	
 </head>
