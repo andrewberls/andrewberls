@@ -5,7 +5,7 @@
 	<title>AndrewBerls.com</title>	
 	<link rel="stylesheet" href="_css/reset.css" />
 	<link rel="stylesheet" href="_css/style.css" />	
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	
 </head>
 
@@ -187,25 +187,24 @@
 
 	//----- CONTACT FORM FOCUS/BLUR ---//
 	$(document).ready(function() {
-	$('input,textarea').focus(function() {
-        if (this.value == this.defaultValue){
-        	this.value = '';
-    	}	        
-    });
-    $('input,textarea').blur(function() {
-        if (this.value == ''){	        	
-        	this.value = this.defaultValue;
-        	$(this).removeClass('valid');
-    	} else {
-    		this.value = this.value;
-    		$(this).addClass('valid');
-    	}	    	
+		$('input,textarea').focus(function() {
+	        if (this.value == this.defaultValue){
+	        	this.value = '';
+	    	}	        
 	    });
+	    $('input,textarea').blur(function() {
+	        if (this.value == ''){	        	
+	        	this.value = this.defaultValue;
+	        	$(this).removeClass('valid');
+	    	} else {
+	    		this.value = this.value;
+	    		$(this).addClass('valid');
+	    	}	    	
+		    });
 	});
 
 	$('.thumb a').click(function() {
 		$(this).addClass('active');
-		//scrollTo('portfolio');
 	});
 	
 	
@@ -235,7 +234,7 @@
 		$(this).addClass("active");
 		var id = $(this).attr('rel');
 		rotate(id);		
-		return false; //Prevent browser jump to link anchor
+		return false; //Prevent browser jump to anchor link
 	});
 	
 </script>
