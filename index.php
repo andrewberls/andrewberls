@@ -108,6 +108,7 @@
 				<p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
 				<label for="name">Name:</label>
 				<input class="" type="text" name="name" value="Name" id="name" />	
+								
 				
 				<label for="email">Email:</label>
 				<input type="text" name="email" value="Email" id="email"/>

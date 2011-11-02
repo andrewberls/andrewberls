@@ -195,8 +195,9 @@ section {
      color: #000;       
    }
             
-    &.title {       
-        font-weight: bold;
+    &.title {
+        font-family: Verdana;                     
+        //font-weight: bold;
         font-size: 2em;
         line-height: 35px;
         margin-bottom: 10px;
