@@ -423,8 +423,10 @@ form {
     }*/
   }
   
-  $border_light:#626262;
-  $border_dark:#0D0D0D;
+  //$border_light:#626262;
+  $border_light: #4E4E4E; //222120
+  //$border_dark:#0D0D0D;
+  $border_dark: #000;
   
   .borderRight {
     border-right: 1px solid $border_light;
