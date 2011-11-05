@@ -142,7 +142,8 @@ section {
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#2c2c2c', endColorstr='#1C1B1B')";
   background: linear-gradient(#2c2c2c, #1C1B1B);
   border-top: none;
-  border-bottom: 1px solid $divider_bottom;
+  //border-bottom: 1px solid $divider_bottom;
+  border-bottom: 1px solid $emphasis;
   height: 120px;
   
   h2 {
@@ -189,7 +190,8 @@ section {
   //background-color: #F5F5F5;  
   //background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#F5F5F5), to(#EFEFEF));    
   //background: -moz-linear-gradient(0% 50% 90deg,#F5F5F5, #EFEFEF);  
-  background-color: $blue;  
+  background-color: $blue;
+  border-top-color: $gray_text;
   
   .wrapper {    
     background-color: #F9F9F9;
