@@ -21,7 +21,7 @@ $bg_2: #EAEAEA;
 
 //---------- TEMPORARY DEV
 
-.wrapper {border-left: 1px solid red; border-right: 1px solid red;}
+//.wrapper {border-left: 1px solid red; border-right: 1px solid red;}
 //h1       {border: 1px solid green;}
 //h2       {border: 1px solid orange;}
 //p        {border: 1px solid purple;}
@@ -29,6 +29,7 @@ $bg_2: #EAEAEA;
 //.column  {border: 1px solid Turquoise;}
 //$divider_bottom: green;
 //$divider_top: orange;
+//.threecol {background-color: #0fc;}
 
 //---------- END TEMPORARY DEV
 
@@ -112,6 +113,13 @@ a {
   background-color: #C2D983;
   border: 2px solid #587605;  
 }
+.threecol {
+  float: left; 
+  //width: 33.333%;
+  margin: 0 15px;
+  //text-align: center;
+  width: 30%;   
+}
 
 // ----------
 // - LAYOUT 
@@ -178,13 +186,12 @@ section {
 }
 
 #home {
-  background-color: #F5F5F5;  
-  background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#F5F5F5), to(#EFEFEF));    
-  background: -moz-linear-gradient(0% 50% 90deg,#F5F5F5, #EFEFEF);  
-  //background-color: $blue;  
+  //background-color: #F5F5F5;  
+  //background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#F5F5F5), to(#EFEFEF));    
+  //background: -moz-linear-gradient(0% 50% 90deg,#F5F5F5, #EFEFEF);  
+  background-color: $blue;  
   
-  .wrapper {
-    /*
+  .wrapper {    
     background-color: #F9F9F9;
     -webkit-border-top-left-radius: 10px;
     -webkit-border-top-right-radius: 10px;
@@ -197,27 +204,38 @@ section {
     box-shadow: 0 0 6px #252525;
     margin-top: 50px;    
     padding: 30px 0 60px; //60px 0 100px;
-    */    
-    padding: 100px 0;
-    text-align: center;    
+       
+    //padding: 100px 0;
+    //text-align: center;    
   }
   
+  h4 {
+    color: $emphasis;
+    font-size: 1.2em;
+    font-weight: bold;    
+    margin: 0 10px 15px;
+  }
   p {
     color: #525252;
-    font-weight: bold;
-    line-height: 28px;
+    //font-weight: bold;
+    //line-height: 28px;
+    font-size: 0.9em;
     margin: 0 10px;
        
     span {
      //color: #000;
-     color: $emphasis;  
+     font-weight: bold;    
+     color: $emphasis;     
+     //color: black;  
    }
             
     &.title {
         font-family: Verdana;
         font-size: 2em;
-        line-height: 35px;
-        margin-bottom: 10px;
+        font-weight: bold;
+        line-height: 40px; //35
+        margin-left: 20px;
+        margin-bottom: 25px;
         
         span {          
           color: $emphasis;

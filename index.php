@@ -35,8 +35,21 @@
 	<section id="home">
 		<div class="wrapper">								
 			<p class="title">Hello and welcome! My name is <span>Andrew Berls</span> and I <span>really enjoy making websites.</span></p>
-			<p>Ever since I started working with the web I've been fascinated by <span>minimalist design</span>, <span>elegant code</span>, and <span>natural user experiences</span>.</p>
-			<p>I'm constantly working to improve my skills, and I love working with others to produce clean, effective, and standards-compliant sites for any range of needs. You can check out some of my best work <a class="portfolio" href="#portfolio">here</a>, or feel free to <a class ="contact" href="#contact">shoot me an email!</a></p>			
+						
+			<div class="threecol">
+				<h4>Who I am</h4>
+				<p>I'm a 19-year old Computer Science student at UCSB. I love to build things and learn new tricks, and I get restless without a project on my hands.</p>
+			</div>
+			<div class="threecol">
+				<h4>What I do</h4>
+				<p>Ever since I started working with the web I've been fascinated by <span>minimalist design</span>, <span>elegant code</span>, and <span>natural user experiences</span>.
+				You can check out some of my best work
+					<a class="portfolio" href="#portfolio">here</a>.</p>
+			</div>
+			<div class="threecol">
+				<h4>Say hello</h4>
+				<p>I love working with others to produce clean, effective, and standards-compliant sites for any range of needs. Feel free to <a class ="contact" href="#contact">shoot me an email!</a></p>
+			</div>			
 		</div>
 	</section>
 	
