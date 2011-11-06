@@ -1,39 +1,39 @@
 <?php
-	//$errors = false;		
-	
-	function invalid($field, $default) {
-		if ($field == $default || $field = "") {
-			return true;
-		}
-		return false;
-	}
+	$errors = array();		
+	$required_fields = array('name','email','message');		
 	
 	if (isset($_POST['submit'])) {
-		$name = $_POST['name'];
-		$email = $_POST['email'];
-		$message = $_POST['message'];
-		
-		if (invalid($name, "Name") || invalid($email, "Email") || invalid($message, "Your message")) {
-			//$errors = true;			
-			header("Location: index.php?success=false#contact");		
+		foreach($required_fields as $fieldname) {							
+			if (!isset($_POST[$fieldname]) || empty($_POST[$fieldname]) || $_POST[$fieldname] == ucfirst($fieldname)) {
+				$errors[] = $fieldname;
+			}
 		}
-		else {						
-			$email_subject= "andrewberls.com - message from " . $name;
-			$email_body = $message . "\n\n Respond to: " . $email;
+		
+		if (empty($errors)) {
+			$name = $_POST['name'];
+			$email = $_POST['email'];
+			$message = $_POST['message'];
 			
+			$email_subject= "andrewberls.com - message from " . $name;
+			$email_body = $message . "\n\n Respond to: " . $email;			
 			$to = "andrew.berls@gmail.com";
 			$headers = "From: andrewberls.com\r\n";
 			$headers .= "Reply-To: " . $email . "\r\n";
 								
 			mail($to, $email_subject, $email_body, $headers);
 			header("Location: index.php?success=true#contact");
-		}
+			
+			
+		} else {
+			//-- ERRORS DETECTED IN FORM
+			header("Location: index.php?success=false#contact");					
+			
+		}		
 	}
-	else {
-		$name = "Name";		
+	
+	$name = "Name";		
 		$email = "Email";
-		$message = "Your message";
-	}
+		$message = "Message";
 ?>
 
 <!DOCTYPE html>
@@ -142,8 +142,10 @@
 			
 			<?php 
 				if (isset($_GET['success']) && $_GET['success'] == "false") {
+				//if (!empty($errors)) {
 					echo "<p class=\"msgBad\">Oops! There was an error submitting the form. Please check your fields and try again.</p>";									
 				}
+				//if (isset($_GET['success']) && $_GET['success'] == "true") {
 				if (isset($_GET['success']) && $_GET['success'] == "true") {
 					echo "<p class=\"msgGood\">Success! I'll get back to you as soon as I can!</p>";
 				}
@@ -225,9 +227,13 @@
 	//----- CONTACT FORM FOCUS/BLUR ---//
 	$(document).ready(function() {
 		$('input,textarea').focus(function() {
-	        if (this.value == this.defaultValue){
+	        if (this.value == this.defaultValue){	             
 	        	this.value = '';
-	    	}	        
+	    	}
+	    	if ($(this).hasClass('invalid')) {
+	    		$(this).removeClass('invalid');
+	    		$(this).val('');	    		
+	    	}        
 	    });
 	    $('input,textarea').blur(function() {
 	        if (this.value == ''){	        	
@@ -272,6 +278,33 @@
 		var id = $(this).attr('rel');
 		rotate(id);		
 		return false; //Prevent browser jump to anchor link
+	});
+	
+	
+	//----- JS FORM VALIDATION ---//
+	$('#submit').click(function() {
+		var name = $('#name'),
+			email = $('#email'),
+			message = $('#message'),
+			errors = false;
+			
+		if (!name.val()|| name.val() == "Name") {
+			name.addClass('invalid');
+			name.val('Please enter your name!')
+			errors = true;
+		}
+		if (!email.val()|| email.val() == "Email") {
+			email.addClass('invalid');
+			email.val('Please enter your email!')
+			errors = true;
+		}
+		if (!message.val()|| message.val() == "Message") {
+			message.addClass('invalid');
+			message.val('Please enter your message!')
+			errors = true;
+		}
+		
+		if (errors) return false;
 	});
 	
 </script>

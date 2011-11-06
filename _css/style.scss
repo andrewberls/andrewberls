@@ -401,6 +401,11 @@ form {
     &.valid {      
       color: $gray_text;
     }
+    &.invalid {
+      border: 1px solid #FF1919;
+      //border-right: 5px solid #FF1919;
+      color: #FF1919;
+    }
     &#submit {       
       width: 78px;
             
