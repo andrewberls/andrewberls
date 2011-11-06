@@ -24,14 +24,16 @@
 			header("Location: index.php?success=true#contact");			
 			
 		} else {
-			//-- ERRORS DETECTED IN FORM
+			//-- Errors detected in form
+			// Fallback from normal JS validation
 			header("Location: index.php?success=false#contact");			
 		}		
 	}
 	
+	// Populate field default values
 	$name = "Name";		
-		$email = "Email";
-		$message = "Message";
+	$email = "Email";
+	$message = "Message";
 ?>
 
 <!DOCTYPE html>
@@ -51,10 +53,11 @@
 			<h2>Andrew <span>Berls</span></h2>
 			<ul class="nav">	
 				<li><a href="#portfolio" class="portfolio">portfolio</a></li>
-				<!--<li><a href="#about" class="about">about me</a></li>-->
-				<li><a href="#contact"   class="contact">get in touch</a></li>
-				<li><a href="#footer"    class="footer">resources</a></li>
+				<li><a href="#about" class="about">about me</a></li>
+				<li><a href="#contact" class="contact">get in touch</a></li>
+				<li><a href="#footer" class="footer">resources</a></li>
 			</ul>
+			<!--<a href="#" class="icon"></a>-->
 		</div>
 	</section>
 	
@@ -62,17 +65,17 @@
 		<div class="wrapper">								
 			<p class="title">Hello and welcome! My name is <span>Andrew Berls</span> and I <span>really enjoy making websites.</span></p>
 						
-			<div class="threecol">
+			<div class="threeCol">
 				<h4>Who I am</h4>
 				<p>I'm a 19-year old Computer Science student at UCSB. I love to build things and learn new tricks, and I get restless without a project on my hands.</p>
 			</div>
-			<div class="threecol">
+			<div class="threeCol">
 				<h4>What I do</h4>
 				<p>Ever since I started working with the web I've been fascinated by <span>minimalist design</span>, <span>elegant code</span>, and <span>natural user experiences</span>.
 				You can check out some of my best work
 					<a class="portfolio" href="#portfolio">here</a>.</p>
 			</div>
-			<div class="threecol">
+			<div class="threeCol">
 				<h4>Say hello</h4>
 				<p>I love working with others to produce clean, effective, and standards-compliant sites for any range of needs. Feel free to <a class ="contact" href="#contact">shoot me an email!</a></p>
 			</div>			
@@ -129,15 +132,21 @@
 		</div>
 	</section>
 	
-	<!--<section id="about">
-		<div class="wrapper"></div>
-	</section>-->
+	<section id="about">
+		<div class="wrapper">			
+			<h2>Details</h2>
+			<div class="twoCol">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>	
+			</div>
+			<div class="twoCol">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>	
+			</div>			
+					
+		</div>
+	</section>
 	
 	<section id="contact">
-		<div class="wrapper">
-			
-			<!--<h4 style="font-size: 1.5em; margin-bottom: 20px;">Form stuff is still a work in progress. Don't panic ;)</h4>-->
-			
+		<div class="wrapper">								
 			<?php 
 				if (isset($_GET['success']) && $_GET['success'] == "false") {
 				//if (!empty($errors)) {
@@ -148,8 +157,7 @@
 					echo "<p class=\"msgGood\">Success! I'll get back to you as soon as I can!</p>";
 				}
 			?>
-									
-			
+												
 			<form method="post" action="index.php">
 				<h2>Get in Touch</h2>
 				<p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>

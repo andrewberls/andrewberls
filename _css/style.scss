@@ -1,15 +1,16 @@
 //-- LIB COLORS
 $dark_gray: #222;
-$gray_text: #434343; //333
+$gray_text: #434343;
 $emphasis: #393335;
 
-$blue: #5EC4F0;
-$med_blue: #1487D4;
+$blue: #5EC4F0;       // Section backgrounds
+$med_blue: #1487D4;   // Links + nav hover
+$light_blue: #65C3EC; // Thumb outline
 //$dark_blue: #1f769c;
-$light_blue: #65C3EC;
-$mailchimp: #45BCD2;
-$green: #87B608;
-$light_green: #91C20D;
+
+//$mailchimp: #45BCD2;
+//$green: #87B608;
+//$light_green: #91C20D;
 
 //-- SECTION BORDERS
 $divider_bottom: #BBB;
@@ -20,17 +21,14 @@ $bg_1: #E2E1E1;
 $bg_2: #EAEAEA;
 
 //---------- TEMPORARY DEV
-
 //.wrapper {border-left: 1px solid red; border-right: 1px solid red;}
-//h1       {border: 1px solid green;}
-//h2       {border: 1px solid orange;}
-//p        {border: 1px solid purple;}
-//ul.nav   {border: 1px solid yellow;}
-//.column  {border: 1px solid Turquoise;}
-//$divider_bottom: green;
-//$divider_top: orange;
+//h1        {border: 1px solid green;}
+//h2        {border: 1px solid orange;}
+//p         {border: 1px solid purple;}
+//ul.nav    {border: 1px solid yellow;}
+//.column   {border: 1px solid Turquoise;}
+//.twoCol     {background-color: orange;}
 //.threecol {background-color: #0fc;}
-
 //---------- END TEMPORARY DEV
 
 // ----------
@@ -113,7 +111,12 @@ a {
   background-color: #C2D983;
   border: 2px solid #587605;  
 }
-.threecol {
+.twoCol {
+  float: left;
+  margin-right: 25px;
+  width: 40%;
+}
+.threeCol {
   float: left; 
   //width: 33.333%;
   margin: 0 15px;
@@ -144,10 +147,11 @@ section {
   border-top: none;
   //border-bottom: 1px solid $divider_bottom;
   border-bottom: 1px solid $emphasis;
-  height: 120px;
+  //height: 120px;
   
   h2 {
     color: #D7D7D7;
+    margin-top: 10px;
     
      span {
       color: #39A6E2;
@@ -155,18 +159,20 @@ section {
   }
      
   .wrapper {
-    padding: 10px 0 30px;
+    //padding: 10px 0 30px;
+    padding: 0;
   }
   
   ul.nav {
   margin-top: 15px;
+  margin-bottom: 20px;
   overflow: auto;  
     
     li {      
       float: left;
       margin-right: 10px;
       
-      a {      
+      a {     
         background-color: #525252;           
         color: #D7D7D7;
         display: block;
@@ -180,10 +186,19 @@ section {
           -moz-transition: all 0.25s ease-out;
           -o-transition: all 0.25s ease-out;
           -webkit-transition: all 0.25s ease-out;        
-        }
+        }               
       }
     }
-  }  
+  }
+  
+  a.icon {
+    background-color: orange;
+    display: block;
+    float: right;    
+    height: 22px;
+    margin-top: -40px;  
+    width: 22px;    
+  }
 }
 
 #home {
@@ -333,9 +348,14 @@ section {
 }
 
 #about {
-  background-color: $bg_1; 
-  background: -moz-linear-gradient(0% 40% 90deg,#e8e8e8, #efefef);
-  background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#e8e8e8), to(#efefef));      
+  //background-color: $bg_1; 
+  //background: -moz-linear-gradient(0% 40% 90deg,#e8e8e8, #efefef);
+  //background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#e8e8e8), to(#efefef));
+  background-color: $blue;
+  
+  h2 {
+    margin-bottom: 15px;
+  }
 }
 
 #contact {  
