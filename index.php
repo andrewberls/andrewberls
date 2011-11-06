@@ -65,7 +65,7 @@
 							<a href="#"><img src="_images/sexinfo_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>SexInfoOnline.com</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+								<p>I'm currently the lead web developer at SexInfoOnline.com, a site devoted to providing comprehensive sex education and accurate information about all aspects of human sexuality, as well as addressing general questions posed from all over the world. The site is run by advanced sociology students at the University of California at Santa Barbara, along with a team of student webmasters. My responsibilities include training and working with the other student developers to maintain existing content, manage projects, and add features. You can read more in the site in the <a href="http://articles.latimes.com/2009/aug/01/local/me-sexclass1">Los Angeles Times</a>.</p>
 							</div>
 																								
 						</div>
@@ -109,7 +109,7 @@
 	
 	<section id="contact">
 		<div class="wrapper">
-			
+			<h4 style="font-size: 1.5em; margin-bottom: 20px;">Form stuff is still a work in progress. Don't panic ;)</h4>
 			<p class="msgBad">Oops! There was an error submitting the form. Please check your fields and try again.</p>
 			<p class="msgGood">Success! I'll get back to you as soon as I can!</p>
 			
