@@ -204,7 +204,7 @@ section {
     -moz-box-shadow: 0 0 6px #000;
     -webkit-box-shadow: 0 0 6px #000;
     box-shadow: 0 0 6px #252525;
-    margin-top: 50px;    
+    margin-top: 100px; //50px  
     padding: 30px 0 60px; //60px 0 100px;
        
     //padding: 100px 0;
@@ -252,6 +252,9 @@ section {
   background: -moz-linear-gradient(0% 40% 90deg,#DBDBDB, #D5D5D5); //EFEEEE - DBDBDB
   background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#DBDBDB), to(#D5D5D5));  
   
+  .wrapper {
+    padding: 65px 0 120px;
+  }
 }
 
 .slider {  
@@ -340,7 +343,7 @@ section {
   //background-color: $blue;
   
   .wrapper {
-    padding-bottom: 120px;    
+    padding: 100px 0 120px;      
   } 
 }
 
