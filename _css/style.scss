@@ -218,26 +218,25 @@ section {
     margin: 0 10px 15px;
   }
   p {
-    color: #525252;
-    //font-weight: bold;
+    color: #525252;    
     //line-height: 28px;
     font-size: 0.9em;
     margin: 0 10px;
        
     span {
-     //color: #000;
      font-weight: bold;    
      color: $emphasis;     
-     //color: black;  
    }
             
     &.title {
+        border-bottom: 1px solid #dadada; //b4b4b4
         font-family: Verdana;
         font-size: 2em;
         font-weight: bold;
         line-height: 40px; //35
         margin-left: 20px;
         margin-bottom: 25px;
+        padding-bottom: 25px;
         
         span {          
           color: $emphasis;
