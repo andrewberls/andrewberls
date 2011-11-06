@@ -3,8 +3,12 @@
 	$email = $_POST['email'];
 	$message = $_POST['message'];
 	
-	$email_subject= "andrewberls.com - new form submission";
-	$email_body = "{$message} \n {$email}";
+	$email_subject= "andrewberls.com - message from " . $name;
+	$email_body = $message . "<br /><br /> Respond to: " . $email;
 	
-	echo $email_body;
+	$to = "andrew.berls@gmail.com";
+	$headers = "From: andrewberls.com\r\n";
+	$headers .= "Reply-To: " . $email . "\r\n";
+	
+	mail($to, $email_subject, $email_body, $headers);
 ?>
