@@ -7,23 +7,22 @@
 	<link rel="stylesheet" href="_css/style.css" />	
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 	
+	<script type="text/javascript" charset="utf-8">
+		//-- FORM VALIDATION
+		$('#submit').click() {
+			alert('you clicked submit');
+			return false;
+		};
+	</script>
+	
 </head>
 
 <body>
 	
 	<section id="header">
-		<div class="wrapper">
-			<!--<h1>Hello World!</h1>-->
+		<div class="wrapper">			
 			<h2>Andrew <span>Berls</span></h2>
-			<ul class="nav">							
-				<!--
-					portfolio
-					resources
-					experiments
-					about
-					contact
-					tumblr
-				-->				
+			<ul class="nav">	
 				<li><a href="#portfolio" class="portfolio">portfolio</a></li>
 				<!--<li><a href="#about" class="about">about me</a></li>-->
 				<li><a href="#contact"   class="contact">get in touch</a></li>
@@ -55,8 +54,7 @@
 	
 	<section id="portfolio">
 		<div class="wrapper">
-			
-			
+						
 			<div class="slider">
 				<div class="window">
 					<div class="reel">
@@ -87,7 +85,7 @@
 						</div>	
 														
 					</div> <!-- .reel -->				
-				</div> <!-- .reel -->
+				</div> <!-- .window -->
 				
 				<div class="thumb">
 					<a class="active" href="#" rel="1"><img src="_images/sexinfo_thumb1.jpg" alt="" /></a>
@@ -98,6 +96,7 @@
 				<div class="thumb">
 					<a class="" href="#" rel="3"><img src="_images/rha_thumb1.jpg" alt="" /></a>
 				</div>
+				
 			</div> <!-- .slider -->
 			
 		</div>
@@ -117,14 +116,13 @@
 				<h2>Get in Touch</h2>
 				<p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
 				<label for="name">Name:</label>
-				<input class="" type="text" name="name" value="Name" id="name" />	
-								
+				<input type="text" name="name" value="Name" />									
 				
 				<label for="email">Email:</label>
-				<input type="text" name="email" value="Email" id="email"/>
+				<input type="text" name="email" value="Email" />
 				
 				<label for="message">Message:</label>
-				<textarea name="message" rows="8" cols="40" id="message">Your message</textarea>
+				<textarea name="message" rows="8" cols="40">Your message</textarea>
 				
 				<input type="submit" name="submit" value="Submit" class ="cta" id="submit"/>				
 			</form>
@@ -153,7 +151,7 @@
 			</div>
 			<div class="column borderLeft">
 				<h3>Tools</h3>
-				<ul>
+				<ul>`
 					<li><a href="http://code.google.com/p/zen-coding/">Zen Coding</a></li>
 					<li><a href="http://www.sass-lang.com">Sass for CSS</a></li>
 					<li><a href="http://www.aptana.com/">Aptana Studio</a></li>
@@ -165,9 +163,9 @@
 	<section id="copyright">
 		<div class="wrapper">
 			<p class="left">Copyright © 2011 Andrew Berls. This site was built using 
-			<a href="#">XHTML</a>,
-			<a href="#">CSS3</a>, and 
-			<a href="#">jQuery</a>
+			<a href="http://www.w3.org/TR/xhtml1/">XHTML</a>,
+			<a href="http://www.css3.info/">CSS3</a>, and 
+			<a href="http://jquery.com/">jQuery</a>
 			</p>
 			<p class="right"><a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.andrewberls.com">valid HTML</a> | 
 				<a href="#">valid CSS</a></p>
@@ -238,6 +236,9 @@
 		rotate(id);		
 		return false; //Prevent browser jump to anchor link
 	});
+	
+	
+	
 	
 </script>
 
