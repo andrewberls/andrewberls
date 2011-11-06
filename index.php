@@ -26,8 +26,7 @@
 			
 		} else {
 			//-- ERRORS DETECTED IN FORM
-			header("Location: index.php?success=false#contact");					
-			
+			header("Location: index.php?success=false#contact");			
 		}		
 	}
 	
