@@ -74,7 +74,7 @@
 							<a href="#"><img src="_images/bruceb_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>Bruceb Consulting</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+								<p>I rebuilt <a href="http://www.bruceb.com">Bruceb Consulting's</a> website from scratch in order to reflect modern web standards in HTML/CSS and to implement a fast and extensible site structure. The previous design of the site was left largely untouched, with a focus on making navigation more simple and elegant. The redesign was done in tandem with an update to Bruceb's <a href="http://www.brucebnews.com">Wordpress blog</a> in order to maintain consistency across platforms.</p>
 							</div>
 						</div>
 						
@@ -82,7 +82,7 @@
 							<a href="#"><img src="_images/rha_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>UCSB RHA</h3>
-								<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>					
+								<p>From August of 2010 to June of 2011, I served as the webmaster of the Residence Halls Association at UCSB, a student organization which oversees all of the Residence Halls on campus and conducts social, educational, and cultural programs for all residents. In that time, I completely redid the site's layout and navigation in an effort to increase traffic and site use. I implemented several initiatives such as transitioning the existing equipment rental system to an entirely paperless online system. My responsibilities also included creating documentation for future webmasters, and I received the NRHH Outstanding Leadership & Service Award in June for my work.</p>					
 							</div>
 						</div>	
 														
