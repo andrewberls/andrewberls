@@ -57,7 +57,8 @@
 				<li><a href="#contact" class="contact">get in touch</a></li>
 				<li><a href="#footer" class="footer">resources</a></li>
 			</ul>
-			<!--<a href="#" class="icon"></a>-->
+			<a href="#" class="icon icon1"></a>
+			<!--<a href="#" class="icon icon2"></a>-->
 		</div>
 	</section>
 	
@@ -90,7 +91,7 @@
 					<div class="reel">
 						
 						<div class="frame">
-							<a href="#"><img src="_images/sexinfo_large1.jpg" alt="" /></a>
+							<a href="http://www.soc.ucsb.edu/sexinfo"><img src="_images/sexinfo_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>SexInfoOnline.com</h3>
 								<p>I'm currently the lead web developer at SexInfoOnline.com, a site devoted to providing comprehensive sex education and accurate information about all aspects of human sexuality, as well as addressing general questions posed from all over the world. The site is run by advanced sociology students at the University of California at Santa Barbara, along with a team of student webmasters. My responsibilities include training and working with the other student developers to maintain existing content, manage projects, and add features. You can read more in the site in the <a href="http://articles.latimes.com/2009/aug/01/local/me-sexclass1">Los Angeles Times</a>.</p>
@@ -99,7 +100,7 @@
 						</div>
 						
 						<div class="frame">
-							<a href="#"><img src="_images/bruceb_large1.jpg" alt="" /></a>
+							<a href="http://www.bruceb.com"><img src="_images/bruceb_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>Bruceb Consulting</h3>
 								<p>I rebuilt <a href="http://www.bruceb.com">Bruceb Consulting's</a> website from scratch in order to reflect modern web standards in HTML/CSS and to implement a fast and extensible site structure. The previous design of the site was left largely untouched, with a focus on making navigation more simple and elegant. The redesign was done in tandem with an update to Bruceb's <a href="http://www.brucebnews.com">Wordpress blog</a> in order to maintain consistency across platforms.</p>
@@ -107,7 +108,7 @@
 						</div>
 						
 						<div class="frame">
-							<a href="#"><img src="_images/rha_large1.jpg" alt="" /></a>
+							<a href="_images/rha_full.jpg"><img src="_images/rha_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>UCSB RHA</h3>
 								<p>From August of 2010 to June of 2011, I served as the webmaster of the Residence Halls Association at UCSB, a student organization which oversees all of the Residence Halls on campus and conducts social, educational, and cultural programs for all residents. In that time, I completely redid the site's layout and navigation in an effort to increase traffic and site use. I implemented several initiatives such as transitioning the existing equipment rental system to an entirely paperless online system. My responsibilities also included creating documentation for future webmasters, and I received the NRHH Outstanding Leadership & Service Award in June for my work.</p>					

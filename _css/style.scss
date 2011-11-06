@@ -117,10 +117,8 @@ a {
   width: 40%;
 }
 .threeCol {
-  float: left; 
-  //width: 33.333%;
-  margin: 0 15px;
-  //text-align: center;
+  float: left;   
+  margin: 0 15px;  
   width: 30%;   
 }
 
@@ -158,8 +156,7 @@ section {
     }  
   }
      
-  .wrapper {
-    //padding: 10px 0 30px;
+  .wrapper {    
     padding: 0;
   }
   
@@ -191,14 +188,17 @@ section {
     }
   }
   
-  a.icon {
-    background-color: orange;
+  a.icon {    
+    background: url('../_images/sprite.gif') no-repeat;    
     display: block;
     float: right;    
     height: 22px;
     margin-top: -40px;  
-    width: 22px;    
+    width: 22px;         
   }
+  a.icon1       { background-position: 0 0;}
+  a.icon1:hover { background-position: -22px 0;}
+  //a.icon2       { background-position: 0 -22px;}
 }
 
 #home {
@@ -220,10 +220,7 @@ section {
     -webkit-box-shadow: 0 0 6px #000;
     box-shadow: 0 0 6px #252525;
     margin-top: 100px; //50px  
-    padding: 30px 0 60px; //60px 0 100px;
-       
-    //padding: 100px 0;
-    //text-align: center;    
+    padding: 30px 0 60px; //60px 0 100px;          
   }
   
   h4 {
@@ -233,8 +230,7 @@ section {
     margin: 0 10px 15px;
   }
   p {
-    color: #525252;    
-    //line-height: 28px;
+    color: #525252;        
     font-size: 0.9em;
     margin: 0 10px;
        
@@ -251,7 +247,7 @@ section {
         line-height: 40px; //35
         margin-left: 20px;
         margin-bottom: 25px;
-        padding-bottom: 25px;
+        padding-bottom: 25px;        
         
         span {          
           color: $emphasis;
@@ -309,10 +305,8 @@ section {
          
          h3 {          
            margin-bottom: 10px;
-         }
-         
-       }
-       
+         }         
+       }       
       } 
     }    
   }
@@ -488,9 +482,7 @@ form {
       }
       
     }
-    
-    
-    
+           
     &:first-child {
       padding: 0 20px 0 0;
     }   
