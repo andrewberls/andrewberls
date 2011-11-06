@@ -1,3 +1,41 @@
+<?php
+	//$errors = false;		
+	
+	function invalid($field, $default) {
+		if ($field == $default || $field = "") {
+			return true;
+		}
+		return false;
+	}
+	
+	if (isset($_POST['submit'])) {
+		$name = $_POST['name'];
+		$email = $_POST['email'];
+		$message = $_POST['message'];
+		
+		if (invalid($name, "Name") || invalid($email, "Email") || invalid($message, "Your message")) {
+			//$errors = true;			
+			header("Location: index.php?success=false#contact");		
+		}
+		else {						
+			$email_subject= "andrewberls.com - message from " . $name;
+			$email_body = $message . "\n\n Respond to: " . $email;
+			
+			$to = "andrew.berls@gmail.com";
+			$headers = "From: andrewberls.com\r\n";
+			$headers .= "Reply-To: " . $email . "\r\n";
+								
+			mail($to, $email_subject, $email_body, $headers);
+			header("Location: index.php?success=true#contact");
+		}
+	}
+	else {
+		$name = "Name";		
+		$email = "Email";
+		$message = "Your message";
+	}
+?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -5,16 +43,7 @@
 	<title>AndrewBerls.com</title>	
 	<link rel="stylesheet" href="_css/reset.css" />
 	<link rel="stylesheet" href="_css/style.css" />	
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	
-	<script type="text/javascript" charset="utf-8">
-		//-- FORM VALIDATION
-		$('#submit').click() {
-			alert('you clicked submit');
-			return false;
-		};
-	</script>
-	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>		
 </head>
 
 <body>
@@ -108,21 +137,30 @@
 	
 	<section id="contact">
 		<div class="wrapper">
-			<h4 style="font-size: 1.5em; margin-bottom: 20px;">Form stuff is still a work in progress. Don't panic ;)</h4>
-			<p class="msgBad">Oops! There was an error submitting the form. Please check your fields and try again.</p>
-			<p class="msgGood">Success! I'll get back to you as soon as I can!</p>
 			
-			<form method="post" action="mail.php">
+			<!--<h4 style="font-size: 1.5em; margin-bottom: 20px;">Form stuff is still a work in progress. Don't panic ;)</h4>-->
+			
+			<?php 
+				if (isset($_GET['success']) && $_GET['success'] == "false") {
+					echo "<p class=\"msgBad\">Oops! There was an error submitting the form. Please check your fields and try again.</p>";									
+				}
+				if (isset($_GET['success']) && $_GET['success'] == "true") {
+					echo "<p class=\"msgGood\">Success! I'll get back to you as soon as I can!</p>";
+				}
+			?>
+									
+			
+			<form method="post" action="index.php">
 				<h2>Get in Touch</h2>
 				<p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
 				<label for="name">Name:</label>
-				<input type="text" name="name" value="Name" />									
+				<input type="text" name="name" id="name" value="<?php echo $name ?>" />									
 				
 				<label for="email">Email:</label>
-				<input type="text" name="email" value="Email" />
+				<input type="text" name="email" id="email" value="<?php echo $email ?>" />
 				
 				<label for="message">Message:</label>
-				<textarea name="message" rows="8" cols="40">Your message</textarea>
+				<textarea name="message" id="message" rows="8" cols="40"><?php echo $message ?></textarea>
 				
 				<input type="submit" name="submit" value="Submit" class ="cta" id="submit"/>				
 			</form>
@@ -151,7 +189,7 @@
 			</div>
 			<div class="column borderLeft">
 				<h3>Tools</h3>
-				<ul>`
+				<ul>
 					<li><a href="http://code.google.com/p/zen-coding/">Zen Coding</a></li>
 					<li><a href="http://www.sass-lang.com">Sass for CSS</a></li>
 					<li><a href="http://www.aptana.com/">Aptana Studio</a></li>
@@ -171,8 +209,7 @@
 				<a href="#">valid CSS</a></p>
 		</div>
 	</section>
-	
-	
+		
 <script type="text/javascript">
 	//----- SCROLLING FOR HEADER NAVIGATION ---//
 	function scrollTo(id) {		 	    		
@@ -236,9 +273,6 @@
 		rotate(id);		
 		return false; //Prevent browser jump to anchor link
 	});
-	
-	
-	
 	
 </script>
 
