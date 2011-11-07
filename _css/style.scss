@@ -152,7 +152,7 @@ section {
     margin-top: 10px;
     
      span {
-      color: #39A6E2;
+      color: #39A6E2;      
     }  
   }
      
@@ -204,24 +204,31 @@ section {
 #home {
   //background-color: #F5F5F5;  
   //background: -webkit-gradient(linear, 0% 0%, 0% 50%, from(#F5F5F5), to(#EFEFEF));    
-  //background: -moz-linear-gradient(0% 50% 90deg,#F5F5F5, #EFEFEF);  
-  background-color: $blue;
+  //background: -moz-linear-gradient(0% 50% 90deg,#F5F5F5, #EFEFEF);    
+  background-color: $blue;  
   border-top-color: $gray_text;
+  border-bottom: 1px solid #EAEAEA;
   
   .wrapper {    
     background-color: #F9F9F9;
-    -webkit-border-top-left-radius: 10px;
+    
+    /*-webkit-border-top-left-radius: 10px;
     -webkit-border-top-right-radius: 10px;
     -moz-border-radius-topleft: 10px;
     -moz-border-radius-topright: 10px;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-right-radius: 10px;*/
+   
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    
     -moz-box-shadow: 0 0 6px #000;
     -webkit-box-shadow: 0 0 6px #000;
     box-shadow: 0 0 6px #252525;
-    margin-top: 100px; //50px
-    //margin-bottom: -30px;    
-    padding: 30px 0 60px; //60px 0 100px;          
+    margin-top: 80px; //50px
+    margin-bottom: 85px;   
+    padding: 30px 0 60px;      
   }
   
   h4 {
@@ -241,11 +248,11 @@ section {
    }
             
     &.title {
-        border-bottom: 1px solid #dadada; //b4b4b4
+        border-bottom: 1px solid #dadada;
         font-family: Verdana;
         font-size: 2em;
         font-weight: bold;
-        line-height: 40px; //35
+        line-height: 40px;
         margin-left: 20px;
         margin-bottom: 25px;
         padding-bottom: 25px;        
@@ -354,8 +361,7 @@ section {
 }
 
 #contact {  
-  background-color: $bg_1;
-  //background-color: $blue;
+  background-color: $bg_1;  
   
   .wrapper {
     padding: 100px 0 120px;      
