@@ -42,7 +42,8 @@
 	<meta charset="utf-8" />
 	<title>AndrewBerls.com</title>	
 	<link rel="stylesheet" href="_css/reset.css" />
-	<link rel="stylesheet" href="_css/style.css" />	
+	<link rel="stylesheet" href="_css/style.css" />
+	<link rel="icon" type="image/ico" href="favicon.ico" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>		
 </head>
 
