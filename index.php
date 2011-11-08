@@ -58,7 +58,7 @@
 				<li><a href="#contact" class="contact">get in touch</a></li>
 				<li><a href="#footer" class="footer">resources</a></li>
 			</ul>
-			<a href="#" class="icon icon1"></a>
+			<!--<a href="#" class="icon icon1"></a>-->
 			<!--<a href="#" class="icon icon2"></a>-->
 		</div>
 	</section>
