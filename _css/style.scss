@@ -8,9 +8,9 @@ $med_blue: #1487D4;   // Links + nav hover
 $light_blue: #65C3EC; // Thumb outline
 //$dark_blue: #1f769c;
 
-//$mailchimp: #45BCD2;
-//$green: #87B608;
-//$light_green: #91C20D;
+$mailchimp: #45BCD2;
+$green: #87B608;
+$light_green: #91C20D;
 
 //-- SECTION BORDERS
 $divider_bottom: #BBB;
@@ -260,9 +260,11 @@ section {
 }
 
 #portfolio {
-  background-color: $bg_2;  
-  background: -moz-linear-gradient(0% 40% 90deg,#EAEAEA, #DBDBDB);
-  background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EAEAEA), to(#DBDBDB));  
+  //background-color: $bg_2;  
+  //background: -moz-linear-gradient(0% 40% 90deg,#EAEAEA, #DBDBDB);
+  //background: -webkit-gradient(linear, 0% 0%, 0% 40%, from(#EAEAEA), to(#DBDBDB));  
+  
+  background-color: $bg_1;
   
   .wrapper {
     padding: 65px 0 120px;
@@ -343,16 +345,31 @@ section {
 }
 
 #about {
-  background-color: $blue;
+  //background-color: $blue;   
+  background-color: #58C2E9;
   
   h2 {
     margin-bottom: 15px;
   }
+  
+  .wrapper {    
+    background-color: #F9F9F9;   
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;    
+    -moz-box-shadow: 0 0 6px #000;
+    -webkit-box-shadow: 0 0 6px #000;
+    box-shadow: 0 0 6px #252525;
+    margin-top: 80px; //50px
+    margin-bottom: 85px;   
+    padding: 30px 25px 60px;      
+  }
 }
 
 #contact {  
-  background-color: $bg_1;  
-  
+  //background-color: $bg_1;
+  background-color: $light_blue;
+     
   .wrapper {
     padding: 100px 0 120px;      
   } 
