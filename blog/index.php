@@ -4,6 +4,7 @@
 	<meta charset="utf-8" />
 	<title>AndrewBerls.com</title>	
 	<link rel="stylesheet" href="../_css/reset.css" />
+	<link rel="stylesheet" href="../_css/style.css" />
 	<link rel="stylesheet" href="blog.css" />
 	<link rel="icon" type="image/ico" href="../favicon.ico" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>		
@@ -13,12 +14,12 @@
 	
 	<section id="header">
 		<div class="wrapper">			
-			<h2>Andrew <span>Berls</span></h2>
+			<h2>Andrew Berls <span>// blog</span></h2>
 			<ul class="nav">	
-				<li><a href="#portfolio" class="portfolio">portfolio</a></li>
-				<li><a href="#about" class="about">about me</a></li>
-				<li><a href="#contact" class="contact">get in touch</a></li>
-				<li><a href="#footer" class="footer">resources</a></li>
+				<li><a href="../#portfolio" class="portfolio">portfolio</a></li>
+				<li><a href="../#about" class="about">about me</a></li>
+				<li><a href="../#contact" class="contact">get in touch</a></li>
+				<li><a href="../#footer" class="footer">resources</a></li>
 			</ul>			
 		</div>
 	</section>
@@ -39,7 +40,14 @@
 				<p class="date">7 November 2011</p>
 				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
 			</div>
-						
+					
+
+			<div class="post">
+				<h4>This is the post title</h4>
+				<p class="date">7 November 2011</p>
+				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+			</div>
+								
 		</div>		
 	</section>
 		

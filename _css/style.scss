@@ -21,7 +21,8 @@ $bg_1: #E2E1E1;
 $bg_2: #EAEAEA;
 
 //---------- TEMPORARY DEV
-//.wrapper {border-left: 1px solid red; border-right: 1px solid red;}
+.wrapper    {border-left: 1px solid red; border-right: 1px solid red;}
+.sidebar {background-color: red;}
 //h1        {border: 1px solid green;}
 //h2        {border: 1px solid orange;}
 //p         {border: 1px solid purple;}
@@ -147,6 +148,7 @@ section {
   
   h2 {
     color: #D7D7D7;
+    display: inline-block;
     margin-top: 10px;
     
      span {
@@ -456,7 +458,7 @@ form {
 #footer {
   background-color: $dark_gray;
   border-bottom: 1px solid #0D0D0D;
-  height: 200px;
+  height: 175px;
   position: relative;
   padding-bottom: 10px;
   
@@ -542,3 +544,4 @@ form {
     }
   }  
 }
+

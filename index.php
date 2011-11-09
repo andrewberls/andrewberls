@@ -51,7 +51,7 @@
 	
 	<section id="header">
 		<div class="wrapper">			
-			<h2>Andrew <span>Berls</span></h2>
+			<a href="/"><h2>Andrew <span>Berls</span></h2></a>
 			<ul class="nav">	
 				<li><a href="#portfolio" class="portfolio">portfolio</a></li>
 				<li><a href="#about" class="about">about me</a></li>
