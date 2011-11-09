@@ -112,7 +112,7 @@
 							<a href="_images/rha_full.jpg"><img src="_images/rha_large1.jpg" alt="" /></a>
 							<div class="text">
 								<h3>UCSB RHA</h3>
-								<p>From August of 2010 to June of 2011, I served as the webmaster of the Residence Halls Association at UCSB, a student organization which oversees all of the Residence Halls on campus and conducts social, educational, and cultural programs for all residents. In that time, I completely redid the site's layout and navigation in an effort to increase traffic and site use. I implemented several initiatives such as transitioning the existing equipment rental system to an entirely paperless online system. My responsibilities also included creating documentation for future webmasters, and I received the NRHH Outstanding Leadership & Service Award in June for my work.</p>					
+								<p>From August of 2010 to June of 2011, I served as the webmaster of the Residence Halls Association at UCSB, a student organization which oversees all of the Residence Halls on campus and conducts social, educational, and cultural programs for all residents. In that time, I completely redid the site's layout and navigation in an effort to increase traffic and site use. I implemented several initiatives such as transitioning the existing equipment rental system to an entirely paperless online system. My responsibilities also included creating documentation for future webmasters, and I received the NRHH Outstanding Leadership &amp; Service Award in June for my work.</p>					
 							</div>
 						</div>	
 												
