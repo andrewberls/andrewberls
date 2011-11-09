@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<title>AndrewBerls.com</title>	
+	<title>Table of Contents | Andrew Berls</title>	
 	<link rel="stylesheet" href="../_css/reset.css" />
 	<link rel="stylesheet" href="../_css/style.css" />
 	<link rel="stylesheet" href="blog.css" />
@@ -27,25 +27,28 @@
 	<section id="main">
 		<div class="wrapper">
 			
-			<div class="sidebar"></div>
-			
-			<div class="post">
-				<h4>This is the post title</h4>
-				<p class="date">7 November 2011</p>
-				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+			<div class="sidebar">
+				<h4>About</h4>
+				<p>Description test test test lskdjf a;lwkejf lskdjf kdjf wlekrjd </p>
 			</div>
 			
 			<div class="post">
-				<h4>This is the post title</h4>
+				<h4>Plain Latin is the best.</h4>
 				<p class="date">7 November 2011</p>
-				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+				<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+			</div>
+			
+			<div class="post">
+				<h4>I use Hipster Ipsum to be ironic</h4>
+				<p class="date">7 November 2011</p>
+				<p>Readymade iphone next level vice, gentrify etsy freegan DIY blog. Seitan etsy biodiesel next level, fanny pack 8-bit brunch mixtape jean shorts. Banh mi photo booth tofu jean shorts, yr mlkshk american apparel master cleanse scenester vice mcsweeney's cred food truck. Thundercats DIY master cleanse tumblr letterpress. High life marfa fap whatever single-origin coffee lo-fi, aesthetic put a bird on it mlkshk skateboard artisan etsy letterpress blog vegan. Chambray Austin gluten-free fanny pack freegan, tumblr tofu mcsweeney's aesthetic williamsburg vice mlkshk craft beer 8-bit. Biodiesel keffiyeh fap, portland banh mi helvetica photo booth sartorial viral</p>
 			</div>
 					
-
 			<div class="post">
-				<h4>This is the post title</h4>
+				<h4>Cupcake ipsum. Sprinkles!</h4>
 				<p class="date">7 November 2011</p>
-				<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+				<p>Cupcake ipsum dolor sit amet. Oat cake bonbon caramels cake cupcake chocolate cake topping halvah bonbon. Cotton candy candy canes pudding oat cake biscuit icing candy canes jelly-o apple pie. Dragée carrot cake chocolate pie jelly-o cookie. Pastry fruitcake cheesecake sweet roll. Oat cake pie applicake tart pastry chupa chups. Cake topping candy wafer marzipan jujubes. Tiramisu chocolate bar pastry biscuit cotton candy chocolate cotton candy.
+Wafer sugar plum oat cake chupa chups toffee brownie tootsie roll. Gummi bears fruitcake chocolate. Apple pie brownie muffin candy marshmallow candy toffee liquorice. Halvah biscuit chupa chups gingerbread icing cookie jujubes jelly cotton candy. Macaroon croissant bonbon. Biscuit sweet roll sweet roll carrot cake jelly-o. Gummi bears wafer chocolate cake cupcake lollipop danish brownie. Pastry marshmallow pastry.</p>
 			</div>
 								
 		</div>		
@@ -94,103 +97,6 @@
 				<a href="#">valid CSS</a></p>
 		</div>
 	</section>
-		
-<script type="text/javascript">
-	//----- SCROLLING FOR HEADER NAVIGATION ---//
-	function scrollTo(id) {		 	    		
-		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
-	}
-
-	$('.nav a, #home a').click(function() {		
-		var id = $(this).attr('class');
-		scrollTo(id);
-		return false;
-	});	
-
-	//----- CONTACT FORM FOCUS/BLUR ---//
-	$(document).ready(function() {
-		$('input,textarea').focus(function() {
-	        if (this.value == this.defaultValue){	             
-	        	this.value = '';
-	    	}
-	    	if ($(this).hasClass('invalid')) {
-	    		$(this).removeClass('invalid');
-	    		$(this).val('');	    		
-	    	}        
-	    });
-	    $('input,textarea').blur(function() {
-	        if (this.value == ''){	        	
-	        	this.value = this.defaultValue;
-	        	$(this).removeClass('valid');
-	    	} else {
-	    		this.value = this.value;
-	    		$(this).addClass('valid');
-	    	}	    	
-		    });
-	});
-
-	$('.thumb a').click(function() {
-		$(this).addClass('active');
-	});
-	
-	
-	//----- IMAGE SLIDER ---//
-	//-- Overflow scrolls by default - hide with JS
-	$('.window').css('overflow', 'hidden');
-	
-	//Get width of the image, how many images there are, then determine the size of the image reel.
-	var imageWidth = $('.window').width();
-	var numImages = $('.reel img').size();
-	var reelWidth = imageWidth * numImages;
-	var active = 1;
-	
-	//Adjust the image reel to its new size
-	$('.reel').css({'width' : reelWidth});
-	
-	function rotate(id) {		
-		var offset = Math.abs(id-active);		
-		var distance = imageWidth * offset;		
-		$('.reel').animate({
-			left: -distance
-		}, 550);
-	}
-	
-	$('.thumb a').click(function() {
-		$('.thumb a').removeClass('active');		
-		$(this).addClass("active");
-		var id = $(this).attr('rel');
-		rotate(id);		
-		return false; //Prevent browser jump to anchor link
-	});
-	
-	
-	//----- JS FORM VALIDATION ---//
-	$('#submit').click(function() {
-		var name = $('#name'),
-			email = $('#email'),
-			message = $('#message'),
-			errors = false;
-			
-		if (!name.val()|| name.val() == "Name") {
-			name.addClass('invalid');
-			name.val('Please enter your name!')
-			errors = true;
-		}
-		if (!email.val()|| email.val() == "Email") {
-			email.addClass('invalid');
-			email.val('Please enter your email!')
-			errors = true;
-		}
-		if (!message.val()|| message.val() == "Message") {
-			message.addClass('invalid');
-			message.val('Please enter your message!')
-			errors = true;
-		}
-		
-		if (errors) return false;
-	});
-	
-</script>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];
