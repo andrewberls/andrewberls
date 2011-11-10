@@ -221,7 +221,9 @@
 		</div>
 	</section>
 		
+<script src="_scripts/functions_dev.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
+	/*
 	//----- SCROLLING FOR HEADER NAVIGATION ---//
 	function scrollTo(id) {		 	    		
 		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
@@ -320,7 +322,7 @@
 		
 		if (errors) return false;
 	});
-	
+	*/	
 </script>
 
 <script type="text/javascript">

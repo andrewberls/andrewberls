@@ -131,6 +131,7 @@ Wafer sugar plum oat cake chupa chups toffee brownie tootsie roll. Gummi bears f
 
 <script type="text/javascript" charset="utf-8">
 	//----- SCROLLING FOR HEADER NAVIGATION ---//
+	/*
 	function scrollTo(id) {		 	    		
 		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
 	}
@@ -140,6 +141,7 @@ Wafer sugar plum oat cake chupa chups toffee brownie tootsie roll. Gummi bears f
 		scrollTo('header');
 		//return false;
 	});
+	*/
 </script>
 <script type="text/javascript">
   var _gaq = _gaq || [];
