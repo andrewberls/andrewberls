@@ -98,18 +98,19 @@ a {
   cursor: pointer;
   padding: 5px 15px;
 }
-.msgBad, .msgGood {  
+.msgBad, .msgGood {
+  border-radius: 6px;
   margin: 0 auto 30px;
   padding: 5px;
   width: 70%;
 }
 .msgBad {
   background-color: #FFAFAF;
-  border: 2px solid #FF1919;  
+  border: 1px solid #FF1919;  
 }
 .msgGood {
   background-color: #C2D983;
-  border: 2px solid #587605;  
+  border: 1px solid #587605;  
 }
 .twoCol {
   float: left;
