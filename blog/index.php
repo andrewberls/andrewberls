@@ -70,7 +70,15 @@ Wafer sugar plum oat cake chupa chups toffee brownie tootsie roll. Gummi bears f
 Wafer sugar plum oat cake chupa chups toffee brownie tootsie roll. Gummi bears fruitcake chocolate. Apple pie brownie muffin candy marshmallow candy toffee liquorice. Halvah biscuit chupa chups gingerbread icing cookie jujubes jelly cotton candy. Macaroon croissant bonbon. Biscuit sweet roll sweet roll carrot cake jelly-o. Gummi bears wafer chocolate cake cupcake lollipop danish brownie. Pastry marshmallow pastry.</p>
 			</div>
 				
-				
+			<div class="pagination">
+				<a href="#footer">&lt;&lt;</a>
+				<a href="#footer">1</a>
+				<a href="#footer">2</a>
+				<a href="#footer">3</a>
+				<a href="#footer">4</a>
+				<a href="#footer">5</a>
+				<a href="#footer">&gt;&gt;</a>
+			</div>
 			<a href="#header" id="top">Back to top</a>			
 		</div>		
 	</section>

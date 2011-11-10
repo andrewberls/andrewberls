@@ -5,6 +5,7 @@ $emphasis: #393335;
 
 $blue: #5EC4F0;       // Section backgrounds
 $med_blue: #1487D4;   // Links + nav hover
+$dark_blue: #1f769c;
 
 //-- SECTION BORDERS
 $divider_bottom: #BBB;
@@ -61,6 +62,7 @@ p {
     overflow: visible;
     position: relative;
     padding-top: 50px;
+    padding-bottom: 50px;
   }
   .post {
     @include rounded;
@@ -110,4 +112,26 @@ p {
   position: absolute;
   right: 15px;
   bottom: 15px;
+}
+
+.pagination { 
+  margin: 60px auto 0; 
+  padding: 5px 0;
+  text-align: center;  
+  
+  a {
+    background-color: white;
+    border: 1px solid $emphasis;
+    color: $dark_blue;    
+    padding: 3px 6px;
+    
+    &:hover {
+      background-color: $gray_text;
+      color: white;
+      text-decoration: none;
+    }
+    &:active {      
+      font-weight: bold;
+    }
+  }  
 }
