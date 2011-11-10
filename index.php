@@ -155,7 +155,7 @@
 				}
 				//if (isset($_GET['success']) && $_GET['success'] == "true") {
 				if (isset($_GET['success']) && $_GET['success'] == "true") {
-					echo "<p class=\"msgGood\">Success! I'll get back to you as soon as I can!</p>";
+					echo "<p class=\"msgGood\">Thanks! I'll get back to you as soon as I can.</p>";
 				}
 			?>
 												
