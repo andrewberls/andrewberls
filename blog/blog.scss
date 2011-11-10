@@ -130,8 +130,15 @@ p {
       color: white;
       text-decoration: none;
     }
+    
     &:active {      
       font-weight: bold;
+    }
+    
+    &.active {
+      background-color: $dark_gray; // blend $dark_gray and $gray_text?
+      color: white;
+      font-weight: bold;      
     }
   }  
 }

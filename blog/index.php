@@ -73,13 +73,15 @@ Wafer sugar plum oat cake chupa chups toffee brownie tootsie roll. Gummi bears f
 			<div class="pagination">
 				<a href="#footer">&lt;&lt;</a>
 				<a href="#footer">1</a>
-				<a href="#footer">2</a>
+				<a href="#footer" class="active">2</a>
 				<a href="#footer">3</a>
 				<a href="#footer">4</a>
 				<a href="#footer">5</a>
 				<a href="#footer">&gt;&gt;</a>
 			</div>
-			<a href="#header" id="top">Back to top</a>			
+			
+			<a href="#header" id="top">Back to top</a>
+					
 		</div>		
 	</section>
 		
