@@ -71,7 +71,7 @@ Wafer sugar plum oat cake chupa chups toffee brownie tootsie roll. Gummi bears f
 			</div>
 				
 				
-			<a href="#header" id="top">Back to top</a>				
+			<a href="#header" id="top">Back to top</a>			
 		</div>		
 	</section>
 		
@@ -125,9 +125,10 @@ Wafer sugar plum oat cake chupa chups toffee brownie tootsie roll. Gummi bears f
 		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
 	}
 
-	$('#top').click(function() {		
+	$('#top').click(function(event) {
+		event.preventDefault();	
 		scrollTo('header');
-		return false;
+		//return false;
 	});
 </script>
 <script type="text/javascript">

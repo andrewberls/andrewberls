@@ -173,7 +173,9 @@
 				
 				<input type="submit" name="submit" value="Submit" class ="cta" id="submit"/>				
 			</form>
-		</div>
+			
+			<a href="#header" id="top">Back to top</a>
+		</div>			
 	</section>
 	
 	<section id="footer">
@@ -225,10 +227,15 @@
 		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
 	}
 
-	$('.nav a, #home a').click(function() {		
+	$('.nav a, #home a').click(function(event) {
+		event.preventDefault();	
 		var id = $(this).attr('class');
 		scrollTo(id);
-		return false;
+		//return false;
+	});	
+	$('#top').click(function(event) {
+		event.preventDefault();			
+		scrollTo('header');		
 	});	
 
 	//----- CONTACT FORM FOCUS/BLUR ---//

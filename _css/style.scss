@@ -381,6 +381,7 @@ section {
   margin: 0 auto;  
   overflow: hidden;
   padding: 50px 0 100px;
+  position: relative;
   text-align: left;
   width: 972px;
   //-- RESPONSIVE DESIGN CREATES ISSUE IN FOOTER - SMALLER PARENT FONT SIZE
@@ -452,6 +453,13 @@ form {
     }
         
   }
+}
+
+#top {  
+  color: $gray_text;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
 }
 
 #footer {
