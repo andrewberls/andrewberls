@@ -1,1 +1,43 @@
 
+
+
+//---------- TEMPORARY DEV STYLES
+
+#sidebar   { background-color: blue; }
+#sidebar a { border-top: 1px solid yellow; border-bottom: 1px solid blue; color: white; }
+#sidebar a.current {background-color: red;}
+
+//---------- TEMPORARY DEV STYLES
+
+#sidebar {
+  
+  float: left;
+  min-height: 500px;  
+  width: 200px;
+  
+  ul {
+    margin-top: 30px;
+    
+    li {    
+     
+     a {
+       background-color: purple;
+       display: block;
+       height: 30px;
+       text-decoration: none;
+       
+       &.current {
+                  
+       }
+       
+       &:hover {
+         text-decoration: underline;
+       }
+       
+       &:active {
+         
+       }
+     } 
+    }
+  }
+}
