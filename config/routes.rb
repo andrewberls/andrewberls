@@ -2,6 +2,8 @@ Andrewberls::Application.routes.draw do
   
   #resources :post, :controller => "posts"
   
+  #resources :blog, :controller => "posts"
+  
   match "/blog" => "posts#list"
   
   match "/blog/:id" => "posts#show"

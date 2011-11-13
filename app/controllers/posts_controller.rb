@@ -1,5 +1,5 @@
-class PostsController < ApplicationController
-    
+class PostsController < ApplicationController  
+      
   #----- CREATE  
   def new # Display new record form
     
