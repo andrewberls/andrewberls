@@ -1,8 +1,10 @@
 Andrewberls::Application.routes.draw do
   
+  #resources :post, :controller => "posts"
+  
   match "/blog" => "posts#list"
   
-  match "/post/:id" => "posts#show"
+  match "/blog/:id" => "posts#show"
   
   root :to => 'home#index'
   
