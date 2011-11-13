@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-       
+         
     
   #----- CREATE  
   def new # Display new record form
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   
   #----- READ
   def list # Main blog page - show paginated blog
-    
+    #@books = Book.all    
   end
   
   def show # Show a single post
