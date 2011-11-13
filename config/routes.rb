@@ -1,13 +1,13 @@
 Andrewberls::Application.routes.draw do
-  
-  #resources :post, :controller => "posts"
-  
-  #resources :blog, :controller => "posts"
-  
-  match "/blog" => "posts#list"
-  
+    
+  match "/blog"     => "posts#list"  
   match "/blog/:id" => "posts#show"
   
+  match "/dashboard" => "sutro#index"  
+  match "/new"       => "sutro#new"
+  match "/edit/:id"  => "sutro#edit"
+  match "/overview"  => "sutro#overview"
+    
   root :to => 'home#index'
   
   
@@ -15,8 +15,7 @@ Andrewberls::Application.routes.draw do
   # The request is dispatched to the patients controller’s show action with { :id => “17” } in params.
   
   
-  
-  
+    
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
