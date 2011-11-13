@@ -4,8 +4,11 @@
 	<meta charset="utf-8" />
 	<title>AndrewBerls.com</title>
 	<%= stylesheet_link_tag "reset" %>
-	<%= stylesheet_link_tag "style" %>	
-	<!--<link rel="icon" type="image/ico" href="assets/favicon.ico" />-->
+	<%= stylesheet_link_tag "style" %>
+	<%# Conditionally load blog.css %>
+	<% if params[:controller] == "posts" %>
+	<%= stylesheet_link_tag "blog" %>	
+	<% end %>	
 	<%= favicon_link_tag %>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
@@ -15,11 +18,14 @@
 	<section id="header">
 		<div class="wrapper">			
 			<a href="/"><h2>Andrew <span>Berls</span></h2></a>
-			<ul class="nav">	
+			<ul class="nav">													
 				<li><a href="#portfolio" class="portfolio">portfolio</a></li>
 				<!--<li><a href="#about" class="about">about me</a></li>-->
 				<li><a href="#contact" class="contact">get in touch</a></li>
 				<li><a href="#footer" class="footer">resources</a></li>
+				<% if params[:controller] != "posts" %>
+				<li><%= link_to "blog", {:controller=>"posts", :action=>"list"}, :class=>"blog" %></li>
+				<% end %>
 			</ul>			
 		</div>
 	</section>
@@ -71,108 +77,7 @@
 		</div>
 	</section>
 		
-<script type="text/javascript">
-	
-	//----- SCROLLING FOR HEADER NAVIGATION ---//
-	function scrollTo(id) {		 	    		
-		$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');		
-	}
-
-	$('.nav a, #home a').click(function(event) {
-		event.preventDefault();	
-		var id = $(this).attr('class');
-		scrollTo(id);
-		//return false;
-	});	
-	$('#top').click(function(event) {
-		event.preventDefault();			
-		scrollTo('header');		
-	});	
-
-	//----- CONTACT FORM FOCUS/BLUR ---//
-	$(document).ready(function() {
-		$('input,textarea').focus(function() {
-	        if (this.value == this.defaultValue){	             
-	        	this.value = '';
-	    	}
-	    	if ($(this).hasClass('invalid')) {
-	    		$(this).removeClass('invalid');
-	    		$(this).val('');	    		
-	    	}        
-	    });
-	    $('input,textarea').blur(function() {
-	        if (this.value == ''){	        	
-	        	this.value = this.defaultValue;
-	        	$(this).removeClass('valid');
-	    	} else {
-	    		this.value = this.value;
-	    		$(this).addClass('valid');
-	    	}	    	
-		    });
-	});
-
-	$('.thumb a').click(function() {
-		$(this).addClass('active');
-	});
-	
-	
-	//----- IMAGE SLIDER ---//
-	//-- Overflow scrolls by default - hide with JS
-	$('.window').css('overflow', 'hidden');
-	
-	//Get width of the image, how many images there are, then determine the size of the image reel.
-	var imageWidth = $('.window').width();
-	var numImages = $('.reel img').size();
-	var reelWidth = imageWidth * numImages;
-	var active = 1;
-	
-	//Adjust the image reel to its new size
-	$('.reel').css({'width' : reelWidth});
-	
-	function rotate(id) {		
-		var offset = Math.abs(id-active);		
-		var distance = imageWidth * offset;		
-		$('.reel').animate({
-			left: -distance
-		}, 550);
-	}
-	
-	$('.thumb a').click(function() {
-		$('.thumb a').removeClass('active');		
-		$(this).addClass("active");
-		var id = $(this).attr('rel');
-		rotate(id);		
-		return false; //Prevent browser jump to anchor link
-	});
-	
-	
-	//----- JS FORM VALIDATION ---//
-	$('#submit').click(function() {
-		var name = $('#name'),
-			email = $('#email'),
-			message = $('#message'),
-			errors = false;
-			
-		if (!name.val()|| name.val() == "Name") {
-			name.addClass('invalid');
-			name.val('Please enter your name!')
-			errors = true;
-		}
-		if (!email.val()|| email.val() == "Email") {
-			email.addClass('invalid');
-			email.val('Please enter your email!')
-			errors = true;
-		}
-		if (!message.val()|| message.val() == "Message") {
-			message.addClass('invalid');
-			message.val('Please enter your message!')
-			errors = true;
-		}
-		
-		if (errors) return false;
-	});
-	
-</script>
+<%= javascript_include_tag "functions" %>
 
 <script type="text/javascript">
   var _gaq = _gaq || [];

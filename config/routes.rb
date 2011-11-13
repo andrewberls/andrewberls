@@ -1,5 +1,9 @@
 Andrewberls::Application.routes.draw do
   
+  match "/blog" => "posts#list"
+  
+  match "/post/:id" => "posts#show"
+  
   root :to => 'home#index'
   
   
