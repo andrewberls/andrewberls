@@ -1,6 +1,14 @@
 Andrewberls::Application.routes.draw do
   
-  root :to => 'home#index', as: 'home'
+  root :to => 'home#index'
+  
+  
+  # match "/patients/:id" => "patients#show"
+  # The request is dispatched to the patients controller’s show action with { :id => “17” } in params.
+  
+  
+  
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
