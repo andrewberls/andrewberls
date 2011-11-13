@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title><%= content_for?(:title) ? content_for(:title) : 'SutroCMS' %></title>
+	<%= stylesheet_link_tag "reset" %>
+	<%= stylesheet_link_tag "sutro" %>		
+	<%= favicon_link_tag %>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+	
+	
+	
+	
+	
+	
+	<%= yield %>
+
+</body>
+</html>
