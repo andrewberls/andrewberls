@@ -11,12 +11,18 @@
 
 <body>
 	
+	<div id="sidebar">
+		<ul class="nav">
+			<li><%= link_to "Dashboard",    :action => "index" %></li>
+			<li><%= link_to "New Post",     :action => "new" %></li>
+			<li><%= link_to "Manage Posts", :action => "overview" %></li>					
+		</ul>
+	</div>
+	
+	<div class="content">
+		<%= yield %>
+	</div>
 	
 	
-	
-	
-	
-	<%= yield %>
-
 </body>
 </html>
