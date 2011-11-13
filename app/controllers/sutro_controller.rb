@@ -1,7 +1,7 @@
 class SutroController < ApplicationController
   
   #----- GENERAL
-  def dashboard
+  def index # Dashboard method
     
   end
   
@@ -13,6 +13,11 @@ class SutroController < ApplicationController
   def create # Process new record form
     
   end
+  
+  #----- READ
+  def overview # Administrative list of posts
+    
+  end  
     
   #----- UPDATE  
   def edit # Display edit record form
