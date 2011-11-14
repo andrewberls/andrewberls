@@ -9,6 +9,10 @@
 
 //---------- TEMPORARY DEV STYLES
 
+body {
+  background-color: #dadada;
+}
+
 #sidebar {
   
   float: left;
@@ -24,6 +28,8 @@
        background-color: purple;
        display: block;
        height: 30px;
+       line-height: 30px;
+       padding-left: 45px;
        text-decoration: none;
        
        &.current {
@@ -31,11 +37,13 @@
        }
        
        &:hover {
-         text-decoration: underline;
+         background-color: orange;
+         color: red;
+         //text-decoration: underline;
        }
        
        &:active {
-         
+         text-decoration: underline;
        }
      } 
     }
