@@ -2,3 +2,9 @@
 
 <p>New Post</p>
 <p>Here will be a form to create and publish (or save) a new post.</p>
+
+<%= form_for(:post, :url => {:action => 'create'}) do |f| %>
+	<%= f.label(:post, :title => "Post Title") %>
+	<%= f.text_field(:title) %>
+
+<% end %>
