@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   
   #----- READ
   def list # Main blog page - show paginated blog
-    
+    @posts = Post.order("posts.position ASC")
   end
   
   def show # Show a single post
