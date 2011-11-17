@@ -37,7 +37,7 @@ class SutroController < ApplicationController
   
   def update # Process edit record form
     @post = Post.find(params[:id])
-    # Assumes post[_field] structure
+    # Assumes post[_field_] structure
     if @post.update_attributes(params[:post])
       #flash[:notice] = "Post created"
       redirect_to('list')

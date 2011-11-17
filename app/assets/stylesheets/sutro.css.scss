@@ -1,19 +1,31 @@
+//-- LIB COLORS
+$dark_gray: #222;
+$gray_text: #434343;
+$emphasis: #393335;
 
+//$green: #87B608; // Too light
+$green: #6F9606;
+$cancel: #FF1919;
 
 
 //---------- TEMPORARY DEV STYLES
-
-#sidebar   { background-color: blue; }
-#sidebar a { border-top: 1px solid yellow; border-bottom: 1px solid blue; color: white; }
-#sidebar a.current {background-color: red;}
 
 //---------- TEMPORARY DEV STYLES
 
 body {
   background-color: #dadada;
+  font-family: Arial, Verdana, Geneva, sans-serif;
+  font-size: 16px;
 }
 
-#sidebar {  
+h2 {
+  color: $emphasis;
+  font-size: 1.7em;  
+  margin-bottom: 15px; //10px
+}
+
+#sidebar {
+  background-color: blue;
   float: left;
   min-height: 500px;  
   width: 200px;
@@ -21,40 +33,113 @@ body {
   ul {
     margin-top: 30px;
     
+    &:last-child {
+      border-bottom: 1px solid red;
+    }  
+    
     li {    
+      //margin: 0;
      
       a {
         background-color: purple;
+        border-top: 1px solid yellow; color: white;
         display: block;
         height: 30px;
         line-height: 30px;
+        margin: 0;
         padding-left: 45px;
         text-decoration: none;
         
-        &.current {                 
+        &.current {
+          background-color: red;              
         }
         
         &:hover {
           background-color: orange;
-          color: red;
-          //text-decoration: underline;
+          color: red;          
         }
         
-        &:active {
-          text-decoration: underline;
-        }
+        &:active {          
+        }               
       }
-    }
+    }      
   }
 }
 
-#content {
-  background-color: red;
+.wrapper {  
+  background-color: #F9F9F9; 
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;    
+  -moz-box-shadow: 0 0 6px #000;
+  -webkit-box-shadow: 0 0 6px #000;
+  box-shadow: 0 0 6px #252525;
+  color: $gray_text;
   float: left;
-  margin-left: 100px;
-  width: 972px;
+  margin: 30px;
+  overflow: auto;
+  padding: 20px;
+  padding-right: 25px;
+  width: 768px;
 }
 
-label, input, textarea {
+label {
   clear: both;
+  float: left;  
+  margin-bottom: 10px;
+}
+
+input[type=text],textarea {
+  clear: both;
+  float: left;  
+  margin-bottom: 10px; 
+  //width: 80%;
+  width: 100%;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type=text] {
+  font-size: 1.2em;
+  height: 30px;
+}
+
+textarea { 
+  font-family: Arial;
+  height: 200px; 
+  overflow: auto; // Remove scrollbar in IE
+}
+
+.cta {
+  border: 1px solid #CCC;
+  border-radius: 5px;
+  margin: 0;
+  padding: 7px 10px;
+  
+  &:hover {    
+    cursor: pointer;
+  }
+}
+
+#submit {
+  color: $green;
+  clear: both;
+  float: left;
+  
+  &:hover {
+    background-color: #C2D983;    
+    border: 1px solid $green;
+  }
+}
+
+#cancel {
+  color: $cancel;
+  float: right;
+  
+  &:hover {
+    background-color: #FFAFAF;
+    border: 1px solid $cancel;
+  }
 }
