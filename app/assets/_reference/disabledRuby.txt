@@ -1,0 +1,21 @@
+DISPLAY POSTS
+<%= @posts.each do |post| %>
+	<div class="post">
+		<h4><%= post.title %></h4>
+		<p class="date"><%= post.CREATED_AT %></p>
+		<p><%= post.body %></p>
+	</div>
+<% end %>
+
+
+NEW POST FORM
+<%= form_for(:post, :url => {:action => 'create'}) do |f| %>
+	<%= f.label(:post, :title => "Post Title") %>
+	<%= f.text_field(:title) %>
+	
+	<%= f.label(:post, :title => "Post Title") %>
+	<%= f.text_field(:title) %>
+	
+	<%= submit_tag("Create Post") %>
+
+<% end %>

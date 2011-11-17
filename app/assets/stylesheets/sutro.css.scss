@@ -13,8 +13,7 @@ body {
   background-color: #dadada;
 }
 
-#sidebar {
-  
+#sidebar {  
   float: left;
   min-height: 500px;  
   width: 200px;
@@ -24,28 +23,38 @@ body {
     
     li {    
      
-     a {
-       background-color: purple;
-       display: block;
-       height: 30px;
-       line-height: 30px;
-       padding-left: 45px;
-       text-decoration: none;
-       
-       &.current {
-                  
-       }
-       
-       &:hover {
-         background-color: orange;
-         color: red;
-         //text-decoration: underline;
-       }
-       
-       &:active {
-         text-decoration: underline;
-       }
-     } 
+      a {
+        background-color: purple;
+        display: block;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 45px;
+        text-decoration: none;
+        
+        &.current {                 
+        }
+        
+        &:hover {
+          background-color: orange;
+          color: red;
+          //text-decoration: underline;
+        }
+        
+        &:active {
+          text-decoration: underline;
+        }
+      }
     }
   }
+}
+
+#content {
+  background-color: red;
+  float: left;
+  margin-left: 100px;
+  width: 972px;
+}
+
+label, input, textarea {
+  clear: both;
 }

@@ -1,10 +1,14 @@
 <% content_for :title, "New Post | SutroCMS" %>
 
-<p>New Post</p>
 <p>Here will be a form to create and publish (or save) a new post.</p>
 
-<%= form_for(:post, :url => {:action => 'create'}) do |f| %>
-	<%= f.label(:post, :title => "Post Title") %>
-	<%= f.text_field(:title) %>
-
-<% end %>
+<form method="post" action="">
+	<h2>Create New Post</h2>	
+	<label for="title">Title:</label>
+	<input type="text" name="name" id="name" value="" />	
+	
+	<label for="body">Post:</label>
+	<textarea name="message" id="message" rows="8" cols="40"></textarea>
+	
+	<input type="submit" name="submit" value="Submit" class ="cta" id="submit"/>				
+</form>
