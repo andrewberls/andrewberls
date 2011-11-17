@@ -4,11 +4,12 @@ class PostsController < ApplicationController
   
   #----- READ
   def list # Main blog page - show paginated blog
-    @posts = Post.order("posts.position ASC")
+    # Set instance variable to all posts (-ordered?)
+    #@posts = Post.order("posts.position ASC")
   end
   
   def show # Show a single post
-    
+    @post = Post.find(params[:id])
   end
 
 end
