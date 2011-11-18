@@ -3,9 +3,8 @@ class PostsController < ApplicationController
   # CREATE/UPDATE/DELETE MANAGED BY SUTRO
   
   #----- READ
-  def list # Main blog page - show paginated blog
-    # Set instance variable to all posts (-ordered?)
-    #@posts = Post.order("posts.position ASC")
+  def list # Main blog page - show paginated blog     
+    @posts = Post.order("id DESC")
   end
   
   def show # Show a single post

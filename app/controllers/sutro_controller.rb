@@ -9,12 +9,11 @@ class SutroController < ApplicationController
   def new # Display new record form    
   end
   
-  def create # Process new record form
-    # Assumes post[_field_] form structure
+  def create # Process new record form    
     @post = Post.new(params[:post])
     if @post.save
       # flash[:notice] = "Post created"
-      redirect_to(:action => 'list') #---------- CHOOSE REDIRECT ACTION
+      redirect_to(:action => 'overview')
     else
       # Save failed - redisplay form for user
       render('new')
@@ -27,6 +26,8 @@ class SutroController < ApplicationController
   
   def overview # Administrative list of posts
     # Set instance variable to all posts (-ordered?)
+    #@posts = Post.all
+    @posts = Post.order("id DESC")
   end  
     
   #----- UPDATE  
