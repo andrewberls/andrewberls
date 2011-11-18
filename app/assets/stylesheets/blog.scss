@@ -16,12 +16,11 @@ $bg_1: #E2E1E1;
 $bg_2: #EAEAEA;
 
 //---------- TEMPORARY DEV
-//.wrapper  {border-left: 1px solid red; border-right: 1px solid red;}
+//.wrapper  {border: 1px solid red; border-top: none;}
 //.sidebar  {background-color: red;}
-//.sidebar    {border: 1px solid yellow;}
-
+//.sidebar  {border: 1px solid yellow;}
+//#main       {border-bottom: 1px solid red;}
 //---------- END TEMPORARY DEV
-
 
 
 @mixin rounded {
@@ -61,11 +60,7 @@ section {
   border: none;
 }
 
-#main {
-  background-color: $blue;  
-  border-top-color: $gray_text;  
-  
-  .wrapper {
+.wrapper {
     overflow: visible;
     position: relative;
     padding-top: 50px;
@@ -84,7 +79,6 @@ section {
     padding: 10px 15px; //20 10 20
     width: 700px;
   }
-}
 
 .sidebar {  
   float: right;
@@ -117,8 +111,8 @@ section {
 #top {
   color: $gray_text;
   position: absolute;
-  right: 15px;
-  bottom: 15px;
+  right: 10px;
+  bottom: 10px;
 }
 
 .pagination { 
@@ -155,4 +149,8 @@ section {
   bottom: 0;
   left: auto;
   width: 100%;
+  
+  p {
+    margin: 0;
+  }
 }
