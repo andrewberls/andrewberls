@@ -1,3 +1,168 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//-- LIB COLORS
+$dark_gray: #222;
+$gray_text: #434343;
+$emphasis: #393335;
+
+$blue: #5EC4F0;       // Section backgrounds
+$med_blue: #1487D4;   // Links + nav hover
+$dark_blue: #1f769c;
+
+//-- SECTION BORDERS
+$divider_bottom: #BBB;
+$divider_top: #FFF;
+
+//-- SECTION BACKGROUNDS
+$bg_1: #E2E1E1;
+$bg_2: #EAEAEA;
+
+//---------- TEMPORARY DEV
+//.wrapper  {border-left: 1px solid red; border-right: 1px solid red;}
+//.sidebar  {background-color: red;}
+//.sidebar    {border: 1px solid yellow;}
+
+//---------- END TEMPORARY DEV
+
+
+
+@mixin rounded {
+  $rad: 10px;
+  -webkit-border-radius: $rad;
+  -moz-border-radius: $rad;
+  border-radius: $rad;
+}
+
+h4 {
+  color: $emphasis;
+  font-size: 1.2em;
+  font-weight: bold;  
+}
+
+p {
+  color: #525252;        
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  
+  &.date {
+    color: #C4C4C4;    
+    font-weight: bold;
+    margin-bottom: 5px;     
+  }
+  
+  &:last-child {
+    margin-bottom: 5px;
+  }
+}
+
+section {
+  border: none;
+}
+
+#main {
+  background-color: $blue;  
+  border-top-color: $gray_text;
+  //border-bottom: 1px solid #EAEAEA;
+  
+  .wrapper {
+    overflow: visible;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .post {
+    @include rounded;
+    
+    background-color: #F9F9F9;        
+    -moz-box-shadow: 0 0 6px #000;
+    -webkit-box-shadow: 0 0 6px #000;
+    box-shadow: 0 0 6px #252525;    
+    margin-bottom: 25px; //10 0 20
+    line-height: 32px;
+    overflow: visible;   
+    padding: 10px 15px; //20 10 20
+    width: 700px;
+  }
+}
+
+.sidebar {  
+  float: right;
+  font-size: 0.9em;
+  min-height: 400px;
+  line-height: 15px;
+  width: 230px;
+
+  h4 {
+    margin-bottom: 10px;
+    border-bottom: 1px solid $gray_text;
+    padding-bottom: 5px;
+  }  
+  
+  p {
+    color: $emphasis;
+    margin-bottom: 5px;
+  }
+  
+  a {
+    color: black;
+    text-decoration: underline;
+    
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+#top {
+  color: $gray_text;
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
+
+.pagination { 
+  margin: 60px auto 0; 
+  padding: 5px 0;
+  text-align: center;  
+  
+  a {
+    background-color: white;
+    border: 1px solid $emphasis;
+    color: $dark_blue;    
+    padding: 3px 6px;
+    
+    &:hover {
+      background-color: $gray_text;
+      color: white;
+      text-decoration: none;
+    }
+    
+    &:active {      
+      font-weight: bold;
+    }
+    
+    &.active {
+      background-color: $dark_gray; // blend $dark_gray and $gray_text?
+      color: white;
+      font-weight: bold;      
+    }
+  }  
+}
+
+
+
+
+
+//----------------------------------------------------------------------------------------
+//need absolutely positioned container for copyright, with wrapper>content inside
+//also removed bottom section border - get body bg to blue
+#copyright {
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  width: 100%;
+}
+
+body {
+  //background-color: red;
+  background-color: $blue;
+  height: 100%;
+}
