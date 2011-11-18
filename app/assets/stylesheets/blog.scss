@@ -31,6 +31,10 @@ $bg_2: #EAEAEA;
   border-radius: $rad;
 }
 
+body {  
+  background-color: $blue;  
+}
+
 h4 {
   color: $emphasis;
   font-size: 1.2em;
@@ -59,8 +63,7 @@ section {
 
 #main {
   background-color: $blue;  
-  border-top-color: $gray_text;
-  //border-bottom: 1px solid #EAEAEA;
+  border-top-color: $gray_text;  
   
   .wrapper {
     overflow: visible;
@@ -147,22 +150,9 @@ section {
   }  
 }
 
-
-
-
-
-//----------------------------------------------------------------------------------------
-//need absolutely positioned container for copyright, with wrapper>content inside
-//also removed bottom section border - get body bg to blue
 #copyright {
   position: absolute;
   bottom: 0;
   left: auto;
   width: 100%;
-}
-
-body {
-  //background-color: red;
-  background-color: $blue;
-  height: 100%;
 }
