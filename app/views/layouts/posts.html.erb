@@ -25,19 +25,16 @@
 		</div>
 	</section>
 
-	<section id="main">		
+	<!-- <section id="main"> -->
 		<div class="wrapper">
 			
 			<div class="sidebar">
 				<h4>about me</h4>
 				<p>I'm currently a student at UCSB, and I love building websites. This is where I occasionally post things that amuse or interest me. I designed and wrote the software that powers this blog, and I distribute it for free over on <a href="#">GitHub.</a></p><p>If you like what you see or want to know more, you can check out my portfolio <a href="#">here</a>!</p>
-			</div>
-			
-	
+			</div>				
 	
 			<%= yield %>
-	
-	
+		
 			<div class="pagination">
 				<a href="#">&laquo;</a>
 				<a href="#">1</a>
@@ -48,10 +45,13 @@
 				<a href="#">&raquo;</a>
 			</div>
 			
-			<a href="#header" id="top">Back to top</a>
-					
-		</div>		
-	</section>
+			<% if @posts.length > 4 %>				
+				<a href="#header" id="top">Back to top</a>
+			<% end %>
+		</div>
+		
+		
+	<!-- </section> -->
 	<!--
 	<section id="footer">
 		<div class="wrapper">
@@ -84,7 +84,7 @@
 		</div>
 	</section>
 	-->
-	<section id="copyright">
+	<section id="copyright">				
 		<div class="wrapper">
 			<p class="left">Copyright © 2011 Andrew Berls. This site was built using
 			<a href="http://rubyonrails.org/">Ruby on Rails</a>,
@@ -93,7 +93,7 @@
 			<a href="http://jquery.com/">jQuery</a>
 			</p>
 			<p class="right"><a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.andrewberls.com">valid HTML</a> | 
-				<a href="#">valid CSS</a></p>
+				<a href="#">valid CSS</a></p>									
 		</div>
 	</section>
 		
