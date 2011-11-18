@@ -3,10 +3,10 @@ $dark_gray: #222;
 $gray_text: #434343;
 $emphasis: #393335;
 
-//$green: #87B608; // Too light
 $green: #6F9606;
-$cancel: #FF1919;
-
+$green_light: #d3e5a3;
+$cancel: #FF1919; //FF1919
+$cancel_light: #FFDEDE; //FFD3D3
 
 //---------- TEMPORARY DEV STYLES
 
@@ -23,9 +23,12 @@ h2 {
   font-size: 1.7em;  
   margin-bottom: 15px; //10px
 }
+h3 {
+  font-size: 1.2em;
+}
 
 #sidebar {
-  background-color: blue;
+  background-color: blue; 
   float: left;
   min-height: 500px;  
   width: 200px;
@@ -113,10 +116,12 @@ textarea {
 }
 
 .cta {
+  background: #F0F0F0;
   border: 1px solid #CCC;
   border-radius: 5px;
   margin: 0;
   padding: 7px 10px;
+  text-decoration: none;
   
   &:hover {    
     cursor: pointer;
@@ -128,8 +133,9 @@ textarea {
   clear: both;
   float: left;
   
-  &:hover {
-    background-color: #C2D983;    
+  &:hover {    
+    background-color: $green_light;
+    color: #5C7C04;    
     border: 1px solid $green;
   }
 }
@@ -137,9 +143,10 @@ textarea {
 #cancel {
   color: $cancel;
   float: right;
+  font-size: 0.9em;  
   
   &:hover {
-    background-color: #FFAFAF;
-    border: 1px solid $cancel;
+    background-color: $cancel_light;
+    border: 1px solid #FF8181;
   }
 }
