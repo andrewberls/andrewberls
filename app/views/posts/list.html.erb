@@ -5,6 +5,15 @@
 	
 -->
 
+<% @posts.each do |post| %>
+	<div class="post">
+		<h4><%= post.title %></h4>
+		<p class="date"><%= post.created_at %></p>
+		<p><%= post.body %></p>
+	</div>
+<% end %>
+
+<!--
 <div class="post">
 	<h4>Plain Latin is the best.</h4>
 	<p class="date">7 November 2011</p>
@@ -42,5 +51,5 @@ Wafer sugar plum oat cake chupa chups toffee brownie tootsie roll. Gummi bears f
 	<p>Cupcake ipsum dolor sit amet. Oat cake bonbon caramels cake cupcake chocolate cake topping halvah bonbon. Cotton candy candy canes pudding oat cake biscuit icing candy canes jelly-o apple pie. Dragée carrot cake chocolate pie jelly-o cookie. Pastry fruitcake cheesecake sweet roll. Oat cake pie applicake tart pastry chupa chups. Cake topping candy wafer marzipan jujubes. Tiramisu chocolate bar pastry biscuit cotton candy chocolate cotton candy.
 Wafer sugar plum oat cake chupa chups toffee brownie tootsie roll. Gummi bears fruitcake chocolate. Apple pie brownie muffin candy marshmallow candy toffee liquorice. Halvah biscuit chupa chups gingerbread icing cookie jujubes jelly cotton candy. Macaroon croissant bonbon. Biscuit sweet roll sweet roll carrot cake jelly-o. Gummi bears wafer chocolate cake cupcake lollipop danish brownie. Pastry marshmallow pastry.</p>
 </div>
-				
+-->		
 			

@@ -3,3 +3,9 @@
 <p>Overview</p>
 <p>Here will be an administrative listing of all content</p>
 
+<p>THIS IS ALL TEMPORARY AND BELONGS IN PUBLIC LIST</p>
+<% @posts.each do |post| %>
+	<h3><%= post.title %></h3>
+	<p><%= post.created_at %></p>
+	<p><%= post.body %></p>
+<% end %>
