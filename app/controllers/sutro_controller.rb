@@ -2,11 +2,12 @@ class SutroController < ApplicationController
   
   #----- GENERAL
   def index # Dashboard method
-    
+    @page_title = "Dashboard | SutroCMS"
   end
   
   #----- CREATE  
-  def new # Display new record form    
+  def new # Display new record form
+    @page_title = "New Post | SutroCMS"
   end
   
   def create # Process new record form    
@@ -28,6 +29,7 @@ class SutroController < ApplicationController
   # Sutro provides administrative view only
   
   def overview # Administrative list of posts
+    @page_title = "Overview | SutroCMS"
     # Set instance variable to all posts (-ordered?)
     #@posts = Post.all
     @posts = Post.order("id DESC")
@@ -35,6 +37,7 @@ class SutroController < ApplicationController
     
   #----- UPDATE  
   def edit # Display edit record form
+    @page_title = "Edit Post | SutroCMS"
     # Form fields prefilled with values from instance variable passed to view
     @post = Post.find(params[:id])
   end

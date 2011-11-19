@@ -1,3 +1,12 @@
+OLD TITLE DISPLAY
+<title><%= content_for?(:title) ? content_for(:title) : 'SutroCMS' %></title>
+<% content_for :title, "Dashboard | SutroCMS" %>
+<% content_for :title, "New Post | SutroCMS" %>
+<% content_for :title, "Edit Post | SutroCMS" %>
+<% content_for :title, "Overview | SutroCMS" %>
+
+---------------------------------------------------------------------
+
 DISPLAY POSTS
 <%= @posts.each do |post| %>
 	<div class="post">
