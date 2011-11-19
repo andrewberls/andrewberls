@@ -8,6 +8,8 @@ Andrewberls::Application.routes.draw do
   match "/edit/:id"  => "sutro#edit"
   match "/overview"  => "sutro#overview"  
   match "/create"    => "sutro#create", :via => :post
+  match "/update"    => "sutro#update", :via => :post
+  match "/destroy"   => "sutro#destroy", :via => :get
   
   root :to => 'home#index'
   

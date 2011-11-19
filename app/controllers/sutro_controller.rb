@@ -11,6 +11,9 @@ class SutroController < ApplicationController
   
   def create # Process new record form    
     @post = Post.new(params[:post])
+    #@post.title = raw(@post.title)
+    #@post.body = raw(@post.body)
+    
     if @post.save
       # flash[:notice] = "Post created"
       redirect_to(:action => 'overview')
@@ -41,7 +44,7 @@ class SutroController < ApplicationController
     # Assumes post[_field_] structure
     if @post.update_attributes(params[:post])
       #flash[:notice] = "Post created"
-      redirect_to('list')
+      redirect_to("/overview")
       #redirect_to(:action => 'show', :id = @post.id) # Redirect to the individual page for the updated post
     else
       # Update fails - redisplay the form
@@ -53,7 +56,7 @@ class SutroController < ApplicationController
   def destroy # Destroy record
     Post.find(params[:id]).destroy # Don't need an instance variable
     #flash[:notice] = "Post successfully deleted"
-    redirect_to(:controller => 'posts', :action => 'list')
+    redirect_to(:action => 'overview')
   end
   
 end
