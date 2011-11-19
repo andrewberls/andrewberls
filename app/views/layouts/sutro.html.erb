@@ -5,44 +5,50 @@
 	<title><%= content_for?(:title) ? content_for(:title) : 'SutroCMS' %></title>
 	<%= stylesheet_link_tag "reset" %>
 	<%= stylesheet_link_tag "sutro" %>		
-	<%= favicon_link_tag %>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<%= favicon_link_tag %>	
+	<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+	<%= javascript_include_tag :application %>
+	<%= csrf_meta_tag %>
 </head>
 
 <body>
 	
-	<div id="sidebar">
-		<ul class="nav">
-			<%# BETTER WAY TO HANDLE CONDITIONAL NAV LINKS? %>
-						
-			<%#----- DASHBOARD -----%>
-			<% if params[:action] == "index" %>
-				<li><%= link_to "Dashboard", {:action => "index"},  :class => "current"  %></li>
-			<% else %>
-				<li><%= link_to "Dashboard", :action => "index" %></li>
-			<% end %>
-			
-			
-			<%#-----  NEW POST -----%>
-			<% if params[:action] == "new" %>
-				<li><%= link_to "New Post", {:action => "new"},  :class => "current"  %></li>
-			<% else %>
-				<li><%= link_to "New Post", :action => "new" %></li>
-			<% end %>
-			
-			
-			<%#----- MANAGE POSTS -----%>
-			<% if params[:action] == "overview" %>
-				<li><%= link_to "Manage Posts", {:action => "overview"},  :class => "current"  %></li>
-			<% else %>
-				<li><%= link_to "Manage Posts", :action => "overview" %></li>
-			<% end %>									
-		</ul>
-		
-	</div>
 	
-	<div id="content">		
-		<%= yield %>			
+	
+	<div id="container">
+		<div id="sidebar">
+			<ul class="nav">
+				<%# BETTER WAY TO HANDLE CONDITIONAL NAV LINKS? %>
+							
+				<%#----- DASHBOARD -----%>
+				<% if params[:action] == "index" %>
+					<li><%= link_to "Dashboard", {:action => "index"},  :class => "current"  %></li>
+				<% else %>
+					<li><%= link_to "Dashboard", :action => "index" %></li>
+				<% end %>
+				
+				
+				<%#-----  NEW POST -----%>
+				<% if params[:action] == "new" %>
+					<li><%= link_to "New Post", {:action => "new"},  :class => "current"  %></li>
+				<% else %>
+					<li><%= link_to "New Post", :action => "new" %></li>
+				<% end %>
+				
+				
+				<%#----- MANAGE POSTS -----%>
+				<% if params[:action] == "overview" %>
+					<li><%= link_to "Manage Posts", {:action => "overview"},  :class => "current"  %></li>
+				<% else %>
+					<li><%= link_to "Manage Posts", :action => "overview" %></li>
+				<% end %>									
+			</ul>
+			
+		</div>
+		<div id="content">
+			<%= yield %>
+		</div>	
+		
 	</div>
 		
 </body>
