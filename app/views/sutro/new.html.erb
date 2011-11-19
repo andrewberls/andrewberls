@@ -1,34 +1,16 @@
 <% content_for :title, "New Post | SutroCMS" %>
 
-<!-- <p>Here will be a form to create and publish (or save) a new post.</p> -->
-
 <div class="wrapper">
 	<h2>Create New Post</h2>
-	
-	<!-- <form method="post" action="">		
-		<label for="title">Title</label>
-		<input type="text" name="name" id="name" value="" />	
-		
-		<label for="body">Post</label>
-		<textarea name="message" id="message"></textarea>
-		
-		input for tags?
-		
-		<input type="submit" name="submit" value="Publish" class ="cta" id="submit"/>
-		<input type="button" name="cancel" value="Cancel"  class ="cta" id="cancel"/>	
-	</form> -->
 	
 	<%= form_for(:post, :url=>{:action => 'create'}) do |f| %>		
 		<%= f.label :title %>
 		<%= f.text_field :title %>
 		<%= f.label :body, "Post" %>
-		<%= f.text_area :body %>
+		<%= f.text_area :body %>		
 		<%= submit_tag "Publish", :id=>"submit", :class => "cta" %>		
 		<!-- <input type="button" name="cancel" value="Cancel"  class ="cta" id="cancel"/> -->
 		<a class="cta" id="cancel" href="/overview">Cancel</a>
 	<% end %>
-
-	
-	
 </div>
 

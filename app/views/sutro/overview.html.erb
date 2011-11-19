@@ -1,11 +1,54 @@
 <% content_for :title, "Overview | SutroCMS" %>
 
-<p>Overview</p>
-<p>Here will be an administrative listing of all content</p>
+<h2>Posts</h2>
 
-<p>THIS IS ALL TEMPORARY AND BELONGS IN PUBLIC LIST</p>
-<% @posts.each do |post| %>
-	<h3><%= post.title %></h3>
-	<p><%= post.created_at %></p>
-	<p><%= post.body %></p>
-<% end %>
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Date</th>
+		<th>Tags</th>
+		<th>Status</th>
+		<th>Actions</th>
+	</tr>
+	
+	<% @posts.each do |post| %>
+	<tr>
+		<td><%= post.title %></td>
+		<td>Andrew Berls</td>
+		<td><%= post.created_at %></td>
+		<td>
+			<% if post.tags == nil %>			
+				No tags
+			<% else %>
+				<% post.tags %>
+			<% end %>
+		</td>
+		<td>Published</td>
+		<td>
+			<%= link_to("Edit", {:action => 'edit', :id => post.id}) %> 
+			<%= link_to "Delete", {:action => 'destroy', :id => post.id}, {:confirm => "Are you sure you want to delete this post?"} %> 
+		</td>
+	</tr>
+	<% end %>
+	
+	
+	<!------- FAKE HTML ROW FOR STYLING. DELETE! ------->
+	<tr>
+		<td><a href="#">Post Title is a Link</a></td>
+		<td>Andrew Berls</td>
+		<td>This is fake HTML</td>
+		<td>
+			<a href="#">Just</a>,
+			<a href="#">for</a>,
+			<a href="#">styling</a>
+		</td>
+		<td>Pending</td>
+		<td>
+			Edit
+			Delete
+		</td>
+	</tr>
+
+</table>
+
