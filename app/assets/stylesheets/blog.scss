@@ -16,10 +16,10 @@ $bg_1: #E2E1E1;
 $bg_2: #EAEAEA;
 
 //---------- TEMPORARY DEV
+
 //.wrapper  {border: 1px solid red; border-top: none;}
-//.sidebar  {background-color: red;}
-//.sidebar  {border: 1px solid yellow;}
-//#main       {border-bottom: 1px solid red;}
+//#copyright .wrapper {border: 1px solid yellow;}
+
 //---------- END TEMPORARY DEV
 
 
@@ -32,6 +32,8 @@ $bg_2: #EAEAEA;
 
 body {  
   background-color: $blue;  
+  height: 100%;
+  position: relative;
 }
 
 h4 {
@@ -56,12 +58,20 @@ p {
   }
 }
 
-section {
-  border: none;
+section {  
+  border: none;  
+}
+
+#main {   
+  .wrapper {
+    
+    margin-bottom: 40px; // Footer is absolutely positioned - need bottom margin to keep bottom elements visible  
+    padding-bottom: 75px;    
+  }
 }
 
 .wrapper {
-    overflow: visible;
+    overflow: visible;     
     position: relative;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -69,14 +79,14 @@ section {
   .post {
     @include rounded;
     
-    background-color: #F9F9F9;        
+    background-color: #F9F9F9;
     -moz-box-shadow: 0 0 6px #000;
     -webkit-box-shadow: 0 0 6px #000;
     box-shadow: 0 0 6px #252525;    
-    margin-bottom: 25px; //10 0 20
+    margin-bottom: 25px;
     line-height: 32px;
     overflow: visible;   
-    padding: 10px 15px; //20 10 20
+    padding: 10px 15px;
     width: 700px;
   }
 
@@ -109,10 +119,10 @@ section {
 }
 
 #top {
-  color: $gray_text;
+  color: $gray_text;  
   position: absolute;
   right: 10px;
-  bottom: 10px;
+  bottom: 10px;  
 }
 
 .pagination { 
@@ -144,7 +154,7 @@ section {
   }  
 }
 
-#copyright {
+#copyright { 
   position: absolute;
   bottom: 0;
   left: auto;
@@ -152,5 +162,9 @@ section {
   
   p {
     margin: 0;
+  }
+  
+  .wrapper {
+    margin: 0 auto;
   }
 }
