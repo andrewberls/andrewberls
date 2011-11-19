@@ -3,6 +3,7 @@ $dark_gray: #222;
 $gray_text: #434343;
 $emphasis: #393335;
 
+$med_blue: #1487D4;
 $green: #6F9606;
 $green_light: #d3e5a3;
 $cancel: #FF1919; //FF1919
@@ -10,10 +11,13 @@ $cancel_light: #FFDEDE; //FFD3D3
 
 //---------- TEMPORARY DEV STYLES
 
+//td     {border-top: 1px solid red; border-bottom: 1px solid red;}
+//#content {background-color: #0FC;}
+
 //---------- TEMPORARY DEV STYLES
 
-body {
-  background-color: #dadada;
+body {  
+  background-color: #EDEDED;
   font-family: Arial, Verdana, Geneva, sans-serif;
   font-size: 16px;
 }
@@ -27,11 +31,28 @@ h3 {
   font-size: 1.2em;
 }
 
+a, a:visited {
+  color: $med_blue;  
+  text-decoration: none;   
+}
+
+a {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#container {  
+  clear: none;  
+  overflow: auto;  
+}
+
 #sidebar {
-  background-color: blue; 
-  float: left;
-  min-height: 500px;  
-  width: 200px;
+  background-color: blue;
+  clear: none;
+  float: left;   
+  min-height: 500px;    
+  width: 12.5em;
   
   ul {
     margin-top: 30px;
@@ -40,9 +61,8 @@ h3 {
       border-bottom: 1px solid red;
     }  
     
-    li {    
-      //margin: 0;
-     
+    li {
+    
       a {
         background-color: purple;
         border-top: 1px solid yellow; color: white;
@@ -69,6 +89,12 @@ h3 {
   }
 }
 
+#content {
+  //background-color: #0FC;      
+  overflow: hidden;  
+  padding: 30px 15px 30px 15px;
+}
+
 .wrapper {  
   background-color: #F9F9F9; 
   -webkit-border-radius: 10px;
@@ -78,9 +104,8 @@ h3 {
   -webkit-box-shadow: 0 0 6px #000;
   box-shadow: 0 0 6px #252525;
   color: $gray_text;
-  float: left;
-  margin: 30px;
-  overflow: auto;
+  float: left; 
+  //overflow: auto;
   padding: 20px;
   padding-right: 25px;
   width: 768px;
@@ -113,6 +138,7 @@ textarea {
   font-family: Arial;
   height: 200px; 
   overflow: auto; // Remove scrollbar in IE
+  resize: vertical;
 }
 
 .cta {
@@ -149,4 +175,22 @@ textarea {
     background-color: $cancel_light;
     border: 1px solid #FF8181;
   }
+}
+
+table {
+  background-color: #F9F9F9;
+  border: 1px solid #CCC;  
+  text-align: left;
+  width: 100%;
+}
+
+th {
+  border: 1px solid #CCC;
+  //font-weight: normal;
+  padding: 7px 225px 7px 5px; 
+}
+
+td {
+  //border: none;  
+  padding: 15px;
 }
