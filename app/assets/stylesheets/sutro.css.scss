@@ -3,7 +3,11 @@ $dark_gray: #222;
 $gray_text: #434343;
 $emphasis: #393335;
 
+$blue: #5EC4F0;
 $med_blue: #1487D4;
+$light_blue: #65C3EC;
+$dark_blue: #1f769c;
+
 $green: #6F9606;
 $green_light: #d3e5a3;
 $cancel: #FF1919; //FF1919
@@ -48,7 +52,7 @@ a {
 }
 
 #sidebar {
-  background-color: blue;
+  background-color: #C4C4C4; //dfdfdf
   clear: none;
   float: left;   
   min-height: 500px;    
@@ -58,32 +62,50 @@ a {
     margin-top: 30px;
     
     &:last-child {
-      border-bottom: 1px solid red;
+      //border-bottom: 1px solid red;
     }  
     
     li {
     
       a {
-        background-color: purple;
-        border-top: 1px solid yellow; color: white;
+        background-color: #f9f9f9;  //ECECEC        
+        background-image: linear-gradient(left , #F9F9F9 88%, #DFDFDF 100%);
+        background-image: -o-linear-gradient(left , #F9F9F9 88%, #DFDFDF 100%);
+        background-image: -moz-linear-gradient(left , #F9F9F9 88%, #DFDFDF 100%);
+        background-image: -webkit-linear-gradient(left , #F9F9F9 88%, #DFDFDF 100%);
+        background-image: -ms-linear-gradient(left , #F9F9F9 88%, #DFDFDF 100%);        
+        background-image: -webkit-gradient(linear, left top, right top, color-stop(0.88, #F9F9F9), color-stop(1, #DFDFDF));
+        border-bottom: 1px solid #9C9C9C;
+        border-top: 1px solid #f9f9f9;
+        color: $med_blue;
         display: block;
         height: 30px;
         line-height: 30px;
         margin: 0;
         padding-left: 45px;
         text-decoration: none;
-        
-        &.current {
-          background-color: red;              
+                       
+        &:hover {          
+          background-color: $med_blue;
+          background-image: none;         
+          color: #f9f9f9;                    
         }
         
-        &:hover {
-          background-color: orange;
-          color: red;          
+        &.current {          
+          background-color: $dark_blue;          
+          background-image: linear-gradient(bottom, #1F779C 48%, #1B6385 100%);
+          background-image: -o-linear-gradient(bottom, #1F779C 48%, #1B6385 100%);
+          background-image: -moz-linear-gradient(bottom, #1F779C 48%, #1B6385 100%);
+          background-image: -webkit-linear-gradient(bottom, #1F779C 48%, #1B6385 100%);
+          background-image: -ms-linear-gradient(bottom, #1F779C 48%, #1B6385 100%);          
+          background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.48, #1F779C), color-stop(1, #1B6385));
+          border-top: 1px solid #666;
+          color: white;         
         }
         
         &:active {          
-        }               
+        }
+                       
       }
     }      
   }
