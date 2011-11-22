@@ -1,8 +1,7 @@
 <% @posts.each do |post| %>
 	<div class="post">
-		<h4><%= post.title %></h4>
+		<h4><%= raw post.title %></h4>
 		<p class="date"><%= post.created_at %></p>
-		<p><%= post.body %></p>
+		<p><%= raw post.body %></p>
 	</div>
 <% end %>
-			
