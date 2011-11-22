@@ -44,7 +44,16 @@ body {
 h4 {
   color: $emphasis;
   font-size: 1.2em;
-  font-weight: bold;  
+  font-weight: bold;
+  
+  a, a:visited {
+    color: inherit;
+    text-decoration: underline;        
+  }
+  
+  a:hover {
+    color: $med_blue;
+  }
 }
 
 p {
