@@ -11,9 +11,7 @@ class SutroController < ApplicationController
   end
   
   def create # Process new record form    
-    @post = Post.new(params[:post])
-    #@post.title = raw(@post.title)
-    #@post.body = raw(@post.body)
+    @post = Post.new(params[:post])    
     
     if @post.save
       # flash[:notice] = "Post created"
