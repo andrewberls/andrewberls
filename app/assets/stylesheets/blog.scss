@@ -23,8 +23,8 @@ $bg_2: #EAEAEA;
 //---------- END TEMPORARY DEV
 
 
-@mixin rounded {
-  $rad: 10px;
+@mixin rounded($rad) {
+  //$rad: 10px;
   -webkit-border-radius: $rad;
   -moz-border-radius: $rad;
   border-radius: $rad;
@@ -85,26 +85,39 @@ section {
 }
 
 .wrapper {
-    overflow: visible;     
-    //position: relative;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-  .post {
-    @include rounded;
-    
-    background-color: #F9F9F9;
-    -moz-box-shadow: 0 0 6px #000;
-    -webkit-box-shadow: 0 0 6px #000;
-    box-shadow: 0 0 6px #252525;    
-    margin-bottom: 25px;
-    line-height: 32px;
-    overflow: visible;   
-    padding: 10px 15px;
-    width: 700px;
-  }
+  overflow: visible;     
+  //position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 
-.sidebar {  
+.post {
+  @include rounded(10px);
+  
+  background-color: #F9F9F9;
+  -moz-box-shadow: 0 0 6px #000;
+  -webkit-box-shadow: 0 0 6px #000;
+  box-shadow: 0 0 6px #252525;    
+  margin-bottom: 25px;
+  line-height: 32px;
+  overflow: visible;   
+  padding: 10px 15px;
+  width: 700px;
+  
+  .tag {
+    @include rounded(3px);
+    
+    background-color: #C4C4C4; // BACKGROUND NEEDS TO BE SLIGHLY LIGHTER, COLOR MIGHT BE GOOD    
+    color: #666; // BLEND 666 AND $GRAY_TEXT------------------------ 
+    font-weight: bold;
+    margin-right: 4px;
+    padding: 2px 7px; 
+   
+     
+  }
+}
+
+.sidebar {
   float: right;
   font-size: 0.9em;
   min-height: 400px;
