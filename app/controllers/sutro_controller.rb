@@ -28,9 +28,11 @@ class SutroController < ApplicationController
   
   def overview # Administrative list of posts
     @page_title = "Overview | SutroCMS"
-    # Set instance variable to all posts (-ordered?)
-    #@posts = Post.all
+    # Set instance variable to all posts    
     @posts = Post.order("id DESC")
+    
+    #@posts = nil;
+    
   end  
     
   #----- UPDATE  

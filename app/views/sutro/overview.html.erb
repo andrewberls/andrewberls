@@ -1,37 +1,41 @@
 <h2>Posts</h2>
 
 <table>
-	<tr>
-		<th>Title</th>
-		<th>Author</th>
-		<th>Date</th>
-		<th>Tags</th>
-		<th>Status</th>
-		<th>Actions</th>
-	</tr>
-	
-	<% @posts.each do |post| %>
-	<tr>
-		<td><%= raw post.title %></td>
-		<td>Andrew Berls</td>
-		<td><%= post.created_at %></td>
-		<td>
-			<% if post.tags == nil %>			
-				No tags
-			<% else %>
-				<% post.tags %>
-			<% end %>
-		</td>
-		<td>Published</td>
-		<td>
-			<%= link_to("Edit", {:action => 'edit', :id => post.id}) %> 
-			<%= link_to "Delete", {:action => 'destroy', :id => post.id}, confirm: "Are you sure you want to delete this post?" %> 
-		</td>
-	</tr>
-	<% end %>
-	
+	<% if (!@posts or @posts.length == 0) %>
+		<td>You haven't added any content yet! Click <%= link_to "here", :action => "new" %> to get started.</td>				
+	<% else %>	
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Date</th>
+			<th>Tags</th>
+			<th>Status</th>
+			<th>Actions</th>
+		</tr>
+		
+		<% @posts.each do |post| %>
+		<tr>
+			<td><%= raw post.title %></td>
+			<td>Andrew Berls</td>
+			<td><%= post.created_at %></td>
+			<td>
+				<% if post.tags == nil %>			
+					No tags
+				<% else %>
+					<% post.tags %>
+				<% end %>
+			</td>
+			<td>Published</td>
+			<td>
+				<%= link_to("Edit", {:action => 'edit', :id => post.id}) %> 
+				<%= link_to "Delete", {:action => 'destroy', :id => post.id}, confirm: "Are you sure you want to delete this post?" %> 
+			</td>
+		</tr>
+		<% end %>
+	<% end %>	
 	
 	<!------- FAKE HTML ROW FOR STYLING. DELETE! ------->
+	<!--
 	<tr>
 		<td><a href="#">Post Title is a Link</a></td>
 		<td>Andrew Berls</td>
@@ -47,6 +51,6 @@
 			Delete
 		</td>
 	</tr>
-
+	-->
 </table>
 
