@@ -12,7 +12,18 @@ Description: This view provides the actual form to add a new user, specifying:
 
 <div class="wrapper">
 	<h2>Add New User</h2>
-		
+	
+	<% if @user.errors.any? %>
+		<div class="error_messages">
+			<h2>Invalid Submission</h2>
+			<ul>
+				<% for message in @user.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>	
+	<% end %>
+	
 	<%= form_for @user do |f| %>
 		<!-- 
 		- Display errors, if any. (outside form?)

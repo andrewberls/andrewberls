@@ -1,4 +1,4 @@
-class SutroController < ApplicationController
+class SutroController < ApplicationController    
   
   #----- GENERAL
   def index # Dashboard method

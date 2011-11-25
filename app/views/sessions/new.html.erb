@@ -1,0 +1,13 @@
+<div class="wrapper">
+	<%= form_tag sessions_path do %>
+	<h2>Log In</h2>
+	
+	<%= label_tag :email %>
+	<%= text_field_tag :email, params[:email] %>
+	
+	<%= label_tag :password %>
+	<%= text_field_tag :password, params[:password] %>
+	
+	<%= submit_tag "Log In", :class => "cta submit" %>
+<% end %>
+</div>
