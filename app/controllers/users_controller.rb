@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   layout 'sutro'    
   
   def new
+    # TEST CODE TO KICK OUT UNAUTHORIZED USER
+    if !session[:user_id]
+      redirect_to root_url
+    end
+    
     @page_title = "Add New User | SutroCMS"       
     @user = User.new
   end
