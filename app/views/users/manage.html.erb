@@ -23,7 +23,7 @@ Description: Similar to sutro#overview, this provides an administrative overview
 
 <table>
 	
-	<% if (@users or @users.length == 0) %>	
+	<% if (!@users or @users.length == 0) %>	
 		<td>That's weird, there doesn't appear to be any existing users. Click <%= link_to "here", :action => "new" %> to add a new user!</td>		
 	<% else %>
 	
@@ -36,8 +36,8 @@ Description: Similar to sutro#overview, this provides an administrative overview
 		
 		<% @users.each do |user| %>
 			<tr>
-				<td><%= @user.full_name %></td>
-				<td><%= @user.email %></td>
+				<td><%= user.full_name %></td>
+				<td><%= user.email %></td>
 				<td>No permissions yet</td>
 				<td>
 					<a href="#">Edit permissions</a>
