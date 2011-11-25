@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       # REDIRECT/NOTICE CAN BE CHANGED
-      redirect_to root_url, :notice => "Logged in!"
+      redirect_to "/overview", :notice => "Logged in!"
     else
       # Authentication failed - render the form again
       flash.now.alert = "Invalid email or password"
@@ -19,8 +19,12 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    session[:user_id] = nil
-    # REDIRECT/NOTICE CAN BE CHANGED
-    redirect_to "/blog", :notice => "Logged out!"
+    if !session[:user_id]
+      redirect_to "/blog"      
+    else
+      session[:user_id] = nil
+      # REDIRECT/NOTICE CAN BE CHANGED
+      redirect_to "/blog", :notice => "Logged out!"
+    end
   end
 end

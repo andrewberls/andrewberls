@@ -1,2 +1,2 @@
-module SutroHelper
+module SutroHelper  
 end

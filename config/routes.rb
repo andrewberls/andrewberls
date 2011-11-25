@@ -10,7 +10,7 @@ Andrewberls::Application.routes.draw do
   match "/dashboard" => "sutro#index"  
   match "/new"       => "sutro#new"
   match "/edit/:id"  => "sutro#edit"
-  match "/overview"  => "sutro#overview"  
+  match "/overview"  => "sutro#overview", :as => "overview"
   match "/create"    => "sutro#create", :via => :post
   match "/update"    => "sutro#update", :via => :post
   match "/destroy"   => "sutro#destroy", :via => :get

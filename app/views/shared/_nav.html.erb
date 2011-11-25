@@ -5,9 +5,6 @@ in order to determine whether or not to render a link styled as .current.
 	
 -->
 
-<p><%= @test %></p>
-
-
 <%# BETTER WAY TO HANDLE CONDITIONAL NAV LINKS? %>
 							
 <%#----- DASHBOARD -----%>
@@ -38,4 +35,9 @@ in order to determine whether or not to render a link styled as .current.
 	<li><%= link_to "Manage Users", {:controller => "users", :action => "manage"}, :class => "current"  %></li>
 <% else %>
 	<li><%= link_to "Manage Users", {:controller => "users", :action => "manage"} %></li>
-<% end %>	
+<% end %>
+
+<% if @current_user %>
+	<p>Logged in as <%= @current_user.full_name %></p>
+	<p><%= link_to "Log Out", logout_path %></p>
+<% end %>
