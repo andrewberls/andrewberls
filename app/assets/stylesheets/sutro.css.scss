@@ -138,7 +138,8 @@ label {
   margin-bottom: 10px;
 }
 
-input[type=text],textarea {
+input[type=text],input[type=password], textarea {
+//input, textarea {
   clear: both;
   float: left;  
   margin-bottom: 10px; 
@@ -150,7 +151,8 @@ input[type=text],textarea {
   }
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
+//input {
   font-size: 1.2em;
   height: 30px;
 }
