@@ -1,0 +1,38 @@
+<!-- 
+	
+This partial loads the Sutro sidebar. The conditional logic inspects the controller and and action from the params hash
+in order to determine whether or not to render a link styled as .current.
+	
+-->
+
+<%# BETTER WAY TO HANDLE CONDITIONAL NAV LINKS? %>
+							
+<%#----- DASHBOARD -----%>
+<% if params[:action] == "index" %>
+	<li><%= link_to "Dashboard", {:action => "index"},  :class => "current"  %></li>
+<% else %>
+	<li><%= link_to "Dashboard", {:controller => "sutro", :action => "index"} %></li>
+<% end %>
+
+
+<%#-----  NEW POST -----%>
+<% if params[:action] == "new" %>
+	<li><%= link_to "New Post", {:action => "new"},  :class => "current"  %></li>
+<% else %>
+	<li><%= link_to "New Post", {:controller => "sutro", :action => "new"} %></li>
+<% end %>
+
+
+<%#----- MANAGE POSTS -----%>
+<% if params[:action] == "overview" %>
+	<li><%= link_to "Manage Posts", {:action => "overview"},  :class => "current"  %></li>
+<% else %>
+	<li><%= link_to "Manage Posts", {:controller => "sutro", :action => "overview"} %></li>
+<% end %>
+
+<%#----- MANAGE USERS -----%>
+<% if params[:action] == "manage" && params[:controller] == "users" %>
+	<li><%= link_to "Manage Users", {:controller => "users", :action => "manage"}, :class => "current"  %></li>
+<% else %>
+	<li><%= link_to "Manage Users", {:controller => "users", :action => "manage"} %></li>
+<% end %>	
