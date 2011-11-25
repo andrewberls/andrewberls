@@ -1,3 +1,16 @@
+<!--
+	
+Title: Add New User | Sutro CMS
+Description: This view provides the actual form to add a new user, specifying:
+	- Full name
+	- Email
+	- Password
+	- Password confirmation
+	-- User will be able to change later
+	- Permissions
+
+-->
+
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
 
@@ -8,7 +21,20 @@
 	-- :email
 	-- :password
 	-- :password_confirmation
-	-- f.submit	
-		
+	-- f.submit			
 	-->
+	
+	<%= f.label :full_name %>
+	<%= f.text_field :full_name %>
+	
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	
+	<%= f.label :password %>
+	<%= f.text_field :password %>
+	
+	<%= f.label :password_confirmation %>
+	<%= f.text_field :password_confirmation %>
+	
+	<%= f.submit "Sign Up", :class => "cta" %>	
 <% end %>

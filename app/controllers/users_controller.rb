@@ -1,4 +1,5 @@
-class UsersController < ApplicationController
+class UsersController < ApplicationController    
+  
   def new
     @user = User.new
   end
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
       # FOLLOWING ASCIICAST - THIS REDIRECT CAN BE CHANGED
       redirect_to root_url, :notice => "Signed up!"
     else
-      # Something failed in the save - render the signup form again
+      # Save failed - render the signup form again
       render "new"
     end
   end
