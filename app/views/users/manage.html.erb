@@ -23,15 +23,34 @@ Description: Similar to sutro#overview, this provides an administrative overview
 
 <table>
 	
-	<tr>
-		<th>Name</th>
-		<th>Email</th>
-		<th>Permission Level</th>
-		<th>Actions</th>
-	</tr>
+	<% if (@users or @users.length == 0) %>	
+		<td>That's weird, there doesn't appear to be any existing users. Click <%= link_to "here", :action => "new" %> to add a new user!</td>		
+	<% else %>
+	
+		<tr>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Permission Level</th>
+			<th>Actions</th>
+		</tr>
 		
+		<% @users.each do |user| %>
+			<tr>
+				<td><%= @user.full_name %></td>
+				<td><%= @user.email %></td>
+				<td>No permissions yet</td>
+				<td>
+					<a href="#">Edit permissions</a>
+					&nbsp;
+					<a href="#">Delete</a>
+				</td>
+			</tr>
+		<% end %>
+		
+	<% end %>
+			
 	<!------- FAKE HTML ROW FOR STYLING. DELETE! ------->	
-	<tr>
+	<!--<tr>
 		<td>Andrew Berls</td>
 		<td>andrew.berls@gmail.com</td>
 		<td>Administrator</td>
@@ -40,6 +59,6 @@ Description: Similar to sutro#overview, this provides an administrative overview
 			&nbsp;
 			<a href="#">Delete</a>
 		</td>
-	</tr>
+	</tr>-->
 	
 </table>

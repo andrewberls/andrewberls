@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   
   def manage
     @page_title = "Manage Users | SutroCMS"
+    @users = User.all
   end
 
 end
