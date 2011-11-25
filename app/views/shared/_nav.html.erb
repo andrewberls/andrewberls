@@ -16,7 +16,7 @@ in order to determine whether or not to render a link styled as .current.
 
 
 <%#-----  NEW POST -----%>
-<% if params[:action] == "new" %>
+<% if params[:action] == "new" && params[:controller] == "sutro" %>
 	<li><%= link_to "New Post", {:action => "new"},  :class => "current"  %></li>
 <% else %>
 	<li><%= link_to "New Post", {:controller => "sutro", :action => "new"} %></li>
