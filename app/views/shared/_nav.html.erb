@@ -37,7 +37,7 @@ in order to determine whether or not to render a link styled as .current.
 	<li><%= link_to "Manage Users", {:controller => "users", :action => "manage"} %></li>
 <% end %>
 
-<% if @current_user %>
-	<p>Logged in as <%= @current_user.full_name %></p>
+<% if current_user %>
+	<p>Logged in as <%= current_user.email %></p>
 	<p><%= link_to "Log Out", logout_path %></p>
 <% end %>
