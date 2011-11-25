@@ -5,36 +5,37 @@ Description: This view provides the actual form to add a new user, specifying:
 	- Full name
 	- Email
 	- Password
-	- Password confirmation
-	-- User will be able to change later
-	- Permissions
+	- Password confirmation (user will be able to change later)
+	- Permission level
 
 -->
 
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-
-<%= form_for @user do |f| %>
-	<!-- 
-	- Display errors, if any. (outside form?)
-	- Need fields for
-	-- :email
-	-- :password
-	-- :password_confirmation
-	-- f.submit			
-	-->
-	
-	<%= f.label :full_name %>
-	<%= f.text_field :full_name %>
-	
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-	
-	<%= f.label :password %>
-	<%= f.text_field :password %>
-	
-	<%= f.label :password_confirmation %>
-	<%= f.text_field :password_confirmation %>
-	
-	<%= f.submit "Sign Up", :class => "cta" %>	
-<% end %>
+<div class="wrapper">
+	<h2>Add New User</h2>
+		
+	<%= form_for @user do |f| %>
+		<!-- 
+		- Display errors, if any. (outside form?)
+		- Need fields for
+		-- :email
+		-- :password
+		-- :password_confirmation
+		-- f.submit			
+		-->
+		
+		<%= f.label :full_name %>
+		<%= f.text_field :full_name %>
+		
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		
+		<%= f.label :password %>
+		<%= f.text_field :password %>
+		
+		<%= f.label :password_confirmation %>
+		<%= f.text_field :password_confirmation %>
+		
+		<%= f.submit "Add User", :class => "cta submit" %>	
+		
+	<% end %>
+</div>

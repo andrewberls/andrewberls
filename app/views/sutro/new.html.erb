@@ -5,8 +5,9 @@
 		<%= f.label :title %>
 		<%= f.text_field :title %>
 		<%= f.label :body, "Post" %>
-		<%= f.text_area :body %>		
-		<%= submit_tag "Publish", :id=>"submit", :class => "cta" %>		
+		<%= f.text_area :body %>
+		<%# submit_tag "Publish", :id=>"submit", :class => "cta" %>			
+		<%= f.submit "Publish", :class => "cta submit" %>		
 		<a class="cta" id="cancel" href="/overview">Cancel</a>
 	<% end %>
 </div>
