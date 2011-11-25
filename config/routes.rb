@@ -14,7 +14,8 @@ Andrewberls::Application.routes.draw do
   match "/destroy"   => "sutro#destroy", :via => :get
     
   # USER URLS (PUBLIC & INTERNAL)
-  match "/signup" => "users#new", :as => "signup"  
+  match "/users/manage" => "users#manage", :as => "manage_users"
+  match "/users/new"    => "users#new", :as => "new_user"  
 
   # RESOURCE MATCHING
   resources :users
