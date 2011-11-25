@@ -1,6 +1,9 @@
-class UsersController < ApplicationController    
+class UsersController < ApplicationController
+  
+  layout 'sutro'    
   
   def new
+    @page_title = "Add New User | SutroCMS"       
     @user = User.new
   end
 
@@ -13,6 +16,10 @@ class UsersController < ApplicationController
       # Save failed - render the signup form again
       render "new"
     end
+  end
+  
+  def manage
+    @page_title = "Manage Users | SutroCMS"
   end
 
 end
