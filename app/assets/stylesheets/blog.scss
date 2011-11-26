@@ -91,14 +91,15 @@ section {
   padding-bottom: 50px;
 }
 
-.flash {  
-  background-color: #F9F9F9;  
-  border: 1px solid $gray_text;
-  color: $emphasis;
+.flash {
+  background-color: #C2D983;
+  border: 1px solid #587605; 
+  color: #587605;  
   display: inline-block;
   margin-bottom: 15px;
   padding: 7px 15px;
-  
+  text-align: center;
+  width: 700px;
 }
 
 .post {

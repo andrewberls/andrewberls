@@ -16,12 +16,14 @@ $cancel_light: #FFDEDE; //FFD3D3
 //---------- TEMPORARY DEV STYLES
 
 //td     {border-top: 1px solid red; border-bottom: 1px solid red;}
-//#content {background-color: #0FC;}
+//body     { background-color: red !important;    }
+//#sidebar { background-color: orange !important;  }
+//#content { background-color: #0FC !important;    }
 
 //---------- TEMPORARY DEV STYLES
 
 body {  
-  background-color: #EDEDED;
+  background-color: #EDEDED;  
   font-family: Arial, Verdana, Geneva, sans-serif;
   font-size: 16px;
 }
