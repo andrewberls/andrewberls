@@ -3,11 +3,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   
   def check_auth
-    if !session[:user_id]
-      redirect_to login_path
-    else
-      nil
-    end
+    unless session[:user_id]
+      redirect_to login_path  
+    end  
   end
   
   private
