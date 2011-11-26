@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      # FOLLOWING ASCIICAST - THIS REDIRECT CAN BE CHANGED
+      # REDIRECT/NOTICE CAN BE CHANGED
       redirect_to root_url, :notice => "Signed up!"
     else
       # Save failed - render the signup form again
