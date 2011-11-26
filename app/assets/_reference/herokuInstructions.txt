@@ -9,4 +9,8 @@ heroku rake db:migrate
 heroku open
 
 
-Develop/commit to git, and then git push heroku
+Develop/commit to git, and then git push heroku master
+
+
+
+http://andrewberls.heroku.com
