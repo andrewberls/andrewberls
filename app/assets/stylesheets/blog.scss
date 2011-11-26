@@ -55,7 +55,12 @@ h4 {
     color: $med_blue;
   }
 }
-
+h5 {
+  font-weight: bold;
+}
+h6 {  
+  text-decoration: underline;
+}
 p {
   color: #525252;        
   font-size: 0.9em;
@@ -123,9 +128,16 @@ section {
     color: #666; // BLEND 666 AND $GRAY_TEXT------------------------ 
     font-weight: bold;
     margin-right: 4px;
-    padding: 2px 7px; 
-   
-     
+    padding: 2px 7px;       
+  }
+  
+  // Explicit element styling for within posts  
+  ul {
+    list-style: square;
+        
+    li {
+      margin-left: 30px;
+    }
   }
 }
 
