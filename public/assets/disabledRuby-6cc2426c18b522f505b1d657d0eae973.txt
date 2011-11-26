@@ -1,0 +1,40 @@
+OLD TITLE DISPLAY
+<title><%= content_for?(:title) ? content_for(:title) : 'SutroCMS' %></title>
+<% content_for :title, "Dashboard | SutroCMS" %>
+<% content_for :title, "New Post | SutroCMS" %>
+<% content_for :title, "Edit Post | SutroCMS" %>
+<% content_for :title, "Overview | SutroCMS" %>
+
+---------------------------------------------------------------------
+
+DISPLAY POSTS
+<%= @posts.each do |post| %>
+	<div class="post">
+		<h4><%= post.title %></h4>
+		<p class="date"><%= post.CREATED_AT %></p>
+		<p><%= post.body %></p>
+	</div>
+<% end %>
+
+---------------------------------------------------------------------
+
+NEW POST FORM
+<%= form_for(:post, :url => {:action => 'create'}) do |f| %>
+	<%= f.label(:post, :title => "Post Title") %>
+	<%= f.text_field(:title) %>
+	
+	<%= f.label(:post, :title => "Post Title") %>
+	<%= f.text_field(:title) %>
+	
+	<%= submit_tag("Create Post") %>
+
+<% end %>
+
+---------------------------------------------------------------------
+
+FOR TAGS
+-Tags stored as a single comma-delimited string
+>> "1,24,53,6,23,6,5".split(",").collect{ |s| s.to_i }
+=> [1, 24, 53, 6, 23, 6, 5]
+
+Use to split into individual items and then display as formatted items with post
