@@ -6,7 +6,7 @@ in order to determine whether or not to render a link styled as .current.
 -->
 
 <%# BETTER WAY TO HANDLE CONDITIONAL NAV LINKS? %>
-							
+			
 <%#----- DASHBOARD -----%>
 <% if params[:action] == "index" %>
 	<li><%= link_to "Dashboard", {:action => "index"},  :class => "current"  %></li>

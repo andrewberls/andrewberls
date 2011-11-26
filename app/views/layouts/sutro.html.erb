@@ -13,12 +13,13 @@
 <body>
 	
 	<div id="container">
-		<div id="sidebar">
-			<ul class="nav">
-				<%= render "shared/nav"	%>						
-			</ul>
-			
-		</div>
+		<% unless params[:controller] == "sessions" && params[:action] == "new" %>
+			<div id="sidebar">
+				<ul class="nav">
+					<%= render "shared/nav"	%>						
+				</ul>		
+			</div>
+		<% end %>
 		<div id="content">
 			<% flash.each do |name,msg| %>
 				<%= content_tag :div, msg, :class => "flash"%>
