@@ -92,7 +92,6 @@ section {
 }
 
 .flash {  
-  
   background-color: #F9F9F9;  
   border: 1px solid $gray_text;
   color: $emphasis;
@@ -114,6 +113,7 @@ section {
   overflow: visible;   
   padding: 10px 15px;
   width: 700px;
+  word-wrap: break-word;
   
   .tag {
     @include rounded(3px);
