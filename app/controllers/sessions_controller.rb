@@ -10,10 +10,10 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       # REDIRECT/NOTICE CAN BE CHANGED
-      redirect_to "/overview", :notice => "Logged in!"
+      redirect_to "/overview"
     else
       # Authentication failed - render the form again
-      flash.now.alert = "Invalid email or password"
+      flash.now.alert = "Invalid email or password."
       render "new"
     end
   end
