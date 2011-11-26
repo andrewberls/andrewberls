@@ -109,11 +109,27 @@ a {
       }
     }      
   }
+  
+  p {
+    color: $gray_text;
+    font-size: 0.8em;
+    margin-top: 15px;
+    text-align: center;
+  }
 }
 
 #content {   
   overflow: hidden;  
   padding: 30px 15px 30px 15px;
+}
+
+.flash {
+  background-color: $cancel_light;
+  border: 1px solid #FF8181;
+  color: $cancel;
+  padding: 7px 10px;
+  margin-bottom: 15px;
+  width: 788px;
 }
 
 .wrapper {  
