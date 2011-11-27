@@ -21,6 +21,11 @@ unless request.post?
 	return false
 end
 ---------------------------------------------------------------------
+CONDITIONAL LOGIN CSS
+<% if params[:controller] == "sessions" && params[:action] == "new" %>
+	<%= stylesheet_link_tag "login" %>
+<% end %>
+---------------------------------------------------------------------	
 DISPLAY POSTS
 <%= @posts.each do |post| %>
 	<div class="post">
