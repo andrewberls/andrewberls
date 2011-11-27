@@ -13,7 +13,7 @@ Andrewberls::Application.routes.draw do
   match "/update"    => "sutro#update", :via => :post
   match "/destroy"   => "sutro#destroy", :via => :get
     
-  # USER URLS (PUBLIC & INTERNAL)
+  # USER URLS
   match "/users"         => "users#manage"
   match "/users/manage"  => "users#manage", :as => "manage_users"
   match "/users/new"     => "users#new", :as => "new_user" 
