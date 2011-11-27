@@ -3,6 +3,9 @@ Andrewberls::Application.routes.draw do
   # PUBLIC URLS
   match "/blog"     => "posts#list"  
   match "/blog/:id" => "posts#show"
+    # /blog/:id
+    # /blog/post/:id
+    # /post/:id
   
   # SUTRO PAGES AND INTERNAL CONTROLLER METHODS
   match "/dashboard" => "sutro#index"  
@@ -14,7 +17,8 @@ Andrewberls::Application.routes.draw do
   match "/destroy"   => "sutro#destroy", :via => :get
     
   # USER URLS
-  match "/users"         => "users#manage"
+  match "/users"         => redirect("/users/manage")
+    # Redirect or plain matching? I don't like the controller-independent syntax.
   match "/users/manage"  => "users#manage", :as => "manage_users"
   match "/users/new"     => "users#new", :as => "new_user" 
   match "/users/destroy" => "users#destroy", :via => :get
