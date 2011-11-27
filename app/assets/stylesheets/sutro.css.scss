@@ -232,6 +232,12 @@ th {
   padding: 7px 10% 7px 12px; 
 }
 
+tr {
+  &.odd {
+    background-color: #f2f2f2;
+  }  
+}
+
 td {  
   padding: 15px;
 }

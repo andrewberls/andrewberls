@@ -14,7 +14,7 @@
 		</tr>
 		
 		<% @posts.each do |post| %>
-		<tr>
+		<tr class="<%= cycle('odd', 'even') %>">
 			<td><%= raw post.title %></td>
 			<td>Andrew Berls</td>
 			<td><%= post.created_at %></td>
