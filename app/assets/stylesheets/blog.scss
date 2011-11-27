@@ -24,7 +24,6 @@ $bg_2: #EAEAEA;
 
 
 @mixin rounded($rad) {
-  //$rad: 10px;
   -webkit-border-radius: $rad;
   -moz-border-radius: $rad;
   border-radius: $rad;
@@ -125,7 +124,8 @@ section {
     @include rounded(3px);
     
     background-color: #C4C4C4; // BACKGROUND NEEDS TO BE SLIGHLY LIGHTER, COLOR MIGHT BE GOOD    
-    color: #666; // BLEND 666 AND $GRAY_TEXT------------------------ 
+    color: #666;
+    font-size: 0.9em;
     font-weight: bold;
     margin-right: 4px;
     padding: 2px 7px;       
@@ -197,8 +197,8 @@ section {
       font-weight: bold;
     }
     
-    &.active {
-      background-color: $dark_gray; // blend $dark_gray and $gray_text?
+    &.active {      
+      background-color: #444;
       color: white;
       font-weight: bold;      
     }
