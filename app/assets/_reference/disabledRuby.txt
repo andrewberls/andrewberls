@@ -6,7 +6,21 @@ OLD TITLE DISPLAY
 <% content_for :title, "Overview | SutroCMS" %>
 
 ---------------------------------------------------------------------
+sutro_ideas.txt
+pluralize(@subjects.size, 'subject') records found
 
+
+tr class=cycle('odd','even',)
+
+
+config/initializers/date_formats.rb
+
+
+unless request.post?
+	redirect to action => list
+	return false
+end
+---------------------------------------------------------------------
 DISPLAY POSTS
 <%= @posts.each do |post| %>
 	<div class="post">
