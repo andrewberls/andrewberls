@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<title><%= @page_title %></title>
+	<title><%= @page_title || "SutroCMS" %></title>
 	<%= stylesheet_link_tag "reset" %>
 	<%= stylesheet_link_tag "sutro" %>	
 	<%= favicon_link_tag %>	
@@ -13,6 +13,7 @@
 <body>
 	
 	<div id="container">
+		
 		<% unless params[:controller] == "sessions" && params[:action] == "new" %>
 			<div id="sidebar">
 				<ul class="nav">
@@ -20,6 +21,7 @@
 				</ul>		
 			</div>
 		<% end %>
+		
 		<div id="content">
 			<% flash.each do |name,msg| %>
 				<%= content_tag :div, msg, :class => "flash"%>

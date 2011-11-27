@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   layout 'sutro'
   
   def new
+    @page_title = "Login | SutroCMS"
   end
 
   def create
@@ -27,4 +28,5 @@ class SessionsController < ApplicationController
       redirect_to "/blog", :notice => "Logged out!"
     end
   end
+  
 end
