@@ -1,6 +1,4 @@
-Andrewberls::Application.routes.draw do
-      
-  get "sessions/new"
+Andrewberls::Application.routes.draw do        
 
   # PUBLIC URLS
   match "/blog"     => "posts#list"  
@@ -16,10 +14,15 @@ Andrewberls::Application.routes.draw do
   match "/destroy"   => "sutro#destroy", :via => :get
     
   # USER URLS (PUBLIC & INTERNAL)
-  match "/users/manage" => "users#manage", :as => "manage_users"
-  match "/users/new"    => "users#new", :as => "new_user"  
-  match "/login"        => "sessions#new", :as => "login"
-  match "/logout"       => "sessions#destroy", :as => "logout"
+  match "/users"         => "users#manage"
+  match "/users/manage"  => "users#manage", :as => "manage_users"
+  match "/users/new"     => "users#new", :as => "new_user" 
+  match "/users/destroy" => "users#destroy", :via => :get
+  
+  # SESSION URLS
+  match "/login"         => "sessions#new", :as => "login"
+  match "/logout"        => "sessions#destroy", :as => "logout"
+  #get "sessions/new" # Controller generated - not sure if I still need it
 
   # RESOURCE MATCHING
   resources :users

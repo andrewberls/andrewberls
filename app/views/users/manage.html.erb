@@ -36,13 +36,18 @@ Description: Similar to sutro#overview, this provides an administrative overview
 		
 		<% @users.each do |user| %>
 			<tr>
-				<td><%= user.full_name %></td>
-				<td><%= user.email %></td>
-				<td>No permissions yet</td>
 				<td>
-					<a href="#">Edit permissions</a>
-					&nbsp;
-					<a href="#">Delete</a>
+					<% if !user.full_name || user.full_name == nil %>
+						<p style="color:red;">Error Detected</p>
+					<% else %>
+						<%= user.full_name %>
+					<% end %>					
+				</td>
+				<td><%= user.email %></td>
+				<td>_No permissions yet_</td>
+				<td>
+					<%= link_to("Edit", {:action => 'edit', :id => user.id}) %> 
+					<%= link_to "Delete", {:action => 'destroy', :id => user.id}, confirm: "This will completely remove the user! Are you sure?" %>
 				</td>
 			</tr>
 		<% end %>
