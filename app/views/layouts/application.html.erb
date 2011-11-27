@@ -21,7 +21,7 @@
 				<li><a href="#footer" class="footer">resources</a></li>
 				<!-- LINK TO BLOG UNLESS ALREADY ON -->
 				<% if params[:controller] != "posts" %>
-				<li><%= link_to "blog", {:controller=>"posts", :action=>"list"}, :class=>"blog" %></li>
+					<li><%= link_to "blog", {:controller=>"posts", :action=>"list"}, :class=>"blog" %></li>
 				<% end %>
 			</ul>			
 		</div>
@@ -63,16 +63,7 @@
 	</section>
 	
 	<section id="copyright">
-		<div class="wrapper">
-			<p class="left">Copyright © 2011 Andrew Berls. This site was built using
-			<a href="http://rubyonrails.org/">Ruby on Rails</a>,
-			<a href="http://www.w3.org/TR/xhtml1/">XHTML</a>,
-			<a href="http://www.css3.info/">CSS3</a>, and 
-			<a href="http://jquery.com/">jQuery</a>
-			</p>
-			<p class="right"><a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.andrewberls.com">valid HTML</a> | 
-				<a href="#">valid CSS</a></p>
-		</div>
+		<%= render "shared/copyright" %>
 	</section>
 		
 	<%= javascript_include_tag "functions" %>

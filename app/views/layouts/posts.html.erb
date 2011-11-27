@@ -13,18 +13,22 @@
 <body>
 	<div id="container">
 	<section id="header">
-		<div class="wrapper">			
+		<!-- 
+			This could be made into a partial only if consistent with application.	
+		-->
+		<div class="wrapper">		
 			<a href="/"><h2>Andrew <span>Berls</span></h2></a>
-			<ul class="nav">													
-				<li><a href="#portfolio" class="portfolio">portfolio</a></li>
+			<ul class="nav">												
+				<li><a href="/#portfolio" class="portfolio">portfolio</a></li>
 				<!--<li><a href="#about" class="about">about me</a></li>-->
-				<li><a href="#contact" class="contact">get in touch</a></li>
-				<li><a href="#footer" class="footer">resources</a></li>
-			</ul>			
+				<li><a href="/#contact" class="contact">get in touch</a></li>
+				<li><a href="/#footer" class="footer">resources</a></li>
+			</ul>		
 		</div>
 	</section>
 
 	<section id="main">
+		
 		<div class="wrapper">
 			
 			<div class="sidebar">
@@ -34,22 +38,16 @@
 	
 			<%= yield %>
 					
-		</div>			
+		</div>
+				
 	</section>
 	
 	<section id="copyright">				
-		<div class="wrapper">
-			<p class="left">Copyright © 2011 Andrew Berls. This site was built using
-			<a href="http://rubyonrails.org/">Ruby on Rails</a>,
-			<a href="http://www.w3.org/TR/xhtml1/">XHTML</a>,
-			<a href="http://www.css3.info/">CSS3</a>, and 
-			<a href="http://jquery.com/">jQuery</a>
-			</p>
-			<p class="right"><a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.andrewberls.com">valid HTML</a> | 
-				<a href="#">valid CSS</a></p>									
-		</div>
+		<%= render "shared/copyright" %>
 	</section>
+	
 	</div> <!-- #container -->
+	
 <%= javascript_include_tag "functions" %>
 
 <script type="text/javascript">
