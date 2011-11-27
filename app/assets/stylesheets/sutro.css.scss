@@ -141,8 +141,8 @@ a {
   -webkit-box-shadow: 0 0 6px #000;
   box-shadow: 0 0 6px #252525;
   color: $gray_text;
-  float: left; 
-  //overflow: auto;
+  float: left;
+  //margin: 0 auto; overflow: auto; //Center the box on the screen
   padding: 20px;
   padding-right: 25px;
   width: 768px;
