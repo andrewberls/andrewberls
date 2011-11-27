@@ -49,7 +49,9 @@ a {
 }
 
 #container {  
-  clear: none;  
+  background: url(../images/bg.jpg) repeat-y;
+  clear: none;
+  min-height: 100%;
   overflow: auto;  
 }
 
@@ -61,11 +63,7 @@ a {
   width: 12.5em;
   
   ul {
-    margin-top: 30px;
-    
-    &:last-child {
-      //border-bottom: 1px solid red;
-    }  
+    margin-top: 30px;     
     
     li {
     
@@ -148,6 +146,14 @@ a {
   padding: 20px;
   padding-right: 25px;
   width: 768px;
+}
+
+#login {
+  // Using IDs to overwrite classes, oooh yeah
+  float: none;
+  margin: 20px auto;  
+  overflow: auto;
+  width: 550px;
 }
 
 label {
