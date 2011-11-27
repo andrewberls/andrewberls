@@ -4,10 +4,7 @@
 	<meta charset="utf-8" />
 	<title><%= @page_title %></title>
 	<%= stylesheet_link_tag "reset" %>
-	<%= stylesheet_link_tag "sutro" %>
-	<% if params[:controller] == "sessions" && params[:action] == "new" %>
-		<%= stylesheet_link_tag "login" %>
-	<% end %>
+	<%= stylesheet_link_tag "sutro" %>	
 	<%= favicon_link_tag %>	
 	<%= javascript_include_tag :application %>
 	<%= csrf_meta_tag %>
