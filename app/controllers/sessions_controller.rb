@@ -4,6 +4,11 @@ class SessionsController < ApplicationController
   
   def new
     @page_title = "Login | SutroCMS"
+    
+    # Redirect if already logged in
+    if session[:user_id]
+      redirect_to "/overview"
+    end
   end
 
   def create
