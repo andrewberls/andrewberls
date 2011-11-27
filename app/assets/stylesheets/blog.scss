@@ -98,6 +98,11 @@ section {
   width: 700px;
 }
 
+#back {
+  color: $emphasis;
+  padding-bottom: 15px;
+}
+
 .post {
   @include rounded(10px);
   
