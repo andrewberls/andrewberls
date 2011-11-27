@@ -27,4 +27,7 @@ Andrewberls::Application.routes.draw do
   
   root :to => 'home#index'
   
+  # ROUTE ALL PAGE NOT FOUND TO HOME URL
+  match "*a" => redirect("/")
+  
 end
