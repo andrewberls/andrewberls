@@ -37,7 +37,7 @@ Description: Similar to sutro#overview, this provides an administrative overview
 		<% @users.each do |user| %>
 			<tr>
 				<td>
-					<% if !user.full_name || user.full_name == nil %>
+					<% if !user.full_name || user.full_name.empty? %>
 						<p style="color:red;">Error Detected</p>
 					<% else %>
 						<%= user.full_name %>
