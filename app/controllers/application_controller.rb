@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   
   def check_auth
+    # unless @current_user (session forgery?)
     unless session[:user_id]
       redirect_to login_path  
     end    
