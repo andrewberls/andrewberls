@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def check_auth
     unless session[:user_id]
       redirect_to login_path  
-    end  
+    end    
   end
   
   private
