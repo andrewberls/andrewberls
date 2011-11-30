@@ -6,7 +6,7 @@ Description: This view provides the actual form to add a new user, specifying:
 	- Email
 	- Password
 	- Password confirmation (user will be able to change later)
-	- Permission level
+	- Permission level (when implemented)
 
 -->
 
@@ -25,14 +25,6 @@ Description: This view provides the actual form to add a new user, specifying:
 	<% end %>
 	
 	<%= form_for(:user, :url=>{:controller => "users", :action => 'create'}) do |f| %>
-		<!-- 
-		- Display errors, if any. (outside form?)
-		- Need fields for
-		-- :email
-		-- :password
-		-- :password_confirmation
-		-- f.submit			
-		-->
 		
 		<%= f.label :full_name %>
 		<%= f.text_field :full_name %>
