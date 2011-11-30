@@ -24,7 +24,7 @@ Description: This view provides the actual form to add a new user, specifying:
 		</div>	
 	<% end %>
 	
-	<%= form_for @user do |f| %>
+	<%= form_for(:user, :url=>{:controller => "users", :action => 'create'}) do |f| %>
 		<!-- 
 		- Display errors, if any. (outside form?)
 		- Need fields for
