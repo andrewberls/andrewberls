@@ -11,7 +11,7 @@ $dark_blue: #1f769c;
 $green: #6F9606;
 $green_light: #d3e5a3;
 $cancel: #FF1919; //FF1919
-$cancel_light: #FFDEDE; //FFD3D3
+$cancel_light: #FFEDED; //ffdede
 
 //---------- TEMPORARY DEV STYLES
 
@@ -130,7 +130,7 @@ a {
   padding: 7px 10px;
   margin: 0 auto;
   margin-bottom: 15px;
-  width: 788px;
+  width: 578px;
 }
 
 .error_messages {
@@ -226,6 +226,7 @@ textarea {
   float: left;
   
   &:hover {    
+    // $GREEN_LIGHT IS TOO DARK -----------------------------------------------------------------
     background-color: $green_light;
     color: #5C7C04;    
     border: 1px solid $green;
@@ -240,6 +241,7 @@ textarea {
   &:hover {
     background-color: $cancel_light;
     border: 1px solid #FF8181;
+    text-decoration: none;
   }
 }
 
