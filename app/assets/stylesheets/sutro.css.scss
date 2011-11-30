@@ -133,6 +133,25 @@ a {
   width: 788px;
 }
 
+.error_messages {
+  background-color: #ffeded;
+  border: 1px solid $cancel;
+  //color: $emphasis;
+  color: $cancel;
+  margin-bottom: 15px;
+  padding: 5px;
+  
+  h2 {
+    color: inherit;
+    font-size: 1.2em;
+  }
+  
+  ul {
+    list-style: square;
+    margin-left: 30px;
+  }
+}
+
 .wrapper {  
   background-color: #F9F9F9; 
   -webkit-border-radius: 10px;
