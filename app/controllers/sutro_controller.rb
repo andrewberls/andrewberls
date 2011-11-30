@@ -1,4 +1,6 @@
-class SutroController < ApplicationController    
+class SutroController < ApplicationController
+  
+  # WHERE IS THE BEFORE FILTER?
   
   #----- GENERAL
   def index # Dashboard method
