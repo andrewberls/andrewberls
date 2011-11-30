@@ -278,6 +278,7 @@ section {
   }
 }
 
+//-- IMAGE SLIDER AND THUMBNAILS
 .slider {  
   float: left;    
   position: relative;
@@ -381,6 +382,7 @@ section {
   //max-width: 60.75em; // 972 / 16 = 60.75 
 }
 
+//-- CONTACT FORM
 form {
   background-color: #F9F9F9;  
   @include shadow(0,0,6,0,#252525);
@@ -445,6 +447,7 @@ form {
   }
 }
 
+//-- BACK TO TOP LINK
 #top {  
   color: $gray_text;
   position: absolute;
