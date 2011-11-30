@@ -2,29 +2,33 @@ class UsersController < ApplicationController
   
   layout 'sutro'    
   
+  before_filter :check_auth, :accept => [:new, :manage]
+  
   #----- CREATE
   def new
     # Display form to add a new user
-    check_auth
+    #check_auth
     @page_title = "Add New User | SutroCMS"       
     @user = User.new
   end
 
   def create
     @user = User.new(params[:user])
+    
     if @user.save
-      # REDIRECT/NOTICE CAN BE CHANGED
-      render "new"
+      # REDIRECT/NOTICE CAN BE CHANGED      
+      #render "new"
+      redirect_to manage_users_path
       flash.now.alert = "Signed up!"
-    else
+    else      
       # Save failed - render the signup form again
-      render "new"
+      render "new"      
     end
   end
   
   #----- READ
   def manage
-    check_auth
+    #check_auth
     @page_title = "Manage Users | SutroCMS"
     @users = User.all
   end

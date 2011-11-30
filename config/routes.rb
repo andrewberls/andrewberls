@@ -20,10 +20,11 @@ Andrewberls::Application.routes.draw do
   match "/users"         => redirect("/users/manage")
     # Redirect or plain matching? I don't like the controller-independent syntax.
   match "/users/manage"  => "users#manage", :as => "manage_users"
-  match "/users/new"     => "users#new", :as => "new_user" 
+  match "/users/new"     => "users#new", :as => "new_user"
+  match "/users/create"  => "users#create", :via => :post
   match "/users/destroy" => "users#destroy", :via => :get
   
-  # SESSION URLS
+  # SESSION URLS  
   match "/login"         => "sessions#new", :as => "login"
   match "/logout"        => "sessions#destroy", :as => "logout"
   #get "sessions/new" # Controller generated - not sure if I still need it

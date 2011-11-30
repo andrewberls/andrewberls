@@ -13,14 +13,15 @@ class SessionsController < ApplicationController
 
   def create
     user  = User.authenticate(params[:email], params[:password])
+    
     if user
       session[:user_id] = user.id
       # REDIRECT/NOTICE CAN BE CHANGED
       redirect_to "/overview"
     else
       # Authentication failed - render the form again
-      flash.now.alert = "Invalid email or password."
-      render "new"
+      flash.now.alert = "Invalid email or password."      
+      redirect_to login_path, :notice => "Invalid email or password."  
     end
   end
   
