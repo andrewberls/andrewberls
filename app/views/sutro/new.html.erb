@@ -1,7 +1,7 @@
 <div class="wrapper">
 	<h2>Create New Post</h2>
 	
-	<% if @post.errors.any? %>
+	<% if @post && @post.errors.any? %>
 		<div class="error_messages">
 			<h2>Invalid Submission</h2>
 			<ul>

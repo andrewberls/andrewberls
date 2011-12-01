@@ -44,7 +44,7 @@ Description: Similar to sutro#overview, this provides an administrative overview
 					<% end %>					
 				</td>
 				<td><%= user.email %></td>
-				<td>_No permissions yet_</td>
+				<td><span style="color: orange;">_No permissions yet_</span></td>
 				<td>
 					<%= link_to("Edit", {:action => 'edit', :id => user.id}) %> 
 					<%= link_to "Delete", {:action => 'destroy', :id => user.id}, confirm: "This will completely remove the user! Are you sure?" %>

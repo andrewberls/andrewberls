@@ -1,0 +1,33 @@
+<div class="wrapper">
+	<h2>Edit User</h2>
+	
+	<% if @user && @user.errors.any? %>
+		<div class="error_messages">
+			<h2>Invalid Submission</h2>
+			<ul>
+				<% for message in @user.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>	
+	<% end %>
+	
+	<%= form_for(:user, :url=>{:action => 'update', :id => @user.id}) do |f| %>
+	
+		<%= f.label :full_name %>
+		<%= f.text_field :full_name %>
+		
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+		
+		<%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation %>
+		
+		<%= f.submit "Update User", :class => "cta submit" %>
+		<%= link_to "Cancel", {:action => "manage"}, {:class => "cta", :id => "cancel"} %>		
+		
+	<% end %>
+</div>

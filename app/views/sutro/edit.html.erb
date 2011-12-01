@@ -1,12 +1,23 @@
 <div class="wrapper">
 	<h2>Edit Post</h2>
+	
+	<% if @post && @post.errors.any? %>
+		<div class="error_messages">
+			<h2>Invalid Submission</h2>
+			<ul>
+				<% for message in @post.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>	
+	<% end %>
 		
 	<%= form_for(:post, :url=>{:action => 'update', :id => @post.id}) do |f| %>		
 		<%= f.label :title %>
 		<%= f.text_field :title %>
 		<%= f.label :body, "Post" %>
 		<%= f.text_area :body %>
-		<%= submit_tag "Update", :id=>"submit", :class => "cta" %>				
-		<a class="cta" id="cancel" href="/overview">Cancel</a>
+		<%= submit_tag "Update", :class => "cta submit" %>
+		<%= link_to "Cancel", {:action => "overview"}, {:class => "cta", :id => "cancel"} %>		
 	<% end %>	
 </div>

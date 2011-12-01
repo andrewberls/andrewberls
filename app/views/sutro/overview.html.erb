@@ -20,12 +20,17 @@
 			<td><%= post.created_at %></td>
 			<td>
 				<% if post.tags == nil %>			
-					No tags
+					<!-- No tags -->
+					<span style="color: orange;">_No tags yet_</span>
 				<% else %>
+					<!-- 
+						EVENTUALLY THIS WILL NEED TO BE A COMMA SEPARATED LIST OF LINKS 
+						EACH LINK WILL LEAD TO AN ADMINISTRATIVE LIST OF POSTS WITH THAT TAG
+					-->
 					<% post.tags %>
 				<% end %>
 			</td>
-			<td>Published</td>
+			<td><span style="color: orange;">_Published [no status yet]_</span></td>
 			<td>
 				<%= link_to("Edit", {:action => 'edit', :id => post.id}) %> 
 				<%= link_to "Delete", {:action => 'destroy', :id => post.id}, confirm: "Are you sure you want to delete this post?" %> 
