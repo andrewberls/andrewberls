@@ -1,16 +1,15 @@
 class SutroController < ApplicationController
   
-  # WHERE IS THE BEFORE FILTER?
+  # Check authentication for on public-facing actions
+  before_filter :check_auth, :accept => [:index, :new, :overview, :edit]
   
   #----- GENERAL
-  def index # Dashboard method
-    check_auth
+  def index # Dashboard method   
     @page_title = "Dashboard | SutroCMS"
   end
   
   #----- CREATE  
-  def new # Display new record form
-    check_auth
+  def new # Display new record form    
     @page_title = "New Post | SutroCMS"
   end
   
@@ -30,17 +29,15 @@ class SutroController < ApplicationController
   # Posts controller has public list and show methods
   # Sutro provides administrative view only
   
-  def overview # Administrative list of posts
-    check_auth
+  def overview # Administrative list of posts    
     @page_title = "Overview | SutroCMS"
-    # Set instance variable to all posts
+    # Instance variable set to all posts
     # This will need to be paginated later   
     @posts = Post.order("id DESC")   
   end  
     
   #----- UPDATE  
-  def edit # Display edit record form
-    check_auth
+  def edit # Display edit record form    
     @page_title = "Edit Post | SutroCMS"
     # Form fields prefilled with values from instance variable passed to view
     @post = Post.find(params[:id])

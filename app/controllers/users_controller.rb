@@ -6,8 +6,7 @@ class UsersController < ApplicationController
   
   #----- CREATE
   def new
-    # Display form to add a new user
-    #check_auth
+    # Display form to add a new user    
     @page_title = "Add New User | SutroCMS"       
     @user = User.new
   end
@@ -27,8 +26,7 @@ class UsersController < ApplicationController
   end
   
   #----- READ
-  def manage
-    #check_auth
+  def manage    
     @page_title = "Manage Users | SutroCMS"
     @users = User.all
   end
