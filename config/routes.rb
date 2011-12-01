@@ -17,11 +17,13 @@ Andrewberls::Application.routes.draw do
   match "/destroy"   => "sutro#destroy", :via => :get
     
   # USER URLS
-  match "/users"         => redirect("/users/manage") # Redirect or plain matching? I don't like the controller-independent syntax.
-  match "/users/manage"  => "users#manage", :as => "manage_users"
-  match "/users/new"     => "users#new", :as => "new_user"
-  match "/users/create"  => "users#create", :via => :post
-  match "/users/destroy" => "users#destroy", :via => :get
+  match "/users"           => redirect("/users/manage") # Redirect or plain matching? I don't like the controller-independent syntax.  
+  match "/users/new"       => "users#new", :as => "new_user"
+  match "/users/create"    => "users#create", :via => :post
+  match "/users/manage"    => "users#manage", :as => "manage_users"
+  match "/users/edit/:id"  => "users#edit"
+  match "/users/update"    => "users#update", :via => :post
+  match "/users/destroy"   => "users#destroy", :via => :get
   
   # SESSION URLS
   match "/sessions/new"  => redirect("/login")
@@ -34,7 +36,7 @@ Andrewberls::Application.routes.draw do
   
   root :to => 'home#index'
   
-  # ROUTE ALL PAGE NOT FOUND TO HOME URL
+  # ROUTE ALL PAGE NOT FOUND TO HOME URL. DESIRABLE BEHAVIOR?
   match "*a" => redirect("/")
   
 end
