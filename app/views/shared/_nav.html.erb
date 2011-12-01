@@ -38,6 +38,6 @@ in order to determine whether or not to render a link styled as .current.
 <% end %>
 
 <% if current_user %>
-	<p>Logged in as <%= current_user.email %></p>
+	<p>Logged in as <%= current_user.full_name %></p>
 	<p><%= link_to "Log Out", logout_path %></p>
 <% end %>
