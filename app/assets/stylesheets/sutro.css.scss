@@ -16,11 +16,30 @@ $cancel_light: #FFEDED; //ffdede
 //---------- TEMPORARY DEV STYLES
 
 //td     {border-top: 1px solid red; border-bottom: 1px solid red;}
-//body     { background-color: red !important;    }
-//#sidebar { background-color: orange !important;  }
-//#content { background-color: #0FC !important;    }
+#container { background-image: none   !important; 
+             background-color: yellow !important; }
+#sidebar   { background-color: orange !important; }
+#content   { background-color: #0FC   !important; }
+.wrapper   { background-color: pink   !important; 
+                   box-shadow: none   !important; 
+                border-radius: 0px    !important; }
 
 //---------- TEMPORARY DEV STYLES
+
+//----- LIB MIXINS
+@mixin border_radius($rad) {
+    -webkit-border-radius: #{$rad}px;
+    -moz-border-radius: #{$rad}px;
+    border-radius: #{$rad}px;
+}
+
+@mixin box_shadow($horizOffset: 0, $vertOffset: 0, $blurDist: 0, $spreadDist: 0, $color: #000) {  
+  -moz-box-shadow:    #{$horizOffset}px #{$vertOffset}px #{$blurDist}px #{$spreadDist}px #{$color};
+  -webkit-box-shadow: #{$horizOffset}px #{$vertOffset}px #{$blurDist}px #{$spreadDist}px #{$color};
+  box-shadow:         #{$horizOffset}px #{$vertOffset}px #{$blurDist}px #{$spreadDist}px #{$color};
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=2, Direction=225, Color='#{$color}')";
+  filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#{$color}');       
+}
 
 body {  
   background-color: #EDEDED;  
@@ -56,7 +75,7 @@ a {
 }
 
 #sidebar {
-  background-color: #C4C4C4; //dfdfdf
+  background-color: #C4C4C4;
   clear: none;
   float: left;   
   min-height: 500px;    
@@ -68,7 +87,7 @@ a {
     li {
     
       a {
-        background-color: #f9f9f9;  //ECECEC        
+        background-color: #f9f9f9;        
         background-image: linear-gradient(left , #F9F9F9 88%, #DFDFDF 100%);
         background-image: -o-linear-gradient(left , #F9F9F9 88%, #DFDFDF 100%);
         background-image: -moz-linear-gradient(left , #F9F9F9 88%, #DFDFDF 100%);
@@ -152,13 +171,9 @@ a {
 }
 
 .wrapper {  
-  background-color: #F9F9F9; 
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;    
-  -moz-box-shadow: 0 0 6px #000;
-  -webkit-box-shadow: 0 0 6px #000;
-  box-shadow: 0 0 6px #252525;
+  background-color: #F9F9F9;
+  @include border_radius(10);  
+  @include box_shadow(0,0,6,0,#000); 
   color: $gray_text;
   float: left;
   //margin: 0 auto; overflow: auto; //Center the box on the screen

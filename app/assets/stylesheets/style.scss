@@ -54,13 +54,12 @@ $bg_2: #EAEAEA;
   background: linear-gradient(#{$start}, #{$end});
 }
 
-@mixin shadow($horizOffset: 0, $vertOffset: 0, $blurDist: 0, $spreadDist: 0, $color: #000) {  
+@mixin box_shadow($horizOffset: 0, $vertOffset: 0, $blurDist: 0, $spreadDist: 0, $color: #000) {  
   -moz-box-shadow:    #{$horizOffset}px #{$vertOffset}px #{$blurDist}px #{$spreadDist}px #{$color};
   -webkit-box-shadow: #{$horizOffset}px #{$vertOffset}px #{$blurDist}px #{$spreadDist}px #{$color};
   box-shadow:         #{$horizOffset}px #{$vertOffset}px #{$blurDist}px #{$spreadDist}px #{$color};
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=2, Direction=225, Color='#{$color}')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#{$color}');
-        
+  filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#{$color}');       
 }
 
 @mixin ease_out($time: 1) {
@@ -229,7 +228,7 @@ section {
   .wrapper {    
     background-color: #F9F9F9;        
     @include border_radius(10);
-    @include shadow(0,0,6,0,#252525);
+    @include box_shadow(0,0,6,0,#252525);
     margin-top: 80px; //50px
     margin-bottom: 85px;   
     padding: 30px 0 60px;      
@@ -299,7 +298,7 @@ section {
        width: 942px;
            
        img {        
-        @include shadow(-2,2,6,1,#a3a3a3);        
+        @include box_shadow(-2,2,6,1,#a3a3a3);        
        }
        
        .text {
@@ -327,7 +326,7 @@ section {
       float: left;
       height: 200px;
       width: 275px;
-      @include shadow(-2,2,6,1,#a3a3a3);
+      @include box_shadow(-2,2,6,1,#a3a3a3);
       
       
       &:hover {
@@ -353,7 +352,7 @@ section {
   .wrapper {    
     background-color: #F9F9F9;  
     @include border_radius(10);
-    @include shadow(0,0,6,0,#000);     
+    @include box_shadow(0,0,6,0,#000);     
     margin-top: 80px; //50px
     margin-bottom: 85px;   
     padding: 30px 25px 60px;      
@@ -383,7 +382,7 @@ section {
 //-- CONTACT FORM
 form {
   background-color: #F9F9F9;  
-  @include shadow(0,0,6,0,#252525);
+  @include box_shadow(0,0,6,0,#252525);
   overflow: hidden;
   margin: 0 auto;
   padding: 50px 40px 60px;
