@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   
   layout 'sutro'    
   
+  # Check authentication for on public-facing actions
   before_filter :check_auth, :accept => [:new, :manage]
   
   #----- CREATE
@@ -32,7 +33,21 @@ class UsersController < ApplicationController
   end
   
   #----- UPDATE
-  # -- To be added later
+  def edit # Display edit record form    
+    @page_title = "Edit User | SutroCMS"
+    # Form fields prefilled with values from instance variable passed to view
+    @user = User.find(params[:id])
+  end
+  
+  def update
+    @user = User.find(params[:id])    
+    if @user.update_attributes(params[:user])
+      redirect_to manage_users_path
+    else
+      # Update fails - redisplay the form
+      render('edit')
+    end
+  end
   
   #----- DELETE
   def destroy # Destroy record
