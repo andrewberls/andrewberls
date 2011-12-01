@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
   
   def check_auth
     # unless @current_user (session forgery?)
-    unless session[:user_id]
-      redirect_to login_path  
-    end    
+    #unless session[:user_id]
+    #  redirect_to login_path  
+    #end    
   end
   
   private
