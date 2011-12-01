@@ -2,8 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
   
-  def check_auth
-    # unless @current_user (session forgery?)
+  def check_auth    
     unless session[:user_id]
       redirect_to login_path  
     end    
