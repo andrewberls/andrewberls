@@ -56,3 +56,10 @@ class UsersController < ApplicationController
   end
 
 end
+
+=begin
+  USER PERMISSIONS MANAGED AS FOLLOWS:
+    0: Administrator
+    1: Developer
+    2: Author    
+=end
