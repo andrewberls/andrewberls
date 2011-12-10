@@ -42,3 +42,4 @@ build/config/buildinfo.properties
 
 app/assets/_reference/designScreen.png
 config/database.yml
+tmp/cache/*
