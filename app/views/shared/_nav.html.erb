@@ -1,9 +1,10 @@
-<!-- 
-	
-This partial loads the Sutro sidebar. The conditional logic inspects the controller and and action from the params hash
-in order to determine whether or not to render a link styled as .current.
-	
--->
+<%
+=begin
+
+Description: This partial loads the Sutro sidebar. The conditional logic inspects the controller and and action from the params hash in order to determine whether or not to render a link styled as .current.
+
+=end
+%>
 
 <%# BETTER WAY TO HANDLE CONDITIONAL NAV LINKS? %>
 			
@@ -37,7 +38,10 @@ in order to determine whether or not to render a link styled as .current.
 	<li><%= link_to "Manage Users", {:controller => "users", :action => "manage"} %></li>
 <% end %>
 
+
+<%#----- LOGGED IN AS "USERNAME" -----%>
 <% if current_user %>
+	<%# MAKE FULL NAME A LINK TO USER EVENTUALLY %>
 	<p>Logged in as <%= current_user.full_name %></p>
 	<p><%= link_to "Log Out", logout_path %></p>
 <% end %>
