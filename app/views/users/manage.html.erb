@@ -8,13 +8,6 @@ Description: Similar to sutro#overview, this provides an administrative overview
 
 - Add a new user (adminstrative action only)
 -- users/new    => users#new
-
-- Full name
-- Email
-- Password
-- Password confirmation
--- User will be able to change later
-- Permissions
 	
 -->
 
@@ -24,7 +17,7 @@ Description: Similar to sutro#overview, this provides an administrative overview
 <table>
 	
 	<% if !@users || @users.length == 0 %>	
-		<td>That's weird, there doesn't appear to be any existing users. Click <%= link_to "here", :action => "new" %> to add a new user!</td>		
+		<td>That's weird, there doesn't appear to be any existing users. This is an error that should probably be fixed by an installation script. Anyways, click <%= link_to "here", :action => "new" %> to add a new user!</td>		
 	<% else %>
 	
 		<tr>
@@ -35,7 +28,7 @@ Description: Similar to sutro#overview, this provides an administrative overview
 		</tr>
 		
 		<% @users.each do |user| %>
-			<tr>
+			<tr class="<%= cycle('odd', 'even') %>">
 				<td>
 					<% if !user.full_name || user.full_name.empty? %>
 						<p style="color:red;">Error Detected</p>
@@ -46,30 +39,19 @@ Description: Similar to sutro#overview, this provides an administrative overview
 				<td><%= user.email %></td>
 				<td>
 					<% if !user.permissions %>
-						<span style="color: red;">Eek! This user has no permissions.</span>					
+						<span style="color: red;">Eek! Permissions not initialized.</span>						
 					<% else %>
-						<span style="color: green;"><%= user.permissions %></span>	
+						<%= render_permissions(user.permissions) %>
 					<% end %>
 				</td>
 				<td>
-					<%= link_to("Edit", {:action => 'edit', :id => user.id}) %> 
+					<%= link_to("Edit", {:action => 'edit', :id => user.id}) %>
+					&nbsp;
 					<%= link_to "Delete", {:action => 'destroy', :id => user.id}, confirm: "This will completely remove the user! Are you sure?" %>
 				</td>
 			</tr>
 		<% end %>
 		
-	<% end %>
-			
-	<!------- FAKE HTML ROW FOR STYLING. DELETE! ------->	
-	<!--<tr>
-		<td>Andrew Berls</td>
-		<td>andrew.berls@gmail.com</td>
-		<td>Administrator</td>
-		<td>
-			<a href="#">Edit permissions</a>
-			&nbsp;
-			<a href="#">Delete</a>
-		</td>
-	</tr>-->
+	<% end %>			
 	
 </table>
