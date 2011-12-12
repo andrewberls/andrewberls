@@ -21,14 +21,21 @@ $bg_1: #E2E1E1;
 $bg_2: #EAEAEA;
 
 //---------- TEMPORARY DEV
-//.wrapper  {border-left: 1px solid red; border-right: 1px solid red;}
-//h1        {border: 1px solid green;}
-//h2        {border: 1px solid orange;}
+/*
+.wrapper  {border-left: 1px solid red; border-right: 1px solid red;}
+#home .wrapper {
+  border: none !important;
+  box-shadow: none !important;
+  background-color: pink !important;
+}
+h1        {border: 1px solid green;}
+h2        {border: 1px solid orange;}
 //p         {border: 1px solid purple;}
-//ul.nav    {border: 1px solid yellow;}
-//.column   {border: 1px solid Turquoise;}
-//.twoCol     {background-color: orange;}
-//.threecol {background-color: #0fc;}
+ul.nav    {border: 1px solid yellow;}
+.column   {border: 1px solid Turquoise;}
+.twoCol     {background-color: orange;}
+.threecol {background-color: #0fc;}
+*/
 //---------- END TEMPORARY DEV
 
 // ----------
@@ -220,7 +227,7 @@ section {
   }  
 }
 
-#home {  
+#home {
   background-color: $blue;  
   border-top-color: $gray_text;
   border-bottom: 1px solid #EAEAEA;
@@ -228,35 +235,35 @@ section {
   .wrapper {    
     background-color: #F9F9F9;        
     @include border_radius(10);
-    @include box_shadow(0,0,6,0,#252525);
+    @include box_shadow(0,0,6,0,#252525); //0 0 3 0    
     margin-top: 80px; //50px
     margin-bottom: 85px;   
-    padding: 30px 0 60px;      
+    padding: 30px 0 60px;        
   }
   
   h4 {
     color: $emphasis;
     font-size: 1.2em;
     font-weight: bold;    
-    margin: 0 10px 15px;
+    margin: 0 10px 15px;    
   }
   p {
     color: #525252;        
     font-size: 0.9em;
-    margin: 0 10px;
+    margin: 0 10px;    
        
     span {
      font-weight: bold;    
      color: $emphasis;     
    }
             
-    &.title {
+    &.welcome {
         border-bottom: 1px solid #dadada;
         font-family: Verdana;
         font-size: 2em;
         font-weight: bold;
         line-height: 40px;
-        margin-left: 20px;
+        margin-left: 20px;        
         margin-bottom: 25px;
         padding-bottom: 25px;        
         

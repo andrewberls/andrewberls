@@ -9,27 +9,37 @@ $light_blue: #65C3EC;
 $dark_blue: #1f769c;
 
 $green: #6F9606;
-$green_light: #d3e5a3;
-$cancel: #FF1919; //FF1919
-$cancel_light: #FFEDED; //ffdede
+$green_light: #d3e5a3; // TOO DARK -------------------------------
+$cancel: #FF1919;
+$cancel_light: #FFEDED;
 
 //---------- TEMPORARY DEV STYLES
-/*
-#container { background-image: none   !important; 
-             background-color: yellow !important; }
-#sidebar   { background-color: orange !important; }
-#content   { background-color: #0FC   !important; }
-.wrapper   { background-color: pink   !important; 
-                   box-shadow: none   !important; 
-                border-radius: 0px    !important; }
-*/
+
+#container { 
+  background-image: none   !important; 
+  background-color: green !important; 
+}
+#sidebar { background-color: orange !important; }
+#content { background-color: #0FC   !important; }
+.wrapper {
+  background-color: pink !important; 
+  box-shadow: none       !important; 
+  border-radius: 0px     !important;
+}
+h1,h2,h3 { border: 1px solid red   !important; }
+table    { border: 1px solid green !important; }
+th {
+  border: none !important;
+  border-bottom: 1px solid brown !important;
+}
+
 //---------- TEMPORARY DEV STYLES
 
 //----- LIB MIXINS
 @mixin border_radius($rad) {
     -webkit-border-radius: #{$rad}px;
-    -moz-border-radius: #{$rad}px;
-    border-radius: #{$rad}px;
+    -moz-border-radius:    #{$rad}px;
+    border-radius:         #{$rad}px;
 }
 
 @mixin box_shadow($horizOffset: 0, $vertOffset: 0, $blurDist: 0, $spreadDist: 0, $color: #000) {  
@@ -172,7 +182,8 @@ a {
 .wrapper {  
   background-color: #F9F9F9;
   @include border_radius(10);  
-  @include box_shadow(0,0,6,0,#000); 
+  //@include box_shadow(0,0,6,0,#000);
+  @include box_shadow(0,0,2,0,#222);   
   color: $gray_text;
   float: left;
   //margin: 0 auto; overflow: auto; //Center the box on the screen
@@ -195,12 +206,10 @@ label {
   margin-bottom: 10px;
 }
 
-input[type=text],input[type=password], textarea {
-//input, textarea {
+input, textarea, select {
   clear: both;
   float: left;  
-  margin-bottom: 10px; 
-  //width: 80%;
+  margin-bottom: 10px;  
   width: 100%;
   
   &:focus {
@@ -208,8 +217,7 @@ input[type=text],input[type=password], textarea {
   }
 }
 
-input[type=text], input[type=password], input[type=select] {
-//input {
+input {
   font-size: 1.2em;
   height: 30px;
 }
@@ -219,6 +227,12 @@ textarea {
   height: 200px; 
   overflow: auto; // Remove scrollbar in IE
   resize: vertical;
+}
+
+select {
+  height: 2.3em;
+  margin-bottom: 15px;
+  width: 50%;  
 }
 
 .cta {
@@ -237,7 +251,11 @@ textarea {
 .submit {
   color: $green;
   clear: both;
-  float: left;
+  float: left;  
+  // Reset box model/font rules inherited from input generic
+  font-size: 0.8em;
+  height: auto;
+  width: auto;
   
   &:hover {    
     // $GREEN_LIGHT IS TOO DARK -----------------------------------------------------------------
@@ -279,6 +297,45 @@ tr {
   }  
 }
 
-td {  
+td {
   padding: 15px;
 }
+
+//-- DASHBOARD COLUMN LAYOUT
+.oneCol { //Test div to check padding
+  width: 100%;
+  background-color: green;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+
+.twoCol {
+  $bottom_margin: 20px;
+  
+  width: 49%; // Sort of hackety, but accidentally responsive! Yay!
+  min-height: 400px;
+  background-color: red;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  float: left;
+  
+  &:last-child {
+    background-color: yellow;
+    float: right; 
+    margin-right: 0;       
+  }
+  
+  .colContent {
+    background-color: brown;
+    color: white;
+    line-height: 1.4;
+    margin-bottom: $bottom_margin;
+    padding: 10px;
+  }
+  
+  table {    
+    margin-top: 0;
+    margin-bottom: $bottom_margin;
+  }
+}
+
