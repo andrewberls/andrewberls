@@ -1,30 +1,62 @@
-<h2 style="border: 1px solid purple;">Dashboard</h2>
+<h2>Dashboard</h2>
 
 <!--<div class="oneCol"></div>-->
 
 <div class="twoCol">
 	<div class="colContent">
 		<h3>Content Overview</h3>
-		<p>Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet </p>
+		<p>Total posts: <%= Post.all.length %></p>		
 	</div>
 	
 	<div class="colContent">
 		<h3>Recent Comments</h3>
-		<p>Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet </p>
+		<table id="comments" class="compact">
+			<tr>
+				<td><span class="italic">Steve Smith said: </span>"Your post is super crazy awes..." on <span class="postTitle"><a href="#">Post Title Goes Here</a></span></td>
+			</tr>
+			<tr>
+				<td>test comment one</td>
+			</tr>
+			<tr>
+				<td>test comment one</td>
+			</tr>
+			<tr>
+				<td>test comment one</td>
+			</tr>
+		</table>
 	</div>
 	
 </div>
 
 <div class="twoCol">
-	<table>
-		<tr><th>Drafts</th></tr>
-		<tr>
-			<td>No drafts found! (This feature doesn't exist)</td>
-		</tr>
-	</table>
+	<div class="colContent">
+		<h3>Drafts</h3>
+		<table id="drafts">			
+			<tr>
+				<td>No drafts found! (This feature doesn't exist)</td>
+			</tr>
+			<tr>
+				<td>Kidding, I found one</td>
+			</tr>
+		</table>
+	</div>
+	
 	
 	<div class="colContent">
 		<h3>User Activity</h3>
-		<p>Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet Lorem ipsum a sit amet </p>
+		<table id="activity" class="compact">
+			<tr>
+				<td>test post one</td>
+			</tr>
+			<tr>
+				<td>test post one</td>
+			</tr>
+			<tr>
+				<td>test post one</td>
+			</tr>
+			<tr>
+				<td>test post one</td>
+			</tr>
+		</table>
 	</div>
 </div>

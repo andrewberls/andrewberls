@@ -14,7 +14,7 @@ $cancel: #FF1919;
 $cancel_light: #FFEDED;
 
 //---------- TEMPORARY DEV STYLES
-
+/*td
 #container { 
   background-image: none   !important; 
   background-color: green !important; 
@@ -26,13 +26,14 @@ $cancel_light: #FFEDED;
   box-shadow: none       !important; 
   border-radius: 0px     !important;
 }
-h1,h2,h3 { border: 1px solid red   !important; }
+//h1,h2,h3 { border: 1px solid red   !important; }
 table    { border: 1px solid green !important; }
 th {
   border: none !important;
   border-bottom: 1px solid brown !important;
 }
-
+td {color: black;}
+*/
 //---------- TEMPORARY DEV STYLES
 
 //----- LIB MIXINS
@@ -312,30 +313,72 @@ td {
 .twoCol {
   $bottom_margin: 20px;
   
-  width: 49%; // Sort of hackety, but accidentally responsive! Yay!
-  min-height: 400px;
-  background-color: red;
+  //background-color: red;
+  float: left;
+  //min-height: 400px;  
   margin-right: 10px;
   margin-bottom: 10px;
-  float: left;
+  
+  width: 49%; // Sort of hackety, but accidentally responsive! Yay!
   
   &:last-child {
-    background-color: yellow;
+    //background-color: yellow;
     float: right; 
     margin-right: 0;       
   }
   
-  .colContent {
-    background-color: brown;
-    color: white;
+  .colContent {    
+    background-color: #F9F9F9;   
     line-height: 1.4;
-    margin-bottom: $bottom_margin;
-    padding: 10px;
+    margin-bottom: $bottom_margin;   
+    padding-bottom: 10px;       
+    
+    h3 {
+      background-color: #D9D9D9; //ccc
+      border-bottom: 1px solid #ccc;  
+      //color: pink;
+      margin-bottom: 10px;
+      padding: 2px 10px;         
+    }
+    
+    p {
+      margin: 0 10px;
+      //border: 1px solid orange;
+    }
   }
   
   table {    
-    margin-top: 0;
-    margin-bottom: $bottom_margin;
+    border: none;
+    margin: 0 0 $bottom_margin;
   }
+  
+  .compact {
+    //border: none;
+    
+    td {      
+      padding: 3px 10px;
+    }
+  }
+  
+  #overview {}
+  #comments {
+    font-size: 0.95em;
+    
+    .italic {
+      color: #6E6E6E;
+      font-style: italic;
+    }
+    .postTitle {
+      //font-weight: bold;
+    }
+  }
+  #drafts {
+    td {
+      border-top: 1px solid #CCC;
+      border-bottom: 1px solid #CCC;
+    }
+  }
+  #activity {}
+  
 }
 
