@@ -29,6 +29,9 @@ class UsersController < ApplicationController
   #----- READ
   def manage    
     @page_title = "Manage Users | SutroCMS"
+    
+    # SORT USERS BY PERMISSIONS ASC
+    # EX ADMINISTRATORS (0) ALWAYS AT TOP
     @users = User.all
   end
   
@@ -56,10 +59,3 @@ class UsersController < ApplicationController
   end
 
 end
-
-=begin
-  USER PERMISSIONS MANAGED AS FOLLOWS:
-    0: Administrator
-    1: Developer
-    2: Author    
-=end
