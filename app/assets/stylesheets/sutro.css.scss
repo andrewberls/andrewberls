@@ -34,6 +34,7 @@ th {
 }
 td {color: black;}
 */
+.todo {color: orange;}
 //---------- TEMPORARY DEV STYLES
 
 //----- LIB MIXINS
@@ -49,6 +50,18 @@ td {color: black;}
   box-shadow:         #{$horizOffset}px #{$vertOffset}px #{$blurDist}px #{$spreadDist}px #{$color};
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=2, Direction=225, Color='#{$color}')";
   filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#{$color}');       
+}
+
+@mixin header_gradient() {
+  // Non-generalized implementation for headers in dashboard tables.
+  // Exists purely for rule cleanliness.
+  background-image: linear-gradient(bottom, #D1D1D1 22%, #D9D9D9 69%);
+  background-image: -o-linear-gradient(bottom, #D1D1D1 22%, #D9D9D9 69%);
+  background-image: -moz-linear-gradient(bottom, #D1D1D1 22%, #D9D9D9 69%);
+  background-image: -webkit-linear-gradient(bottom, #D1D1D1 22%, #D9D9D9 69%);
+  background-image: -ms-linear-gradient(bottom, #D1D1D1 22%, #D9D9D9 69%);  
+  background-image: -webkit-gradient(linear,left bottom,left top,
+    color-stop(0.22, #D1D1D1),color-stop(0.69, #D9D9D9));
 }
 
 body {  
@@ -334,9 +347,9 @@ td {
     padding-bottom: 10px;       
     
     h3 {
-      background-color: #D9D9D9; //ccc
-      border-bottom: 1px solid #ccc;  
-      //color: pink;
+      background-color: #D9D9D9;      
+      @include header_gradient;                
+      border-bottom: 1px solid #ccc;      
       margin-bottom: 10px;
       padding: 2px 10px;         
     }
