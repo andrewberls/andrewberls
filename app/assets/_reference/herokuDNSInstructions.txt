@@ -1,0 +1,11 @@
+heroku addons:add custom_domains
+heroku domains:add www.andrewberls.com
+heroku domains:add andrewberls.com       [delete all with heroku domains:clear]
+
+
+
+BACKUP
+bluehost
+	Host Record: @
+	Points to: 69.89.31.231
+	TTL: 14400
