@@ -6,6 +6,7 @@ class SutroController < ApplicationController
   #----- GENERAL
   def index # Dashboard method   
     @page_title = "Dashboard | SutroCMS"
+    @posts = Post.all
   end
   
   #----- CREATE  
