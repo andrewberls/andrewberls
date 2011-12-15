@@ -3,7 +3,7 @@ function scrollTo(id) {
 	$('html,body').animate({scrollTop: $("#" + id).offset().top}, 'slow');
 }
 
-$('.nav a, #home a').click(function (event) {
+$('ul.nav a, #home a').click(function (event) {
 	if (!$(this).hasClass('blog')) {
 		event.preventDefault();
 		var id = $(this).attr('class');
@@ -37,14 +37,14 @@ $(document).ready(function () {
 	    });
 });
 
-$('.thumb a').click(function() {
+$('div.thumb a').click(function() {
 	$(this).addClass('active');
 });
 
 
 //----- IMAGE SLIDER ---//
 //-- Overflow scrolls by default - hide with JS
-$('.window').css('overflow', 'hidden');
+$('div.window').css('overflow', 'hidden');
 
 //Get width of the image, how many images there are, then determine the size of the image reel.
 var imageWidth = $('.window').width();
