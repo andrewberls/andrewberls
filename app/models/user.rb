@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  
   attr_accessible :full_name, :email, :password, :password_confirmation
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password # callback calls encrypt method before password is saved

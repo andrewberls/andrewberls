@@ -3,11 +3,20 @@ Andrewberls::Application.routes.draw do
   # PUBLIC URLS
   match "/blog"     => "posts#list"  
   match "/blog/:id" => "posts#show"
+    # Ideas for posts#show:
     # /blog/:id
     # /blog/post/:id
     # /post/:id
+    
+  # CONTACT URLS
+  #match '/contact' => 'contact#new', :as => 'contact', :via => :get
+  #match '/contact' => 'contact#create', :as => 'contact', :via => :post
+  match '/contact' => 'home#new', :as => 'contact', :via => :get
+  match '/contact' => 'home#create', :as => 'contact', :via => :post
   
   # SUTRO PAGES AND INTERNAL CONTROLLER METHODS
+  # Can this be consolidated into a resource?
+  # /dashboard and /overview are the only non HTTP verbs
   match "/dashboard" => "sutro#index"  
   match "/new"       => "sutro#new"
   match "/edit/:id"  => "sutro#edit"
@@ -16,8 +25,8 @@ Andrewberls::Application.routes.draw do
   match "/update"    => "sutro#update", :via => :post
   match "/destroy"   => "sutro#destroy", :via => :get
     
-  # USER URLS
-  match "/users"           => redirect("/users/manage") # Redirect or plain matching? I don't like the controller-independent syntax.  
+  # USER URLS  
+  match "/users"           => redirect("/users/manage") # I don't like the controller independence here
   match "/users/new"       => "users#new", :as => "new_user"
   match "/users/create"    => "users#create", :via => :post
   match "/users/manage"    => "users#manage", :as => "manage_users"
@@ -30,8 +39,8 @@ Andrewberls::Application.routes.draw do
   match "/login"         => "sessions#new", :as => "login"
   match "/logout"        => "sessions#destroy", :as => "logout"  
 
-  # RESOURCE MATCHING
-  resources :users
+  # RESOURCE MATCHING  
+  resources :users # How many redundant URLs does this enable me to get rid of?
   resources :sessions
   
   root :to => 'home#index'
