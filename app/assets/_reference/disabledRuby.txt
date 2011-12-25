@@ -57,3 +57,22 @@ FOR TAGS
 => [1, 24, 53, 6, 23, 6, 5]
 
 Use to split into individual items and then display as formatted items with post
+---------------------------------------------------------------------
+OLD HTML CONTACT FORM
+<form method="post" action="#">
+	<h2>Get in Touch</h2>
+	<p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
+	<label for="name">Name:</label>
+	<input type="text" name="name" id="name" value="Name" />									
+	
+	<label for="email">Email:</label>
+	<input type="text" name="email" id="email" value="Email" />
+	
+	<label for="message">Message:</label>
+	<textarea name="message" id="message" rows="8" cols="40">Message</textarea>
+	
+	<input type="submit" name="submit" value="Submit" class ="cta" id="submit"/>				
+</form>
+
+
+---------------------------------------------------------------------
