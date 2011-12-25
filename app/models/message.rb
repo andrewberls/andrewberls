@@ -9,6 +9,9 @@ class Message
   validates :name, :email, :message, :presence => true
   validates :email, :format => { :with => %r{.+@.+\..+} }, :allow_blank => true
   
+  # This code is copied from http://matharvard.ca/posts/2011/aug/22/contact-form-in-rails-3/  
+  # Why do initialize and persisted? exist?
+  
   def initialize(attributes = {})
     attributes.each do |name, value|
       send("#{name}=", value)
