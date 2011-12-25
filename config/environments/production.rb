@@ -13,6 +13,7 @@ Andrewberls::Application.configure do
   config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
+  config.assets.css_compressor = :yui
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
