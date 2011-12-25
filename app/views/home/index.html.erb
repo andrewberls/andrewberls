@@ -82,22 +82,25 @@
 	</section>
 	-->
 	<section id="contact">
-		<div class="wrapper">								
-												
-			<form method="post" action="index.php">
-				<h2>Get in Touch</h2>
+		<div class="wrapper">
+											
+			<!-- FLASH NOTICE NEEDS TO GO HERE -->			
+			
+			<%= form_for(@message, :url => contact_path) do |f| %>
+				<h2>Get in Touch (Rails)</h2>
 				<p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
-				<label for="name">Name:</label>
-				<input type="text" name="name" id="name" value="" />									
+				<%= f.label :name %>
+				<%= f.text_field :name, :value => "Name" %>
 				
-				<label for="email">Email:</label>
-				<input type="text" name="email" id="email" value="" />
+				<%= f.label :email %>
+				<%= f.text_field :email, :value => "Email" %>
 				
-				<label for="message">Message:</label>
-				<textarea name="message" id="message" rows="8" cols="40"></textarea>
+				<%= f.label :message %>
+				<%= f.text_area :message, :value => "Message", :rows => 8, :cols => 40 %>
 				
-				<input type="submit" name="submit" value="Submit" class ="cta" id="submit"/>				
-			</form>
+				<%= f.submit "Submit", {:class=> 'cta', :id => 'submit'} %>
+				
+			<% end %>										
 			
 			<a href="#header" id="top">Back to top</a>
 		</div>			
