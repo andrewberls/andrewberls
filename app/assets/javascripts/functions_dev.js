@@ -1,3 +1,8 @@
+//----- UTILITY FUNCTIONS ---//
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 //----- SCROLLING FOR HEADER NAVIGATION ---//
 function scrollTo(id) {
 	$('html,body').animate({scrollTop: $("#" + id).offset().top}, 'slow');
@@ -10,7 +15,7 @@ $('ul.nav a, #home a').click(function (event) {
 		scrollTo(id);
 		//return false;
 	}
-});	
+});
 $('#top').click(function (event) {
 	event.preventDefault();
 	scrollTo('header');
@@ -21,17 +26,17 @@ $(document).ready(function () {
 	$('input,textarea').focus(function () {
         if (this.value == this.defaultValue) {
         	this.value = '';
-    	}
+		}
     	if ($(this).hasClass('invalid')) {
     		$(this).removeClass('invalid');
     		$(this).val('');
     	}        
     });
     $('input,textarea').blur(function() {
-        if (this.value == ''){	        	
+        if (this.value == ''){
         	this.value = this.defaultValue;
         	$(this).removeClass('valid');
-    	} else {    		
+    	} else {
     		$(this).addClass('valid');
     	}
 	    });
@@ -56,15 +61,15 @@ var active = 1;
 $('.reel').css({'width' : reelWidth});
 
 function rotate(id) {
-	var offset = Math.abs(id-active),		
-		distance = imageWidth * offset;		
+	var offset = Math.abs(id-active),
+		distance = imageWidth * offset;
 	$('.reel').animate({
 		left: -distance
 	}, 550);
 }
 
 $('.thumb a').click(function() {
-	$('.thumb a').removeClass('active');		
+	$('.thumb a').removeClass('active');	
 	$(this).addClass("active");
 	var id = $(this).attr('rel');
 	rotate(id);
@@ -74,26 +79,31 @@ $('.thumb a').click(function() {
 
 //----- JS FORM VALIDATION ---//
 $('#submit').click(function() {
+	// Initialize variables
 	var name = $('#name'),
 		email = $('#email'),
 		message = $('#message'),
 		errors = false;
-		
-	if (!name.val()|| name.val() == "Name") {
-		name.addClass('invalid');
-		name.val('Please enter your name!');
-		errors = true;
-	}
-	if (!email.val()|| email.val() == "Email") {
-		email.addClass('invalid');
-		email.val('Please enter your email!');
-		errors = true;
-	}
-	if (!message.val()|| message.val() == "Message") {
-		message.addClass('invalid');
-		message.val('Please enter your message!');
-		errors = true;
+			
+	var fields = [name, email, message];
+	var fieldNames = ["name","email","message"];
+
+	/*
+	 * Loop through all of the submitted field values
+	 * If any of the values is nil or equivalent to its default value,
+	 * add an invalid class (red border/text),
+	 * change its value to an appropriate error message,
+	 * (these calls are chained together for efficiency),
+	 * and return false.
+	 */
+			
+	for(var i=0; i<fields.length; i++) {				
+		if(!fields[i].val() || fields[i].val() == capitalize(fieldNames[i])) {
+			fields[i].addClass('invalid').val('Please enter your ' + fieldNames[i] + "!");
+			errors = true;
+		}		
 	}
 	
-	if (errors) { return false; }
+	if (errors) { return false; } else return true;
+	
 });
