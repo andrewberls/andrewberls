@@ -23,18 +23,24 @@ $bg_2: #EAEAEA;
 //---------- TEMPORARY DEV
 /*
 .wrapper  {border-left: 1px solid red; border-right: 1px solid red;}
+h1        {border: 1px solid green !important;}
+h2        {border: 1px solid orange !important;}
+//p       {border: 1px solid purple !important;}
+ul.nav    {border: 1px solid yellow !important;}
+.column   {border: 1px solid Turquoise !important;}
+.twoCol     {background-color: orange !important;}
+
+// Home-Specific
 #home .wrapper {
   border: none !important;
   box-shadow: none !important;
-  background-color: pink !important;
+  //background-color: pink !important;
 }
-h1        {border: 1px solid green;}
-h2        {border: 1px solid orange;}
-//p         {border: 1px solid purple;}
-ul.nav    {border: 1px solid yellow;}
-.column   {border: 1px solid Turquoise;}
-.twoCol     {background-color: orange;}
-.threecol {background-color: #0fc;}
+.threeCol {
+  background-color: #0fc !important;
+  // The margins must be reduced along with making the wrapper narrower
+  margin: 0 15px !important;
+}
 */
 //---------- END TEMPORARY DEV
 
@@ -86,7 +92,7 @@ ul.nav    {border: 1px solid yellow;}
   cursor: pointer;
   padding: 5px 15px;
 }
-.msgBad, .msgGood {
+.msgBad, .msgGood, .msgDebug {
   border-radius: 6px;
   margin: 0 auto 30px;
   padding: 5px;
@@ -100,6 +106,10 @@ ul.nav    {border: 1px solid yellow;}
   background-color: #C2D983;
   border: 1px solid #587605;  
 }
+.msgDebug {
+  background-color: #FFCE32;
+  border: 1px solid #E8840E;
+}
 .twoCol {
   float: left;
   margin-right: 25px;
@@ -107,7 +117,7 @@ ul.nav    {border: 1px solid yellow;}
 }
 .threeCol {
   float: left;   
-  margin: 0 15px;  
+  margin: 0 15px;
   width: 30%;   
 }
 
