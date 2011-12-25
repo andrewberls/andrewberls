@@ -82,23 +82,28 @@
 	</section>
 	-->
 	<section id="contact">
-		<div class="wrapper">
-											
-			<!-- FLASH NOTICE NEEDS TO GO HERE -->			
+		<div class="wrapper">								
+									
+			<% if flash[:type] == "invalid" %>
+				<p class="msgBad"><%= flash[:msg] %></p>
+			<% elsif flash[:type] == "valid" %>
+				<p class="msgGood"><%= flash[:msg] %></p>
+			<% end %>
+			
 			
 			<%= form_for(@message, :url => contact_path) do |f| %>
 				<h2>Get in Touch (Rails)</h2>
 				<p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
 				<%= f.label :name %>
-				<%= f.text_field :name, :value => "Name" %>
+				<%= f.text_field :name, :value => "Name", :id => "name" %>
 				
 				<%= f.label :email %>
-				<%= f.text_field :email, :value => "Email" %>
+				<%= f.text_field :email, :value => "Email", :id => "email" %>
 				
 				<%= f.label :message %>
-				<%= f.text_area :message, :value => "Message", :rows => 8, :cols => 40 %>
+				<%= f.text_area :message, :value => "Message", :id => "message", :rows => 8, :cols => 40 %>
 				
-				<%= f.submit "Submit", {:class=> 'cta', :id => 'submit'} %>
+				<%= f.submit "Submit", {:class=> 'cta', :id => 'submit'} %>				
 				
 			<% end %>										
 			
