@@ -40,6 +40,6 @@ build/buildinfo.properties
 build/config/buildinfo.properties
 
 
-app/assets/_reference/designScreen.png
+config/application.rb
 config/database.yml
 tmp/cache/*
