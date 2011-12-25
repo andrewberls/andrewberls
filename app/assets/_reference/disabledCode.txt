@@ -76,3 +76,21 @@ OLD HTML CONTACT FORM
 
 
 ---------------------------------------------------------------------
+OLD JS FORM VALIDATION
+// If any field fails tests, errors set to true and false is returned
+if (!name.val()|| name.val() == "Name") {
+	name.addClass('invalid');
+	name.val('Please enter your name!');
+	errors = true;
+}
+if (!email.val()|| email.val() == "Email") {
+	email.addClass('invalid');
+	email.val('Please enter your email!');
+	errors = true;
+}
+if (!message.val()|| message.val() == "Message") {
+	message.addClass('invalid');
+	message.val('Please enter your message!');
+	errors = true;
+}
+	
