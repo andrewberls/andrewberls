@@ -23,9 +23,8 @@ class SessionsController < ApplicationController
       # REDIRECT/NOTICE CAN BE CHANGED
       redirect_to "/overview"
     else
-      # Authentication failed - render the form again
-      flash.now.alert = "Invalid email or password."      
-      redirect_to login_path, :notice => "Invalid email or password."  
+      # Authentication failed - render the form again      
+      redirect_to login_path, :notice => "Invalid email or password."     
     end
   end
   
