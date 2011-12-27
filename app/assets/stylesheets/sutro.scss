@@ -14,30 +14,41 @@ $cancel: #FF1919;
 $cancel_light: #FFEDED;
 
 //---------- TEMPORARY DEV STYLES
-/*td
+/*
 #container { 
   background-image: none   !important; 
   background-color: green !important; 
 }
 #sidebar { background-color: orange !important; }
 #content { background-color: #0FC   !important; }
-.wrapper {
+.wrapper, .recommendations ul {
   background-color: pink !important; 
   box-shadow: none       !important; 
   border-radius: 0px     !important;
 }
-//h1,h2,h3 { border: 1px solid red   !important; }
 table    { border: 1px solid green !important; }
 th {
   border: none !important;
   border-bottom: 1px solid brown !important;
 }
 td {color: black;}
-*/
-.todo {color: orange;}
-//---------- TEMPORARY DEV STYLES
 
-//----- LIB MIXINS
+h2 {background-color: orange !important; color: black !important;}
+label {background-color: blue !important; color: white !important;}
+input,textarea {border: 1px solid black !important;}
+.fieldDescription {background-color: red !important; color: yellow !important;}
+
+.cta {
+  background-color: yellow !important; 
+  border: 1px solid red !important;
+  border-radius: 0px !important;
+  color: black !important;  
+}
+*/
+
+//---------- END TEMPORARY DEV STYLES
+
+//----- LIB MIXINS/CLASSES
 @mixin border_radius($rad) {
     -webkit-border-radius: #{$rad}px;
     -moz-border-radius:    #{$rad}px;
@@ -63,6 +74,8 @@ td {color: black;}
   background-image: -webkit-gradient(linear,left bottom,left top,
     color-stop(0.22, #D1D1D1),color-stop(0.69, #D9D9D9));
 }
+
+.todo {color: orange;}
 
 body {  
   background-color: #EDEDED;  
@@ -196,14 +209,48 @@ a {
 .wrapper {  
   background-color: #F9F9F9;
   @include border_radius(10);  
-  //@include box_shadow(0,0,6,0,#000);
-  @include box_shadow(0,0,2,0,#222);   
+  @include box_shadow(0,0,2,0,#222); // 0 0 6 0 #000
   color: $gray_text;
   float: left;
-  //margin: 0 auto; overflow: auto; //Center the box on the screen
+  //margin: 0 auto; overflow: auto; //Center the box on the screen if desired
   padding: 20px;
   padding-right: 25px;
   width: 768px;
+}
+
+.fieldDescription {  
+  color: #aaa; //THIS NEEDS TO BE DARKER-----------------------------------------------------
+  float: left;
+  font-size: 0.8em;
+  font-style: italic;
+  margin-top: 2px;
+  margin-left: 5px;
+}
+
+.recommendations {  
+  clear: both;
+  font-size: 0.9em;
+  line-height: 1.4;  
+  
+  h4 {
+    color: #393335;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  ul {
+    background-color: #F9F9F9;
+    @include border_radius(10);  
+    @include box_shadow(0,0,2,0,#222); // 0 0 6 0 #000
+    display: inline-block;
+    list-style: disc;
+    margin-top: 15px;
+    padding: 10px;
+    
+    li {
+      margin-left: 25px;
+    }
+  }
 }
 
 #login {
@@ -223,7 +270,7 @@ label {
 input, textarea, select {
   clear: both;
   float: left;  
-  margin-bottom: 10px;  
+  margin-bottom: 10px; 
   width: 100%;
   
   &:focus {
@@ -250,44 +297,54 @@ select {
 }
 
 .cta {
+  // Verbosity ensures that input[submit] and ordinary link are consistent
   background: #F0F0F0;
   border: 1px solid #CCC;
   border-radius: 5px;
-  margin: 0;
+  float: left;
+  font-size: 0.9em;
+  margin: 0 0 0 10px;
   padding: 7px 10px;
   text-decoration: none;
+  width: auto;   
   
   &:hover {    
     cursor: pointer;
+    text-decoration: none;
   }
 }
 
+// Rest the left margin on the first button
+input.cta { margin-left: 0; }
+
 .submit {
   color: $green;
-  clear: both;
-  float: left;  
-  // Reset box model/font rules inherited from input generic
-  font-size: 0.8em;
-  height: auto;
-  width: auto;
   
   &:hover {    
-    // $GREEN_LIGHT IS TOO DARK -----------------------------------------------------------------
-    background-color: $green_light;
+    // $GREEN_LIGHT BACKGROUND IS TOO DARK -----------------------------------------------------------------
+    //background-color: $green_light;
     color: #5C7C04;    
     border: 1px solid $green;
   }
 }
 
+#save  {
+  // Uses inherited link coloring by default
+  
+  &:hover {
+    // $LIGHT_BLUE BACKGROUND IS TOO DARK -----------------------------------------------------------------
+    //background-color: $light_blue;
+    border: 1px solid $blue;    
+  }
+}
+
 #cancel {
   color: $cancel;
-  float: right;
-  font-size: 0.9em;  
+  float: right; 
   
   &:hover {
     background-color: $cancel_light;
-    border: 1px solid #FF8181;
-    text-decoration: none;
+    border: 1px solid #FF8181;    
   }
 }
 
