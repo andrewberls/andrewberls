@@ -30,7 +30,7 @@ ul.nav    {border: 1px solid yellow !important;}
 .column   {border: 1px solid Turquoise !important;}
 .twoCol     {background-color: orange !important;}
 
-// Home-Specific
+// Home Panel
 #home .wrapper {
   border: none !important;
   box-shadow: none !important;
@@ -41,6 +41,19 @@ ul.nav    {border: 1px solid yellow !important;}
   // The margins must be reduced along with making the wrapper narrower
   margin: 0 15px !important;
 }
+*/
+
+// Slider
+/*
+.slider {background-color: red !important;}
+.window {background-color: orange !important;}
+.reel   {background-color: yellow !important;}
+.frame  {  
+  &:first-child {background-color: green !important;}
+  background-color: blue !important;
+  &:last-child {background-color: purple !important;}
+}
+.text   {background-color: #0FC !important;}
 */
 //---------- END TEMPORARY DEV
 
