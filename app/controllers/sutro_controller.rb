@@ -4,9 +4,13 @@ class SutroController < ApplicationController
   before_filter :check_auth, :accept => [:index, :new, :overview, :edit]
   
   #----- GENERAL
-  def index # Dashboard method   
+  def index # Dashboard method
+    # FOR SAVED POSTS, SELECT ONLY POSTS WITH STATUS 0  
     @page_title = "Dashboard | SutroCMS"
     @posts = Post.all
+    # dev - status needs to be 0
+    @saved_posts = Post.where("status = 0")
+    
   end
   
   #----- CREATE  
@@ -24,7 +28,7 @@ class SutroController < ApplicationController
       # Save failed - redisplay form for user
       render('new')
     end
-  end
+  end    
   
   #----- READ
   # Posts controller has public list and show methods

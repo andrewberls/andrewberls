@@ -38,11 +38,7 @@ Description: Similar to sutro#overview, this provides an administrative overview
 				</td>
 				<td><%= user.email %></td>
 				<td>
-					<% if !user.permissions %>
-						<span style="color: red;">Eek! Permissions not initialized.</span>						
-					<% else %>
-						<%= render_permissions(user.permissions) %>
-					<% end %>
+					<%= render_permissions(user.permissions) %>					
 				</td>
 				<td>
 					<%= link_to("Edit", {:action => 'edit', :id => user.id}) %>

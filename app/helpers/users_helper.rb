@@ -8,7 +8,7 @@ module UsersHelper
       when 0 then "Adminstrator"
       when 1 then "Developer"     
       when 2 then "Author"        
-      else "Something is wrong here" 
+      else "Error - Permissions not initialized for this user." 
     end
     
   end
