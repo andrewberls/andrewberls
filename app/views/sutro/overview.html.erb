@@ -27,11 +27,16 @@
 					<!-- 
 						EVENTUALLY THIS WILL NEED TO BE A COMMA SEPARATED LIST OF LINKS 
 						EACH LINK WILL LEAD TO AN ADMINISTRATIVE LIST OF POSTS WITH THAT TAG
+						render_tags(post.tags)
+							Sample tag: "food,cooking,baking" (string)
+							Split by comma,	format tag and auto-generate link
 					-->
 					<% post.tags %>
 				<% end %>
 			</td>
-			<td><span style="color: orange;">_No status yet_</span></td>
+			<td>
+				<%= render_status(post.status) %>
+			</td>
 			<td>
 				<%= link_to("Edit", {:action => 'edit', :id => post.id}) %>
 				&nbsp;
