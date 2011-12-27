@@ -5,7 +5,7 @@
 <% @posts.each do |post| %>
 	<div class="post">
 		<h4><%= raw post.title %></h4>
-		<p class="date"><%= post.created_at %></p>
+		<p class="date"><%= render_sutro_time(post.created_at) %></p>
 		<p><%= raw post.body %></p>
 		
 		<!-- TEMPORARY STATIC TAGS FOR STYLING. REPLACE WITH CODE FROM DISABLEDRUBY.TXT -->		

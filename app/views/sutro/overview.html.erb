@@ -17,8 +17,7 @@
 		<tr class="<%= cycle('odd', 'even') %>">
 			<td><%= raw post.title %></td>
 			<td>Andrew Berls</td>
-			<%# TIMESTAMPS NEED FORMATTING! ----------------------------------------------- %>
-			<td><%= post.created_at %></td>
+			<td><%= render_sutro_time(post.created_at) %></td>
 			<td>
 				<% if post.tags == nil %>			
 					<!-- No tags -->
