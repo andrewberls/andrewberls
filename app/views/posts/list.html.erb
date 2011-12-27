@@ -1,5 +1,5 @@
-<% flash.each do |name,msg| %>
-	<%= content_tag :div, msg, :class => "flash"%>
+<% flash.each do |name,msg| %>	
+	<div class="flash"><%= msg %></div>
 <% end %>
 
 <% @posts.each do |post| %>
@@ -8,13 +8,14 @@
 		<p class="date"><%= post.created_at %></p>
 		<p><%= raw post.body %></p>
 		
-		<!-- TEMPORARY STATIC TAGS FOR STYLING. REPLACE WITH CODE FROM DISABLEDRUBY.TXT -->
+		<!-- TEMPORARY STATIC TAGS FOR STYLING. REPLACE WITH CODE FROM DISABLEDRUBY.TXT -->		
 		<a class="tag" href="#">rants</a>
 		<a class="tag" href="#">testing</a>			
 	</div>
 <% end %>
 
 <div class="pagination">
+	<!-- TEMPORARY STATIC PAGINATION FOR VISUALS. NEEDS TO BE DONE DYNAMICALLY -->	
 	<a href="#">&laquo;</a>
 	<a href="#">1</a>
 	<a href="#" class="active">2</a>
@@ -24,6 +25,6 @@
 	<a href="#">&raquo;</a>
 </div>
 
-<% if @posts.length > 4 %>				
+<% if @posts.length > 4 %>			
 	<a href="#header" id="top">Back to top</a>
 <% end %>

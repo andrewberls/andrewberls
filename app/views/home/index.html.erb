@@ -69,6 +69,8 @@
 		</div>
 	</section>
 	<!--
+		THIS SECTION SHOULD BE MOVED TO A SLIDER IN THE HOME PANEL
+		
 	<section id="about">
 		<div class="wrapper">			
 			<h2>Details</h2>
@@ -87,12 +89,13 @@
 			<% if flash[:type] == "invalid" %>
 				<p class="msgBad"><%= flash[:msg] %></p>
 			<% elsif flash[:type] == "valid" %>
-				<p class="msgGood"><%= flash[:msg] %></p>
+				<p class="msgGood"><%= flash[:msg] %></p>			
 			<% end %>
-			
-			
-			<%= form_for(@message, :url => contact_path) do |f| %>
-				<h2>Get in Touch (Rails)</h2>
+						
+			<%= form_for(@message, :url => contact_path) do |f| %>							
+				<!-- IDs are for JS validation hooks only -->
+		
+				<h2>Get in Touch</h2>
 				<p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
 				<%= f.label :name %>
 				<%= f.text_field :name, :value => "Name", :id => "name" %>

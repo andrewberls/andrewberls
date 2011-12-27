@@ -3,10 +3,18 @@
 <head>
 	<meta charset="utf-8" />
 	<title>AndrewBerls.com</title>
+	<%
+		# Is the stylesheet_link "application" master pipeline more efficient here?
+	%>	
 	<%= stylesheet_link_tag "reset" %>
 	<%= stylesheet_link_tag "style" %>
 	<%= favicon_link_tag %>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<%=
+		# Local copy of jquery for offline development
+		# This could also be conditionally loaded in production
+		# javascript_include_tag "jquery-dev" 
+	%>	
 </head>
 
 <body>
@@ -19,7 +27,10 @@
 				<!--<li><a href="#about" class="about">about me</a></li>-->
 				<li><a href="#contact" class="contact">get in touch</a></li>
 				<li><a href="#footer" class="footer">resources</a></li>
-				<!-- LINK TO BLOG UNLESS ALREADY ON -->
+				<%
+					# Link to blog unless already on
+					# This behavior can change (ex button always present)
+				%>	
 				<% if params[:controller] != "posts" %>
 					<li><%= link_to "blog", {:controller=>"posts", :action=>"list"}, :class=>"blog" %></li>
 				<% end %>
@@ -65,7 +76,7 @@
 	<section id="copyright">
 		<%= render "shared/copyright" %>
 	</section>
-		
+			
 	<%= javascript_include_tag "functions" %>
 	
 	<script type="text/javascript">
