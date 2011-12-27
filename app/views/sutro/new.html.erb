@@ -1,5 +1,6 @@
 <div class="wrapper">
-	<h2>Create New Post</h2>
+	<!-- Add options for pure links/images later  -->
+	<h2>Create New Text Post</h2>
 	
 	<% if @post && @post.errors.any? %>
 		<div class="error_messages">
@@ -17,9 +18,28 @@
 		<%= f.text_field :title %>
 		<%= f.label :body, "Post" %>
 		<%= f.text_area :body %>
-		<%# submit_tag "Publish", :id=>"submit", :class => "cta" %>			
-		<%= f.submit "Publish", :class => "cta submit" %>		
-		<a class="cta" id="cancel" href="/overview">Cancel</a>
+		<%= f.label :tags, "Tags (optional)" %>
+		<p class="fieldDescription">Enter a comma separated list of tags.</p>
+		<%= f.text_field :tags %>
+		<%
+			# TO DO - FIND OUT HOW BUTTONS CAN DETERMINE STATUS TO BE SAVED
+		%>
+		<%=
+			# Save with status 1	
+			f.submit "Publish", :class => "cta submit"
+		%>	
+		<%= 
+			# Save with status 0
+			link_to "Save for later", "#", {:class => "cta", :id => "save"}
+		%>						
+		<%= link_to "Cancel", overview_path, {:class => "cta", :id => "cancel"}%>
 	<% end %>
 </div>
 
+<div class="recommendations">
+	<ul>		
+		<h4>Style recommendations:</h4>
+		<li>Use h5 for section headings.</li>
+		<li>Use code>pre for code snippets (watch out for pre formatting).</li>
+	</ul>
+</div>
