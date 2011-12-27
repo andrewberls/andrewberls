@@ -9,8 +9,6 @@ Andrewberls::Application.routes.draw do
     # /post/:id
     
   # CONTACT URLS
-  #match '/contact' => 'contact#new', :as => 'contact', :via => :get
-  #match '/contact' => 'contact#create', :as => 'contact', :via => :post
   match '/contact' => 'home#new', :as => 'contact', :via => :get
   match '/contact' => 'home#create', :as => 'contact', :via => :post
   
@@ -19,7 +17,8 @@ Andrewberls::Application.routes.draw do
   # /dashboard and /overview are the only non HTTP verbs
   match "/dashboard" => "sutro#index"  
   match "/new"       => "sutro#new"
-  match "/edit/:id"  => "sutro#edit"
+  # match "/save" => "sutro#save", :as => "save"
+  match "/edit/:id"  => "sutro#edit", :as => "edit_post"
   match "/overview"  => "sutro#overview", :as => "overview"
   match "/create"    => "sutro#create", :via => :post
   match "/update"    => "sutro#update", :via => :post
