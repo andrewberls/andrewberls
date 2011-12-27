@@ -7,8 +7,7 @@ class SutroController < ApplicationController
   def index # Dashboard method
     # FOR SAVED POSTS, SELECT ONLY POSTS WITH STATUS 0  
     @page_title = "Dashboard | SutroCMS"
-    @posts = Post.all
-    # dev - status needs to be 0
+    @posts = Post.all    
     @saved_posts = Post.where("status = 0")
     
   end
@@ -49,8 +48,7 @@ class SutroController < ApplicationController
   end
   
   def update # Process edit record form
-    @post = Post.find(params[:id])
-    # Assumes post[_field_] structure
+    @post = Post.find(params[:id])    
     if @post.update_attributes(params[:post])
       #flash[:notice] = "Post created"
       redirect_to("/overview")
