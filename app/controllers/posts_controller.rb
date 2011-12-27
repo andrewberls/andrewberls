@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   
   #----- READ
   def list # Main blog page - will show paginated blog
+    # SELECT ONLY PUBLISHED POSTS - STATUS 1
     # @page_title = "string"   
     @posts = Post.order("id DESC")
   end

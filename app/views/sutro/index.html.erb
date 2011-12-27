@@ -9,12 +9,12 @@
 	<div class="colContent">
 		<h3>Recent Comments</h3>
 		<table id="comments" class="compact">
-			<!--<tr>
-				<td><span class="italic">Steve Smith said: </span>"Your post is super crazy awes..." on <span class="postTitle"><a href="#">Post Title Goes Here</a></span></td>
-			</tr>-->
 			<tr>
 				<td><span class="todo">This feature won't exist for a long time.</span></td>
-			</tr>			
+			</tr>
+			<tr>
+				<td><span class="italic">Steve Smith said: </span>"This comment is static" on <span class="postTitle"><a href="#">Post Title Goes Here</a></span></td>
+			</tr>						
 		</table>
 	</div>
 	
@@ -25,7 +25,19 @@
 		<h3>Drafts</h3>
 		<table id="drafts">			
 			<tr>
-				<td><span class="todo">Drafts don't exist yet, but are high priority.</span></td>
+				<td>
+					<% if @saved_posts %>
+						<% if @saved_posts.blank? %>
+							No saved posts
+						<% else %>
+							<% @saved_posts.each do |post| %>
+								<p><%=							
+									link_to post.title, edit_post_path(post.id) 
+								%></p>
+							<% end %>
+						<% end %>					
+					<% end %>
+				</td>
 			</tr>			
 		</table>
 	</div>
