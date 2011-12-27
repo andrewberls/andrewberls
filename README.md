@@ -8,9 +8,10 @@ The site is divided into two components: the portfolio page and the blog. The bl
 
 
 ### To Do
-* More multi-user support, e.g. permission levels
+* Finish implementing ability to save posts for later
+* Format timestamps on Sutro/public post listings
+* Finish implementing user permission levels
 * Pagination of administrative and public post listings
-* Dashboard view
-* Tag support
+* Add ability for other post formats, e.g. solo link or image
+* Post tag support
 * Post comments
-* Tighter validation on passwords, emails, etc
