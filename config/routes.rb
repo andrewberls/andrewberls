@@ -7,6 +7,7 @@ Andrewberls::Application.routes.draw do
     # /blog/:id
     # /blog/post/:id
     # /post/:id
+ # match "/tags/:tag" => "_action_" # For later. How to parameterize tag slug?
     
   # CONTACT URLS
   match '/contact' => 'home#new', :as => 'contact', :via => :get
