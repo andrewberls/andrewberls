@@ -28,7 +28,8 @@
 		%>	
 		<%= 
 			# Save with status 0
-			link_to "Save for later", "#", {:class => "cta", :id => "save"}
+			# SAVE_DRAFT DOES NOT TAKE EDITING INTO ACCOUNT - ERROR
+			#link_to "Save for later", save_draft_path, {:class => "cta", :id => "save"}
 		%>						
 		<%= link_to "Cancel", overview_path, {:class => "cta", :id => "cancel"}%>
 		
