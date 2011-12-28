@@ -17,7 +17,23 @@
 		<%= f.text_field :title %>
 		<%= f.label :body, "Post" %>
 		<%= f.text_area :body %>
-		<%= submit_tag "Update", :class => "cta submit" %>
-		<%= link_to "Cancel", {:action => "overview"}, {:class => "cta", :id => "cancel"} %>		
+		<%
+			# Old submit tag
+			# submit_tag "Update", :class => "cta submit"
+			# TO DO - FIND OUT HOW BUTTONS CAN DETERMINE STATUS TO BE SAVED
+		%>			
+		<%=
+			# Save with status 1	
+			f.submit "Update", :class => "cta submit"
+		%>	
+		<%= 
+			# Save with status 0
+			link_to "Save for later", "#", {:class => "cta", :id => "save"}
+		%>						
+		<%= link_to "Cancel", overview_path, {:class => "cta", :id => "cancel"}%>
+		
+		
+		
+				
 	<% end %>	
 </div>
