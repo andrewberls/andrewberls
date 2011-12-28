@@ -2,6 +2,10 @@
 	#container {background-image: none !important;}
 </style>
 
+<% flash.each do |name,msg| %>
+	<%= content_tag :div, msg, :class => "flash" %>
+<% end %>
+
 <div id="login" class="wrapper">
 	<%= form_tag sessions_path do %>
 	<h2>Log In</h2>
