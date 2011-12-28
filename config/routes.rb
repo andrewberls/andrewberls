@@ -1,7 +1,7 @@
 Andrewberls::Application.routes.draw do        
 
   # PUBLIC URLS
-  match "/blog"          => "posts#list"  
+  match "/blog"          => "posts#list", :as => "blog"
   match "/blog/post/:id" => "posts#show"    
  # match "/tags/:tag" => "_action_" # For later. How to parameterize tag slug?
     
@@ -13,11 +13,10 @@ Andrewberls::Application.routes.draw do
   # Can this be consolidated into a resource?
   # /dashboard and /overview are the only non HTTP verbs
   match "/dashboard" => "sutro#index"  
-  match "/new"       => "sutro#new"
-  match "/save"      => "sutro#save_draft", :as => "save_draft"
+  match "/new"       => "sutro#new", :as => "new_post"  
   match "/edit/:id"  => "sutro#edit", :as => "edit_post"
   match "/overview"  => "sutro#overview", :as => "overview"
-  match "/create"    => "sutro#create", :via => :post
+  match "/create"    => "sutro#create", :via => :post  
   match "/update"    => "sutro#update", :via => :post
   match "/destroy"   => "sutro#destroy", :via => :get
     
