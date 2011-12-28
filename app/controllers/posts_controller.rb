@@ -4,10 +4,9 @@ class PostsController < ApplicationController
   # This controller manages read-only public views
   
   #----- READ
-  def list # Main blog page - will show paginated blog
-    # SELECT ONLY PUBLISHED POSTS - STATUS 1
+  def list # Main blog page - will show paginated blog    
     # @page_title = "string"   
-    @posts = Post.order("id DESC")
+    @posts = Post.where("status = 1").order("id DESC")
   end
   
   def show # Show a single post
