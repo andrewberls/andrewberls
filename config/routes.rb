@@ -1,7 +1,7 @@
 Andrewberls::Application.routes.draw do        
 
   # PUBLIC URLS
-  match "/blog"     => "posts#list"  
+  match "/blog"          => "posts#list"  
   match "/blog/post/:id" => "posts#show"    
  # match "/tags/:tag" => "_action_" # For later. How to parameterize tag slug?
     
@@ -23,8 +23,7 @@ Andrewberls::Application.routes.draw do
     
   # USER URLS  
   match "/users"             => redirect("/users/manage"), :via => :get
-  match "/users/manage"      => "users#manage", :as => "manage_users" 
-  match "/users/:id/edit"    => "users#edit", :via => :post, :as => "edit_user"
+  match "/users/manage"      => "users#manage", :as => "manage_users"  
   match "/users/:id"         => "users#update", :via => :post
   match "/users/:id/destroy" => "users#destroy", :via => :get
   
@@ -40,13 +39,13 @@ Andrewberls::Application.routes.draw do
   match "/logout"        => "sessions#destroy", :as => "logout"  
 
   # RESOURCE MATCHING  
-  resources :users
+  resources :users, :except => :destroy
   resources :sessions
   
   root :to => 'home#index'
   
   # ROUTE ALL PAGE NOT FOUND TO HOME URL. DESIRABLE BEHAVIOR?
-  match "*a" => redirect("/")
+  #match "*a" => redirect("/")
   
 end
 =begin
