@@ -18,24 +18,22 @@ class SutroController < ApplicationController
   end
   
   def create # Process new record form    
-    @post = Post.new(params[:post])
-    #redirect_to({:action => "new"},{:notice => params[:post].to_s})
+    @post = Post.new(params[:post])    
 
     if params[:post][:status] == "draft"
-      @post.status = 0      
+      @post.status = 0
+      success_msg = "Post saved successfully."
     else
-      @post.status = 1         
+      @post.status = 1
+      success_msg = "Post created successfully."        
     end
 
-    if @post.status == 0 and @post.save
+    if @post.save
       redirect_to({:action => "overview"}, 
-        :flash => {:type => "action", :msg => "Post saved succesfully."})
-    elsif @post.save
-      redirect_to({:action => "overview"}, 
-        :flash => {:type => "action", :msg => "Post created succesfully."})
+        :flash => {:type => "action", :msg => success_msg})    
     else
       # Save failed - redisplay form for user
-      render :new # There should be a notice included here eventually
+      render :new
     end
 
   end   
@@ -65,7 +63,7 @@ class SutroController < ApplicationController
       #redirect_to(:action => 'show', :id = @post.id) # Redirect to the updated post
     else
       # Update fails - redisplay the form
-      render :edit # There should be a notice included here eventually
+      render :edit
     end
   end
   
