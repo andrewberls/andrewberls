@@ -41,7 +41,7 @@ Description: Similar to sutro#overview, this provides an administrative overview
 					<%= render_permissions(user.permissions) %>					
 				</td>
 				<td>
-					<%= link_to("Edit", {:action => 'edit', :id => user.id}) %>
+					<%= link_to("Edit", edit_user_path(user.id)) %>
 					&nbsp;
 					<%= link_to "Delete", {:action => 'destroy', :id => user.id}, confirm: "This will completely remove the user! Are you sure?" %>
 				</td>

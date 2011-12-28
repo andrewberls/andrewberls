@@ -27,7 +27,9 @@
 		<%= f.password_field :password_confirmation %>
 		
 		<%= f.label :permissions %>
-		<%= f.select :permissions, User.all %>
+		<%
+			#f.select :permissions, User.all 
+		%>
 		
 		<%= f.submit "Update User", :class => "cta submit" %>
 		<%= link_to "Cancel", {:action => "manage"}, {:class => "cta", :id => "cancel"} %>		

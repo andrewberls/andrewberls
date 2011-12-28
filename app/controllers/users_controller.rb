@@ -17,12 +17,10 @@ class UsersController < ApplicationController
     
     if @user.save
       # REDIRECT/NOTICE CAN BE CHANGED      
-      #render "new"
-      redirect_to manage_users_path
-      flash.now.alert = "Signed up!"
+      redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User created succesfully."})
     else      
       # Save failed - render the signup form again
-      render "new"      
+      render :new
     end
   end
   
@@ -35,6 +33,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
   
+  def show
+    
+  end
+  
   #----- UPDATE
   def edit # Display edit record form    
     @page_title = "Edit User | SutroCMS"
@@ -45,17 +47,17 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])    
     if @user.update_attributes(params[:user])
-      redirect_to manage_users_path
+      redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User updated succesfully."})
     else
       # Update fails - redisplay the form
-      render('edit')
+      render :edit
     end
   end
   
   #----- DELETE
   def destroy # Destroy record
     User.find(params[:id]).destroy # Don't need an instance variable    
-    redirect_to "/users"
+    redirect_to(manage_users_path)
   end
 
 end

@@ -2,11 +2,7 @@ Andrewberls::Application.routes.draw do
 
   # PUBLIC URLS
   match "/blog"     => "posts#list"  
-  match "/blog/:id" => "posts#show"
-    # Ideas for posts#show:
-    # /blog/:id
-    # /blog/post/:id
-    # /post/:id
+  match "/blog/post/:id" => "posts#show"    
  # match "/tags/:tag" => "_action_" # For later. How to parameterize tag slug?
     
   # CONTACT URLS
@@ -18,7 +14,7 @@ Andrewberls::Application.routes.draw do
   # /dashboard and /overview are the only non HTTP verbs
   match "/dashboard" => "sutro#index"  
   match "/new"       => "sutro#new"
-  # match "/save" => "sutro#save", :as => "save"
+  match "/save"      => "sutro#save_draft", :as => "save_draft"
   match "/edit/:id"  => "sutro#edit", :as => "edit_post"
   match "/overview"  => "sutro#overview", :as => "overview"
   match "/create"    => "sutro#create", :via => :post
@@ -26,13 +22,17 @@ Andrewberls::Application.routes.draw do
   match "/destroy"   => "sutro#destroy", :via => :get
     
   # USER URLS  
-  match "/users"           => redirect("/users/manage") # I don't like the controller independence here
-  match "/users/new"       => "users#new", :as => "new_user"
-  match "/users/create"    => "users#create", :via => :post
-  match "/users/manage"    => "users#manage", :as => "manage_users"
-  match "/users/edit/:id"  => "users#edit"
-  match "/users/update"    => "users#update", :via => :post
-  match "/users/destroy"   => "users#destroy", :via => :get
+  match "/users"             => redirect("/users/manage"), :via => :get
+  match "/users/manage"      => "users#manage", :as => "manage_users" 
+  match "/users/:id/edit"    => "users#edit", :via => :post, :as => "edit_user"
+  match "/users/:id"         => "users#update", :via => :post
+  match "/users/:id/destroy" => "users#destroy", :via => :get
+  
+  # match "/users/new"       => "users#new", :as => "new_user"
+  # match "/users/create"    => "users#create", :via => :post
+  # match "/users/:id/edit"  => "users#edit"
+  # match "/users/update"    => "users#update", :via => :post
+  
   
   # SESSION URLS
   match "/sessions/new"  => redirect("/login")
@@ -40,7 +40,7 @@ Andrewberls::Application.routes.draw do
   match "/logout"        => "sessions#destroy", :as => "logout"  
 
   # RESOURCE MATCHING  
-  resources :users # How many redundant URLs does this enable me to get rid of?
+  resources :users
   resources :sessions
   
   root :to => 'home#index'
@@ -49,3 +49,15 @@ Andrewberls::Application.routes.draw do
   match "*a" => redirect("/")
   
 end
+=begin
+Example resource matching
+resources :photos maps the following actions in the Photos controller
+  Method  Path              Action   Used for                      Named Route
+  GET     /photos           index    display list of all photos    photos_path
+  GET     /photos/new       new      form for creating new photo   new_photo_path
+  POST    /photos           create   create a new photo            
+  GET     /photos/:id       show     display a specific photo      
+  GET     /photos/:id/edit  edit     form for editing a photo      edit_photo_path(id)
+  PUT     /photos/:id       update   update a specific photo       photo_path(id)
+  DELETE  /photos/:id       destroy  delete a specific photo       
+=end
