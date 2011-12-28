@@ -93,4 +93,11 @@ if (!message.val()|| message.val() == "Message") {
 	message.val('Please enter your message!');
 	errors = true;
 }
+
+---------------------------------------------------------------------
+OLD USER ROUTES
+# match "/users/new"       => "users#new", :as => "new_user"
+# match "/users/create"    => "users#create", :via => :post
+# match "/users/:id/edit"  => "users#edit"
+# match "/users/update"    => "users#update", :via => :post
 	

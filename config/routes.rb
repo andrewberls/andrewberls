@@ -26,13 +26,7 @@ Andrewberls::Application.routes.draw do
   match "/users/manage"      => "users#manage", :as => "manage_users"  
   match "/users/:id"         => "users#update", :via => :post
   match "/users/:id/destroy" => "users#destroy", :via => :get
-  
-  # match "/users/new"       => "users#new", :as => "new_user"
-  # match "/users/create"    => "users#create", :via => :post
-  # match "/users/:id/edit"  => "users#edit"
-  # match "/users/update"    => "users#update", :via => :post
-  
-  
+
   # SESSION URLS
   match "/sessions/new"  => redirect("/login")
   match "/login"         => "sessions#new", :as => "login"
