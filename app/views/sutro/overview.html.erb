@@ -1,5 +1,9 @@
 <h2>Posts</h2>
 
+<% if flash[:type] == "action" %>
+	<p class="action_success"><%= flash[:msg] %></p>
+<% end %>
+
 <table>
 	<% if (!@posts or @posts.length == 0) %>
 		<td>You haven't added any content yet! Click <%= link_to "here", :action => "new" %> to get started.</td>				
@@ -19,16 +23,15 @@
 			<td>Andrew Berls</td>
 			<td><%= render_sutro_time(post.created_at) %></td>
 			<td>
-				<% if post.tags == nil %>			
-					<!-- No tags -->
-					<span style="color: orange;">_No tags yet_</span>
+				<% if post.tags.blank? %>					
+					<span style="color: orange;">No tags</span>
 				<% else %>
 					<!-- 
 						EVENTUALLY THIS WILL NEED TO BE A COMMA SEPARATED LIST OF LINKS 
 						EACH LINK WILL LEAD TO AN ADMINISTRATIVE LIST OF POSTS WITH THAT TAG
 						render_tags(post.tags)
-							Sample tag: "food,cooking,baking" (string)
-							Split by comma,	format tag and auto-generate link
+							Sample tag as in DB: "food,cooking,baking" (string)
+							Split by comma,	format tag text and auto-generate link for each element
 					-->
 					<% post.tags %>
 				<% end %>
@@ -46,4 +49,3 @@
 	<% end %>
 	
 </table>
-

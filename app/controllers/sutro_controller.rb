@@ -22,10 +22,10 @@ class SutroController < ApplicationController
     
     if @post.save
       # flash[:notice] = "Post created"
-      redirect_to(:action => 'overview')
+      redirect_to({:action => "overview"}, :flash => {:type => "action", :msg => "Post created succesfully."})
     else
       # Save failed - redisplay form for user
-      render('new')
+      render :new # There should be a notice included here eventually
     end
   end    
   
@@ -35,7 +35,7 @@ class SutroController < ApplicationController
   
   def overview # Administrative list of posts    
     @page_title = "Overview | SutroCMS"
-    # Instance variable set to all posts
+    # Instance variable set to all posts for development
     # This will need to be paginated later   
     @posts = Post.order("id DESC")   
   end  
@@ -49,13 +49,12 @@ class SutroController < ApplicationController
   
   def update # Process edit record form
     @post = Post.find(params[:id])    
-    if @post.update_attributes(params[:post])
-      #flash[:notice] = "Post created"
-      redirect_to("/overview")
-      #redirect_to(:action => 'show', :id = @post.id) # Redirect to the individual page for the updated post
+    if @post.update_attributes(params[:post])      
+      redirect_to({:action => 'overview'}, :flash => {:type => "action", :msg => "Post edited succesfully."})
+      #redirect_to(:action => 'show', :id = @post.id) # Redirect to the updated post
     else
       # Update fails - redisplay the form
-      render('edit')
+      render :edit # There should be a notice included here eventually
     end
   end
   
