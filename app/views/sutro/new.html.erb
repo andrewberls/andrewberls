@@ -2,6 +2,10 @@
 	<!-- Add options for pure links/images later  -->
 	<h2>Create New Text Post</h2>
 	
+	<% flash.each do |name,msg| %>
+		<p class="msgDebug"><%= msg %></p>
+	<% end %>
+	
 	<% if @post && @post.errors.any? %>
 		<div class="error_messages">
 			<h2>Invalid Submission</h2>
@@ -19,18 +23,17 @@
 		<%= f.label :body, "Post" %>
 		<%= f.text_area :body %>
 		<%= f.label :tags, "Tags (optional)" %>
+		<%= f.hidden_field(:status) %>
 		<p class="fieldDescription">Enter a comma separated list of tags.</p>
-		<%= f.text_field :tags %>
-		<%
-			# TO DO - FIND OUT HOW BUTTONS CAN DETERMINE STATUS TO BE SAVED
-		%>
+		<%= f.text_field :tags %>		
 		<%=
-			# Save with status 1	
+			# Save with status 1 by default
 			f.submit "Publish", :class => "cta submit"
 		%>	
 		<%= 
-			# Save with status 0
-			#link_to "Save for later", save_draft_path, {:class => "cta", :id => "save"}
+			# Save with status 0 (draft)
+			# Draft is marked by hidden field populated by JS on submit			
+			f.submit "Save for later", {:class => "cta  submit", :id => "save"}
 		%>						
 		<%= link_to "Cancel", overview_path, {:class => "cta", :id => "cancel"}%>
 	<% end %>

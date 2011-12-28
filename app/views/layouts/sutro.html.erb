@@ -5,8 +5,10 @@
 	<title><%= @page_title || "SutroCMS" %></title>
 	<%= stylesheet_link_tag "reset" %>
 	<%= stylesheet_link_tag "sutro" %>	
-	<%= favicon_link_tag %>	
+	<%= favicon_link_tag %>
 	<%= javascript_include_tag :application %>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
 	<%= csrf_meta_tag %>
 </head>
 
@@ -27,6 +29,7 @@
 		</div>	
 		
 	</div>
-		
+
+<%= javascript_include_tag "sutro" %>	
 </body>
 </html>

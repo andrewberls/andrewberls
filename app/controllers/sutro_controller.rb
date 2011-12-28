@@ -18,29 +18,27 @@ class SutroController < ApplicationController
   end
   
   def create # Process new record form    
-    @post = Post.new(params[:post])    
-    @post.status = 1 # Publish code
-    
-    if @post.save      
-      redirect_to({:action => "overview"}, :flash => {:type => "action", :msg => "Post created succesfully."})
-    else
-      # Save failed - redisplay form for user
-      render :new # There should be a notice included here eventually
-    end
-  end
+    @post = Post.new(params[:post])
+    #redirect_to({:action => "new"},{:notice => params[:post].to_s})
 
-  # THIS DOESN'T TAKE EDITING INTO ACCOUNT
-  def save_draft # Same as create but marks post as draft
-    @post = Post.new(params[:post])    
-    @post.status = 0 # Draft code
-    
-    if @post.save      
-      redirect_to({:action => "overview"}, :flash => {:type => "action", :msg => "Post saved as draft."})
+    if params[:post][:status] == "draft"
+      @post.status = 0      
+    else
+      @post.status = 1         
+    end
+
+    if @post.status == 0 and @post.save
+      redirect_to({:action => "overview"}, 
+        :flash => {:type => "action", :msg => "Post saved succesfully."})
+    elsif @post.save
+      redirect_to({:action => "overview"}, 
+        :flash => {:type => "action", :msg => "Post created succesfully."})
     else
       # Save failed - redisplay form for user
       render :new # There should be a notice included here eventually
     end
-  end
+
+  end   
   
   #----- READ
   # Posts controller has public list and show methods

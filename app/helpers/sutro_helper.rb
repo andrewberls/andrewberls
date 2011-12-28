@@ -1,5 +1,5 @@
 module SutroHelper
-  
+
   def render_status(status)
     case status
       when 0 then "Saved"
@@ -7,5 +7,5 @@ module SutroHelper
       else "Error - Status not initialized" 
     end
   end
-  
+
 end
