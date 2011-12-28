@@ -39,9 +39,13 @@ Description: This partial loads the Sutro sidebar. The conditional logic inspect
 <% end %>
 
 
-<%#----- LOGGED IN AS "USERNAME" -----%>
+<%
+	#----- LOGGED IN AS "USERNAME" -----
+%>
 <% if current_user %>
-	<%# MAKE FULL NAME A LINK TO USER EVENTUALLY %>
-	<p>Logged in as <%= current_user.full_name %></p>
+	<%
+		# MAKE FULL NAME A LINK TO USER EVENTUALLY 
+	%>
+	<p>Logged in as <%= current_user.full_name %></p>	
 	<p><%= link_to "Log Out", logout_path %></p>
 <% end %>
