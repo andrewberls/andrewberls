@@ -17,7 +17,8 @@ class UsersController < ApplicationController
     
     if @user.save
       # REDIRECT/NOTICE CAN BE CHANGED      
-      redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User created succesfully."})
+      redirect_to(manage_users_path,  
+        :flash => {:type => "action", :msg => "User created succesfully."})
     else      
       # Save failed - render the signup form again
       render :new

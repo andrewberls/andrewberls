@@ -9,11 +9,11 @@ class HomeController < ApplicationController
     
     if @message.valid?      
       Notifier.new_message(@message).deliver      
-      redirect_to("/#contact", :flash => {:type => "valid", 
-                                          :msg => "Thanks! I'll get back to you as soon as possible."})     
+      redirect_to("/#contact", 
+        :flash => {:type => "valid", :msg => "Thanks! I'll get back to you as soon as possible."})     
     else      
-      redirect_to("/#contact", :flash => {:type => "invalid", 
-                                          :msg => "Please check your fields and try again!"})      
+      redirect_to("/#contact", 
+        :flash => {:type => "invalid", :msg => "Please check your fields and try again!"})      
     end
   end
   
