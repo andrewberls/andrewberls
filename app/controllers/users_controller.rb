@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   #----- DELETE
   def destroy # Destroy record
     User.find(params[:id]).destroy # Don't need an instance variable    
-    redirect_to(manage_users_path)
+    redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User deleted succesfully."})
   end
 
 end

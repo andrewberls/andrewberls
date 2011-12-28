@@ -1,18 +1,10 @@
-<!--
-	
-Title: Manage Users | SutroCMS
-Description: Similar to sutro#overview, this provides an administrative overview of users, with permission control features
-
-- View/Manage Users
--- users/manage => users#manage
-
-- Add a new user (adminstrative action only)
--- users/new    => users#new
-	
--->
-
 <h2>Manage Users</h2>
+
 <%= link_to "Add New User", new_user_path %>
+
+<% if flash[:type] == "action" %>
+	<p class="action_success"><%= flash[:msg] %></p>
+<% end %>
 
 <table>
 	
@@ -43,7 +35,8 @@ Description: Similar to sutro#overview, this provides an administrative overview
 				<td>
 					<%= link_to("Edit", edit_user_path(user.id)) %>
 					&nbsp;
-					<%= link_to "Delete", {:action => 'destroy', :id => user.id}, confirm: "This will completely remove the user! Are you sure?" %>
+					<%= link_to "Delete", {:action => 'destroy', :id => user.id}, 
+						confirm: "This will completely remove the user! Are you sure?" %>
 				</td>
 			</tr>
 		<% end %>
