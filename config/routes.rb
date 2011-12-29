@@ -24,6 +24,9 @@ Andrewberls::Application.routes.draw do
   match "/users"             => redirect("/users/manage"), :via => :get
   match "/users/manage"      => "users#manage", :as => "manage_users"  
   match "/users/:id"         => "users#update", :via => :post
+  # This really shouldn't be necessary
+  # The resources will put a DELETE request to users/:id/destroy,
+  # which looks weird at first glance. Figure this one out.
   match "/users/:id/destroy" => "users#destroy", :via => :get
 
   # SESSION URLS
