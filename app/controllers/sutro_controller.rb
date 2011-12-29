@@ -70,7 +70,8 @@ class SutroController < ApplicationController
   #----- DELETE  
   def destroy # Destroy record
     Post.find(params[:id]).destroy # Don't need an instance variable    
-    redirect_to(:action => 'overview')
+    #redirect_to(:action => 'overview')
+    redirect_to root_url
   end
   
 end

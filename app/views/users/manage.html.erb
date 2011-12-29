@@ -35,8 +35,10 @@
 				<td>
 					<%= link_to("Edit", edit_user_path(user.id)) %>
 					&nbsp;
-					<%= link_to "Delete", {:action => 'destroy', :id => user.id}, 
-						confirm: "This will completely remove the user! Are you sure?" %>
+					<%= 
+						link_to "Delete", {:action => 'destroy', :id => user.id}, 
+						{:method => :delete, confirm: "This will completely remove the user! Are you sure?"}
+					%>
 				</td>
 			</tr>
 		<% end %>

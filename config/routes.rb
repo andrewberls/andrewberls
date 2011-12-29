@@ -23,11 +23,7 @@ Andrewberls::Application.routes.draw do
   # USER URLS  
   match "/users"             => redirect("/users/manage"), :via => :get
   match "/users/manage"      => "users#manage", :as => "manage_users"  
-  match "/users/:id"         => "users#update", :via => :post
-  # This really shouldn't be necessary
-  # The resources will put a DELETE request to users/:id/destroy,
-  # which looks weird at first glance. Figure this one out.
-  match "/users/:id/destroy" => "users#destroy", :via => :get
+  match "/users/:id"         => "users#update", :via => :post  
 
   # SESSION URLS
   match "/sessions/new"  => redirect("/login")
@@ -35,7 +31,7 @@ Andrewberls::Application.routes.draw do
   match "/logout"        => "sessions#destroy", :as => "logout"  
 
   # RESOURCE MATCHING  
-  resources :users, :except => :destroy
+  resources :users
   resources :sessions
   
   root :to => 'home#index'
