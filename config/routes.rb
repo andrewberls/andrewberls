@@ -10,8 +10,8 @@ Andrewberls::Application.routes.draw do
   match '/contact' => 'home#create', :as => 'contact', :via => :post
   
   # SUTRO PAGES AND INTERNAL CONTROLLER METHODS  
-  match "/dashboard" => "posts#index"  
-  match "/overview"  => "posts#overview", :as => "overview"  
+  match "/dashboard" => "admin/posts#index"  
+  match "/overview"  => "admin/posts#overview", :as => "overview"  
     
   # USER URLS  
   match "/users"        => redirect("/users/manage")
@@ -22,7 +22,10 @@ Andrewberls::Application.routes.draw do
   match "/logout" => "sessions#destroy", :as => "logout"  
 
   # RESOURCE MATCHING
-  resources :posts, :users  
+  namespace :admin do
+    resources :posts
+  end
+  resources :users  
   resources :sessions, :only => :create
   
   root :to => 'home#index'

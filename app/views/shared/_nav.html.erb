@@ -14,7 +14,7 @@ Description: This partial loads the Sutro sidebar. The conditional logic inspect
 <% if params[:action] == "index" %>
 	<li><%= link_to "Dashboard", {:action => "index"},  :class => "current"  %></li>
 <% else %>
-	<li><%= link_to "Dashboard", {:controller => "sutro", :action => "index"} %></li>
+	<li><%= link_to "Dashboard", {:controller => "admin/posts", :action => "index"} %></li>
 <% end %>
 
 
@@ -22,7 +22,7 @@ Description: This partial loads the Sutro sidebar. The conditional logic inspect
 <% if params[:action] == "new" && params[:controller] == "sutro" %>
 	<li><%= link_to "New Post", {:action => "new"},  :class => "current"  %></li>
 <% else %>
-	<li><%= link_to "New Post", {:controller => "sutro", :action => "new"} %></li>
+	<li><%= link_to "New Post", {:controller => "admin/posts", :action => "new"} %></li>
 <% end %>
 
 
@@ -30,16 +30,16 @@ Description: This partial loads the Sutro sidebar. The conditional logic inspect
 <% if params[:action] == "overview" %>
 	<li><%= link_to "Manage Posts", {:action => "overview"},  :class => "current"  %></li>
 <% else %>
-	<li><%= link_to "Manage Posts", {:controller => "sutro", :action => "overview"} %></li>
+	<li><%= link_to "Manage Posts", {:controller => "admin/posts", :action => "overview"} %></li>
 <% end %>
 
 <%#----- MANAGE USERS -----%>
-<% if params[:action] == "manage" && params[:controller] == "users" %>
-	<li><%= link_to "Manage Users", {:controller => "users", :action => "manage"}, :class => "current"  %></li>
+<% if params[:controller] == "users" && params[:action] == "manage" %>
+	<li><%= link_to "Manage Users", {:controller => "users", :action => "manage"}, 
+		:class => "current" %></li>
 <% else %>
-	<li><%= link_to "Manage Users", {:controller => "users", :action => "manage"} %></li>
+	<li><%= link_to "Manage Users", {:controller => "/users", :action => "manage"} %></li>
 <% end %>
-
 
 <%
 	#----- LOGGED IN AS "USERNAME" -----
