@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     
     # Redirect if already logged in
     if session[:user_id]
-      redirect_to "/overview"
+      redirect_to dashboard_path
     end
   end
 
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     if user
       session[:user_id] = user.id
       # REDIRECT/NOTICE CAN BE CHANGED
-      redirect_to "/overview"
+      redirect_to dashboard_path
     else
       # Authentication failed - render the form again      
       redirect_to login_path, :notice => "Invalid email or password."     
@@ -30,11 +30,11 @@ class SessionsController < ApplicationController
   
   def destroy
     if !session[:user_id]
-      redirect_to "/blog"      
+      redirect_to blog_path   
     else
       session[:user_id] = nil
       # REDIRECT/NOTICE CAN BE CHANGED
-      redirect_to "/blog", :notice => "Logged out!"
+      redirect_to blog_path, :notice => "Logged out!"
     end
   end
   
