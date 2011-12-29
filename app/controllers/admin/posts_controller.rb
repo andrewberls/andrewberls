@@ -3,15 +3,13 @@ class Admin::PostsController < ApplicationController
   layout 'sutro'
   
   # Check authentication for on public-facing actions
-  before_filter :check_auth, :accept => [:index, :new, :overview, :edit]
+  before_filter :check_auth, :accept => [:index, :new, :dashboard, :edit]
   
   #----- GENERAL
-  def index # Dashboard method
-    # FOR SAVED POSTS, SELECT ONLY POSTS WITH STATUS 0  
+  def dashboard    
     @page_title = "Dashboard | SutroCMS"
     @posts = Post.all    
-    @saved_posts = Post.where("status = 0")
-    
+    @saved_posts = Post.where("status = 0")    
   end
   
   #----- CREATE  
@@ -31,7 +29,7 @@ class Admin::PostsController < ApplicationController
     end
 
     if @post.save
-      redirect_to({:action => "overview"}, 
+      redirect_to({:action => "dashboard"}, 
         :flash => {:type => "action", :msg => success_msg})    
     else
       # Save failed - redisplay form for user
@@ -44,8 +42,8 @@ class Admin::PostsController < ApplicationController
   # Posts controller has public list and show methods
   # Sutro provides administrative view only
   
-  def overview # Administrative list of posts    
-    @page_title = "Overview | SutroCMS"
+  def index # Administrative list of posts    
+    @page_title = "Posts Overview | SutroCMS"
     # Instance variable set to all posts for development
     # This will need to be paginated later   
     @posts = Post.order("id DESC")   
@@ -61,7 +59,7 @@ class Admin::PostsController < ApplicationController
   def update # Process edit record form
     @post = Post.find(params[:id])    
     if @post.update_attributes(params[:post])      
-      redirect_to({:action => 'overview'}, :flash => {:type => "action", :msg => "Post edited succesfully."})
+      redirect_to({:action => 'dashboard'}, :flash => {:type => "action", :msg => "Post edited succesfully."})
       #redirect_to(:action => 'show', :id = @post.id) # Redirect to the updated post
     else
       # Update fails - redisplay the form
@@ -72,7 +70,7 @@ class Admin::PostsController < ApplicationController
   #----- DELETE  
   def destroy # Destroy record
     Post.find(params[:id]).destroy # Don't need an instance variable    
-    redirect_to(:action => 'overview')    
+    redirect_to(:action => 'dashboard')    
   end
   
 end

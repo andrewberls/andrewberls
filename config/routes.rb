@@ -10,8 +10,7 @@ Andrewberls::Application.routes.draw do
   match '/contact' => 'home#create', :as => 'contact', :via => :post
   
   # SUTRO PAGES AND INTERNAL CONTROLLER METHODS  
-  match "/dashboard" => "admin/posts#index"  
-  match "/overview"  => "admin/posts#overview", :as => "overview"  
+  match "/dashboard" => "admin/posts#dashboard", :as => "dashboard"  
     
   # USER URLS  
   match "/users"        => redirect("/users/manage")
