@@ -102,4 +102,7 @@ OLD USER ROUTES
 # match "/users/update"    => "users#update", :via => :post
 # match "/users/:id"         => "users#update", :via => :post  
 # match "/users/:id/destroy" => "users#destroy", :via => :get
+
+OLD SESSION ROUTE
+#match "/sessions/new" => redirect("/login")
 	
