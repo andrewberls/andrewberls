@@ -100,4 +100,6 @@ OLD USER ROUTES
 # match "/users/create"    => "users#create", :via => :post
 # match "/users/:id/edit"  => "users#edit"
 # match "/users/update"    => "users#update", :via => :post
+# match "/users/:id"         => "users#update", :via => :post  
+# match "/users/:id/destroy" => "users#destroy", :via => :get
 	

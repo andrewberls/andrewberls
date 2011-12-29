@@ -12,7 +12,7 @@
 		</div>	
 	<% end %>
 	
-	<%= form_for(:user, :url=>{:action => 'update', :id => @user.id}) do |f| %>
+	<%= form_for(:user, :url=>{:action => 'update', :id => @user.id}, :method => :put) do |f| %>
 	
 		<%= f.label :full_name %>
 		<%= f.text_field :full_name %>
@@ -25,9 +25,9 @@
 		
 		<%= f.label :password_confirmation %>
 		<%= f.password_field :password_confirmation %>
-		
-		<%= f.label :permissions %>
-		<%
+				
+		<%=
+			#f.label :permissions
 			#f.select :permissions, User.all 
 		%>
 		

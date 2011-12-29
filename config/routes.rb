@@ -21,23 +21,24 @@ Andrewberls::Application.routes.draw do
   match "/destroy"   => "sutro#destroy", :via => :get
     
   # USER URLS  
-  match "/users"             => redirect("/users/manage"), :via => :get
-  match "/users/manage"      => "users#manage", :as => "manage_users"  
-  match "/users/:id"         => "users#update", :via => :post  
+  match "/users"        => redirect("/users/manage")
+  match "/users/manage" => "users#manage", :as => "manage_users"
+  
 
   # SESSION URLS
-  match "/sessions/new"  => redirect("/login")
-  match "/login"         => "sessions#new", :as => "login"
-  match "/logout"        => "sessions#destroy", :as => "logout"  
+  match "/sessions/new" => redirect("/login")
+  match "/login"        => "sessions#new", :as => "login"
+  match "/logout"       => "sessions#destroy", :as => "logout"  
 
   # RESOURCE MATCHING  
-  resources :users
+  resources :users 
   resources :sessions
   
   root :to => 'home#index'
   
-  # ROUTE ALL PAGE NOT FOUND TO HOME URL. DESIRABLE BEHAVIOR?
-  #match "*a" => redirect("/")
+  # ROUTE ALL PAGE NOT FOUND TO HOME URL.
+  # TO DO - CREATE 404 PAGE
+  # match "*a" => redirect("/")
   
 end
 =begin
