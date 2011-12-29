@@ -5,6 +5,10 @@ module ApplicationHelper
     time.strftime("%-d %b %Y")
   end
   
+  def logged_in?
+    !session[:user_id].nil?
+  end
+  
   # 0: Admin
   # 1: Developer
   # 2: Author   
