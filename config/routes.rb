@@ -9,16 +9,9 @@ Andrewberls::Application.routes.draw do
   match '/contact' => 'home#new', :as => 'contact', :via => :get
   match '/contact' => 'home#create', :as => 'contact', :via => :post
   
-  # SUTRO PAGES AND INTERNAL CONTROLLER METHODS
-  # Can this be consolidated into a resource?
-  # /dashboard and /overview are the only non HTTP verbs
-  match "/dashboard" => "sutro#index"  
-  match "/new"       => "sutro#new", :as => "new_post"  
-  match "/edit/:id"  => "sutro#edit", :as => "edit_post"
-  match "/overview"  => "sutro#overview", :as => "overview"
-  match "/create"    => "sutro#create", :via => :post  
-  match "/update"    => "sutro#update", :via => :post
-  match "/destroy"   => "sutro#destroy", :via => :get
+  # SUTRO PAGES AND INTERNAL CONTROLLER METHODS  
+  match "/dashboard" => "posts#index"  
+  match "/overview"  => "posts#overview", :as => "overview"  
     
   # USER URLS  
   match "/users"        => redirect("/users/manage")
@@ -28,8 +21,8 @@ Andrewberls::Application.routes.draw do
   match "/login"  => "sessions#new", :as => "login"
   match "/logout" => "sessions#destroy", :as => "logout"  
 
-  # RESOURCE MATCHING  
-  resources :users 
+  # RESOURCE MATCHING
+  resources :posts, :users  
   resources :sessions, :only => :create
   
   root :to => 'home#index'

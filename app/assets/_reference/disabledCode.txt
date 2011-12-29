@@ -105,4 +105,14 @@ OLD USER ROUTES
 
 OLD SESSION ROUTE
 #match "/sessions/new" => redirect("/login")
+
+OLD SUTRO ROUTES (MIGHT BE NECESSARY)
+# SUTRO PAGES AND INTERNAL CONTROLLER METHODS  
+#match "/dashboard" => "posts#index"  
+#match "/new"       => "sutro#new", :as => "new_post"  
+#match "/edit/:id"  => "sutro#edit", :as => "edit_post"
+match "/overview"  => "posts#overview", :as => "overview"
+#match "/create"    => "sutro#create", :via => :post  
+#match "/update"    => "sutro#update", :via => :post
+#match "/destroy"   => "sutro#destroy", :via => :get
 	

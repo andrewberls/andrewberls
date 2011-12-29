@@ -1,0 +1,52 @@
+<h2>Posts</h2>
+
+<% if flash[:type] == "action" %>
+	<p class="action_success"><%= flash[:msg] %></p>
+<% end %>
+
+<table>
+	<% if (!@posts or @posts.length == 0) %>
+		<td>You haven't added any content yet! Click <%= link_to "here", :action => "new" %> to get started.</td>				
+	<% else %>	
+		<tr>
+			<th>Title</th>
+			<th>Author</th>
+			<th>Date</th>
+			<th>Tags</th>
+			<th>Status</th>
+			<th>Actions</th>
+		</tr>
+		
+		<% @posts.each do |post| %>
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td><%= raw post.title %></td>
+			<td>Andrew Berls</td>
+			<td><%= render_sutro_time(post.created_at) %></td>
+			<td>
+				<% if post.tags.blank? %>					
+					<span style="color: orange;">No tags</span>
+				<% else %>
+					<!-- 
+						EVENTUALLY THIS WILL NEED TO BE A COMMA SEPARATED LIST OF LINKS 
+						EACH LINK WILL LEAD TO AN ADMINISTRATIVE LIST OF POSTS WITH THAT TAG
+						render_tags(post.tags)
+							Sample tag as in DB: "food,cooking,baking" (string)
+							Split by comma,	format tag text and auto-generate link for each element
+					-->
+					<% post.tags %>
+				<% end %>
+			</td>
+			<td>
+				<%= render_status(post.status) %>
+			</td>
+			<td>
+				<%= link_to("Edit", {:action => 'edit', :id => post.id}) %>
+				&nbsp;
+				<%= link_to "Delete", {:action => 'destroy', :id => post.id}, 
+					{:method => :delete, confirm: "Are you sure you want to delete this post?"} %> 
+			</td>
+		</tr>
+		<% end %>
+	<% end %>
+	
+</table>

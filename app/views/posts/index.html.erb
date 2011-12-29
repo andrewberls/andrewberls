@@ -1,0 +1,53 @@
+<h2>Dashboard</h2>
+
+<div class="twoCol">
+	<div class="colContent">
+		<h3>Content Overview</h3>
+		<p><%= link_to "Total Posts", {:action => 'overview'}%>: <%= @posts.length %></p>		
+	</div>
+	
+	<div class="colContent">
+		<h3>Recent Comments</h3>
+		<table id="comments" class="compact">
+			<tr>
+				<td><span class="todo">This feature won't exist for a long time.</span></td>
+			</tr>
+			<tr>
+				<td><span class="italic">Steve Smith said: </span>"This comment is static" on <span class="postTitle"><a href="#">Post Title Goes Here</a></span></td>
+			</tr>						
+		</table>
+	</div>
+	
+</div>
+
+<div class="twoCol">
+	<div class="colContent">
+		<h3>Drafts</h3>
+		<table id="drafts">			
+			<tr>
+				<td>
+					<% if @saved_posts %>
+						<% if @saved_posts.blank? %>
+							No saved posts
+						<% else %>
+							<% @saved_posts.each do |post| %>
+								<p><%=							
+									link_to post.title, edit_post_path(post.id) 
+								%></p>
+							<% end %>
+						<% end %>					
+					<% end %>
+				</td>
+			</tr>			
+		</table>
+	</div>
+		
+	<div class="colContent">
+		<h3>User Activity</h3>
+		<table id="activity" class="compact">
+			<tr>
+				<td><span class="todo">This won't exist for an extremely long time.</span></td>
+			</tr>			
+		</table>
+	</div>
+</div>
