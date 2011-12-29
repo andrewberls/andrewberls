@@ -5,6 +5,14 @@ module ApplicationHelper
     time.strftime("%-d %b %Y")
   end
   
+  # TO DO
+  def action_request
+    # Instead of if params[:controller] == ... && params [:action] = ...
+    # If action_request() == "returned string" then ...
+    # Format of returned string: "controller#action"
+    params[:controller] + "#" + params[:action]
+  end
+  
   #def logged_in?
   #  !session[:user_id].nil?
   #end
