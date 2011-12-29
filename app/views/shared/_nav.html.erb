@@ -5,44 +5,39 @@ Description: This partial loads the Sutro sidebar. The conditional logic inspect
 
 =end
 %>
-
-<%
-	# BETTER WAY TO HANDLE CONDITIONAL NAV LINKS?
-%>
 			
 <%#----- DASHBOARD -----%>
-<% if params[:action] == "index" %>
-	<li><%= link_to "Dashboard", {:action => "index"},  :class => "current"  %></li>
+<% if params[:controller] == "admin/posts" && params[:action] == "dashboard" %>
+	<li><%= link_to "Dashboard", dashboard_path,  :class => "current"	%></li>
 <% else %>
-	<li><%= link_to "Dashboard", {:controller => "admin/posts", :action => "index"} %></li>
+	<li><%= link_to "Dashboard", dashboard_path	%></li>
 <% end %>
 
 
 <%#-----  NEW POST -----%>
-<% if params[:action] == "new" && params[:controller] == "sutro" %>
-	<li><%= link_to "New Post", {:action => "new"},  :class => "current"  %></li>
+<% if params[:controller] == "admin/posts" && params[:action] == "new" %>
+	<li><%= link_to "New Post", new_admin_post_path,  :class => "current" %></li>
 <% else %>
-	<li><%= link_to "New Post", {:controller => "admin/posts", :action => "new"} %></li>
+	<li><%= link_to "New Post", new_admin_post_path %></li>
 <% end %>
 
 
 <%#----- MANAGE POSTS -----%>
-<% if params[:action] == "overview" %>
-	<li><%= link_to "Manage Posts", {:action => "overview"},  :class => "current"  %></li>
+<% if params[:controller] == "admin/posts" && params[:action] == "index" %>
+	<li><%= link_to "Manage Posts", admin_posts_path, :class => "current" %></li>
 <% else %>
-	<li><%= link_to "Manage Posts", {:controller => "admin/posts", :action => "overview"} %></li>
+	<li><%= link_to "Manage Posts", admin_posts_path %></li>
 <% end %>
 
 <%#----- MANAGE USERS -----%>
 <% if params[:controller] == "users" && params[:action] == "manage" %>
-	<li><%= link_to "Manage Users", {:controller => "users", :action => "manage"}, 
-		:class => "current" %></li>
+	<li><%= link_to "Manage Users", manage_users_path, :class => "current" %></li>
 <% else %>
-	<li><%= link_to "Manage Users", {:controller => "/users", :action => "manage"} %></li>
+	<li><%= link_to "Manage Users", manage_users_path %></li>
 <% end %>
 
 <%
-	#----- LOGGED IN AS "USERNAME" -----
+	#----- LOGGED IN AS "USERNAME" -----#
 %>
 <% if current_user %>
 	<%
