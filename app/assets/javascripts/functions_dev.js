@@ -10,7 +10,7 @@ function scrollTo(id) {
 
 $('ul.nav a, #home a').click(function (event) {
 	// This statement is unecessary if button is not included
-	if (!$(this).hasClass('blog')) {
+	if (!$(this).hasClass('blog') && !$(this).hasClass('noScroll')) {		
 		event.preventDefault();
 		var id = $(this).attr('class');
 		scrollTo(id);
