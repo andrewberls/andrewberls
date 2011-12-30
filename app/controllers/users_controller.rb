@@ -33,9 +33,8 @@ class UsersController < ApplicationController
   def manage    
     @page_title = "Manage Users | SutroCMS"
     
-    # SORT USERS BY PERMISSIONS ASC
-    # EX ADMINISTRATORS (0) ALWAYS AT TOP
-    @users = User.all
+    # Sort all users for Admin/Dev/Author list order
+    @users = User.order("permissions ASC")
   end
   
   def show
