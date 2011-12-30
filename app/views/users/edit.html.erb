@@ -35,8 +35,8 @@
 			],@user.permissions)) # Determines which field to mark preselected 
 		%>
 		
-		<%= f.submit "Update User", :class => "cta submit" %>
-		<%= link_to "Cancel", {:action => "manage"}, {:class => "cta", :id => "cancel"} %>		
+		<%= f.submit "Update User", :class => "cta submit" %>		
+		<%= link_to "Cancel", manage_users_path, {:class => "cta", :id => "cancel"} %>	
 		
-	<% end %>
+	<% end %>	
 </div>
