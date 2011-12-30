@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   
   layout 'sutro'    
   
@@ -67,5 +67,5 @@ class UsersController < ApplicationController
     User.find(params[:id]).destroy # Don't need an instance variable    
     redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User deleted succesfully."})
   end
-
+  
 end

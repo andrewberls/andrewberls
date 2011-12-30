@@ -1,6 +1,6 @@
 <h2>Manage Users</h2>
 
-<%= link_to "Add New User", new_user_path %>
+<%= link_to "Add New User", new_admin_user_path %>
 
 <% if flash[:type] == "action" %>
 	<p class="action_success"><%= flash[:msg] %></p>
@@ -33,7 +33,7 @@
 					<%= render_permissions(user.permissions) %>					
 				</td>
 				<td>
-					<%= link_to("Edit", edit_user_path(user.id)) %>
+					<%= link_to("Edit", edit_admin_user_path(user.id)) %>
 					&nbsp;
 					<%= 
 						link_to "Delete", {:action => 'destroy', :id => user.id}, 

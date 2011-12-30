@@ -1,4 +1,4 @@
-module UsersHelper
+module Admin::UsersHelper
   
   def render_permissions(permission)
     # Description: Permission parameter is stored as an integer. This returns the permission string associated

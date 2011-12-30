@@ -30,7 +30,7 @@ Description: This partial loads the Sutro sidebar. The conditional logic inspect
 <% end %>
 
 <%#----- MANAGE USERS -----%>
-<% if action_request == "users#manage" %>
+<% if action_request == "admin/users#manage" %>
 	<li><%= link_to "Manage Users", manage_users_path, :class => "current" %></li>
 <% else %>
 	<li><%= link_to "Manage Users", manage_users_path %></li>
