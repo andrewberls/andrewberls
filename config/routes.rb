@@ -13,8 +13,8 @@ Andrewberls::Application.routes.draw do
   match "/dashboard" => "admin/posts#dashboard", :as => "dashboard"  
     
   # USER URLS  
-  match "/users"        => redirect("/admin/users/manage"), :via => :get
-  match "/users/manage" => "admin/users#manage", :as => "manage_users"
+  match "/users"              => redirect("/admin/users/manage"), :via => :get
+  match "/admin/users/manage" => "admin/users#manage", :as => "manage_users"
   
   # SESSION URLS  
   match "/login"  => "sessions#new", :as => "login"
