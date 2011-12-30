@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])       
     # A little unsure of why this is explicitly necessary
-    @user.permissions = params[:user][:permissions] 
+    @user.permissions = params[:user][:permissions]
         
     #redirect_to(manage_users_path, 
     #  :flash => {:type => "action", :msg => params[:user].to_s + @user.permissions.to_s})
@@ -50,7 +50,11 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.find(params[:id])    
+    @user = User.find(params[:id])
+    
+    # A little unsure of why this is explicitly necessary
+    @user.permissions = params[:user][:permissions]
+      
     if @user.update_attributes(params[:user])
       redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User updated succesfully."})
     else

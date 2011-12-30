@@ -26,9 +26,13 @@
 		<%= f.label :password_confirmation %>
 		<%= f.password_field :password_confirmation %>
 				
-		<%=
-			#f.label :permissions
-			#f.select :permissions, User.all 
+		<%= f.label :permissions %>
+		<%= 
+			f.select(:permissions, options_for_select([
+				['Administrator', 0], 
+				['Developer', 1],
+				['Author', 2]
+			],@user.permissions)) # Determines which field to mark preselected 
 		%>
 		
 		<%= f.submit "Update User", :class => "cta submit" %>
