@@ -30,7 +30,7 @@ Andrewberls::Application.routes.draw do
   
   # ROUTE ALL PAGE NOT FOUND TO HOME URL.
   # TO DO - CREATE 404 PAGE
-  #match "*a" => redirect("/")
+  match "*a" => redirect("/")
   
 end
 =begin
