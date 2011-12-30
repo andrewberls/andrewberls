@@ -9,11 +9,11 @@ Andrewberls::Application.routes.draw do
   match '/contact' => 'home#new', :as => 'contact', :via => :get
   match '/contact' => 'home#create', :as => 'contact', :via => :post
   
-  # SUTRO PAGES AND INTERNAL CONTROLLER METHODS  
+  # NON-RESOURCEFUL ADMIN PAGES
   match "/dashboard" => "admin/posts#dashboard", :as => "dashboard"  
     
   # USER URLS  
-  match "/users"        => redirect("/users/manage")
+  match "/users"        => redirect("/users/manage"), :via => :get
   match "/users/manage" => "users#manage", :as => "manage_users"
   
   # SESSION URLS  
