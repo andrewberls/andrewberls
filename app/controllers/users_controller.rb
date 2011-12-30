@@ -13,16 +13,20 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
-    
-    if @user.save
-      # REDIRECT/NOTICE CAN BE CHANGED      
-      redirect_to(manage_users_path,  
-        :flash => {:type => "action", :msg => "User created succesfully."})
+    @user = User.new(params[:user])       
+    # A little unsure of why this is explicitly necessary
+    @user.permissions = params[:user][:permissions] 
+        
+    #redirect_to(manage_users_path, 
+    #  :flash => {:type => "action", :msg => params[:user].to_s + @user.permissions.to_s})
+#=begin
+    if @user.save          
+      redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User created succesfully."})      
     else      
       # Save failed - render the signup form again
       render :new
     end
+#=end
   end
   
   #----- READ

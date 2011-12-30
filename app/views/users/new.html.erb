@@ -1,15 +1,3 @@
-<!--
-	
-Title: Add New User | Sutro CMS
-Description: This view provides the actual form to add a new user, specifying:
-	- Full name
-	- Email
-	- Password
-	- Password confirmation (user will be able to change later)
-	- Permission level (when implemented)
-
--->
-
 <div class="wrapper">
 	<h2>Add New User</h2>
 	
@@ -37,8 +25,15 @@ Description: This view provides the actual form to add a new user, specifying:
 		
 		<%= f.label :password_confirmation %>
 		<%= f.password_field :password_confirmation %>
-		
-		<!-- SELECT FIELD FOR USER PERMISSIONS HERE -->		
+				
+		<%= f.label :permissions %>
+		<%= 
+			f.select(:permissions, options_for_select([
+				['Administrator', 0], 
+				['Developer', 1],
+				['Author', 2]
+			])) 
+		%>
 		
 		<%= f.submit "Add User", :class => "cta submit" %>	
 		
