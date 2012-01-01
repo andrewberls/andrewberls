@@ -10,11 +10,11 @@ Andrewberls::Application.configure do
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
   # default set to false
-  config.serve_static_assets = true
+  config.serve_static_assets = false
 
   # Compress JavaScripts and CSS
-  #config.assets.css_compressor = :scss
-  #config.assets.compress = true
+  config.assets.css_compressor = :scss
+  config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   # default set to false, was set to true
