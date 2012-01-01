@@ -14,7 +14,7 @@ Andrewberls::Application.configure do
 
   # Compress JavaScripts and CSS
   config.assets.css_compressor = :scss
-  config.assets.compress = true
+  #config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
   # default set to false, was set to true
