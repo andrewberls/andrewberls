@@ -30,4 +30,8 @@ Andrewberls::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # This line is not a default and fixes an asset not precompiled error
+  config.assets.compile = true  
+  
 end
