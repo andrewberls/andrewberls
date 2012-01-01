@@ -1,9 +1,17 @@
 module ApplicationHelper
   
   def render_sutro_time(time)
+    # Used in: overviews and public blog posts
     # Returns a string timestamp
     # Ex: 7 Oct 2011
     time.strftime("%-d %b %Y")
+  end
+  
+  def render_creation_time(time)
+    # Used in: dashboard drafts
+    # Returns a string timeestamp
+    # Ex: Jan 4 at 2:42pm
+    #time.strftime("")
   end
      
   def action_request

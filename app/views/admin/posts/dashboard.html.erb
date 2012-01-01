@@ -3,7 +3,7 @@
 <div class="twoCol">
 	<div class="colContent">
 		<h3>Content Overview</h3>
-		<p><%= link_to "Total Posts", {:action => 'index'} %>: <%= @posts.length %></p>		
+		<p><%= link_to "Total Posts", admin_posts_path %>: <%= @posts.length %></p>		
 	</div>
 	
 	<div class="colContent">
@@ -12,9 +12,9 @@
 			<tr>
 				<td><span class="todo">This feature won't exist for a long time.</span></td>
 			</tr>
-			<tr>
+			<!--<tr>
 				<td><span class="italic">Steve Smith said: </span>"This comment is static" on <span class="postTitle"><a href="#">Post Title Goes Here</a></span></td>
-			</tr>						
+			</tr>-->			
 		</table>
 	</div>
 	
@@ -31,9 +31,12 @@
 							No saved posts
 						<% else %>
 							<% @saved_posts.each do |post| %>
-								<p><%=							
-									link_to post.title, edit_post_path(post.id) 
-								%></p>
+								<p>
+									<%
+										# To do: trade render_sutro time for render_creation_time										
+									%>
+									<%= link_to post.title, edit_admin_post_path(post.id) %><span class="subdued">, authored on <%= render_sutro_time(post.created_at) %></span>
+								</p>
 							<% end %>
 						<% end %>					
 					<% end %>
@@ -46,7 +49,9 @@
 		<h3>User Activity</h3>
 		<table id="activity" class="compact">
 			<tr>
-				<td><span class="todo">This won't exist for an extremely long time.</span></td>
+				<td>
+					<span class="todo">This won't exist for an extremely long time.</span>
+				</td>
 			</tr>			
 		</table>
 	</div>
