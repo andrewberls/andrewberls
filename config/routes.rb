@@ -33,15 +33,3 @@ Andrewberls::Application.routes.draw do
   match "*a" => redirect("/")
   
 end
-=begin
-Example resource matching
-resources :photos maps the following actions in the Photos controller
-  Method  Path              Action   Used for                      Named Route
-  GET     /photos           index    display list of all photos    photos_path
-  GET     /photos/new       new      form for creating new photo   new_photo_path
-  POST    /photos           create   create a new photo            
-  GET     /photos/:id       show     display a specific photo      
-  GET     /photos/:id/edit  edit     form for editing a photo      edit_photo_path(id)
-  PUT     /photos/:id       update   update a specific photo       photo_path(id)
-  DELETE  /photos/:id       destroy  delete a specific photo       
-=end
