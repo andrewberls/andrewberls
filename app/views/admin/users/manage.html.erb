@@ -1,6 +1,6 @@
 <h2>Manage Users</h2>
 
-<%= link_to "Add New User", new_admin_user_path %>
+<%= link_to "Add New User", new_admin_user_path unless is_author?(current_user) %>
 
 <% if flash[:type] == "action" %>
 	<p class="action_success"><%= flash[:msg] %></p>
@@ -9,7 +9,7 @@
 <table>
 	
 	<% if !@users || @users.length == 0 %>	
-		<td>That's weird, there doesn't appear to be any existing users. This is an error that should probably be fixed by an installation script. Anyways, click <%= link_to "here", :action => "new" %> to add a new user!</td>		
+		<td>That's weird, there doesn't appear to be any existing users. This is an error that should probably be fixed by an installation script. Anyways, click <%= link_to "here", new_admin_user_path %> to add a new user!</td>		
 	<% else %>
 	
 		<tr>
@@ -30,15 +30,15 @@
 				</td>
 				<td><%= user.email %></td>
 				<td>
-					<%= render_permissions(user.permissions) %>					
+					<%= render_permission_string(user.permissions) %>					
 				</td>
-				<td>
+				<td>					
 					<%= link_to("Edit", edit_admin_user_path(user.id)) %>
-					&nbsp;
-					<%= 
+					&nbsp;					
+					<%=								
 						link_to "Delete", {:action => 'destroy', :id => user.id}, 
-						{:method => :delete, confirm: "This will completely remove the user! Are you sure?"}
-					%>
+							{:method => :delete, confirm: "This will completely remove the user! Are you sure?"}
+					%>					
 				</td>
 			</tr>
 		<% end %>

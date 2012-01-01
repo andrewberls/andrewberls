@@ -3,10 +3,11 @@ class Admin::UsersController < ApplicationController
   layout 'sutro'    
   
   # Check authentication for on public-facing actions
-  before_filter :check_auth, :accept => [:new, :manage]
+  before_filter :check_auth, :accept => [:new, :manage]  
   
   #----- CREATE
   def new
+    check_admin_privileges(admin_posts_path)
     # Display form to add a new user    
     @page_title = "Add New User | SutroCMS"       
     @user = User.new
@@ -30,7 +31,9 @@ class Admin::UsersController < ApplicationController
   end
   
   #----- READ
-  def manage    
+  def manage
+    check_admin_privileges(admin_posts_path)
+    
     @page_title = "Manage Users | SutroCMS"
     
     # Sort all users for Admin/Dev/Author list order
