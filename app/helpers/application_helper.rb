@@ -23,5 +23,13 @@ module ApplicationHelper
   def is_admin?(user)    
     user.permissions == 0
   end
+  
+  def is_developer?(user)    
+    user.permissions == 1
+  end
+  
+  def is_author?(user)    
+    user.permissions == 2
+  end
  
 end
