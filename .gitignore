@@ -42,5 +42,5 @@ build/config/buildinfo.properties
 
 config/application.rb
 config/database.yml
-tmp/*
+tmp/*/*
 app/assets/_reference/*
