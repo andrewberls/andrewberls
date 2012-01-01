@@ -96,6 +96,11 @@ input,textarea {border: 1px solid black !important;}
   padding: 5px;
 }
 
+.subdued {
+  color: orange;
+  font-size: 0.9em;
+ }
+
 // ----------
 // - GENERIC
 // ----------
@@ -319,7 +324,7 @@ select {
 }
 
 .cta {
-  // Verbosity ensures that input[submit] and ordinary link are consistent
+  // ------------------------------- ARE ALL OF THESE STILL NECESSARY? TWO SUBMITS NOW  
   background: #F0F0F0;
   border: 1px solid #CCC;
   border-radius: 5px;
@@ -407,9 +412,7 @@ td {
 }
 
 .twoCol {
-  $bottom_margin: 20px;
-  
-  //background-color: red;
+  $bottom_margin: 20px; 
   float: left;
   //min-height: 400px;  
   margin-right: 10px;
@@ -417,8 +420,7 @@ td {
   
   width: 49%; // Sort of hackety, but accidentally responsive! Yay!
   
-  &:last-child {
-    //background-color: yellow;
+  &:last-child {    
     float: right; 
     margin-right: 0;       
   }
@@ -438,8 +440,7 @@ td {
     }
     
     p {
-      margin: 0 10px;
-      //border: 1px solid orange;
+      margin: 0 10px;      
     }
   }
   
@@ -474,7 +475,7 @@ td {
       border-bottom: 1px solid #CCC;
     }
   }
-  #activity {}
+  //#activity {}
   
 }
 
