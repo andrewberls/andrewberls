@@ -12,13 +12,11 @@ module ApplicationHelper
     params[:controller] + "#" + params[:action]
   end
   
-  #def logged_in?
-  #  !session[:user_id].nil?
-  #end
-  
-  # 0: Admin
-  # 1: Developer
-  # 2: Author
+  # Various permission/access utility methods  
+  def logged_in?
+    # Is there a better way to do this?
+    !session[:user_id].nil?
+  end
   
   def is_admin?(user)    
     user.permissions == 0
