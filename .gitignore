@@ -40,7 +40,13 @@ build/buildinfo.properties
 build/config/buildinfo.properties
 
 
+# Configuration files with sensitive information
 config/application.rb
 config/database.yml
-tmp/*/*
+
+# Various development directories
+tmp/*
+public/assets/*
+
+# Reference files unecessary to application structure
 app/assets/_reference/*
