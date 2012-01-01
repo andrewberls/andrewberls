@@ -322,10 +322,10 @@ section {
   float: left;    
   position: relative;
   
-  .window {    
-    height: 450px;    
+  .window {       
+    height: 1375px; // old 450px - now set with JS to cater to non JS viewers
     overflow-x: hidden;
-    overflow-y: scroll;  
+    overflow-y: hidden;
     position: relative;
     width: 972px;
     
@@ -357,7 +357,8 @@ section {
     }    
   }
   
-  .thumb {   
+  .thumb {
+    display: none; // Re-enabled with JS (disable for non JS viewers)
     float: left;
     height: 200px; 
     margin: 20px 15px 0 15px;

@@ -25,7 +25,11 @@ $('#top').click(function (event) {
 
 //----- IMAGE SLIDER ---//
 //-- Overflow scrolls by default - hide with JS
-$('div.window').css('overflow', 'hidden');
+$('div.window').css({
+	'overflow' : 'hidden',
+	'height' : '450px',
+});
+$('.thumb').css('display', 'block');
 
 //Get width of the image, how many images there are, then determine the size of the image reel.
 var imageWidth = $('.window').width();
