@@ -28,8 +28,7 @@ Andrewberls::Application.routes.draw do
   
   root :to => 'home#index'
   
-  # ROUTE ALL PAGE NOT FOUND TO HOME URL.
-  # TO DO - CREATE 404 PAGE
-  match "*a" => redirect("/")
+  # ROUTE ALL PAGE NOT FOUND TO 404.html  
+  match "*a" => redirect("/404.html")
   
 end
