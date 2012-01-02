@@ -87,8 +87,8 @@ ul.nav    {border: 1px solid yellow !important;}
   background: -ms-linear-gradient(#{$start},#{$end});
   background: -webkit-gradient(linear, 0% 0%, 0% 35%, from($start), to($end)); 
   background: -o-linear-gradient(#{$start},#{$end});   
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start}', endColorstr='#{$end}');
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='{$start}', endColorstr='#{$end}')";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$start}, endColorstr='#{$end}');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start}', endColorstr='#{$end}')";
   background: linear-gradient(#{$start}, #{$end});
 }
 
@@ -324,8 +324,8 @@ section {
   
   .window {       
     height: 1375px; // old 450px - now set with JS to cater to non JS viewers
-    overflow-x: hidden;
-    overflow-y: hidden;
+    //overflow-x: hidden;
+    //overflow-y: hidden;
     position: relative;
     width: 972px;
     
