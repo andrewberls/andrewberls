@@ -41,6 +41,7 @@ var active = 1;
 $('.reel').css({'width' : reelWidth});
 
 function rotate(id) {
+	// var active never changes - its always just id-1 !
 	var offset = Math.abs(id-active),
 		distance = imageWidth * offset;
 		
