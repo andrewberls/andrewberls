@@ -31,7 +31,7 @@
 					# This behavior can change (ex button always present)
 				%>	
 				<% if params[:controller] != "posts" %>
-					<li><%= link_to "blog", {:controller=>"posts", :action=>"list"}, :class=>"blog" %></li>
+					<li><%= link_to "blog", blog_path, :class=>"blog" %></li>
 				<% end %>
 			</ul>			
 		</div>

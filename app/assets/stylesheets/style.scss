@@ -252,16 +252,20 @@ section {
         }               
       }
     }
+    
+    .current {      
+      background-color: $med_blue;
+    }
   }
   
-  a.icon {    
-    background: url('../_images/sprite.gif') no-repeat;    
+  /*a.icon {    
+    background: url('../images/sprites.png') no-repeat;    
     display: block;
     float: right;    
     height: 22px;
     margin-top: -40px;  
     width: 22px;         
-  }  
+  }*/
 }
 
 #home {
