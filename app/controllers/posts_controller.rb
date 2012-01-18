@@ -6,7 +6,11 @@ class PostsController < ApplicationController
   #----- READ
   def list # Main blog page - will show paginated blog    
     # @page_title = "string"   
-    @posts = Post.where("status = 1").order("id DESC")
+    # @posts = Post.where("status = 1").order("id DESC")
+    
+    @posts = Post.paginate(:page => params[:page], :per_page => 6)
+    
+    
   end
   
   def show # Show a single post
