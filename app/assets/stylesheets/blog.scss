@@ -11,6 +11,9 @@ $dark_blue: #1f769c;
 
 //.wrapper  {border: 1px solid red; border-top: none;}
 //#copyright .wrapper {border: 1px solid yellow;}
+// .posts-left { background-color: green; }
+// .posts-right { background-color: #0fc; }
+
 
 //---------- END TEMPORARY DEV
 
@@ -113,6 +116,19 @@ section {
   margin-bottom: 20px;
 }
 
+// I needed .pagination to be centered on the post, not the wrapper
+// so I got lazy and wrapper everything in containers.
+// Probably should refactor it into a better extensible column setup
+// Sorry future me.
+
+.posts-left {
+  float: left;
+  width: 730px;
+}
+.posts-right {
+  float: right;
+}
+
 .post {
   @include rounded(10px);
   @include box_shadow(0,0,2,0,#000000); //252525
@@ -200,7 +216,7 @@ section {
   bottom: 10px;  
 }
 
-.pagination { 
+.pagination {
   margin: 60px auto 0; 
   padding: 5px 0;
   text-align: center;  
@@ -219,14 +235,22 @@ section {
     
     &:active {      
       font-weight: bold;
-    }
-    
-    &.active {      
-      background-color: #444;
-      color: white;
-      font-weight: bold;      
-    }
-  }  
+    }       
+  }
+  .current {      
+    background-color: #444;
+    border: 1px solid $emphasis;
+    color: white;
+    font-weight: bold;
+    padding: 3px 6px;    
+  }
+  .disabled {
+    background-color: #e7e7e7;
+    border: 1px solid $emphasis;
+    color: $emphasis; //989898
+    opacity: 0.5;
+    padding: 3px 6px;
+  }
 }
 
 #copyright { 
