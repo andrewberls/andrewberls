@@ -133,11 +133,7 @@ section {
   @include rounded(10px);
   @include box_shadow(0,0,2,0,#000000); //252525
   
-  background-color: #F9F9F9;
-  /*-moz-box-shadow: 0 0 6px #000; // 0 0 6px #000
-  -webkit-box-shadow: 0 0 6px #000;
-  box-shadow: 0 0 6px #252525;*/ 
-     
+  background-color: #F9F9F9;     
   margin-bottom: 25px;
   //margin-top: 20px;
   line-height: 32px;

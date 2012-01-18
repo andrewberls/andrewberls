@@ -9,8 +9,6 @@ class PostsController < ApplicationController
     # @posts = Post.where("status = 1").order("id DESC")
     
     @posts = Post.paginate(:page => params[:page], :per_page => 6)
-    
-    
   end
   
   def show # Show a single post
