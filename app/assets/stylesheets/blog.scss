@@ -72,12 +72,12 @@ body {
 
 h4 {
   color: $emphasis;
-  font-size: 1.2em;
+  font-size: 1.4em; // 1.2em
   font-weight: bold;
   
   a, a:visited {
     color: inherit;
-    text-decoration: underline;        
+    text-decoration: none;        
   }
   
   a:hover {
@@ -166,11 +166,7 @@ section {
   overflow: visible;   
   padding: 10px 15px;
   width: 700px;
-  word-wrap: break-word;
-  
-  h4 a {
-    text-decoration: none;    
-  }
+  word-wrap: break-word;     
   
   .tag {
     @include rounded(3px);
