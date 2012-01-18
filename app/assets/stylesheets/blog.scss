@@ -31,6 +31,32 @@ $dark_blue: #1f769c;
   -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=2, Direction=225, Color='#{$color}')";
   filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#{$color}');       
 }
+.button {
+  background-color: #3099DF;  
+  background: -moz-linear-gradient(0% 50% 90deg,#188AC2, #3099DF);
+  background: -ms-linear-gradient(#3099DF,#188AC2);
+  background: -webkit-gradient(linear, 0% 0%, 0% 35%, from(#3099DF), to(#188AC2)); 
+  background: -o-linear-gradient(#3099DF,#188AC2);   
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3099DF', endColorstr='#188AC2');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#3099DF', endColorstr='#188AC2')";
+  background: linear-gradient(#3099DF, #188AC2);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: white !important;
+  display: inline-block;
+  float: right;
+  font-size: 0.9em;
+  margin-right: 5px;
+  padding: 2px 5px;
+  
+  &:hover {
+    background: none;
+    background-color: #008AB8;
+    cursor: pointer;
+  }
+}
+  
 
 body {  
   //background-color: $blue;
@@ -142,6 +168,10 @@ section {
   width: 700px;
   word-wrap: break-word;
   
+  h4 a {
+    text-decoration: none;    
+  }
+  
   .tag {
     @include rounded(3px);
     
@@ -182,11 +212,10 @@ section {
   width: 230px;
 
   h4 {
-    font-size: 1.4em;
-    padding-bottom: 7px;
-    
-    margin-bottom: 10px;
     border-bottom: 2px solid $gray_text;
+    font-size: 1.4em;        
+    margin-bottom: 10px;
+    padding-bottom: 7px;
     
   }  
   

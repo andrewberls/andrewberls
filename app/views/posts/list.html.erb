@@ -4,13 +4,17 @@
 
 <% @posts.each do |post| %>
 	<div class="post">
-		<h4><%= raw post.title %></h4>
+		<h4><%= link_to(raw(post.title), {:action => "show", :id => post.id}) %></h4>
 		<p class="date"><%= render_sutro_time(post.created_at) %></p>
 		<p><%= raw post.body %></p>
 		
 		<!-- TEMPORARY STATIC TAGS FOR STYLING. REPLACE WITH CODE FROM DISABLEDRUBY.TXT -->		
-		<!--<a class="tag" href="#">static</a>
-		<a class="tag" href="#">fake</a>-->		
+		<!--
+		<a class="tag" href="#">static</a>
+		<a class="tag" href="#">fake</a>
+		-->
+		<%= link_to raw("Full Post &raquo;"), {:action => "show", :id => post.id}, {:class => "button"} %>
+		<div style="clear: both"></div>
 	</div>
 <% end %>
 
