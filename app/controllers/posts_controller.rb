@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     # @page_title = "string"   
     # @posts = Post.where("status = 1").order("id DESC")
     
-    @posts = Post.paginate(:page => params[:page], :per_page => 6)
+    @posts = Post.where("status = 1").paginate(:page => params[:page], :per_page => 6).order("id DESC")
   end
   
   def show # Show a single post
