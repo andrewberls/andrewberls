@@ -6,11 +6,12 @@
 	<%= stylesheet_link_tag "reset" %>
 	<%= stylesheet_link_tag "style" %>	
 	<%= stylesheet_link_tag "blog" %>
+	<!-- stylesheet_link_tag "prettify/prettify" -->
 	<link rel="icon" type="image/gif" href="/favicon.gif" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
-<body>
+<body><!-- onload="prettyPrint()" -->
 	<div id="container">
 	<section id="header">
 		<!-- 
@@ -52,7 +53,8 @@
 	</section>
 	
 	</div> <!-- #container -->
-	
+
+<!-- javascript_include_tag "prettify/prettify" -->
 <%= javascript_include_tag "functions" %>
 
 <script type="text/javascript">

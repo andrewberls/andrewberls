@@ -17,8 +17,7 @@ $dark_blue: #1f769c;
 
 //---------- END TEMPORARY DEV
 
-
-@mixin rounded($rad) {
+@mixin border_radius($rad) {
   -webkit-border-radius: $rad;
   -moz-border-radius: $rad;
   border-radius: $rad;
@@ -60,7 +59,8 @@ $dark_blue: #1f769c;
 
 body {  
   //background-color: $blue;
-  background: #E7E7E7 url(../images/cork1.jpg); // public/images
+  //background: #E7E7E7 url(../images/cork1.png); // public/images  
+  background-color: #E7E7E7;    
   position: relative;
 }
 
@@ -156,7 +156,7 @@ section {
 }
 
 .post {
-  @include rounded(10px);
+  @include border_radius(10px);
   @include box_shadow(0,0,2,0,#000000); //252525
   
   background-color: #F9F9F9;     
@@ -169,7 +169,7 @@ section {
   word-wrap: break-word;     
   
   .tag {
-    @include rounded(3px);
+    @include border_radius(3px);
     
     background-color: #D3D3D3; // c4c4c4 
     color: #666;
@@ -189,14 +189,19 @@ section {
     }
   }
   
+  //pre { border: none !important; }
+  
   code {
-    background-color: #E6E6E6; // e2e2e2
+    @include border_radius(4px);    
+      
+    background-color: #ececec; //background e7 || f1
+    border: 1px solid #ddd;
     font-family: 'Courier New', Arial, Helvetica, sans-serif;
     font-size: 0.9em;
     display: block;
-    line-height: 1.2; // 1.1
+    line-height: 1.25; // 1.1
     margin-bottom: 15px;
-    padding: 8px 12px;
+    padding: 10px 15px; // 8px 12px
   }
   
   img {
