@@ -17,6 +17,11 @@
 		<%= f.text_field :title %>
 		<%= f.label :body, "Post" %>
 		<%= f.text_area :body %>
+		
+		<%= f.label :tags, "Tags (optional)" %>		
+		<p class="fieldDescription">Enter a comma separated list of tags.</p>
+		<%= f.text_field :tags %>
+		
 		<%= f.hidden_field(:status) %>
 		
 		<%
