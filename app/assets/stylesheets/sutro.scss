@@ -164,7 +164,8 @@ a {
         height: 30px;
         line-height: 30px;
         margin: 0;
-        padding-left: 45px;
+        //padding-left: 45px; // Left align the edge instead of centering
+        text-align: center;
         text-decoration: none;
                        
         &:hover {          
