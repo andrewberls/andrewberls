@@ -56,10 +56,19 @@ class Admin::PostsController < ApplicationController
   end
   
   def update # Process edit record form
-    @post = Post.find(params[:id])    
-    if @post.update_attributes(params[:post])      
-      redirect_to(admin_posts_path, :flash => {:type => "action", :msg => "Post edited succesfully."})
-      #redirect_to(:action => 'show', :id = @post.id) # Redirect to the updated post
+    @post = Post.find(params[:id])
+    new_post = params[:post]
+
+    if params[:post][:status] == "draft"
+      new_post[:status] = 0
+      success_msg = "Post marked as draft."      
+    else
+      new_post[:status] = 1
+      success_msg = "Post updated successfully."            
+    end
+   
+    if @post.update_attributes(new_post)   
+      redirect_to(admin_posts_path, :flash => {:type => "action", :msg => success_msg})         
     else
       # Update fails - redisplay the form
       render :edit

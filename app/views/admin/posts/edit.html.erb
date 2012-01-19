@@ -17,19 +17,21 @@
 		<%= f.text_field :title %>
 		<%= f.label :body, "Post" %>
 		<%= f.text_area :body %>
+		<%= f.hidden_field(:status) %>
+		
 		<%
-			# Old submit tag
-			# submit_tag "Update", :class => "cta submit"
-			# TO DO - FIND OUT HOW BUTTONS CAN DETERMINE STATUS TO BE SAVED
-		%>			
-		<%=
-			# Save with status 1	
-			f.submit "Update", :class => "cta submit"
+			# Save with status 1 (published)
+			# If post is draft, display "Publish", else "Update"
 		%>	
+		<% if @post.status == 0 %>
+			<%= f.submit "Publish", :class => "cta submit" %>
+		<% else %>
+			<%= f.submit "Update", :class => "cta submit" %>
+		<% end %>
+		
 		<%= 
-			# Save with status 0
-			# SAVE_DRAFT DOES NOT TAKE EDITING INTO ACCOUNT - ERROR
-			#link_to "Save for later", save_draft_path, {:class => "cta", :id => "save"}
+			# Save with status 0 (draft)		
+			f.submit "Save for later", {:class => "cta  submit", :id => "save"}
 		%>						
 		<%= link_to "Cancel", dashboard_path, {:class => "cta", :id => "cancel"}%>
 		
