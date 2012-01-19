@@ -189,9 +189,9 @@ section {
     }
   }
   
-  //pre { border: none !important; }
+  //pre { border: none !important; } // For use with prettyprint
   
-  code {
+  pre { // code
     @include border_radius(4px);    
       
     background-color: #ececec; //background e7 || f1
@@ -201,7 +201,7 @@ section {
     display: block;
     line-height: 1.25; // 1.1
     margin-bottom: 15px;
-    padding: 10px 15px; // 8px 12px
+    padding: 10px 15px; // 8px 12px    
   }
   
   img {
