@@ -9,10 +9,16 @@
 		<p><%= raw post.body %></p>
 		
 		<!-- TEMPORARY STATIC TAGS FOR STYLING. REPLACE WITH CODE FROM DISABLEDRUBY.TXT -->		
-		<!--
+		<!--		
 		<a class="tag" href="#">static</a>
 		<a class="tag" href="#">fake</a>
 		-->
+		
+		<!-- render_tags(post.tags) -->
+		<% unless post.tags.blank? %>						
+			<%= raw render_tags(post.tags, false) %>					
+		<% end %>	
+		
 		<%= link_to raw("Full Post &raquo;"), {:action => "show", :id => post.id}, {:class => "button"} %>
 		<div style="clear: both"></div>
 	</div>

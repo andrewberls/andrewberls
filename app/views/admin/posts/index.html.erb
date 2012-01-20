@@ -24,16 +24,9 @@
 			<td><%= render_sutro_time(post.created_at) %></td>
 			<td>
 				<% if post.tags.blank? %>					
-					<span style="color: orange;">No tags</span>
-				<% else %>
-					<!-- 
-						EVENTUALLY THIS WILL NEED TO BE A COMMA SEPARATED LIST OF LINKS 
-						EACH LINK WILL LEAD TO AN ADMINISTRATIVE LIST OF POSTS WITH THAT TAG
-						render_tags(post.tags)
-							Sample tag as in DB: "food,cooking,baking" (string)
-							Split by comma,	format tag text and auto-generate link for each element
-					-->
-					<% post.tags %>
+					-
+				<% else %>				
+					<%= render_tags(post.tags) %>					
 				<% end %>
 			</td>
 			<td>
