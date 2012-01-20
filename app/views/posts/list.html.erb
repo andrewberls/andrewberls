@@ -5,18 +5,18 @@
 <% @posts.each do |post| %>
 	<div class="post">
 		<h4><%= link_to(raw(post.title), {:action => "show", :id => post.id}) %></h4>
-		<p class="date"><%= render_sutro_time(post.created_at) %></p>
-		<p><%= raw post.body %></p>
-		
-		<!-- TEMPORARY STATIC TAGS FOR STYLING. REPLACE WITH CODE FROM DISABLEDRUBY.TXT -->		
-		<!--		
-		<a class="tag" href="#">static</a>
-		<a class="tag" href="#">fake</a>
-		-->
-		
-		<!-- render_tags(post.tags) -->
+		<p class="date"><%= render_sutro_time(post.created_at) %></p>		
+		<%
+			# TO DO: if post is type:text only, use render_teaser(post.body) to
+			# trim and add read more breka
+		%>
+		<p><%= raw post.body %></p>		
+				
 		<% unless post.tags.blank? %>						
-			<%= raw render_tags(post.tags, false) %>					
+			<%=
+				# render_tags(tags, commas=true)
+				raw render_tags(post.tags, false)
+			%>					
 		<% end %>	
 		
 		<%= link_to raw("Full Post &raquo;"), {:action => "show", :id => post.id}, {:class => "button"} %>
@@ -26,7 +26,7 @@
 
 
 <%= 
-	# Display pagination links (prev,1,2,next,etc)
+	# Display pagination links
 	will_paginate @posts 
 %>
 
