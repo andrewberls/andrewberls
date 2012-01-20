@@ -187,9 +187,7 @@ section {
       color: #525252;
       margin-left: 30px;
     }
-  }
-  
-  //pre { border: none !important; } // For use with prettyprint
+  }    
   
   pre { // code
     @include border_radius(4px);    
