@@ -5,7 +5,10 @@
 	<p class="date"><%= @post.created_at %></p>
 	<p><%= raw @post.body %></p>
 	
-	<!-- TEMPORARY STATIC TAGS FOR STYLING. REPLACE WITH CODE FROM DISABLEDRUBY.TXT -->
-	<a class="tag" href="#">rants</a>
-	<a class="tag" href="#">testing</a>			
+	<% unless @post.tags.blank? %>						
+		<%=
+			# render_tags(tags, commas=true)
+			raw render_tags(@post.tags, false)
+		%>					
+	<% end %>		
 </div>
