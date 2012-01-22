@@ -189,7 +189,16 @@ section {
     }
   }    
   
-  pre { // code
+  code {
+    // Inline code snippets
+    background-color: #EDEDED;
+    border: 1px solid #c4c4c4;    
+    font-family: 'Courier New', Arial, Helvetica, sans-serif;
+    padding: 1px 3px;
+  }
+  
+  pre {
+    // Code blocks
     @include border_radius(4px);    
       
     background-color: #ececec; //background e7 || f1
