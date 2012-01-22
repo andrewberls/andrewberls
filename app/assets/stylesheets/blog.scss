@@ -85,10 +85,17 @@ h4 {
   }
 }
 h5 {
-  font-weight: bold;
+  font-weight: bold;  
 }
 h6 {  
-  text-decoration: underline;
+  border-bottom: 1px solid #c4c4c4;    
+  color: #545152;
+  font-size: 0.85em;
+  font-weight: bold;
+  line-height: 1;
+  margin: 5px 0 10px;  
+  padding-bottom: 5px;
+  width: 85%;
 }
 p {
   color: #525252;  
