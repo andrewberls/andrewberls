@@ -201,7 +201,7 @@ section {
     background-color: #EDEDED;
     border: 1px solid #c4c4c4;    
     font-family: 'Courier New', Arial, Helvetica, sans-serif;
-    padding: 1px 3px;
+    padding: 1px 3px;        
   }
   
   pre {
@@ -215,7 +215,13 @@ section {
     display: block;
     line-height: 1.25; // 1.1
     margin-bottom: 15px;
-    padding: 10px 15px; // 8px 12px    
+    padding: 10px 15px; // 8px 12px
+    
+    .label {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: #797979;    
+    }   
   }
   
   img {
