@@ -5,7 +5,18 @@ class ApplicationController < ActionController::Base
   def check_auth    
     unless session[:user_id]
       redirect_to login_path  
-    end    
+    end
+    
+=begin
+  if session[:logged_in]
+    reset_session if session[:last_seen] < 2.minutes.ago
+    session[:last_seen] = Time.now
+  else
+    ... authenticate
+    session[:last_seen] = Time.now
+  end  
+=end
+ 
   end
   
   def is_admin?(user)
