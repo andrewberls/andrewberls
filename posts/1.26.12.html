@@ -1,0 +1,34 @@
+Title: Styling buttons with Sass
+
+button -> radius -> gradient -> rad mixin
+
+
+finishing touches
+html -> raquo
+button mixin, with color parameters
+
+
+
+<p>On every single web project I've worked on, I find myself having to style decent-looking buttons. Instead of rewriting them from scratch every time, I have a pretty standard block of code I paste around between projects, and I figured I would share, despite it being rather simple. For fun, I'll write it using <a href="http://sass-lang.com/">Sass</a> (something I rave about in just about everything I write) to make things a little easier.</p>
+
+<h5>The Basics</h5>
+We'll start with the HTML - all we need is a single anchor with a class.
+<pre>
+<span class="label"># index.html</span>
+<a href="#" class="button">Full Post</a>
+</pre>
+
+<p>This doesn't look like much of anything, so let's add some style to our button class.</p>
+
+<pre>
+<span class="label"># style.scss</span>
+.button {
+	background-color: #3099DF;	  
+	color: white;  
+	font-family: Arial, Verdana, Geneva, sans-serif;
+	font-size: 0.8em;     
+	padding: 7px;
+}
+</pre>
+
+<p>That's a good start - all we're doing here is some font basics, adding a nice blue background color, and some padding to make it look more like a button.</p>
