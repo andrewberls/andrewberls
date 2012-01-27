@@ -31,6 +31,8 @@ $dark_blue: #1f769c;
   filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#{$color}');       
 }
 .button {
+  @include border_radius(5px); 
+ 
   background-color: #3099DF;  
   background: -moz-linear-gradient(0% 50% 90deg,#188AC2, #3099DF);
   background: -ms-linear-gradient(#3099DF,#188AC2);
@@ -39,11 +41,9 @@ $dark_blue: #1f769c;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3099DF', endColorstr='#188AC2');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#3099DF', endColorstr='#188AC2')";
   background: linear-gradient(#3099DF, #188AC2);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  
   color: white !important;
-  display: inline-block;
+  //display: inline-block;
   float: right;
   font-size: 0.8em;
   margin-right: 5px;
@@ -53,6 +53,9 @@ $dark_blue: #1f769c;
     background: none;
     background-color: #008AB8;
     cursor: pointer;
+  }
+  &:active {    
+    background-color: #007298;
   }
 }
   
