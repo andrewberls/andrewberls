@@ -29,7 +29,7 @@ class Admin::PostsController < ApplicationController
     end
 
     if @post.save
-      redirect_to(admin_posts_path, :flash => {:type => "action", :msg => success_msg})    
+      redirect_to(admin_posts_path, :flash => {:type => "action", :msg => success_msg})
     else
       # Save failed - redisplay form for user
       render :new
