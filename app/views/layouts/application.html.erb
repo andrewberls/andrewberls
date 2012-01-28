@@ -25,14 +25,8 @@
 				<li><a href="#portfolio" class="portfolio">portfolio</a></li>
 				<!--<li><a href="#about" class="about">about me</a></li>-->
 				<li><a href="#contact" class="contact">get in touch</a></li>
-				<li><a href="#footer" class="footer">resources</a></li>
-				<%
-					# Link to blog unless already on
-					# This behavior can change (ex button always present)
-				%>	
-				<% if params[:controller] != "posts" %>
-					<li><%= link_to "blog", blog_path, :class=>"blog" %></li>
-				<% end %>
+				<li><a href="#footer" class="footer">resources</a></li>				
+				<li><%= link_to "blog", blog_path, :class=>"blog" %></li>				
 			</ul>			
 		</div>
 	</section>
@@ -89,6 +83,6 @@
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
 	</script>
-	<!-- </div> -->
+	<!--</div>--><!-- #container -->
 </body>
 </html>
