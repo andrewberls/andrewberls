@@ -2,7 +2,7 @@ class Admin::PostsController < ApplicationController
   
   layout 'sutro'
   
-  # Check authentication for on public-facing actions
+  # Check authentication for on public-accessible actions
   before_filter :check_auth, :accept => [:index, :new, :dashboard, :edit]
   
   #----- GENERAL
@@ -38,14 +38,12 @@ class Admin::PostsController < ApplicationController
   end   
   
   #----- READ
-  # Posts controller has public list and show methods
-  # Sutro provides administrative view only
+  # posts controller has public list and show methods
+  # admin/posts provides only backend management
   
   def index # Administrative list of posts    
     @page_title = "Posts Overview | SutroCMS"
-    # Instance variable set to all posts for development
-    # This will need to be paginated later   
-    @posts = Post.order("id DESC")   
+    @posts = Post.paginate(:page => params[:page], :per_page => 10).order("id DESC")
   end  
     
   #----- UPDATE  
