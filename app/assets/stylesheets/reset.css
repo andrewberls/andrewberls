@@ -26,6 +26,10 @@ time, mark, audio, video {
 html,body {
 	height: 100%;	
 }
+html {
+	/* Force a scrollbar everywhere to prevent any jumping around */
+	overflow-y: scroll;
+}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
