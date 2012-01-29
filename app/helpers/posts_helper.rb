@@ -15,15 +15,13 @@ module PostsHelper
         body = body[0..endchar]
         
         # slice out the closing p tag, insert ellipses, re-close p tag
-        endchar = body.rindex('</p>') - 1        
-        body = body[0..endchar]
-                                
-        return raw body + "</p>"        
-      
-      else
-        # Display the post normally if no break tag specified
-        raw body
+        #endchar = body.rindex('</p>') - 1        
+        #body = body[0..endchar]                               
+        #return raw body + "&hellip;</p>"         
       end
+      
+      return raw body
+            
     end
     
     def render_full_post(body)
