@@ -6,13 +6,10 @@
 	<div class="post">
 		<h4><%= link_to(raw(post.title), {:action => "show", :id => post.id}) %></h4>
 		<p class="date"><%= render_sutro_time(post.created_at) %></p>		
-		<%
-			# TO DO: if post is type:text only, use render_teaser(post.body) to
-			# trim and add read more breka
-		%>
+
 		<p><%= render_teaser(post.body) %></p>		
 				
-		<% unless post.tags.blank? %>						
+		<% unless has_pagebreak? post.body || post.tags.blank? %>						
 			<%= raw render_tags(post.tags, false) %>					
 		<% end %>	
 		
@@ -20,7 +17,7 @@
 			<%= link_to raw("Full Post &raquo;"), {:action => "show", :id => post.id}, 
 				{:class => "button"} %>
 		<% end %>
-		<div style="clear: both"></div>
+		<div class="clearfix"></div>
 	</div>
 <% end %>
 
