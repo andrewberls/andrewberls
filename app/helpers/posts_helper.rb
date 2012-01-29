@@ -18,7 +18,7 @@ module PostsHelper
         endchar = body.rindex('</p>') - 1        
         body = body[0..endchar]
                                 
-        return raw body + "&hellip;</p>"        
+        return raw body + "</p>"        
       
       else
         # Display the post normally if no break tag specified
