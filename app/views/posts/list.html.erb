@@ -10,16 +10,16 @@
 			# TO DO: if post is type:text only, use render_teaser(post.body) to
 			# trim and add read more breka
 		%>
-		<p><%= raw post.body %></p>		
+		<p><%= render_teaser(post.body) %></p>		
 				
 		<% unless post.tags.blank? %>						
-			<%=
-				# render_tags(tags, commas=true)
-				raw render_tags(post.tags, false)
-			%>					
+			<%= raw render_tags(post.tags, false) %>					
 		<% end %>	
 		
-		<%= link_to raw("Full Post &raquo;"), {:action => "show", :id => post.id}, {:class => "button"} %>
+		<% if has_pagebreak? post.body %>
+			<%= link_to raw("Full Post &raquo;"), {:action => "show", :id => post.id}, 
+				{:class => "button"} %>
+		<% end %>
 		<div style="clear: both"></div>
 	</div>
 <% end %>
