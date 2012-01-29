@@ -8,20 +8,15 @@ module PostsHelper
       # render up until the break tag if specified
       # if encountered, break the text and add a link to full text
       
-      if has_pagebreak?(body)
-                
+      if has_pagebreak?(body)                
         # slice up until the start of the break tag
-        endchar = body.index('<break />') - 1         
-        body = body[0..endchar]
-        
-        # slice out the closing p tag, insert ellipses, re-close p tag
-        #endchar = body.rindex('</p>') - 1        
-        #body = body[0..endchar]                               
-        #return raw body + "&hellip;</p>"         
+        break_tag = '<break />'
+        endchar = body.index(break_tag) - 1         
+        body = body[0..endchar]    
       end
       
       return raw body
-            
+                
     end
     
     def render_full_post(body)
@@ -39,7 +34,7 @@ module PostsHelper
     if commas
       raw tags.split(',').map! {|tag| render_link(tag)}.join(', ')
     else
-      raw tags.split(',').map! {|tag| render_link(tag)}.join('')
+      raw tags.split(',').map! {|tag| render_link(tag)}.join('')     
     end       
   end 
     
