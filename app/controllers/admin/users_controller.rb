@@ -5,6 +5,7 @@ class Admin::UsersController < ApplicationController
   # Check authentication for on public-facing actions
   before_filter :check_auth, :accept => [:new, :manage]  
   
+  
   #----- CREATE
   def new
     check_admin_privileges(admin_posts_path)
@@ -17,18 +18,16 @@ class Admin::UsersController < ApplicationController
     @user = User.new(params[:user])       
     # A little unsure of why this is explicitly necessary
     @user.permissions = params[:user][:permissions]
-        
-    #redirect_to(manage_users_path, 
-    #  :flash => {:type => "action", :msg => params[:user].to_s + @user.permissions.to_s})
-#=begin
+
     if @user.save          
       redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User created succesfully."})      
     else      
       # Save failed - render the signup form again
       render :new
     end
-#=end
+
   end
+  
   
   #----- READ
   def manage
@@ -45,6 +44,7 @@ class Admin::UsersController < ApplicationController
     @posts = Post.where(:user_id => @user.id)
       .paginate(:page => params[:page], :per_page => 10).order("id DESC")
   end
+  
   
   #----- UPDATE
   def edit # Display edit record form    
@@ -66,6 +66,7 @@ class Admin::UsersController < ApplicationController
       render :edit
     end
   end
+  
   
   #----- DELETE
   def destroy # Destroy record
