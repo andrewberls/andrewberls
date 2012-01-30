@@ -10,7 +10,7 @@
 		<p><%= render_teaser(post.body) %></p>		
 				
 		<% unless has_pagebreak? post.body || post.tags.blank? %>						
-			<%= raw render_tags(post.tags, false) %>					
+			<%= render_tags(post.tags, false) %>					
 		<% end %>	
 		
 		<% if has_pagebreak? post.body %>

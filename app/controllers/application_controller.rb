@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  
   protect_from_forgery
   helper_method :current_user
   
@@ -7,15 +8,17 @@ class ApplicationController < ActionController::Base
       redirect_to login_path  
     end
     
-=begin
-  if session[:logged_in]
-    reset_session if session[:last_seen] < 2.minutes.ago
-    session[:last_seen] = Time.now
-  else
-    ... authenticate
-    session[:last_seen] = Time.now
-  end  
-=end
+    #redirect_to(blog_path, :flash => {:type => "action", :msg => "Good story brah"})  
+ 
+=begin 
+    if session[:user_id]
+      reset_session if session[:last_seen] < 2.minutes.ago
+      session[:last_seen] = Time.now
+    else
+      redirect_to login_path unless session[:user_id]
+      session[:last_seen] = Time.now
+    end
+=end    
  
   end
   

@@ -18,7 +18,8 @@ class Admin::PostsController < ApplicationController
   end
   
   def create # Process new record form    
-    @post = Post.new(params[:post])    
+    @post = Post.new(params[:post])
+    @post.user_id = current_user.id
 
     if params[:post][:status] == "draft"
       @post.status = 0
