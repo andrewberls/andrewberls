@@ -97,9 +97,11 @@ input,textarea {border: 1px solid black !important;}
 }
 
 .subdued {
-  color: orange;
-  font-size: 0.9em;
+  color: #9b9b9b;
+  /*font-size: 0.9em;*/
  }
+ .italic { font-style: italic; }
+ .bold { font-weight: bold; }
 
 // ----------
 // - GENERIC
