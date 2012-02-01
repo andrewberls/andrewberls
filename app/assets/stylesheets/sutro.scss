@@ -97,9 +97,11 @@ input,textarea {border: 1px solid black !important;}
 }
 
 .subdued {
-  color: orange;
-  font-size: 0.9em;
+  color: #9b9b9b;
+  /*font-size: 0.9em;*/
  }
+ .italic { font-style: italic; }
+ .bold { font-weight: bold; }
 
 // ----------
 // - GENERIC
@@ -325,13 +327,10 @@ select {
 }
 
 .cta {
-  // ------------------------------- ARE ALL OF THESE STILL NECESSARY? TWO SUBMITS NOW  
   background: #F0F0F0;
   border: 1px solid #CCC;
-  border-radius: 5px;
-  float: left;
-  font-size: 0.9em;
-  //margin: 0 0 0 10px;
+  border-radius: 5px;  
+  font-size: 0.9em;  
   padding: 7px 10px;
   text-decoration: none;
   width: auto;   
@@ -341,9 +340,6 @@ select {
     text-decoration: none;
   }
 }
-
-// Rest the left margin on the first button
-input.cta { margin-left: 0; }
 
 .submit {
   color: $green;
@@ -356,11 +352,10 @@ input.cta { margin-left: 0; }
   }
 }
 
-#save  {
-  // Uses inherited link coloring by default
+#save  {  
   clear: none;
   color: $med_blue;
-  display: none;
+  display: none; // Enabled with JS
   margin-left: 10px;
   
   &:hover {
@@ -417,12 +412,12 @@ td {
 }
 
 .twoCol {
-  $bottom_margin: 20px; 
-  float: left;
-  //min-height: 400px;  
-  margin-right: 10px;
-  margin-bottom: 10px;
+  // TO DO: stop being lazy and figure out the right box-model math
   
+  $bottom_margin: 20px;
+  
+  float: left;
+  margin-right: 10px;  
   width: 49%; // Sort of hackety, but accidentally responsive! Yay!
   
   &:last-child {    

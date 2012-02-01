@@ -18,7 +18,8 @@ class Admin::PostsController < ApplicationController
   end
   
   def create # Process new record form    
-    @post = Post.new(params[:post])    
+    @post = Post.new(params[:post])
+    @post.user_id = current_user.id
 
     if params[:post][:status] == "draft"
       @post.status = 0
@@ -29,7 +30,7 @@ class Admin::PostsController < ApplicationController
     end
 
     if @post.save
-      redirect_to(admin_posts_path, :flash => {:type => "action", :msg => success_msg})    
+      redirect_to(admin_posts_path, :flash => {:type => "action", :msg => success_msg})
     else
       # Save failed - redisplay form for user
       render :new

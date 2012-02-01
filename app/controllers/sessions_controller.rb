@@ -19,12 +19,11 @@ class SessionsController < ApplicationController
     user  = User.authenticate(params[:email], params[:password])
     
     if user
-      session[:user_id] = user.id
-      # REDIRECT/NOTICE CAN BE CHANGED
+      session[:user_id] = user.id      
       redirect_to dashboard_path
     else
       # Authentication failed - render the form again      
-      redirect_to login_path, :notice => "Invalid email or password."     
+      redirect_to(login_path, :flash => {:msg => "Invalid email or password."})     
     end
   end
   
@@ -32,9 +31,8 @@ class SessionsController < ApplicationController
     if !session[:user_id]
       redirect_to blog_path   
     else
-      session[:user_id] = nil
-      # REDIRECT/NOTICE CAN BE CHANGED
-      redirect_to blog_path, :notice => "Logged out!"
+      session[:user_id] = nil      
+      redirect_to(blog_path, :flash => {:msg => "Logged out!"})
     end
   end
   
