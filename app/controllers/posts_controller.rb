@@ -1,7 +1,7 @@
 class PostsController < ApplicationController  
 
   # Public-facing actions only.
-  # Administrative actions are handled by Admin::PostsController
+  # Administrative actions are handled by admin/posts_controller
 
   #----- READ
   def list # Main blog page - will show paginated blog    
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   
   def show # Show a single post    
     @post = Post.find(params[:id])
-	@page_title = "Andrew Berls | " + @post.title   
+	  @page_title = "Andrew Berls | " + @post.title   
   end
 
 end
