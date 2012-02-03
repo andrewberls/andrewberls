@@ -42,6 +42,8 @@ $dark_blue: #1f769c;
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#3099DF', endColorstr='#188AC2')";
   background: linear-gradient(#3099DF, #188AC2);
   
+  //box-shadow: inset 0px 1px 0px #4db0e1;
+  
   color: white !important;
   //display: inline-block;
   float: right;
@@ -72,6 +74,7 @@ body {
 }
 
 h4 {
+  // Post Titles
   color: $emphasis;
   font-size: 1.4em; // 1.2em
   font-weight: bold;
@@ -86,7 +89,9 @@ h4 {
   }
 }
 h5 {
-  font-weight: bold;  
+  // Post sub headers
+  font-weight: bold;
+  font-size: 1em;  
 }
 h6 {  
   border-bottom: 1px solid #c4c4c4;    
@@ -222,6 +227,10 @@ section {
       display: inline-block;
       margin-bottom: 8px;
       color: #797979;    
+    }
+    .comment {
+      
+      color: #797979;
     }
     .new {
       color: #778f48;
