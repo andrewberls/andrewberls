@@ -334,3 +334,18 @@ section {
     margin: 0 auto;
   }
 }
+
+//----- DISQUS STYLING
+//---------------------------------------
+#disqus_thread {
+  
+  h3 {    
+    font-size: 1.3em;
+  }
+  a {
+    font-size: 0.9em;
+  }
+  .dsq-trackback-url {
+    display: none;
+  }
+}
