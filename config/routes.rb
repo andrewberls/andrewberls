@@ -7,7 +7,7 @@ Andrewberls::Application.routes.draw do
   # PUBLIC URLS
   match "/blog"          => "posts#list", :as => "blog"
   match "/blog/post/:id" => "posts#show"    
-  match "blog/tag/:tag" => "posts#list"
+  match "blog/tag/:tag" => "posts#list", :as => "tag"
     
   # CONTACT URLS
   match '/contact' => 'home#new', :as => 'contact', :via => :get

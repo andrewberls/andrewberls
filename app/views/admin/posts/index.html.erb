@@ -33,7 +33,7 @@
 					%>
 					<% else %>
 						nil id
-					<% end %>			
+					<% end %>
 				</td>
 				<td>
 					<%= render_sutro_time(post.created_at) %>
@@ -42,9 +42,8 @@
 					<% if post.tags.nil? || post.tags.blank? %>
 						-
 					<% else %>
-						<%= render_tags(post.tags) %>	
-					<% end %>				
-							
+						<%= render_tags(post.tags) %>																															
+					<% end %>							
 				</td>
 				<td>
 					<%= render_status(post.status) %>

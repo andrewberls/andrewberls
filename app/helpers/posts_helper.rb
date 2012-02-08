@@ -14,18 +14,9 @@ module PostsHelper
       username = User.find(user_id).full_name      
       username
     end          
-    
-    #user_id # For debugging            
+         
   end
 
-  def render_tag_link(tag)
-    # param: tag (ex: rails)
-    # returns: HTML link (ex: <a class="tag" href="blog/tag/path">rails</a>)    
-    tag.downcase! # Convert to lowercase
-    tag.strip! # Strip leading/trailing whitespace
-    loc = "/blog/tag/" + tag
-    "<a class=\"tag\" href=\"" + loc + "\">" + tag + "</a>"
-  end
 
   def render_tags(tags, commas=true)
     # Transform each element of the tag array into a link
@@ -33,10 +24,10 @@ module PostsHelper
     # param commas: bool determining whether or not to split result with commas
         
     result = commas ?
-      tags.map { |t| render_tag_link(t.name) }.join(", ") :
-      tags.map { |t| render_tag_link(t.name) }.join("")
+      tags.map { |t| link_to(t.name, tag_path(t.name), :class=> "tag") }.join(", ") :
+      tags.map { |t| link_to(t.name, tag_path(t.name), :class=> "tag") }.join("")
       
-    raw result       
+    raw result
   end 
     
   def has_pagebreak?(body)
