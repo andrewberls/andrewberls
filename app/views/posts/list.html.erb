@@ -18,8 +18,7 @@
 		<% end %>	
 		
 		<% if has_pagebreak? post.body %>
-			<%= link_to raw("Full Post &raquo;"), {:action => "show", :id => post.id}, 
-				{:class => "button"} %>
+			<%= link_to raw("Full Post &raquo;"), post_path(post.id), {:class => "button"} %>
 		<% end %>
 		<div class="clearfix"></div>
 	</div>
