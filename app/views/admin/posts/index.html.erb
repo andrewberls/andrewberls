@@ -24,8 +24,7 @@
 		<% @posts.each do |post| %>
 			<tr class="<%= cycle('odd', 'even') %>">
 				<td>					
-					<%= raw post.title %>
-					<span style="color: red; font-size: 0.9em;"><%= "id " +  post.id.to_s %></span>					
+					<%= raw post.title %>									
 				</td>
 				<td>
 					<% if !post.user_id.nil? %>									
