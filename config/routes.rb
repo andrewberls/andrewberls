@@ -1,9 +1,13 @@
 Andrewberls::Application.routes.draw do        
 
+  get "tags/index"
+
+  get "tags/show"
+
   # PUBLIC URLS
   match "/blog"          => "posts#list", :as => "blog"
   match "/blog/post/:id" => "posts#show"    
- # match "/tags/:tag" => "_action_" # For later. How to parameterize tag slug?
+  match "blog/tag/:tag" => "posts#list"
     
   # CONTACT URLS
   match '/contact' => 'home#new', :as => 'contact', :via => :get
@@ -23,12 +27,13 @@ Andrewberls::Application.routes.draw do
   # RESOURCE MATCHING
   namespace :admin do
     resources :posts, :users
-  end  
+  end
+    
   resources :sessions, :only => :create
   
   root :to => 'home#index'
   
   # ROUTE ALL PAGE NOT FOUND TO 404.html  
-  match "*a" => redirect("/404.html")
+  #match "*a" => redirect("/404.html")
   
 end

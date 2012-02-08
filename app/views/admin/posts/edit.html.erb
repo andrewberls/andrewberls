@@ -18,26 +18,19 @@
 		<%= f.label :body, "Post" %>
 		<%= f.text_area :body %>
 		
-		<%= f.label :tags, "Tags (optional)" %>		
+		<%= f.label :tag_list, "Tags (optional)" %>		
 		<p class="fieldDescription">Enter a comma separated list of tags.</p>
-		<%= f.text_field :tags %>
+		<%= f.text_field :tag_list %>
 		
 		<%= f.hidden_field(:status) %>
 		
-		<%
-			# Save with status 1 (published)
-			# If post is draft, display "Publish", else "Update"
-		%>	
 		<% if @post.status == 0 %>
 			<%= f.submit "Publish", :class => "cta submit" %>
 		<% else %>
 			<%= f.submit "Update", :class => "cta submit" %>
 		<% end %>
 		
-		<%= 
-			# Save with status 0 (draft)		
-			f.submit "Save for later", {:class => "cta  submit", :id => "save"}
-		%>						
+		<%= f.submit "Save for later", {:class => "cta  submit", :id => "save"} %>						
 		<%= link_to "Cancel", dashboard_path, {:class => "cta", :id => "cancel"}%>
 		
 	<% end %>	

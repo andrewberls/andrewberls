@@ -20,28 +20,25 @@ module PostsHelper
 
   def render_tag_link(tag)
     # param: tag (ex: rails)
-    # returns: HTML link (ex: <a class="tag" href="rails/tag/path">Rails</a>)
+    # returns: HTML link (ex: <a class="tag" href="blog/tag/path">rails</a>)    
     tag.downcase! # Convert to lowercase
     tag.strip! # Strip leading/trailing whitespace
-    loc = "/path/" + tag # TEMPORARY
+    loc = "/blog/tag/" + tag
     "<a class=\"tag\" href=\"" + loc + "\">" + tag + "</a>"
   end
 
   def render_tags(tags, commas=true)
-    # Split the tags into an array
-    # Transform each element of the new array into a link
+    # Transform each element of the tag array into a link
     # Return the array concatenated comma-separated string of links
     # param commas: bool determining whether or not to split result with commas
-    
-    if commas
-      raw tags.split(',').map! {|tag| render_tag_link(tag)}.join(', ')
-    else
-      raw tags.split(',').map! {|tag| render_tag_link(tag)}.join('')     
-    end       
+        
+    result = commas ?
+      tags.map { |t| render_tag_link(t.name) }.join(", ") :
+      tags.map { |t| render_tag_link(t.name) }.join("")
+      
+    raw result       
   end 
     
-
-  
   def has_pagebreak?(body)
     body.include? '<break />'
   end

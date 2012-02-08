@@ -3,10 +3,7 @@
 <div class="post">
 	<h4><%= raw @post.title %></h4>
 	<p class="date"><%= render_sutro_time(@post.created_at) %></p>
-	<p><%= 
-		#raw @post.body
-		render_full_post(@post.body)
-	%></p>
+	<p><%= render_full_post(@post.body) %></p>
 	
 	<% unless @post.tags.blank? %>						
 		<%=

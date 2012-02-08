@@ -2,6 +2,10 @@
 	<div class="flash"><%= flash[:msg] %></div>
 <% end %>
 
+<% unless @tag.nil? %>
+	<h1>Tagged: <%= @tag.name %></h1>
+<% end %>
+
 <% @posts.each do |post| %>
 	<div class="post">
 		<h4><%= link_to(raw(post.title), {:action => "show", :id => post.id}) %></h4>

@@ -4,6 +4,10 @@
 	<p class="action_success"><%= flash[:msg] %></p>
 <% end %>
 
+<% if flash[:type] == "debug" %>
+	<p class="action_debug"><%= flash[:msg] %></p>
+<% end %>
+
 <table>
 	<% if (!@posts or @posts.blank?) %>
 		<td>You haven't added any content yet! Click <%= link_to "here", new_admin_post_path %> to get started.</td>				
@@ -20,7 +24,8 @@
 		<% @posts.each do |post| %>
 			<tr class="<%= cycle('odd', 'even') %>">
 				<td>					
-					<%= raw post.title %>					
+					<%= raw post.title %>
+					<span style="color: red; font-size: 0.9em;"><%= "id " +  post.id.to_s %></span>					
 				</td>
 				<td>
 					<% if !post.user_id.nil? %>									
@@ -37,9 +42,10 @@
 				<td>
 					<% if post.tags.nil? || post.tags.blank? %>
 						-
-					<% else %>				
-						<%= render_tags(post.tags) %>
-					<% end %>									
+					<% else %>
+						<%= render_tags(post.tags) %>	
+					<% end %>				
+							
 				</td>
 				<td>
 					<%= render_status(post.status) %>

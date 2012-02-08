@@ -72,7 +72,12 @@ body {
   min-height: 100%;
   position: relative;
 }
-
+h1 {
+  font-size: 2em;
+  font-weight: normal;
+  text-shadow: none;
+  margin-bottom: 15px;
+}
 h4 {
   // Post Titles
   color: $emphasis;

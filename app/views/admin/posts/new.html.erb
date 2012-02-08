@@ -22,19 +22,14 @@
 		<%= f.text_field :title %>
 		<%= f.label :body, "Post" %>
 		<%= f.text_area :body %>
-		<%= f.label :tags, "Tags (optional)" %>		
+		
+		<%= f.label :tag_list, "Tags (optional)" %>		
 		<p class="fieldDescription">Enter a comma separated list of tags.</p>
-		<%= f.text_field :tags %>
-		<%= f.hidden_field(:status) %>		
-		<%=
-			# Save with status 1 (published) by default
-			f.submit "Publish", :class => "cta submit"
-		%>		
-		<%= 
-			# Save with status 0 (draft)
-			# Draft is marked by hidden field populated by JS on submit			
-			f.submit "Save for later", {:class => "cta  submit", :id => "save"}
-		%>						
+		<%= f.text_field :tag_list %>
+		
+		<%= f.hidden_field(:status) %>
+		<%= f.submit "Publish", :class => "cta submit" %>		
+		<%= f.submit "Save for later", {:class => "cta  submit", :id => "save"} %>					
 		<%= link_to "Cancel", dashboard_path, {:class => "cta", :id => "cancel"}%>
 	<% end %>
 </div>
@@ -44,7 +39,7 @@
 		<h4>Style recommendations:</h4>
 		<li>Use &lt;h5&gt; for section headings.</li>
 		<li>Use &lt;pre&gt; for code blocks, and &lt;code&gt; for inline snippets.</li>
-		<li>span.label for code file labels (inline)</li>		
+		<li>span.label for code file labels, or span.comment for an inline comment</li>		
 		<li>Image path is "/images/posts/name.jpg"</li>
 	</ul>
 </div>

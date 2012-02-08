@@ -17,10 +17,10 @@ class Admin::PostsController < ApplicationController
     @page_title = "New Post | SutroCMS"
   end
   
-  def create # Process new record form    
+  def create # Process new record form              
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
-
+       
     if params[:post][:status] == "draft"
       @post.status = 0
       success_msg = "Post saved successfully."
@@ -36,7 +36,7 @@ class Admin::PostsController < ApplicationController
       render :new
     end
 
-  end   
+  end
   
   #----- READ
   # posts controller has public list and show methods
@@ -44,7 +44,8 @@ class Admin::PostsController < ApplicationController
   
   def index # Administrative list of posts    
     @page_title = "Posts Overview | SutroCMS"
-    @posts = Post.paginate(:page => params[:page], :per_page => 10).order("id DESC")
+    @posts = Post.paginate(:page => params[:page], :per_page => 10)
+                 .order("id DESC")
   end  
     
   #----- UPDATE  
