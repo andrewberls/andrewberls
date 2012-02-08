@@ -2,19 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<title><%= @page_title || "SutroCMS" %></title>
-	<%
-		# To do: make use of the master asset pipeline
-	%>
+	<title><%= @page_title || "SutroCMS" %></title>	
 	<%= stylesheet_link_tag "reset" %>
 	<%= stylesheet_link_tag "sutro" %>	
-	<link rel="icon" type="image/gif" href="/favicon.gif" />
-	<%= javascript_include_tag :application %>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	
+	<link rel="icon" type="image/gif" href="/favicon.gif" />	
 	<%= csrf_meta_tag %>
 </head>
-
 <body>
 	
 	<div id="container">
@@ -31,8 +24,8 @@
 			<%= yield %>
 		</div>	
 		
-	</div>
+	</div><!-- .container -->
 
-<%= javascript_include_tag "sutro" %>	
+<%= javascript_include_tag :application %>
 </body>
 </html>
