@@ -1,7 +1,7 @@
 Andrewberls::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
     
-  require 'sass'
+  #require 'sass'
 
   # Code is not reloaded between requests
   config.cache_classes = true
@@ -15,8 +15,8 @@ Andrewberls::Application.configure do
 
   # Compress JavaScripts and CSS  
   #config.assets.css_compressor = :scss  
-  config.assets.js_compressor = :closure
-  config.assets.compress = true
+  #config.assets.js_compressor = :closure
+  #config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed  
   config.assets.compile = true # default false (True necessary to prevent errors)
