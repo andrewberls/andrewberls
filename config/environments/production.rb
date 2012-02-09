@@ -11,7 +11,7 @@ Andrewberls::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)  
-  config.serve_static_assets = false # Default false. Had been true, but appears to make no difference
+  config.serve_static_assets = true # Default false. Had been true, but appears to make no difference
 
   # Compress JavaScripts and CSS  
   #config.assets.css_compressor = :scss  
