@@ -3,8 +3,11 @@
 <head>
 	<meta charset="utf-8" />
 	<title><%= @page_title || "SutroCMS" %></title>	
-	<%= stylesheet_link_tag "reset" %>
-	<%= stylesheet_link_tag "sutro" %>	
+	<%# stylesheet_link_tag "reset" 
+	%>
+	<%# stylesheet_link_tag "sutro" 
+	%>
+	<%= stylesheet_link_tag :application %>
 	<link rel="icon" type="image/gif" href="/favicon.gif" />	
 	<%= csrf_meta_tag %>
 </head>
