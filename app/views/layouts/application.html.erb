@@ -3,30 +3,22 @@
 <head>
 	<meta charset="utf-8" />
 	<title>AndrewBerls.com</title>
-	<%
-		# Is the stylesheet_link "application" master pipeline more efficient here?
-	%>	
 	<%= stylesheet_link_tag "reset" %>
 	<%= stylesheet_link_tag "style" %>
 	<link rel="icon" type="image/gif" href="/favicon.gif" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<%=
-		# Local copy of jquery for offline development		
-		# javascript_include_tag "jquery-dev" 
-	%>	
 </head>
 
 <body>
-	<!-- <div id="container"> -->
+	
 	<section id="header">
 		<div class="wrapper">			
 			<a href="/"><h2>Andrew <span>Berls</span></h2></a>
 			<ul class="nav">													
-				<li><a href="#portfolio" class="portfolio">portfolio</a></li>
-				<!--<li><a href="#about" class="about">about me</a></li>-->
+				<li><a href="#portfolio" class="portfolio">portfolio</a></li>				
 				<li><a href="#contact" class="contact">get in touch</a></li>
 				<li><a href="#footer" class="footer">resources</a></li>				
-				<li><%= link_to "blog", blog_path, :class=>"blog" %></li>				
+				<li><%= link_to "blog", blog_path, :class => "blog" %></li>				
 			</ul>			
 		</div>
 	</section>
@@ -71,7 +63,6 @@
 	</section>
 			
 	<%= javascript_include_tag "functions.min" %>	
-	
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-9633739-4']);
@@ -83,6 +74,5 @@
 	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 	  })();
 	</script>
-	<!--</div>--><!-- #container -->
 </body>
 </html>
