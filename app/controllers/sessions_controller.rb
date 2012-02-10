@@ -23,7 +23,8 @@ class SessionsController < ApplicationController
       redirect_to dashboard_path
     else
       # Authentication failed - render the form again      
-      redirect_to(login_path, :flash => {:msg => "Invalid email or password."})     
+      flash[:msg] = "Invalid email or password."
+      render :new
     end
   end
   
