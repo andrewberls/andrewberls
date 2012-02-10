@@ -1,20 +1,7 @@
 module PostsHelper
   
-  #title
-  #username
-  #date
-  #tags
-  #status
-  #actions
-
   def render_username(user_id)
-    if user_id.nil?
-      "Error: No ID"
-    else
-      username = User.find(user_id).full_name      
-      username
-    end          
-         
+    User.find(user_id).full_name             
   end
 
 
