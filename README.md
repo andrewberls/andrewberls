@@ -6,9 +6,5 @@ The site is divided into two components: the portfolio page and the blog. The bl
 * Basic multi-user blog engine with access-restricted permission support
 * Users can create and manage blog posts/drafts by logging into a private backend
 * Paginated public listing of posts
-
-
-### To Do
-* Add ability for other post formats, e.g. link or image
-* Post tag support
-* Post comments
+* Post-tag association and ability to filter by tag
+* Comments on posts
