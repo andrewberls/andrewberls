@@ -22,7 +22,7 @@
 		<p class="fieldDescription">Enter a comma separated list of tags.</p>
 		<%= f.text_field :tag_list %>
 		
-		<%= f.hidden_field(:status) %>
+		<%= f.hidden_field :status, :value => 1 %>
 		
 		<% if @post.status == 0 %>
 			<%= f.submit "Publish", :class => "cta submit" %>

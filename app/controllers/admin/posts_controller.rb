@@ -20,14 +20,11 @@ class Admin::PostsController < ApplicationController
   def create # Process new record form              
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
-       
-    if params[:post][:status] == "draft"
-      @post.status = 0
-      success_msg = "Post saved successfully."
-    else
-      @post.status = 1
-      success_msg = "Post created successfully."        
-    end
+     
+    @post.status ||= 1
+    success_msg = @post.status == 1 ?
+      "Post saved successfully." :
+      "Post created successfully."    
 
     if @post.save
       redirect_to(admin_posts_path, :flash => {:type => "action", :msg => success_msg})
@@ -59,13 +56,13 @@ class Admin::PostsController < ApplicationController
     @post = Post.find(params[:id])
     new_post = params[:post]
 
-    if params[:post][:status] == "draft"
-      new_post[:status] = 0
-      success_msg = "Post marked as draft."      
-    else
-      new_post[:status] = 1
-      success_msg = "Post updated successfully."            
-    end
+    # Bit of a hack here - can't use ||= as in create because
+    # field is already set. Hidden field in edit view defaults 
+    # to 1 as a workaround.
+    new_post[:status] = 1 if params[:post][:status] == 1
+    success_msg = new_post[:status] == 1 ?
+      "Post marked as draft." :
+      "Post updated successfully." 
    
     if @post.update_attributes(new_post)   
       redirect_to(admin_posts_path, :flash => {:type => "action", :msg => success_msg})         
