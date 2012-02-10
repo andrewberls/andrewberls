@@ -6,7 +6,7 @@
 	<%= stylesheet_link_tag "reset" %>
 	<%= stylesheet_link_tag "style" %>
 	<link rel="icon" type="image/gif" href="/favicon.gif" />
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>-->
 </head>
 
 <body>
@@ -62,7 +62,9 @@
 		<%= render "shared/copyright" %>
 	</section>
 			
-	<%= javascript_include_tag "functions.min" %>	
+	<%= javascript_include_tag :application %>
+	<% javascript_include_tag "functions.min" %>		
+		
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
 	  _gaq.push(['_setAccount', 'UA-9633739-4']);
