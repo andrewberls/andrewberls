@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
   
-  def index # default new (index?)  
+  def index
     @message = Message.new
   end  
 
