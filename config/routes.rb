@@ -4,6 +4,8 @@ Andrewberls::Application.routes.draw do
   match "/blog"          => "posts#list", :as => "blog"
   match "/blog/post/:id" => "posts#show", :as => "post"
   match "blog/tag/:tag"  => "posts#list", :as => "tag"
+  match '/blog/feed'     => 'posts#feed', :as => "feed",
+      :defaults => { :format => 'atom' }
     
   # CONTACT URLS
   match '/contact' => 'home#new', :as => 'contact', :via => :get
@@ -30,6 +32,6 @@ Andrewberls::Application.routes.draw do
   root :to => 'home#index'
   
   # ROUTE ALL PAGE NOT FOUND TO 404.html  
-  match "*a" => redirect("/404.html")
+  #match "*a" => redirect("/404.html")
   
 end

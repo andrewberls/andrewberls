@@ -29,5 +29,20 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 	  @page_title = "Andrew Berls | " + @post.title   
   end
+  
+  def feed
+    # this will be the name of the feed displayed on the feed reader
+    @title = "AndrewBerls.com"
+  
+    # the news items
+    @posts = Post.order("created_at DESC")      
+  
+    respond_to do |format|
+      format.atom { render :layout => false }
+  
+      # we want the RSS feed to redirect permanently to the ATOM feed
+      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+    end
+  end
 
 end

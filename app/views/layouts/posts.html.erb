@@ -5,7 +5,9 @@
 	<title><%= @page_title || "AndrewBerls.com" %></title>
 	<%= stylesheet_link_tag "reset" %>
 	<%= stylesheet_link_tag "style" %>	
-	<%= stylesheet_link_tag "blog" %>	
+	<%= stylesheet_link_tag "blog" %>
+	<%= auto_discovery_link_tag :atom, "/blog/feed" %>
+	<%= auto_discovery_link_tag :rss, "/blog/feed.rss" %>
 	<link rel="icon" type="image/gif" href="/favicon.gif" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
