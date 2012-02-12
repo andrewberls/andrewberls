@@ -281,12 +281,13 @@ section {
   }
 }
 #rss {
-  background: url(../images/feed-icon.png) no-repeat;  
+  background: url(../images/feed-icon24x24.gif) no-repeat;
+  //border: 1px solid red;
   display: inline-block;
   font-size: 0.9em;
   margin-top: 10px;
-  min-height: 40px;
-  padding: 5px 0 0 40px;  
+  min-height: 30px;
+  padding: 2px 0 0 30px;  
 }
 #top {
   color: $gray_text;  
