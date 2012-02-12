@@ -280,7 +280,14 @@ section {
     }
   }
 }
-
+#rss {
+  background: url(../images/feed-icon.png) no-repeat;  
+  display: inline-block;
+  font-size: 0.9em;
+  margin-top: 10px;
+  min-height: 40px;
+  padding: 5px 0 0 40px;  
+}
 #top {
   color: $gray_text;  
   position: absolute;
