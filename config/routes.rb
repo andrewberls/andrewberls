@@ -1,6 +1,6 @@
 Andrewberls::Application.routes.draw do        
 
-  # PUBLIC URLS
+  # BLOG URLS
   match "/blog"          => "posts#list", :as => "blog"
   match "/blog/post/:id" => "posts#show", :as => "post"
   match "blog/tag/:tag"  => "posts#list", :as => "tag"
@@ -32,6 +32,6 @@ Andrewberls::Application.routes.draw do
   root :to => 'home#index'
   
   # ROUTE ALL PAGE NOT FOUND TO 404.html  
-  #match "*a" => redirect("/404.html")
+  match "*a" => redirect("/404.html")
   
 end
