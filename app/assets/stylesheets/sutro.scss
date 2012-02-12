@@ -374,7 +374,20 @@ select {
     border: 1px solid #FF8181;    
   }
 }
-
+.status-pill {
+  @include border_radius(2);
+  color: white;
+  font-size: 0.7em;
+  font-weight: bold;
+  padding: 1px 3px;
+  text-transform: uppercase;
+}
+.status-published {
+  background-color: #46A546;
+}
+.status-saved {
+  background-color: #F89406;
+}
 table {
   background-color: #F9F9F9;
   border: 1px solid #CCC;
