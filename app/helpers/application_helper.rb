@@ -1,5 +1,12 @@
 module ApplicationHelper
   
+  def render_flashes(flash)
+    if !flash.blank?
+      #"action_" + flash[:type].to_s
+      content_tag(:p, flash[:msg].to_s, {:class=>"action_" + flash[:type].to_s})           
+    end
+  end
+  
   def render_sutro_time(time)
     # Used in: overviews and public blog posts
     # Returns a string timestamp

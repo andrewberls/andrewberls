@@ -1,6 +1,4 @@
-<% if flash[:msg] %>	
-	<div class="flash"><%= flash[:msg] %></div>
-<% end %>
+<%= render_flashes(flash) %>
 
 <% unless @tag.nil? %>
 	<h1>Tagged: <%= @tag.name %></h1>

@@ -27,7 +27,7 @@ class Admin::PostsController < ApplicationController
       "Post created successfully."    
 
     if @post.save
-      redirect_to(admin_posts_path, :flash => {:type => "action", :msg => success_msg})
+      redirect_to(admin_posts_path, :flash => {:type => "success", :msg => success_msg})
     else
       # Save failed - redisplay form for user
       render :new
@@ -65,7 +65,7 @@ class Admin::PostsController < ApplicationController
       "Post updated successfully." 
    
     if @post.update_attributes(new_post)   
-      redirect_to(admin_posts_path, :flash => {:type => "action", :msg => success_msg})         
+      redirect_to(admin_posts_path, :flash => {:type => "success", :msg => success_msg})         
     else
       # Update fails - redisplay the form
       render :edit
@@ -75,7 +75,7 @@ class Admin::PostsController < ApplicationController
   #----- DELETE  
   def destroy # Destroy record
     Post.find(params[:id]).destroy # Don't need an instance variable    
-    redirect_to(admin_posts_path, :flash => {:type => "action", :msg => "Post deleted succesfully."})
+    redirect_to(admin_posts_path, :flash => {:type => "success", :msg => "Post deleted succesfully."})
   end
   
 end

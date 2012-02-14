@@ -33,7 +33,7 @@ class SessionsController < ApplicationController
       redirect_to blog_path   
     else
       session[:user_id] = nil      
-      redirect_to(blog_path, :flash => {:msg => "Logged out!"})
+      redirect_to(blog_path, :flash => {:type => "success", :msg => "Logged out!"})
     end
   end
   

@@ -1,12 +1,6 @@
 <h2>Posts</h2>
 
-<% if flash[:type] == "action" %>
-	<p class="action_success"><%= flash[:msg] %></p>
-<% end %>
-
-<% if flash[:type] == "debug" %>
-	<p class="action_debug"><%= flash[:msg] %></p>
-<% end %>
+<%= render_flashes(flash) %>
 
 <table>
 	<% if (!@posts or @posts.blank?) %>
