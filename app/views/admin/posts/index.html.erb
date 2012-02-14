@@ -18,7 +18,9 @@
 		<% @posts.each do |post| %>
 			<tr class="<%= cycle('odd', 'even') %>">
 				<td>					
-					<%= raw post.title %>									
+					<%= 						
+						link_to post.title, post_path(post.id), :class => "plain"
+					%>									
 				</td>
 				<td>
 					<% if !post.user_id.nil? %>									
