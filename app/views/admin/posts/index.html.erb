@@ -22,9 +22,7 @@
 				</td>
 				<td>
 					<% if !post.user_id.nil? %>									
-					<%=
-						link_to render_username(post.user_id), admin_user_path(:id => post.user_id)						
-					%>
+					<%= link_to render_username(post.user_id), admin_user_path(:id => post.user_id) %>
 					<% else %>
 						nil id
 					<% end %>

@@ -25,7 +25,7 @@
 					<% if !user.full_name || user.full_name.empty? %>
 						<p style="color:red;">Error Detected</p>
 					<% else %>
-						<%= user.full_name %>
+					<%= link_to render_username(user.id), admin_user_path(:id => user.id) %>
 					<% end %>					
 				</td>
 				<td><%= user.email %></td>
