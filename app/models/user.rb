@@ -5,14 +5,15 @@ class User < ActiveRecord::Base
   attr_accessible :full_name, :email, :password, :password_confirmation
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password # callback calls encrypt method before password is saved
+    
+  validates :full_name, presence: true, length: { maximum: 50 }
   
-  validates_presence_of :full_name
-  
-  validates_presence_of :email
-  validates_uniqueness_of :email
-  
+  validates :email, presence: true,                    
+                    uniqueness: { case_sensitive: false }
+    
   validates_presence_of :password, :on => :create
   validates_confirmation_of :password
+  
   
   def encrypt_password
     # Checks if password is present and generates hash and salt using BCrypt methods
