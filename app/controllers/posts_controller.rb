@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     
     if params[:title]        
       @post = Post.find_by_url_alias(params[:title])
-      #redirect_to post_path(@post)
+      redirect_to post_path(@post)
     else      
       @post = Post.find(params[:id])      
     end
