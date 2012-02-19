@@ -26,8 +26,16 @@ class PostsController < ApplicationController
   end
   
   def show # Show a single post    
-    @post = Post.find(params[:id])
-	  @page_title = "Andrew Berls | " + @post.title   
+    
+    if params[:title]        
+      @post = Post.find_by_url_alias(params[:title])
+      #redirect_to post_path(@post)
+    else      
+      @post = Post.find(params[:id])      
+    end
+    
+    @page_title = "Andrew Berls | " + @post.title
+    
   end
   
   def feed

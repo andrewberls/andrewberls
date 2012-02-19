@@ -5,12 +5,10 @@
 	<p class="date"><%= render_sutro_time(@post.created_at) %></p>
 	<p><%= render_full_post(@post.body) %></p>
 	
-	<% unless @post.tags.blank? %>						
-		<%=
-			# render_tags(tags, commas=true)
-			render_tags(@post.tags, false)
-		%>					
-	<% end %>		
+	<% unless @post.tags.blank? %>
+		<%= render_tags(@post.tags, false) %>
+	<% end %>
+  
 </div>
 
 <div id="disqus_thread"></div>
