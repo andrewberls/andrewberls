@@ -26,16 +26,8 @@ class PostsController < ApplicationController
   end
   
   def show # Show a single post    
-    
-    if params[:title]        
-      @post = Post.find_by_url_alias(params[:title])
-      redirect_to post_path(@post)
-    else      
-      @post = Post.find(params[:id])      
-    end
-    
-    @page_title = "Andrew Berls | " + @post.title
-    
+    @post = Post.find(params[:id])
+	  @page_title = "Andrew Berls | " + @post.title   
   end
   
   def feed
@@ -43,7 +35,7 @@ class PostsController < ApplicationController
     @title = "Andrew Berls"
   
     # the news items
-    @posts = Post.order("created_at DESC")      
+    @posts = Post.where(:status => 1).order("created_at DESC")      
   
     respond_to do |format|
       format.atom { render :layout => false }
