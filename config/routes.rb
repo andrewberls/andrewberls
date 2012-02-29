@@ -3,7 +3,7 @@ Andrewberls::Application.routes.draw do
   # BLOG URLS
   match "/blog"          => "posts#list", :as => "blog"
   match "/blog/tag/:tag" => "posts#list", :as => "tag"
-  match "/blog/:title"   => "posts#show"
+  #match "/blog/:title"   => "posts#show"
   match "/blog/post/:id" => "posts#show", :as => "post"
   
   match '/blog/feed'     => 'posts#feed', :as => "feed",
