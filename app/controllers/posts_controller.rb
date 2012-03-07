@@ -14,12 +14,12 @@ class PostsController < ApplicationController
       else            
         @posts = @tag.posts
                      .where(:status => 1)
-                     .paginate(:page => params[:page], :per_page => 6)
+                     .paginate(:page => params[:page], :per_page => 5)
                      .order("id DESC")
       end
     else           
       @posts = Post.where(:status => 1)
-                   .paginate(:page => params[:page], :per_page => 6)
+                   .paginate(:page => params[:page], :per_page => 5)
                    .order("id DESC")
     end
                      
