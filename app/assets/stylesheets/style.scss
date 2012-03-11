@@ -279,7 +279,8 @@ section {
     @include box_shadow(0,0,6,0,#252525); //0 0 3 0    
     margin-top: 80px; //50px
     margin-bottom: 85px;   
-    padding: 30px 0 60px;        
+    //padding: 30px 0 60px;
+    padding: 30px 0 45px;        
   }
   
   h4 {
@@ -503,6 +504,7 @@ form {
 
 #footer {
   background-color: $dark_gray;
+  border-top-color: #383838;
   border-bottom: 1px solid #0D0D0D;
   height: 175px;
   position: relative;
@@ -521,6 +523,7 @@ form {
     h3 {
       color: white;
       font-size: 1.4em;
+      margin-bottom: 10px;
       text-shadow: 1px 1px 1px #1d1d1d;
     }
     
