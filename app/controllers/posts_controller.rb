@@ -25,8 +25,13 @@ class PostsController < ApplicationController
                      
   end
   
-  def show # Show a single post    
-    @post = Post.find(params[:id])
+  def show # Show a single post
+    if params[:permalink]
+      @post = Post.find_by_url_alias(params[:permalink])
+    else
+      @post = Post.find(params[:id])
+    end
+    
 	  @page_title = "Andrew Berls | " + @post.title   
   end
   

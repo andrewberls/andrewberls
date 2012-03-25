@@ -1,12 +1,12 @@
 Andrewberls::Application.routes.draw do        
 
   # BLOG URLS
-  match "/blog"          => "posts#list", :as => "blog"
-  match "/blog/tag/:tag" => "posts#list", :as => "tag"
-  #match "/blog/:title"   => "posts#show"
-  match "/blog/post/:id" => "posts#show", :as => "post"
+  match "/blog"              => "posts#list", :as => "blog"
+  match "/blog/tag/:tag"     => "posts#list", :as => "tag"
+  match "/blog/:permalink"   => "posts#show"
+  match "/blog/post/:id"     => "posts#show", :as => "post"
   
-  match '/blog/feed'     => 'posts#feed', :as => "feed",
+  match '/feed'     => 'posts#feed', :as => "feed",
       :defaults => { :format => 'atom' }
     
   # CONTACT URLS
