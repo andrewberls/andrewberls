@@ -15,6 +15,7 @@ class Admin::PostsController < ApplicationController
   #----- CREATE  
   def new # Display new record form    
     @page_title = "New Post | SutroCMS"
+    @post = Post.new
   end
   
   def create # Process new record form              

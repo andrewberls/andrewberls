@@ -6,7 +6,7 @@
 		<p class="msgDebug"><%= msg %></p>
 	<% end %>
 	
-	<% if @post && @post.errors.any? %>
+	<% if @post.errors.any? %>
 		<div class="error_messages">
 			<h2>Invalid Submission</h2>
 			<ul>
@@ -17,7 +17,7 @@
 		</div>	
 	<% end %>
 	
-	<%= form_for(:post, :url=>{:action => 'create'}) do |f| %>		
+  <%= form_for @post, url: admin_posts_path do |f| %>
 		<%= f.label :title %>
 		<%= f.text_field :title %>
 		<%= f.label :body, "Post" %>
@@ -27,9 +27,9 @@
 		<p class="fieldDescription">Enter a comma separated list of tags.</p>
 		<%= f.text_field :tag_list %>
 
-    <%# f.label :url_alias, "URL Alias (optional)"%>
-    <!-- <p class="fieldDescription">Example: any-questions</p> -->
-    <%# f.text_field :url_alias %>
+    <%= f.label :url_alias, "URL Alias (optional)"%>
+    <p class="fieldDescription">Example: any-questions</p>
+    <%= f.text_field :url_alias %>
 		
 		<%= f.hidden_field(:status) %>
 		<%= f.submit "Publish", :class => "cta submit" %>		
