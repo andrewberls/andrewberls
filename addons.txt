@@ -1,0 +1,2 @@
+shared-database:5mb
+zerigo_dns:basic
