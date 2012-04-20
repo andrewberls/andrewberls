@@ -6,6 +6,21 @@ function capitalize(string) {
 //----- SCROLLING FOR HEADER NAVIGATION ---//
 function scrollTo(id) {
 	$('html,body').animate({scrollTop: $("#" + id).offset().top}, 'slow');
+
+    /*
+    $(function() {
+        $('ul.nav a').bind('click',function(event){
+
+            var $anchor = $(this);
+
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1000);
+
+            event.preventDefault();
+        });
+     });
+    */
 }
 
 $('ul.nav a, #home a').click(function (event) {
