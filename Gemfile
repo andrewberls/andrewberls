@@ -6,6 +6,8 @@ gem 'pg'
 
 gem 'heroku'
 
+gem 'thin'
+
 gem 'therubyracer', :platforms => :ruby
 
 gem 'jquery-rails'
