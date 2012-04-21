@@ -1,5 +1,0 @@
-APP_NAME=andrewberls
-BUNDLE_WITHOUT=development:test
-RACK_ENV=production
-SHARED_DATABASE_URL=postgres://idqmldjoay:lh7Nt9sGnQWClwzs7bDG@ec2-107-22-213-40.compute-1.amazonaws.com/idqmldjoay
-URL=andrewberls.com
