@@ -7,6 +7,18 @@ header nav li a {
   padding: 9px;
 }
 
+// CONTACT
+//-------------------------
+#contact .contact-form {
+  padding: 30px 15px;
+  width: auto;
+
+  input, textarea {
+    @include border-box;
+    width: 100%;
+  }
+}
+
 }
 
 
