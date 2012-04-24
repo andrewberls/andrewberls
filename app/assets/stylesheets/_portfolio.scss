@@ -1,0 +1,24 @@
+#portfolio {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #ccc;
+  padding-top: 30px;
+
+  h1 {
+    //border-bottom: 1px dashed #ccc; margin-bottom: 15px;
+    color: #525252;
+    font-size: 2.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .row:last-child {
+    margin-top: 20px !important;
+  }
+
+} // #portfolio

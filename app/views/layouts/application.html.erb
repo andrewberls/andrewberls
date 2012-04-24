@@ -1,80 +1,34 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-	<meta charset="utf-8" />
-	<title>AndrewBerls.com</title>
-	<%= stylesheet_link_tag "reset" %>
-	<%= stylesheet_link_tag "style" %>
-	<link rel="icon" type="image/gif" href="/favicon.gif" />
-	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <meta charset="utf-8" />
+  <title>AndrewBerls.com</title>
+  <%= stylesheet_link_tag :application %>
+  <link rel="icon" type="image/gif" href="/favicon.gif" />
 </head>
 
 <body>
-	
-	<section id="header">
-		<div class="wrapper">			
-			<a href="/"><h2>Andrew <span>Berls</span></h2></a>
-			<ul class="nav">													
-				<li><a href="#portfolio" class="portfolio">portfolio</a></li>				
-				<li><a href="#contact" class="contact">get in touch</a></li>
-				<li><a href="#footer" class="footer">resources</a></li>				
-				<li><%= link_to "blog", blog_path, :class => "blog" %></li>				
-			</ul>			
-		</div>
-	</section>
-	
+  
+  <%= render "shared/header" %>
+  
+  <%= yield %>
 
-	<%= yield %>
-
-	
-	<section id="footer">
-		<div class="wrapper">
-			<div class="column borderRight">
-				<h3>Projects</h3>
-				<ul>
-					<li><a href="https://github.com/andrewberls">GitHub</a></li>
-					<!-- <li><a href="http://apps.andrewberls.com">Web Apps</a></li> -->
-					<li><a href="http://www.soc.ucsb.edu/sexinfo">SexInfo Online</a></li>
-					<li><a href="http://www.bruceb.com">bruceb.com</a></li>
-					<li><a href="http://www.acmucsb.com">ACM</a></li>
-				</ul>
-			</div>
-			<div class="column borderBoth">
-				<h3>Media</h3>
-				<ul>
-					<li><a href="/blog">Blog</a></li>
-					<li><a href="http://www.linkedin.com/pub/andrew-berls/2b/1a6/aa8">LinkedIn</a></li>					
-					<li><a href="http://brucebnews.com">Bruceb News</a></li>
-				</ul>
-			</div>
-			<div class="column borderLeft">
-				<h3>Tools</h3>
-				<ul>
-					<li><a href="http://code.google.com/p/zen-coding/">Zen Coding</a></li>
-					<li><a href="http://www.sass-lang.com">Sass CSS</a></li>
-					<li><a href="http://www.sublimetext.com/">Sublime Text</a></li>
-				</ul>
-			</div>					
-		</div>
-	</section>
-	
-	<section id="copyright">
-		<%= render "shared/copyright" %>
-	</section>
-			
-	<% javascript_include_tag :application %>
-	<%= javascript_include_tag "functions.min" %>		
-		
-	<script type="text/javascript">
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-9633739-4']);
-	  _gaq.push(['_trackPageview']);
-	
-	  (function() {
-	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-	</script>
+  <%= render "shared/footer" %>
+  
+  
+  <%= javascript_include_tag :application %>
+    
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9633739-4']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  
 </body>
 </html>

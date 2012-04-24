@@ -1,0 +1,27 @@
+.tweets {
+  @include border-radius(5px);
+  background-color: white;
+  border: 1px solid #ccc;
+  font-size: 0.9em;
+  list-style: none;
+  padding: 0;
+
+  .tweet {
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    
+    &:last-child {
+      border: none;
+    }
+  }
+
+  .tw-text {
+
+  }
+
+  .tw-date {
+    display: none;
+  }
+
+}
+

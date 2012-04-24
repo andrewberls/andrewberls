@@ -1,0 +1,66 @@
+// TEMPORARY
+//------------------------------------
+//body { background-color: red; }
+//[class^="span-"] { outline: 1px solid blue; }
+//.container { outline: 1px solid red; }
+//#intro { outline: 1px solid green; }
+
+//------------------------------------------
+
+
+// ==============================================
+.row .row { margin-top: 5px; }
+// ==============================================
+
+
+//-- LAYOUT
+//------------------------------------
+body {
+  color: #525252;
+  font-family: 'Helvetiva Neue', Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+section {
+  padding: 40px 0;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+
+//-- TYPOGRAPHY
+//------------------------------------
+a {
+  color: lighten(#3485B6, 3); // 08c
+  text-decoration: none;
+}
+
+//-- LIB CLASSES
+//------------------------------------
+
+// ==============================================
+// TODO: MAKE THESE MIXINS
+// ==============================================
+
+// .whitebox-rounded {
+//   @include border-box;
+//   @include border-radius(4px);
+//   background-color: white;
+//   padding: 10px;
+// }
+
+.whitebox-square {
+  //@include border-box; // TODO
+  background-color: white;
+  outline: 1px solid #ccc;
+  padding: 10px;
+}
+
+.separator {
+  border-bottom: 1px dashed #888888; // 717171
+  margin: 20px auto;
+  width: 75%;
+}

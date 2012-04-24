@@ -1,0 +1,45 @@
+footer {
+  //[class^="span-"] { outline: 1px solid blue; }
+
+  background-color: #f9f9f9;
+  border-top: 1px solid white;
+  padding: 15px 0 25px;
+
+  h3 {
+    //color: #393335;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .column-container {
+    margin-top: 0 !important; // :(
+
+    .column {
+      @include border-box;
+      @include border-radius(3px);
+      background-color: white;
+      padding: 5px;
+      
+      a {
+        display: block;
+        //margin-bottom: 5px;
+        padding: 2px;
+
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+  } // .column-container
+
+  .social {
+    @include border-box;
+    @include border-radius(3px);
+    background-color: white;
+    padding: 5px;
+  }
+
+} // footer
+
+@import "twitter";
