@@ -1,8 +1,7 @@
 header {
   background-color: #3485B6; // eee
-
   border-bottom: 1px solid #ccc;
-  padding: 15px 0; // 20px 0 10px
+  padding: 15px 0;
 
   h1 {
     // TODO: change this
@@ -20,26 +19,22 @@ header {
       font-size: 1.1em;
       padding: 5px 10px;
 
+      &:first-child { border: none; }
+
       a {        
-        color: white; // 6F6F6F
+        color: white;
         font-size: 1.1em;
         display: block;
         text-decoration: none;
-        padding: 7px 15px;
-        padding: 2px 5px; // 7px 15px
+        padding: 2px 5px;
 
         &:hover {
-          //color: #193F59; // 08c
-          //text-shadow: 0 1px 0 #3C9BD7;
-
           @include border-radius(4px);
           background-color: #65afdb;
           color: #214761;  
         }
       }
-
-      &:first-child { border: none; }
-
+      
     } // li
 
   } // nav

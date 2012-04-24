@@ -1,5 +1,4 @@
 #intro {
-  //background-color: #dfdfdf;
   background: #e2e2e2 url('../img/lines.png') 0 0;
   border-top: 1px solid white;
   border-bottom: 1px solid #ccc;
@@ -14,10 +13,12 @@
     .highlight {
       color: lighten(#3485B6, 3); //2FA6DE
     }
+
     strong {
       color: #393335;
     }
-  }
+
+  } // .welcome
 
   .item-container {
     margin-top: 10px;
@@ -43,6 +44,7 @@
       }
 
     } // .item
+    
   } // .item-container
 
 } // #intro
