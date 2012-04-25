@@ -9,25 +9,22 @@ footer {
     margin-bottom: 5px;
   }
 
-  .column-container {
-    margin-top: 0 !important; // :(
+  .column {
+    @include border-box;
+    @include border-radius(3px);
+    background-color: white;
+    padding: 5px;
+    
+    a {
+      display: block;
+      padding: 2px;
 
-    .column {
-      @include border-box;
-      @include border-radius(3px);
-      background-color: white;
-      padding: 5px;
-      
-      a {
-        display: block;
-        padding: 2px;
-
-        &:hover {
-          background-color: #eee;
-        }
+      &:hover {
+        background-color: #eee;
       }
     }
-  } // .column-container
+
+  } // .column
 
   .social {
     @include border-box;
