@@ -24,8 +24,8 @@
     margin-top: 10px;
 
     .item {
-      margin-right: 95px;
-      &:last-child { margin-right:0; }
+      @include whitebox;
+      min-height: 165px;
 
       h3 {
         color: #393335;

@@ -22,6 +22,13 @@
   }
 }
 
+@mixin whitebox {
+  @include border-box;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
 @mixin horizontal-gradient($startColor: #555, $endColor: #333) {
   background-color: $endColor;
   background-image: -webkit-linear-gradient(left, $startColor, $endColor); // Safari 5.1+, Chrome 10+

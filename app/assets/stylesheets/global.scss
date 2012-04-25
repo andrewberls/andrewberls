@@ -3,13 +3,13 @@
 //body { background-color: red; }
 //[class^="span-"] { outline: 1px solid blue; }
 //.container { outline: 1px solid red; }
-//#intro { outline: 1px solid green; }
-
 //------------------------------------------
 
 
 // ==============================================
+
 .row .row { margin-top: 5px; }
+
 // ==============================================
 
 
@@ -45,22 +45,9 @@ a {
 // TODO: MAKE THESE MIXINS
 // ==============================================
 
-// .whitebox-rounded {
-//   @include border-box;
-//   @include border-radius(4px);
-//   background-color: white;
-//   padding: 10px;
-// }
-
-.whitebox-square {
-  //@include border-box; // TODO
-  background-color: white;
-  outline: 1px solid #ccc;
-  padding: 10px;
-}
-
 .separator {
-  border-bottom: 1px dashed #888888; // 717171
+  border-bottom: 1px dashed #888888;
+  height: 0;
   margin: 20px auto;
   width: 75%;
 }

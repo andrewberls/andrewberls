@@ -3,6 +3,10 @@
   border-bottom: 1px solid #ccc;
   padding-top: 30px;
 
+  .portfolio-item {
+    @include whitebox;
+  }
+
   h1 {
     //border-bottom: 1px dashed #ccc; margin-bottom: 15px;
     color: #525252;
