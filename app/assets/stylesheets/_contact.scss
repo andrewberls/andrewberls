@@ -38,14 +38,14 @@
       @include border-box;
       background-color: #FFF;
       border: 1px dashed #b4b4b4;
-      color: #B4B4B4;
+      color: #404040;
       font-family: inherit;
       font-size: 1em;
       padding: 5px;        
       width: 100%;
       
       &:focus {
-        border: 1px solid #5EC4F0; // 3485B6        
+        border: 1px solid #5EC4F0; // 3485B6
         outline: none;
       }
     } // input, textarea
