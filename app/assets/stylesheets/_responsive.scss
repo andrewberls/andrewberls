@@ -7,6 +7,18 @@ header nav li a {
   padding: 9px;
 }
 
+// #INTRO
+//-------------------------
+#intro .item-container .item {
+  border: none;
+}
+
+// #PORTFOLIO
+//-------------------------
+#portfolio .portfolio-item {
+  border: none;
+}
+
 // CONTACT
 //-------------------------
 #contact .contact-form {
@@ -22,15 +34,7 @@ header nav li a {
 }
 
 
-@media (max-width: 768px) {
-
-// #INTRO
-//-------------------------
-#intro .item-container .item {
-  border: none;
-}
-
-}
+//@media (max-width: 768px) {}
 
 
 @media (min-width: 768px) and (max-width: 980px) {
