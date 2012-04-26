@@ -1,21 +1,21 @@
 #intro {
   background: #e2e2e2 url('../img/lines.png') 0 0;
   border-top: 1px solid white;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $gray-border;
 
   .welcome {
-    color: #525252;
+    color: $gray-text;
     font-size: 2.4em;
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
     
     .highlight {
-      color: lighten(#3485B6, 3); //2FA6DE
+      color: $blue; // lighten(#3485B6, 3)
     }
 
     strong {
-      color: #393335;
+      color: $gray-header;
     }
 
   } // .welcome
@@ -28,7 +28,7 @@
       min-height: 165px;
 
       h3 {
-        color: #393335;
+        color: $gray-header;
         font-size: 1.5em;
         font-weight: bold;
         margin-bottom: 10px;

@@ -1,6 +1,6 @@
 header {
-  background-color: #3485B6;
-  border-bottom: 1px solid #ccc;
+  background-color: $blue;
+  border-bottom: 1px solid $gray-border;
   padding: 15px 0;
 
   h1 {
@@ -14,7 +14,7 @@ header {
     margin-top: 20px;
 
     li {
-      border-right: 1px dashed #ccc;
+      border-right: 1px dashed $gray-border;
       float: right;
       font-size: 1.1em;
       padding: 5px 10px;
@@ -32,8 +32,8 @@ header {
 
         &:hover {
           @include border-radius(4px);
-          background-color: #00b4ff;
-          //color: #214761;  
+          background-color: $blue-light;
+          //color: $blue-dark;  
         }
       }
       

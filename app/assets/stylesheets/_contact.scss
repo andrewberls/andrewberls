@@ -1,14 +1,14 @@
 #contact {
-  background-color: #3485B6;
+  background-color: $blue;
   border-top: 1px solid white;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid $gray-border;
   font-size: 1.2em;
 
   .contact-form {
     @include border-box;
     @include clearfix;
-    background-color: #F9F9F9;
-    border: 1px solid #ccc;
+    background-color: $gray-light;
+    border: 1px solid $gray-border;
     margin: 0 auto;
     padding: 20px 35px 25px;
     width: 425px;
@@ -36,16 +36,15 @@
 
     input, textarea { 
       @include border-box;
-      background-color: #FFF;
-      border: 1px dashed #b4b4b4;
-      color: #404040;
+      border: 1px dashed darken($gray-border, 3); // b4b4b4
+      color: $gray-text;
       font-family: inherit;
       font-size: 1em;
       padding: 5px;        
       width: 100%;
       
       &:focus {
-        border: 1px solid #5EC4F0; // 3485B6
+        border: 1px solid $blue-light; // 5EC4F0
         outline: none;
       }
     } // input, textarea
@@ -54,7 +53,7 @@
 
   .submit {
     @include border-radius(5px);
-    background-color: #119EE7; // #0AF
+    background-color: #119EE7;
     border: 1px solid #0099E6;
     color: white;
     display: inline-block;

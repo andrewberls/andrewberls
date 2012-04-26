@@ -1,5 +1,5 @@
 footer {
-  background-color: #f9f9f9;
+  background-color: $gray-light;
   border-top: 1px solid white;
   padding: 15px 0 25px;
 
@@ -20,7 +20,7 @@ footer {
       padding: 2px;
 
       &:hover {
-        background-color: #eee;
+        background-color: darken($gray-light, 3); // eee
       }
     }
 
