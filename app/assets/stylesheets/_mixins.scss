@@ -1,13 +1,22 @@
+//-- UTILITY/VENDER PREFIXES
+//------------------------------------
+
 @mixin border-radius($rad: 5px) {
-  -moz-border-radius: $rad;
   -webkit-border-radius: $rad;
-  border-radius: $rad;
+     -moz-border-radius: $rad;
+          border-radius: $rad;
 }
 
 @mixin border-box {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+@mixin ease_out($time: 0.5s) {
+  -webkit-transition: all $time ease-out;
+     -moz-transition: all $time ease-out;
+       -o-transition: all $time ease-out;
 }
 
 @mixin clearfix {
@@ -21,6 +30,10 @@
     clear: both;
   }
 }
+
+
+//-- PRESENTATIONAL
+//------------------------------------
 
 @mixin whitebox {
   @include border-box;
