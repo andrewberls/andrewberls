@@ -1,5 +1,5 @@
 header {
-  background-color: #3485B6; // eee
+  background-color: #3485B6;
   border-bottom: 1px solid #ccc;
   padding: 15px 0;
 
@@ -21,17 +21,18 @@ header {
 
       &:first-child { border: none; }
 
-      a {        
+      a {
         color: white;
         font-size: 1.1em;
+        font-weight: bold;
         display: block;
         text-decoration: none;
         padding: 2px 5px;
 
         &:hover {
           @include border-radius(4px);
-          background-color: #65afdb;
-          color: #214761;  
+          background-color: #00b4ff;
+          //color: #214761;  
         }
       }
       
