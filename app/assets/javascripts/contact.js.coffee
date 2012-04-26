@@ -9,6 +9,7 @@ insertAfter = (refNode, newNode) ->
 validate = (fields) ->
   errors = false
   for field in fields
+    # TODO: Add error class to invalid fields?
     errors = true if !field.val()
   errors
 
@@ -25,7 +26,7 @@ $ ->
     if errors && $form.find('.flash').size() == 0 # Only if an alert doesn't already exist
       alertBox = document.createElement('div')
       alertBox.setAttribute('class', 'flash flash-error')
-      errTxt = document.createTextNode('Please check your fields and try again')
+      errTxt = document.createTextNode('Please check your fields and try again!')
       alertBox.appendChild(errTxt)
       $title = $form.find('h2')[0]
       insertAfter($title, alertBox)      
