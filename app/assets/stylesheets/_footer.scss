@@ -16,6 +16,7 @@ footer {
     padding: 5px;
     
     a {
+      @include ease-out(0.12s);
       display: block;
       padding: 2px;
 
