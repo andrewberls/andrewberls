@@ -27,7 +27,7 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'eventmachine', '1.0.0.beta.4.1'
+  #gem 'eventmachine', '1.0.0.beta.4.1'
 end
 
 group :test do
