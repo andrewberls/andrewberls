@@ -10,11 +10,17 @@
   display: none;
   margin: 0 auto;
   padding: 15px;
-  width: 640px;
+  width: 700px; // 640
 
   img {
     float: left;
-    margin-right: 10px;
+    margin-right: 15px; // 10
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
 } // .modal
