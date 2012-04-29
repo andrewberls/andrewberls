@@ -1,25 +1,28 @@
 <section id="contact">
 
-  <form action="" class="contact-form">
-
-    <!-- TODO: FLASH SUCCESS/ERROR -->
+  <%= form_for(@message, url: contact_path, html: {class: "contact-form"}) do |f| %>    
 
     <h2>Get in Touch</h2>
+
+    <%= content_tag :div, flash[:success], class: 'flash flash-success' if  flash[:success] %>
+
+    <%= content_tag :div, flash[:error], class: 'flash flash-error' if  flash[:error] %>
+
     <p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
 
     <div class="field">
-      <input type="text" placeholder="Name" id="name">
+      <%= f.text_field :name, placeholder: "Name" %> 
     </div>
 
     <div class="field">
-      <input type="text" placeholder="Email" id="email">
+      <%= f.text_field :email, placeholder: "Email" %> 
     </div>
 
     <div class="field">
-      <textarea placeholder="Message" id="message"></textarea>
+      <%= f.text_area :message, placeholder: "Message" %>
     </div>
 
-    <a href="#" class="submit" id="submit-contact">Submit</a>
-  </form>
+    <%= f.submit "Submit", class: "submit", id: "submit-contact" %>
+  <% end %>
 
 </section><!-- #contact -->
