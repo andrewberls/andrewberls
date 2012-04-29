@@ -1,14 +1,13 @@
 header {
-  background-color: $blue;
+  background-color: $blue; // TODO: Add noise/texture
   border-bottom: 1px solid $gray-border;
   padding: 15px 0;
 
   h1 {
-    // TODO: load font-family: Cabin? (-ref Sphero)
     color: white;
-    //font-family: "Franklin Gothic Book"; 
     font-family: 'Cabin', Arial, sans-serif;
     font-size: 3.3em;
+    font-weight: normal;
   }
 
   nav {
@@ -34,7 +33,6 @@ header {
         &:hover {
           @include border-radius(4px);
           background-color: $blue-light;
-          //color: $blue-dark;  
         }
       }
       
