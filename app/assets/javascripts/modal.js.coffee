@@ -1,11 +1,7 @@
 $ ->
-  # Load dialog on page load
-  #$('#portfolio-modal').modal()
 
-
-  # Load dialog on click
-  $('#tr-portfolio-modal').click (e) ->
-    $('#portfolio-modal').modal {
+  $('#tr-sexinfo-modal').click (e) ->
+    $('#sexinfo-modal').modal {
       overlayClose : true,
       # onOpen: (dialog) ->
       #   dialog.overlay.fadeIn('fast', ->
@@ -14,4 +10,16 @@ $ ->
       #     )
       #   )
     }
+    false
+
+  $('#tr-robodactyl-modal').click (e) ->
+    $('#robodactyl-modal').modal { overlayClose: true }
+    false
+
+  $('#tr-bruceb-modal').click (e) ->
+    $('#bruceb-modal').modal { overlayClose: true }
+    false
+
+  $('#tr-rha-modal').click (e) ->
+    $('#rha-modal').modal { overlayClose: true }
     false
