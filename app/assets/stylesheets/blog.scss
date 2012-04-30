@@ -1,10 +1,14 @@
 #back {
-  display: block;
-  margin-bottom: 20px
+  @include bluebutton;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: -125px;
 }
 
 .post-container {
   margin-top: 50px !important;
+  position: relative;
 }
 
 //-- POST
@@ -100,6 +104,7 @@
 
 .read-more {
   @include bluebutton;
+  float: right;
   margin-bottom: 5px;
 }
 
