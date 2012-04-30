@@ -11,13 +11,18 @@
           <a href="http://feeds.feedburner.com/andrewberls" class="icon rss-icon"></a>
         </div>
         
+        <p><strong>Latest blog post: </strong><%= link_to @last_post.title, post_path(@last_post) %></p>
       </div>
 
       <div class="span-6 offset-4 column">
         <h2>Andrew Berls <span class="description">Student, web developer</span></h2>
 
-        <p><strong>Email:</strong> andrew.berls@gmail.com</p>
-        <p><strong>Latest blog post: </strong><%= link_to @last_post.title, post_path(@last_post) %></p>
+        <!-- <p><strong>Email:</strong> andrew.berls@gmail.com</p> -->
+        <p><strong>GitHub: </strong><a href="https://github.com/andrewberls">andrewberls</a></p>
+        <p><strong>Twitter: </strong><a href="twitter.com/aberls">@aberls</a></p>
+        
+
+        <p>Built with Rails and <a href="http://andrewberls.github.com/Cheeky/">Cheeky CSS</a></p>
       </div>
 
 
