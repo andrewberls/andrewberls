@@ -43,6 +43,22 @@
   padding: 10px;
 }
 
+@mixin bluebutton {
+  @include border-radius(5px);
+  background-color: #119EE7;
+  border: 1px solid #0099E6;
+  color: white;
+  display: inline-block;
+  float: right;
+  margin-top: 15px;
+  padding: 5px 10px;
+
+  &:hover {
+    background-color: #08c;
+    text-decoration: none;
+  }
+}
+
 @mixin horizontal-gradient($startColor: #555, $endColor: #333) {
   background-color: $endColor;
   background-image: -webkit-linear-gradient(left, $startColor, $endColor); // Safari 5.1+, Chrome 10+

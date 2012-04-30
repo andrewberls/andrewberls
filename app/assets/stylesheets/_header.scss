@@ -4,10 +4,11 @@ header {
   padding: 15px 0;
 
   h1 {
-    color: white;
     font-family: 'Cabin', Arial, sans-serif;
     font-size: 3.3em;
     font-weight: normal;
+
+    a { color: white; }
   }
 
   nav {
