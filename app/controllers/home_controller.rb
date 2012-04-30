@@ -2,7 +2,6 @@ class HomeController < ApplicationController
   
   def index
     @message = Message.new
-    @last_post = Post.last
   end  
 
   def create
