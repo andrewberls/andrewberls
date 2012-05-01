@@ -1,3 +1,5 @@
+<% provide(:title, "User: #{@user.full_name}") %>
+
 <h2>Posts by <%= render_username @user.id %></h2>
 
 <% if flash[:type] == "action" %>

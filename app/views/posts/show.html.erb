@@ -1,3 +1,5 @@
+<% provide(:title, "| #{@post.title}") %>
+
 <div class="container blog-container">
   <div class="row">
     <div class="span-11">
@@ -10,7 +12,7 @@
         <p><%= render_full_post(@post.body) %></p> 
             
         <% unless @post.tags.blank? %>           
-          <%= render_tags(post.tags, false) %>          
+          <%= render_tags(@post.tags, false) %>          
         <% end %> 
       </div>
 

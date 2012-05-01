@@ -6,15 +6,13 @@ class Admin::PostsController < ApplicationController
   before_filter :check_auth, :accept => [:index, :new, :dashboard, :edit]
   
   #----- GENERAL
-  def dashboard    
-    @page_title = "Dashboard | SutroCMS"
+  def dashboard
     @posts = Post.all    
     @saved_posts = Post.where("status = 0")    
   end
   
   #----- CREATE  
-  def new # Display new record form    
-    @page_title = "New Post | SutroCMS"
+  def new # Display new record form
     @post = Post.new
   end
   
@@ -41,14 +39,12 @@ class Admin::PostsController < ApplicationController
   # admin/posts provides only backend management
   
   def index # Administrative list of posts    
-    @page_title = "Posts Overview | SutroCMS"
     @posts = Post.paginate(:page => params[:page], :per_page => 10)
                  .order("id DESC")
   end  
     
   #----- UPDATE  
-  def edit # Display edit record form    
-    @page_title = "Edit Post | SutroCMS"
+  def edit # Display edit record form
     # Form fields prefilled with values from instance variable passed to view
     @post = Post.find(params[:id])
   end

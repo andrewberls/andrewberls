@@ -9,8 +9,7 @@ class Admin::UsersController < ApplicationController
   #----- CREATE
   def new
     check_admin_privileges(admin_posts_path)
-    # Display form to add a new user    
-    @page_title = "Add New User | SutroCMS"       
+    # Display form to add a new user
     @user = User.new
   end
 
@@ -31,10 +30,7 @@ class Admin::UsersController < ApplicationController
   
   #----- READ
   def manage
-    check_admin_privileges(admin_posts_path)
-    
-    @page_title = "Manage Users | SutroCMS"
-    
+    check_admin_privileges(admin_posts_path)    
     # Sort all users for Admin/Dev/Author list order
     @users = User.order("permissions ASC")
   end
@@ -42,13 +38,12 @@ class Admin::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = Post.where(:user_id => @user.id)
-      .paginate(:page => params[:page], :per_page => 10).order("id DESC")
+                 .paginate(:page => params[:page], :per_page => 10).order("id DESC")
   end
   
   
   #----- UPDATE
-  def edit # Display edit record form    
-    @page_title = "Edit User | SutroCMS"
+  def edit # Display edit record form
     # Form fields prefilled with values from instance variable passed to view
     @user = User.find(params[:id])
   end

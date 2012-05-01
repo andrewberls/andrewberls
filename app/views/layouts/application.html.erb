@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>AndrewBerls.com</title>
+  <title>Andrew Berls <%= yield(:title) %></title>
   <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag :application %>
   <%= auto_discovery_link_tag :atom, "/feed" %>

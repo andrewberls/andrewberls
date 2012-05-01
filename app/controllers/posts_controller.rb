@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
   #----- READ
   def list # Main blog index
-    @page_title = "Andrew Berls | Blog"
     
     if !params[:tag].nil?
       @tag = Tag.find_by_name(params[:tag])
@@ -30,9 +29,7 @@ class PostsController < ApplicationController
       @post = Post.find_by_url_alias(params[:permalink])
     else
       @post = Post.find(params[:id])
-    end
-    
-	  @page_title = "Andrew Berls | " + @post.title   
+    end 
   end
   
   def feed

@@ -6,9 +6,7 @@ class SessionsController < ApplicationController
     redirect_to login_path
   end
   
-  def new
-    @page_title = "Login | SutroCMS"
-    
+  def new    
     # Redirect if already logged in
     if session[:user_id]
       redirect_to dashboard_path

@@ -1,3 +1,5 @@
+<% provide(:title, "All Users") %>
+
 <h2>Manage Users</h2>
 
 <%= link_to "Add New User", new_admin_user_path unless is_author?(current_user) %>
