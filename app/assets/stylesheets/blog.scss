@@ -133,39 +133,38 @@
 .pagination {
   font-size: 1.1em;
   margin: 30px auto; 
-  text-align: center;  
+  text-align: center;
+
+  a,
+  .current,
+  .disabled {
+    border: 1px solid $gray-border;    
+    padding: 5px 8px;
+  }
   
   a {
     background-color: white;
-    border: 1px solid $gray-border;    
-    padding: 3px 6px;
     
     &:hover {
       background-color: $gray-text;
       color: white;
-      text-decoration: none;
     }
     
     &:active {      
       font-weight: bold;
     }
 
-  } // a
+  }
 
   .current {      
     background-color: #444;
-    border: 1px solid $gray-border;
     color: white;
     font-weight: bold;
-    padding: 3px 6px;    
   }
 
   .disabled {
     background-color: #e7e7e7;
-    border: 1px solid $gray-border;
-    color: $gray-text;
-    opacity: 0.5;
-    padding: 3px 6px;
+    color: lighten($gray-text, 35);
   }
 
 } // .pagination
