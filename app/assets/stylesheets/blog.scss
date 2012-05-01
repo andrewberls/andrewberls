@@ -6,10 +6,11 @@
   left: -125px;
 }
 
-.post-container {
+.blog-container {
   margin-top: 50px !important;
   position: relative;
 }
+
 
 //-- POST
 //------------------------------------
@@ -113,6 +114,12 @@
 //------------------------------------
 .sidebar {
 
+  h2 {
+    border-bottom: 1px dashed darken($gray-border, 10);
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
+
   p {
     line-height: 1.6;
     margin-bottom: 15px;
@@ -162,3 +169,21 @@
   }
 
 } // .pagination
+
+
+//-- DISQUS COMMENTS
+//------------------------------------
+#disqus_thread {
+  margin: 20px auto 15px;
+  
+  h3 {    
+    font-size: 1.3em;
+  }
+  a {
+    font-size: 0.9em;
+  }
+  .dsq-trackback-url {
+    display: none;
+  }
+
+} // #disqus_thread
