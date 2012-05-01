@@ -1,5 +1,5 @@
 #intro {
-  background: #e2e2e2 url('../img/lines.png') 0 0;
+  background: #e2e2e2 url('/assets/lines.png') 0 0;
   border-top: 1px solid white;
   border-bottom: 1px solid $gray-border;
 
@@ -11,7 +11,7 @@
     text-align: center;
     
     .highlight {
-      color: $blue; // lighten(#3485B6, 3)
+      color: $blue;
     }
 
     strong {
@@ -25,13 +25,13 @@
 
     .item {
       @include whitebox;
-      min-height: 165px;
+      min-height: 170px;
 
       h3 {
         color: $gray-header;
         font-size: 1.5em;
         font-weight: bold;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
       }
 
       p {

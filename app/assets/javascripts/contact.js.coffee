@@ -10,7 +10,7 @@ validate = (fields) ->
   errors = false
   for field in fields
     # TODO: Add error class to invalid fields?
-    errors = true if !field.val()
+    errors = true if !field.value
   errors
 
 $ ->
@@ -18,10 +18,8 @@ $ ->
 
   $('#submit-contact').click ->
     $form = $(this).parent()
-    $name = $('#name')
-    $email = $('#email')
-    $message = $('#message')
-    errors = validate([$name, $email, $message])
+    fields = $form.find(':text, textarea')
+    errors = validate(fields)
 
     if errors && $form.find('.flash').size() == 0 # Only if an alert doesn't already exist
       alertBox = document.createElement('div')

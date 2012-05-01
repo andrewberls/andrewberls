@@ -1,31 +1,44 @@
-<%= render_flashes(flash) %>
+<%# render_flashes(flash) %>
 
-<% unless @tag.nil? %>
-	<h1>Tagged: <%= @tag.name %></h1>
-<% end %>
+<div class="container blog-container">
+  <div class="row">
+    <% unless @tag.nil? %>
+      <h1>Tagged: <%= @tag.name %></h1>
+    <% end %>
 
-<% @posts.each do |post| %>
-	<div class="post">
-		<h4><%= link_to(raw(post.title), {:action => "show", :id => post.id}) %></h4>
-		<p class="date"><%= render_sutro_time(post.created_at) %></p>		
+    <div class="span-11">
+      <% @posts.each do |post| %>
+        
+          <div class="post">
+            <h2><%= link_to raw(post.title), post_path(post) %></h2>
+            <p class="date"><%= render_sutro_time(post.created_at) %></p>   
 
-		<p><%= render_teaser(post.body) %></p>		
-				
-		<% unless has_pagebreak? post.body || post.tags.blank? %>						
-			<%= render_tags(post.tags, false) %>					
-		<% end %>	
-		
-		<% if has_pagebreak? post.body %>
-			<%= link_to raw("Full Post &raquo;"), post_path(post.id), {:class => "button"} %>
-		<% end %>
-		<div class="clearfix"></div>
-	</div>
-<% end %>
+            <p><%= render_teaser(post.body) %></p>    
+                
+            <% unless has_pagebreak? post.body || post.tags.blank? %>           
+              <%= render_tags(post.tags, false) %>          
+            <% end %> 
+            
+            <% if has_pagebreak? post.body %>
+              <%= link_to raw("Full Post &raquo;"), post_path(post.id), {:class => "read-more"} %>
+            <% end %>
+            <div class="clearfix"></div>
+          </div>
+        
+      <% end %>
+
+      <%= 
+        # Display pagination links
+        will_paginate @posts 
+      %>
+
+    </div>
+
+    <%= render 'sidebar' %>
+
+  </div>
+</div><!-- .container -->
 
 
-<%= 
-	# Display pagination links
-	will_paginate @posts 
-%>
 
-<a href="#header" id="top">Back to top</a>
+<!-- <a href="#header" id="top">Back to top</a> -->

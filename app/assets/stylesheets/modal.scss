@@ -1,0 +1,26 @@
+#simplemodal-overlay {
+  background-color: #000;
+}
+
+.modal {
+  @include border-box;
+  @include clearfix;
+  background-color: white;
+  border: 1px solid $gray-border;
+  display: none;
+  margin: 0 auto;
+  padding: 15px;
+  width: 700px; // 640
+
+  img {
+    float: left;
+    margin-right: 15px; // 10
+  }
+
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+} // .modal

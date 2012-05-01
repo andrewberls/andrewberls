@@ -37,9 +37,25 @@
 
 @mixin whitebox {
   @include border-box;
+  @include clearfix;
   background-color: white;
   border: 1px solid #ccc;
   padding: 10px;
+}
+
+@mixin bluebutton {
+  @include border-radius(5px);
+  background-color: #119EE7;
+  border: 1px solid #0099E6;
+  color: white;
+  display: inline-block;
+  margin-top: 15px;
+  padding: 5px 10px;
+
+  &:hover {
+    background-color: #08c;
+    text-decoration: none;
+  }
 }
 
 @mixin horizontal-gradient($startColor: #555, $endColor: #333) {

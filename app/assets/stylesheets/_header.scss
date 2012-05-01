@@ -1,5 +1,5 @@
 header {
-  background-color: $blue;
+  background-color: $blue; // TODO: Add noise/texture
   border-bottom: 1px solid $gray-border;
   padding: 15px 0;
 
@@ -7,6 +7,9 @@ header {
     color: white;
     font-family: 'Cabin', Arial, sans-serif;
     font-size: 3.3em;
+    font-weight: normal;
+
+    a { color: white; }
   }
 
   nav {
@@ -24,7 +27,7 @@ header {
         @include ease-out(0.12s);
         color: white;
         font-size: 1.1em;
-        font-weight: bold;
+        //font-weight: bold;
         display: block;
         text-decoration: none;
         padding: 2px 5px;
@@ -32,7 +35,6 @@ header {
         &:hover {
           @include border-radius(4px);
           background-color: $blue-light;
-          //color: $blue-dark;  
         }
       }
       

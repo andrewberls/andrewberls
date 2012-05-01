@@ -9,11 +9,12 @@ loadTweets = (tweets) ->
   
   $(".tweets").html(results.join(''))
 
-$.ajax({
-     url: "https://api.twitter.com/1/statuses/user_timeline.json?&include_rts=true&screen_name=aberls&count=4"
-     dataType: 'JSONP'
-     success: (json) ->
-        loadTweets(json)
-     error: ->
-        # handle error
-})
+$ ->
+  $.ajax({
+    url: "https://api.twitter.com/1/statuses/user_timeline.json?&include_rts=true&screen_name=aberls&count=4"
+    dataType: 'JSONP'
+    success: (json) ->
+      loadTweets(json)
+    error: ->
+      # handle error
+  })

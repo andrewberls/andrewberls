@@ -2,13 +2,25 @@
   background-color: $gray-light;
   border-bottom: 1px solid $gray-border;
   padding-top: 30px;
+  padding-bottom: 60px;
 
   .portfolio-item {
     @include whitebox;
   }
 
-  .row:last-child {
-    margin-top: 20px;
+  img {
+    display: block;
+    margin-bottom: 10px;
+    max-width: 100%;    
+  }
+
+  .separator {
+    border-color: lighten($gray-border, 7);
+    margin: 7px auto;
+
+    & + a {
+      float: right;
+    }
   }
 
 } // #portfolio

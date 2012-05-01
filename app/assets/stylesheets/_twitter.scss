@@ -1,14 +1,14 @@
 .tweets {
   @include border-radius(5px);
-  background-color: white;
-  border: 1px solid $gray-border;
+  //background-color: white;
+  //border: 1px solid $gray-border;
   font-size: 0.9em;
   list-style: none;
   padding: 0;
 
   .tweet {
-    border-bottom: 1px solid $gray-border;
-    padding: 5px;
+    border-bottom: 1px solid lighten($gray-border, 10);
+    padding: 7px 5px;
     
     &:last-child {
       border: none;

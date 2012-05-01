@@ -4,9 +4,16 @@ footer {
   padding: 15px 0 25px;
 
   h3 {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+  }
+
+  .social {
+    @include clearfix;
+    margin-bottom: 10px;
+
+    & + p {
+      clear: both;
+    }
   }
 
   .column {
@@ -14,8 +21,20 @@ footer {
     @include border-radius(3px);
     background-color: white;
     padding: 5px;
+
+    .description {
+      color: darken($gray-border, 10);
+      display: inline-block;
+      font-size: 0.7em;
+      font-weight: normal;
+      margin-left: 5px;
+    }
+
+    p {
+      margin-bottom: 5px;
+    }
     
-    a {
+    /*a {
       @include ease-out(0.12s);
       display: block;
       padding: 2px;
@@ -23,16 +42,22 @@ footer {
       &:hover {
         background-color: darken($gray-light, 3); // eee
       }
-    }
+    }*/
 
   } // .column
 
-  .social {
-    @include border-box;
-    @include border-radius(3px);
-    background-color: white;
-    padding: 5px;
+  .icon {
+    // TODO: sprite these
+    float: left;
+    margin-right: 10px;
+    height: 32px;
+    width: 32px; 
   }
+
+  .github-icon   { background-image: url('/assets/github_cat.png'); }
+  .linkedin-icon { background-image: url('/assets/linkedin.png'); }
+  .twitter-icon  { background-image: url('/assets/twitter.png'); }
+  .rss-icon      { background-image: url('/assets/rss.png'); }
 
 } // footer
 

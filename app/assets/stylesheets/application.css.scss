@@ -3,11 +3,18 @@
 @import "variables";
 @import "mixins";
 
+// Front page
 @import "header";
 @import "intro";
 @import "portfolio";
+@import "modal";
 @import "contact";
 @import "footer";
+
+// Blog
+@import "blog";
+
+// Generic
 @import "flash";
 @import "global";
 @import "responsive";
