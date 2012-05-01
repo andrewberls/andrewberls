@@ -1,9 +1,7 @@
 #back {
+  // Left aligned, above posts container
   @include bluebutton;
-  margin: 0;
-  position: absolute;
-  top: 0;
-  left: -125px;
+  margin-bottom: 15px;
 }
 
 .blog-container {
