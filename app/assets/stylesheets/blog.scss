@@ -1,12 +1,12 @@
 #back {
-  // Left aligned, above posts container
   @include bluebutton;
+  font-size: 1.2em;
   margin-bottom: 15px;
+  padding: 8px;
 }
 
 .blog-container {
   margin-top: 50px !important;
-  position: relative;
 }
 
 

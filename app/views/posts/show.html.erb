@@ -3,8 +3,6 @@
 <div class="container blog-container">
   <div class="row">
     <div class="span-11">
-              
-      <%= link_to raw("&laquo; Back to Blog"), blog_path, :id => "back" %>
 
       <div class="post">
         <h2><%= raw @post.title %></h2>
@@ -13,21 +11,15 @@
             
         <% unless @post.tags.blank? %>           
           <%= render_tags(@post.tags, false) %>          
-        <% end %> 
-      </div>
+        <% end %>
+      </div><!-- .post -->
+
+      <%= link_to raw("&laquo; Back to Blog"), blog_path, :id => "back" %>
 
       <div class="row">
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">    
-            var disqus_shortname = 'andrewberls';
-            
-            (function() {
-                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <div class="span-11">
+          <%= render 'disqus' %>
+        </div>
       </div>
 
     </div>
@@ -35,4 +27,4 @@
     <%= render 'sidebar' %>
 
   </div>
-</div><!-- .container -->
+</div><!-- .blog-container -->
