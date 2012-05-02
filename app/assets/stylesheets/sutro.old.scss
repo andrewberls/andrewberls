@@ -50,36 +50,8 @@ input,textarea {border: 1px solid black !important;}
 
 // ----------
 // - LIB
-// -- Mixins
 // -- Classes
 // ----------
-
-//----- LIB MIXINS
-@mixin border_radius($rad) {
-    -webkit-border-radius: #{$rad}px;
-    -moz-border-radius:    #{$rad}px;
-    border-radius:         #{$rad}px;
-}
-
-@mixin box_shadow($horizOffset: 0, $vertOffset: 0, $blurDist: 0, $spreadDist: 0, $color: #000) {  
-  -moz-box-shadow:    #{$horizOffset}px #{$vertOffset}px #{$blurDist}px #{$spreadDist}px #{$color};
-  -webkit-box-shadow: #{$horizOffset}px #{$vertOffset}px #{$blurDist}px #{$spreadDist}px #{$color};
-  box-shadow:         #{$horizOffset}px #{$vertOffset}px #{$blurDist}px #{$spreadDist}px #{$color};
-  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=2, Direction=225, Color='#{$color}')";
-  filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#{$color}');       
-}
-
-@mixin header_gradient() {
-  // Non-generalized implementation for headers in dashboard tables.
-  // Exists purely for rule cleanliness.
-  background-image: linear-gradient(bottom, #D1D1D1 22%, #D9D9D9 69%);
-  background-image: -o-linear-gradient(bottom, #D1D1D1 22%, #D9D9D9 69%);
-  background-image: -moz-linear-gradient(bottom, #D1D1D1 22%, #D9D9D9 69%);
-  background-image: -webkit-linear-gradient(bottom, #D1D1D1 22%, #D9D9D9 69%);
-  background-image: -ms-linear-gradient(bottom, #D1D1D1 22%, #D9D9D9 69%);  
-  background-image: -webkit-gradient(linear,left bottom,left top,
-    color-stop(0.22, #D1D1D1),color-stop(0.69, #D9D9D9));
-}
 
 //----- LIB CLASSES
 .todo {color: orange;}
@@ -134,7 +106,7 @@ a {
 }
 
 #container {  
-  background: url(../images/bg.jpg) repeat-y;
+  background: url('/images/bg.jpg') repeat-y;
   clear: none;
   min-height: 100%;
   overflow: auto;  
@@ -239,8 +211,8 @@ a {
 
 .wrapper {  
   background-color: #F9F9F9;
-  @include border_radius(10);  
-  @include box_shadow(0,0,2,0,#222); // 0 0 6 0 #000
+  @include border-radius(10px);  
+  @include box-shadow(0px,0px,2px,0px,#222); // 0 0 6 0 #000
   color: $gray_text;
   float: left;
   //margin: 0 auto; overflow: auto; //Center the box on the screen if desired
@@ -271,8 +243,8 @@ a {
   
   ul {
     background-color: #F9F9F9;
-    @include border_radius(10);  
-    @include box_shadow(0,0,2,0,#222); // 0 0 6 0 #000
+    @include border-radius(10px);  
+    @include box-shadow(0px,0px,2px,0px,#222); // 0 0 6 0 #000
     display: inline-block;
     list-style: disc;
     margin-top: 15px;
@@ -376,7 +348,7 @@ select {
   }
 }
 .status-pill {
-  @include border_radius(2);
+  @include border-radius(2px);
   color: white;
   font-size: 0.7em;
   font-weight: bold;
@@ -447,7 +419,7 @@ td {
     
     h3 {
       background-color: #D9D9D9;      
-      @include header_gradient;                
+      //@include header_gradient;                
       border-bottom: 1px solid #ccc;      
       margin-bottom: 10px;
       padding: 2px 10px;         
