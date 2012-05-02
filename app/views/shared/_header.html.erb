@@ -8,14 +8,13 @@
 
       <nav class="span-8">
         <ul>
-          <li><%= link_to "blog", blog_path %></li>
           <% if params[:controller] == "posts" %>
-            <li><a class="" href="/#footer">resources</a></li>
             <li><a class="" href="/#contact">get in touch</a></li>
+            <li><%= link_to "blog", blog_path %></li>
             <li><a class="" href="/#portfolio">portfolio</a></li>
           <% else %>
-            <li><a class="scroll" href="#footer">resources</a></li>
             <li><a class="scroll" href="#contact">get in touch</a></li>
+            <li><%= link_to "blog", blog_path %></li>
             <li><a class="scroll" href="#portfolio">portfolio</a></li>
           <% end %>
         </ul>
