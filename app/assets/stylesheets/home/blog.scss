@@ -1,4 +1,4 @@
-#back {
+ #back {
   @include bluebutton;
   font-size: 1.1em;
   margin-bottom: 15px;
@@ -7,6 +7,7 @@
 
 .blog-container {
   margin-top: 50px !important;
+  position: relative;
 }
 
 
@@ -112,6 +113,8 @@
 //-- SIDEBAR
 //------------------------------------
 .sidebar {
+  position: fixed;
+  margin-left: 840px;
 
   h2 {
     border-bottom: 1px dashed darken($gray-border, 10);
