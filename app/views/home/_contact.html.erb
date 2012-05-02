@@ -10,17 +10,11 @@
 
     <p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
 
-    <div class="field">
-      <%= f.text_field :name, placeholder: "Name" %> 
-    </div>
+    <%= f.text_field :name, placeholder: "Name" %> 
 
-    <div class="field">
-      <%= f.text_field :email, placeholder: "Email" %> 
-    </div>
+    <%= f.text_field :email, placeholder: "Email" %> 
 
-    <div class="field">
-      <%= f.text_area :message, placeholder: "Message" %>
-    </div>
+    <%= f.text_area :message, placeholder: "Message" %>
 
     <%= f.submit "Submit", class: "submit", id: "submit-contact" %>
   <% end %>
