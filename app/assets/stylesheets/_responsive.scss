@@ -61,20 +61,3 @@ header nav li {
 }
 
 } // @media (min-width: 768px) and (max-width: 980px)
-
-
-
-@media (min-width: 1100px) {
-
-// POST#SHOW BACK BUTTON
-//-------------------------
-#back {
-  // Top aligned, to the left of posts container
-  margin: 0;
-  position: absolute;
-  top: 0; left: -125px;
-}
-
-} // @media (min-width: 1100px)
-
-
