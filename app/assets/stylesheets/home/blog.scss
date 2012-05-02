@@ -43,33 +43,34 @@
     // Section titles
     font-size: 1.2em;
     font-weight: bold;
+    margin-bottom: 5px;
   }
 
   p {
     margin-bottom: 15px;
   }
 
+  code, 
+  pre {
+    color: lighten($gray-header, 3);
+    //font-family: 'Courier New', Arial, sans-serif;
+    font-family: "Lucida Console", Arial, sans-serif;
+    font-size: 0.9em;
+  }
+
   code {
     // Inline code snippets
     background-color: darken($gray-light, 3);   
     border: 1px solid $gray-border;
-    color: $gray-header;
-    font-family: 'Courier New', Arial, sans-serif;
-    font-size: 0.9em;
-    padding: 1px 3px;        
+    padding: 3px;        
   }
 
   pre {
     // Code blocks
-    @include border_radius(4px);    
-      
-    background-color: darken($gray-light, 4); // ececec
+    @include border_radius(4px);
+    background-color: darken($gray-light, 4);
     border: 1px solid #ddd;
-    color: $gray-header;
-    font-family: 'Courier New', Arial, Helvetica, sans-serif;
-    font-size: 0.9em;
-    display: block;
-    line-height: 1.25;
+    line-height: 1.4;
     margin-bottom: 15px;
     padding: 10px 15px;
     
