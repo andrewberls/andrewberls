@@ -29,5 +29,4 @@ $ ->
       $title = $form.find('h2')[0]
       insertAfter($title, alertBox)      
       $('.flash').hide().slideDown('fast')
-
-    return false
+      return false
