@@ -30,7 +30,7 @@ header {
         //font-weight: bold;
         display: block;
         text-decoration: none;
-        padding: 2px 5px;
+        padding: 3px 5px;
 
         &:hover {
           @include border-radius(4px);
