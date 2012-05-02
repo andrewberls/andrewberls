@@ -13,25 +13,35 @@ header nav li a {
   border: none;
 }
 
+
 // #PORTFOLIO
 //-------------------------
 #portfolio .portfolio-item {
   border: none;
 }
 
+
 // CONTACT
 //-------------------------
-#contact .contact-form {
-  padding: 30px 15px;
-  width: auto;
+#contact {
 
-  input, textarea {
-    @include border-box;
-    width: 100%;
+  .contact-form {
+    padding: 30px 15px;
+    width: auto;
+
+    input, textarea {
+      @include border-box;
+      width: 100%;
+    }
+  }
+
+  .submit {
+    padding: 10px 0;
   }
 }
 
 } // @media (max-width: 480px)
+
 
 
 
@@ -42,22 +52,3 @@ header nav li {
 }
 
 } // @media (max-width: 768px)
-
-
-
-@media (min-width: 768px) and (max-width: 980px) {
-
-// #INTRO
-//-------------------------
-#intro .item-container .item {
-  margin-right: 67px !important;
-  &:last-child { margin-right: 0 !important; }
-}
-
-// #CONTACT
-//-------------------------
-#contact [class^="span-"] {
-  //width: 400px !important;
-}
-
-} // @media (min-width: 768px) and (max-width: 980px)
