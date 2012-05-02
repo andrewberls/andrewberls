@@ -80,7 +80,7 @@ input,textarea {border: 1px solid black !important;}
 // - GENERIC
 // ----------
 body {  
-  background-color: #EDEDED;  
+  background-color: #EDEDED;
   font-family: Arial, Verdana, Geneva, sans-serif;
   font-size: 16px;
 }
@@ -106,7 +106,7 @@ a {
 }
 
 #container {  
-  background: url(../images/bg.jpg) repeat-y;
+  //background: url('/images/bg.jpg') repeat-y;
   clear: none;
   min-height: 100%;
   overflow: auto;  
