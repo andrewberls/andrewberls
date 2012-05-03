@@ -1,13 +1,4 @@
-//----- SAVE FOR LATER ---//
-$(function() {	
-	// Enable display (since requires JS)
-	$('#save').css('display', 'block');
-})
+//= require jquery
+//= require jquery_ujs
 
-$('#save').click(function() {
-	// Fill hidden status field & mark post as draft
-	//$('#post_status').val('draft');
-	$('#post_status').val('0');	
-});
-
-
+//= require sutro/draft
