@@ -1,3 +1,5 @@
+//-- SUTRO BAR
+//------------------------------------
 .sutro-bar {
   @include border-radius(3px);
   border: 1px solid $gray-border;
@@ -25,22 +27,13 @@
 }
 
 
-
-#back {
-  @include bluebutton;
-  font-size: 1.1em;
-  margin-bottom: 15px;
-  padding: 8px;
-}
-
+//-- POSTS
+//------------------------------------
 .blog-container {
   margin-top: 50px !important;
   position: relative;
 }
 
-
-//-- POST
-//------------------------------------
 .post {
   @include whitebox;
   @include border-radius(5px);
@@ -137,6 +130,14 @@
   @include bluebutton;
   float: right;
   margin-bottom: 5px;
+}
+
+#back {
+  // "Back to Blog"
+  @include bluebutton;
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  padding: 8px;
 }
 
 
