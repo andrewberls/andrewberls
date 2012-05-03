@@ -10,14 +10,6 @@
 
 //-- SITE SCRIPTS
 //------------------------------------
-//= require scroll
-//= require contact
-//= require sutro
-//= require modal
-
-
-
-//-- UNUSED
-//------------------------------------
-// require twitter
-// require functions
+//= require home/scroll
+//= require home/contact
+//= require home/modal
