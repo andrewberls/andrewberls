@@ -50,12 +50,6 @@
     margin-bottom: 15px;
   }
 
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
   code, 
   pre {
     color: lighten($gray-header, 3);
@@ -133,10 +127,6 @@
   p {
     line-height: 1.6;
     margin-bottom: 15px;
-  }
-
-  a:hover {
-    text-decoration: underline;
   }
 
 } // .sidebar

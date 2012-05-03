@@ -37,6 +37,10 @@ section {
 a {
   color: lighten($blue, 3); // 08c
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 h1, h2, h3 {

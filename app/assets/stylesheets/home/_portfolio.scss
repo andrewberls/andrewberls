@@ -8,6 +8,10 @@
     @include whitebox;
   }
 
+  h2 > a:hover {
+    text-decoration: none;
+  }
+
   img {
     display: block;
     margin-bottom: 10px;

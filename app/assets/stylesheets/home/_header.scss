@@ -9,7 +9,13 @@ header {
     font-size: 3.3em;
     font-weight: normal;
 
-    a { color: white; }
+    a {
+      color: white;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
   nav {
@@ -35,6 +41,7 @@ header {
         &:hover {
           @include border-radius(4px);
           background-color: $blue-light;
+          text-decoration: none;
         }
       }
       
