@@ -9,7 +9,6 @@ insertAfter = (refNode, newNode) ->
 validate = (fields) ->
   errors = false
   for field in fields
-    # TODO: Add error class to invalid fields?
     errors = true if !field.value
   errors
 
