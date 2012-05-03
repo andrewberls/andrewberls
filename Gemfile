@@ -28,10 +28,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do
-  #gem 'eventmachine', '1.0.0.beta.4.1'
-end
-
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
