@@ -1,4 +1,4 @@
-<% provide(:title, "Edit Post: #{@post.title}") %>
+                   <% provide(:title, "Edit Post: #{@post.title}") %>
 
 <div class="wrapper">
 	<h2>Edit Post</h2>
@@ -14,7 +14,8 @@
 		</div>	
 	<% end %>
 		
-	<%= form_for(:post, :url=>{:action => 'update', :id => @post.id}, :method => :put) do |f| %>		
+  <%= form_for @post, url: admin_post_path , :method => :put do |f| %>
+  
 		<%= f.label :title %>
 		<%= f.text_field :title %>
 		<%= f.label :body, "Post" %>
