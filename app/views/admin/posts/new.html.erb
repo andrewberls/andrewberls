@@ -29,9 +29,9 @@
 		<p class="fieldDescription">Enter a comma separated list of tags.</p>
 		<%= f.text_field :tag_list %>
 
-    <%= f.label :url_alias, "URL Alias (optional)"%>
-    <p class="fieldDescription">Example: any-questions</p>
-    <%= f.text_field :url_alias %>
+    <% #f.label :url_alias, "URL Alias (optional)"%>
+    <!-- <p class="fieldDescription">Example: any-questions</p> -->
+    <% #f.text_field :url_alias %>
 		
 		<%= f.hidden_field(:status) %>
 		<%= f.submit "Publish", :class => "cta submit" %>		
@@ -43,7 +43,7 @@
 <div class="recommendations">
 	<ul>		
 		<h4>Style recommendations:</h4>
-		<li>Use &lt;h5&gt; for section headings.</li>
+		<li>Use &lt;h3&gt; for section headings.</li>
 		<li>Use &lt;pre&gt; for code blocks, and &lt;code&gt; for inline snippets.</li>
 		<li>span.label for code file labels, or span.comment for an inline comment</li>		
 		<li>Image path is "/images/posts/name.jpg"</li>
