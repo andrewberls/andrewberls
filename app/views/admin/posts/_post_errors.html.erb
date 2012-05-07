@@ -1,0 +1,10 @@
+<% if @post.errors.any? %>
+  <div class="error_messages">
+    <h2>Invalid Submission</h2>
+    <ul>
+      <% for message in @post.errors.full_messages %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>  
+<% end %>

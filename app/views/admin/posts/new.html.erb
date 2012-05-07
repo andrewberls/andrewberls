@@ -1,23 +1,10 @@
 <% provide(:title, "New Post") %>
 
 <div class="wrapper">
-	<!-- Add options for pure links/images later  -->
+
 	<h2>Create New Text Post</h2>
 	
-	<% flash.each do |name,msg| %>
-		<p class="msgDebug"><%= msg %></p>
-	<% end %>
-	
-	<% if @post.errors.any? %>
-		<div class="error_messages">
-			<h2>Invalid Submission</h2>
-			<ul>
-				<% for message in @post.errors.full_messages %>
-					<li><%= message %></li>
-				<% end %>
-			</ul>
-		</div>	
-	<% end %>
+  <%= render "post_errors" %>
 	
   <%= form_for @post, url: admin_posts_path do |f| %>
 		<%= f.label :title %>
