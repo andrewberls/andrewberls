@@ -7,25 +7,19 @@ Description: This partial loads the Sutro sidebar. The conditional logic inspect
 %>
 
 
-<%
-	#----- BLOG -----#
-%>
+<% #----- BLOG -----# %>
 <li><%= link_to "Blog", blog_path %></li>
 
 
-<%
-	#----- DASHBOARD -----#
-%>
-<% if action_request == "admin/posts#dashboard" %>
-	<li><%= link_to "Dashboard", dashboard_path,  :class => "current"	%></li>
-<% else %>
-	<li><%= link_to "Dashboard", dashboard_path	%></li>
-<% end %>
+<% #----- DASHBOARD -----# %>
+<% #if action_request == "admin/posts#dashboard" %>
+	<!-- <li><%= link_to "Dashboard", dashboard_path,  :class => "current"	%></li> -->
+<% #else %>
+	<!-- <li><%= link_to "Dashboard", dashboard_path	%></li> -->
+<% #end %>
 
 
-<%
-	#-----  NEW POST -----#
-%>
+<% #-----  NEW POST -----# %>
 <% if action_request == "admin/posts#new" %>
 	<li><%= link_to "New Post", new_admin_post_path,  :class => "current" %></li>
 <% else %>
@@ -33,18 +27,14 @@ Description: This partial loads the Sutro sidebar. The conditional logic inspect
 <% end %>
 
 
-<%
-	#----- MANAGE POSTS -----#
-%>
+<% #----- MANAGE POSTS -----# %>
 <% if action_request == "admin/posts#index" %>
 	<li><%= link_to "Manage Posts", admin_posts_path, :class => "current" %></li>
 <% else %>
 	<li><%= link_to "Manage Posts", admin_posts_path %></li>
 <% end %>
 
-<%
-	#----- MANAGE USERS (Admins only) -----#
-%>
+<% #----- MANAGE USERS (Admins only) -----# %>
 <% if is_admin?(current_user) %>
 	<% if action_request == "admin/users#manage" %>
 		<li><%= link_to "Manage Users", manage_users_path, :class => "current" %></li>
@@ -53,9 +43,7 @@ Description: This partial loads the Sutro sidebar. The conditional logic inspect
 	<% end %>
 <% end %>
 
-<%
-	#----- LOGGED IN AS "USERNAME" -----#
-%>
+<% #----- LOGGED IN AS "USERNAME" -----# %>
 <% if current_user %>
 	<p>Logged in as <%= link_to current_user.full_name, admin_user_path(:id => current_user.id)  %></p>	
 	<p><%= link_to "Log Out", logout_path %></p>

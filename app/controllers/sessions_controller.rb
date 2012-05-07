@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     
     if user
       session[:user_id] = user.id      
-      redirect_to dashboard_path
+      redirect_to admin_posts_path
     else
       # Authentication failed - render the form again      
       flash[:msg] = "Invalid email or password."
