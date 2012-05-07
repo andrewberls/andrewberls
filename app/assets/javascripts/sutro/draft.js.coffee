@@ -1,5 +1,5 @@
 
-$ -> 
+$ ->
   # Enable display (since requires JS)
   $('#save').css('display', 'block')
 
