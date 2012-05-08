@@ -20,6 +20,7 @@
 }
 
 @mixin clearfix {
+  // http://nicolasgallagher.com/micro-clearfix-hack/
   *zoom: 1;
   &:before,
   &:after {
