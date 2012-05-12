@@ -78,7 +78,6 @@
    <input type="text" placeholder="Name">
 
    <label for="email">Email</label>
-   <!-- <p class="prompt">Enter something incorrect, like user@gnail.com</p> -->
    <input id="email" type="text" placeholder="Email">
 
    <div id="hint"></div>
@@ -99,24 +98,27 @@
     var $hint = $("#hint");
 
     $email.on('blur',function() {
+      $hint.css('display', 'none').empty();
       $(this).mailcheck({
         suggested: function(element, suggestion) {
           if(!$hint.html()) {
             // First error - fill in/show entire hint element
             var suggestion = "Yikes! Did you mean <span class='suggestion'>" +
-                              suggestion.address + "@<a href='#' class='domain'>" + 
-                              suggestion.domain+"</a></span>?";
+                              "<span class='address'>" + suggestion.address + "</span>"
+                              + "@<a href='#' class='domain'>" + suggestion.domain + 
+                              "</a></span>?";
                               
             $hint.html(suggestion).fadeIn(150);
           } else {
-            // Subsequent errors - modify domain only
+            // Subsequent errors
+            $(".address").html(suggestion.address);
             $(".domain").html(suggestion.domain);
           }
         }
       });
     });
 
-    $(document.body).delegate('.domain', 'click', function() {
+    $hint.on('click', '.domain', function() {
       // On click, fill in the field with the suggestion and remove the hint
       $email.val($(".suggestion").text());
       $hint.fadeOut(200, function() {
