@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Mailcheck Demo</title>
+  <style type="text/css">
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #404040;
+      padding: 0;
+    }
+
+    a {
+      color: #08c;
+      text-decoration: none;
+    }
+      a:hover {
+        text-decoration: underline;
+      }
+
+    form {
+      border: 1px solid #ccc;
+      margin: 20px auto 40px;
+      overflow: auto;
+      padding: 25px 25px 15px;
+      width: 400px;
+    }
+
+    label {
+      margin-bottom: 7px;
+      float: left;
+    }
+
+    input {
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+
+      border: 1px solid #ccc;
+      font-size: 0.8em;
+      margin-bottom: 25px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .prompt {
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    #hint {
+      color: #B94A48;
+      display: none;
+      font-size: 0.9em;
+      margin: -10px 0 10px;
+    }
+
+    .domain {
+      color: #08c;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    .credits {
+      font-size: 0.8em;
+      text-align: center;
+    }
+  </style>
+	
+</head>
+<body>
+
+  <p class="prompt">Enter an email with a typo like user@gnail.com and tab to the next field to see what happens!</p>
+
+	<form id="mailcheck-test">
+
+   <label for="Name">Name</label>
+   <input type="text" placeholder="Name">
+
+   <label for="email">Email</label>
+   <!-- <p class="prompt">Enter something incorrect, like user@gnail.com</p> -->
+   <input id="email" type="text" placeholder="Email">
+
+   <div id="hint"></div>
+
+   <label for="Password">Password</label>
+   <input type="password">
+
+  </form>
+
+  <p class="credits">
+    Mailcheck.js example by <a href="http://andrewberls.com/">Andrew Berls</a>, courtesy of <a href="http://kicksend.com/">Kicksend</a>.
+  </p>
+
+  <script src="lib/jquery-1.7.1.min.js"></script>
+  <script src="lib/jquery.mailcheck.min.js"></script>
+  <script type="text/javascript">
+    var $email = $('#email');
+    var $hint = $("#hint");
+
+    $email.on('blur',function() {
+      $(this).mailcheck({
+        suggested: function(element, suggestion) {
+          if(!$hint.html()) {
+            // First error - fill in/show entire hint element
+            var suggestion = "Yikes! Did you mean <span class='suggestion'>" +
+                              suggestion.address + "@<a href='#' class='domain'>" + 
+                              suggestion.domain+"</a></span>?";
+                              
+            $hint.html(suggestion).fadeIn(150);
+          } else {
+            // Subsequent errors - modify domain only
+            $(".domain").html(suggestion.domain);
+          }
+        }
+      });
+    });
+
+    $(document.body).delegate('.domain', 'click', function() {
+      // On click, fill in the field with the suggestion and remove the hint
+      $email.val($(".suggestion").text());
+      $hint.fadeOut(200, function() {
+        $(this).empty();
+      });
+      return false;
+    });
+  </script>
+
+</body>
+</html>
