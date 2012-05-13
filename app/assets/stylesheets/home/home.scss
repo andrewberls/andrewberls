@@ -62,10 +62,47 @@ strong { font-weight: bold; }
 
 //-- LIB CLASSES
 //------------------------------------
+.btn {
+  @include bluebutton;
+}
+
+.btn-huge {
+  font-size: 1.2em;
+  padding: 20px 30px;
+}
+
 
 .separator {
   border-bottom: 1px dashed #888888;
   height: 0;
   margin: 20px auto;
   width: 75%;
+}
+
+
+//-- PAGE NOT FOUND
+//------------------------------------
+.error-box {
+  @include whitebox;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  strong {
+    color: $gray-header;
+    font-size: 1.7em;
+  }
+
+  .error-message {
+    font-size: 1.5em;
+  }
+
+  .btn-huge {
+    margin-top: 25px;
+    margin-right: 10px;
+
+    &:last-child {
+      float: right;
+    }
+  }
+
 }

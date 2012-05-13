@@ -2,7 +2,10 @@ class HomeController < ApplicationController
   
   def index
     @message = Message.new
-  end  
+  end
+
+  def not_found
+  end
 
   def create
     @message = Message.new(params[:message])

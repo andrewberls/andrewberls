@@ -33,7 +33,7 @@ Andrewberls::Application.routes.draw do
   
   root :to => 'home#index'
   
-  # ROUTE ALL PAGE NOT FOUND TO 404.html  
-  match "*a" => redirect("/404.html")
+  # ROUTE ALL PAGE NOT FOUND TO 404 LANDING
+  match "*a" => "home#not_found"
   
 end
