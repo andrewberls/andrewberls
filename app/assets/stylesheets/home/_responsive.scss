@@ -16,8 +16,18 @@ header nav li a {
 
 // #PORTFOLIO
 //-------------------------
-#portfolio .portfolio-item {
-  border: none;
+#portfolio {
+  .portfolio-item {
+    border: none;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  img {
+    margin: 5px auto 10px;
+  }
 }
 
 
