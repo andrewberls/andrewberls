@@ -62,7 +62,8 @@ class Admin::PostsController < ApplicationController
       "Post updated successfully." 
    
     if @post.update_attributes(new_post)   
-      redirect_to(admin_posts_path, :flash => {:type => "success", :msg => success_msg})         
+      #redirect_to(admin_posts_path, :flash => {:type => "success", :msg => success_msg})
+      redirect_to @post
     else
       # Update fails - redisplay the form
       render :edit
