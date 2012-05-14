@@ -12,7 +12,36 @@ validate = (fields) ->
   return false
 
 $ ->
-  # Create and insert an alet error box if blank fields present
+  # Mailcheck the email field
+
+  $email = $('#message_email')
+  $hint = $("#hint")
+
+  $email.on 'blur', ->
+    $hint.css('display', 'none').empty()
+    $(this).mailcheck {
+      suggested: (element, suggestion) ->
+        if !$hint.html()
+          # First error - fill in/show entire hint element
+          suggestion = "Yikes! Did you mean <span class='suggestion'>" +
+                        "<span class='address'>#{suggestion.address}</span>" +
+                        "@<a href='#' class='domain'>#{suggestion.domain}</a></span>?";
+                            
+          $hint.html(suggestion).fadeIn(150)
+        else
+          # Subsequent errors
+          $(".address").html(suggestion.address)
+          $(".domain").html(suggestion.domain)
+    }
+
+  $hint.on 'click', '.domain', ->
+    # On click, fill in the field with the suggestion and remove the hint
+    $email.val($(".suggestion").text());
+    $hint.fadeOut(200, -> $(this).empty())
+    return false
+    
+
+  # On submit, show an error box if blank fields present
 
   $('#submit-contact').click ->
     $form = $(this).parent()
@@ -25,3 +54,5 @@ $ ->
       insertAfter($title, alertBox)      
       $('.flash').hide().slideDown('fast')
       return false
+
+  

@@ -60,3 +60,16 @@
   }
 
 } // # contact
+
+#hint {
+  // Mailcheck suggestion
+  color: #B94A48;
+  display: none;
+  font-size: 0.9em;
+  margin: 10px 0 -5px;
+
+  .domain {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
