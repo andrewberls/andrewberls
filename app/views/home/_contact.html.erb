@@ -4,19 +4,18 @@
 
     <h2>Get in Touch</h2>
 
-    <%= content_tag :div, flash[:success], class: 'flash flash-success' if  flash[:success] %>
-
-    <%= content_tag :div, flash[:error], class: 'flash flash-error' if  flash[:error] %>
+   <%= render 'shared/flashes' %>
 
     <p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
 
     <%= f.text_field :name, placeholder: "Name" %> 
 
-    <%= f.text_field :email, placeholder: "Email" %> 
+    <%= f.email_field :email, placeholder: "Email" %>
 
     <%= f.text_area :message, placeholder: "Message" %>
 
     <%= f.submit "Submit", class: "submit", id: "submit-contact" %>
+    
   <% end %>
 
 </section><!-- #contact -->

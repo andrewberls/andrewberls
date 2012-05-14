@@ -31,7 +31,7 @@
       overflow: auto; // Remove scrollbar in IE
     }
 
-    input[type="text"], 
+    input:not([type="submit"]),
     textarea {
       @include border-box;
       @include ease-out(0.2s);
