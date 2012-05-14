@@ -6,6 +6,7 @@
 //------------------------------------
 //= require jquery.scrollTo.1.4.2.min
 //= require jquery.simplemodal.1.4.2.min
+//= require laconic
 
 
 //-- SITE SCRIPTS

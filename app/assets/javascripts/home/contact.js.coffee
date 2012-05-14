@@ -7,10 +7,9 @@ insertAfter = (refNode, newNode) ->
   refNode.parentNode.insertBefore(newNode, refNode.nextSibling)
 
 validate = (fields) ->
-  errors = false
   for field in fields
-    errors = true if !field.value
-  errors
+    return true if !field.value
+  return false
 
 $ ->
   # Create and insert an alet error box if blank fields present
@@ -21,10 +20,7 @@ $ ->
     errors = validate(fields)
 
     if errors && $form.find('.flash').size() == 0 # Only if an alert doesn't already exist
-      alertBox = document.createElement('div')
-      alertBox.setAttribute('class', 'flash flash-error')
-      errTxt = document.createTextNode('Please check your fields and try again!')
-      alertBox.appendChild(errTxt)
+      alertBox = $.el.div({'class' : 'flash flash-error'}, 'Please check your fields and try again!')
       $title = $form.find('h2')[0]
       insertAfter($title, alertBox)      
       $('.flash').hide().slideDown('fast')
