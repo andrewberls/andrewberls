@@ -12,7 +12,7 @@
       <% @posts.each do |post| %>
         
           <div class="post">
-            <h2><%= link_to raw(post.title), post_path(post) %></h2>
+            <h2><%= link_to raw(post.title), post_path(post.url_alias) %></h2>
             <p class="date"><%= render_sutro_time(post.created_at) %></p>   
 
             <p><%= render_teaser(post.body) %></p>    

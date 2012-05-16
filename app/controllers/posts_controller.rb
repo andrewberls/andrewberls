@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # Administrative actions are handled by admin/posts_controller
 
   #----- READ
-  def list # Main blog index
+  def list
     
     if !params[:tag].nil?
       @tag = Tag.find_by_name(params[:tag])
@@ -24,8 +24,16 @@ class PostsController < ApplicationController
                      
   end
   
-  def show # Show a single post
-    @post = Post.find(params[:id])
+  def show
+    if params[:slug].to_i == 0
+      # Slug is a url alias
+      @post = Post.find_by_url_alias(params[:slug])
+    else
+      # TODO (LEGACY):Slug is an ID - redirect to aliased post
+      @post = Post.find(params[:slug])
+      redirect_to post_path(@post.url_alias), status: 301
+    end
+    
   end
   
   def feed

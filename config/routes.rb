@@ -1,9 +1,9 @@
 Andrewberls::Application.routes.draw do        
 
   # BLOG URLS
-  match "/blog"              => "posts#list", :as => "blog"
-  match "/blog/tag/:tag"     => "posts#list", :as => "tag"
-  match "/blog/post/:id"     => "posts#show", :as => "post"
+  match "/blog"            => "posts#list", :as => "blog"
+  match "/blog/tag/:tag"   => "posts#list", :as => "tag"
+  match "/blog/post/:slug" => "posts#show", :as => "post"
   
   match '/feed'     => 'posts#feed', :as => "feed",
       :defaults => { :format => 'atom' }

@@ -12,6 +12,7 @@
 			<th>Title</th>
 			<th>Author</th>
 			<th>Date</th>
+      <th>Alias</th>
 			<th>Tags</th>
 			<th>Status</th>
 			<th>Actions</th>
@@ -20,30 +21,41 @@
 		<% @posts.each do |post| %>
 			<tr class="<%= cycle('odd', 'even') %>">
 				<td>					
-					<%= 						
-						link_to post.title, post_path(post.id), :class => "plain"
-					%>									
+					<%= link_to post.title, post_path(post.id), :class => "plain" %>
 				</td>
+
 				<td>
 					<% if !post.user_id.nil? %>									
 					<%= link_to render_username(post.user_id), admin_user_path(:id => post.user_id) %>
 					<% else %>
-						nil id
+						ERROR - nil id
 					<% end %>
 				</td>
+
 				<td>
 					<%= render_sutro_time(post.created_at) %>
 				</td>
-				<td>
-					<% if post.tags.nil? || post.tags.blank? %>
+
+        <td class="column-small">
+          <% if !post.url_alias.blank? %>
+            <%= link_to post.url_alias, post_path(post.url_alias) %>
+          <% else %>
+            -
+          <% end %>
+        </td>
+
+				<td class="column-small">
+					<% if post.tags.blank? %>
 						-
 					<% else %>
 						<%= render_tags(post.tags) %>																															
 					<% end %>							
 				</td>
+
 				<td>
 					<%= render_status_pill(post.status) %>
 				</td>
+
 				<td>
 					<%= link_to "Edit", edit_admin_post_path(post.id) %>
 					&nbsp;
