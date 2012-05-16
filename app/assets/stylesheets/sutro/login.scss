@@ -2,7 +2,30 @@
   A singleton login page, just because it's so trendy
 */
 
-@import "global/_mixins";
+@mixin clearfix {
+  // http://nicolasgallagher.com/micro-clearfix-hack/
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin border-radius($rad: 5px) {
+  -webkit-border-radius: $rad;
+     -moz-border-radius: $rad;
+          border-radius: $rad;
+}
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 body {
   background-color: white !important;
