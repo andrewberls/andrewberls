@@ -1,4 +1,4 @@
-# Validate contact form before submissiopn
+# Validate contact form before submission
 
 #------------------------------
 # Utility Methods
@@ -48,11 +48,13 @@ $ ->
     fields = $form.find(':text, textarea')
     errors = validate(fields)
 
-    if errors && $form.find('.flash').size() == 0 # Only if an alert doesn't already exist
+    if errors && !$form.find('.flash').size() 
+      # Only if an alert doesn't already exist
       alertBox = $.el.div({'class' : 'flash flash-error'}, 'Please check your fields and try again!')
       $title = $form.find('h2')[0]
       insertAfter($title, alertBox)      
       $('.flash').hide().slideDown('fast')
-      return false
+    
+    return false if errors
 
   

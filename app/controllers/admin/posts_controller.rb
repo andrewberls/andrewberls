@@ -5,11 +5,6 @@ class Admin::PostsController < ApplicationController
   # Check authentication for on public-accessible actions
   before_filter :check_auth, :accept => [:index, :new, :dashboard, :edit]
   
-  #----- GENERAL
-  def dashboard
-    @posts = Post.all    
-    @saved_posts = Post.where("status = 0")    
-  end
   
   #----- CREATE  
   def new

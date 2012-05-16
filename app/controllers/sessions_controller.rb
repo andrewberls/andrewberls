@@ -32,7 +32,7 @@ class SessionsController < ApplicationController
     else
       session[:user_id] = nil
       flash[:success] = "Logged out!"
-      redirect_to blog_path
+      redirect_to login_path
     end
   end
   

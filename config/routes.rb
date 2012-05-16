@@ -13,10 +13,10 @@ Andrewberls::Application.routes.draw do
   match '/contact' => 'home#create', :as => 'contact', :via => :post
   
   # NON-RESOURCEFUL ADMIN PAGES
-  match "/dashboard" => "admin/posts#dashboard", :as => "dashboard"  
+  #match "/dashboard" => "admin/posts#dashboard", :as => "dashboard"  
     
   # USER URLS  
-  match "/admin/users"        => redirect("/admin/users/manage"), :via => :get
+  get "/admin/users"        => redirect("/admin/users/manage")
   match "/admin/users/manage" => "admin/users#manage", :as => "manage_users"
   
   # SESSION URLS  

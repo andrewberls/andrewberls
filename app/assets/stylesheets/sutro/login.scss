@@ -1,0 +1,98 @@
+/*
+  A singleton login page, just because it's so trendy
+*/
+
+@import "global/mixins";
+
+body {
+  background-color: white !important;
+  font-family: 'Helvetica Neue';
+}
+
+.svtro-flash {
+  @include border-box;
+  background-color: white;
+  border-radius: 0;
+  font-size: 1em;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  &.flash-blue {
+    border: 3px solid #00A2FF;
+    color: #00A2FF;
+  }
+
+  &.flash-red {
+    border: 3px solid #f00;
+    color: #f00;
+  }
+}
+
+#login {
+  width: 350px;
+  margin: 100px auto 0;
+
+  form {
+    @include border-box;
+    @include clearfix;
+
+    background-color: white;
+    border: 6px solid black;
+    padding: 17px;
+    
+  }
+
+  h1 {
+    color: #404040;
+    font-size: 1.7em;
+    margin: 0 0 10px;
+
+    .blue {
+      color: #00A2FF;
+    }
+  }
+
+  input {
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input:not([type="submit"]) {
+    @include border-box;
+    color: #404040;
+    font-size: 1em;
+    height: auto;
+    margin: 0;
+    margin-bottom: 15px;
+    padding: 10px 2px !important;
+    width: 100%;
+  }
+
+  h1 + input {
+    border-bottom: 1px dashed #ccc;
+    margin-bottom: 5px !important;
+  }
+
+  .blackbutton {
+    @include border-radius(5px);
+    background-color: black;
+    border: none;
+    color: white;
+    height: auto;
+    float: right;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 10px 15px;
+    width: auto;
+
+    &:hover {
+      background-color: #00A2FF;
+      cursor: pointer;
+    }
+  }
+}

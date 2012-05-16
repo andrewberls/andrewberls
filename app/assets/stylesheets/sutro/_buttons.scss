@@ -1,0 +1,43 @@
+.cta {
+  background: #F0F0F0;
+  border: 1px solid #CCC;
+  border-radius: 5px;  
+  font-size: 0.9em;  
+  padding: 7px 10px;
+  text-decoration: none;
+  width: auto;   
+  
+  &:hover {    
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.submit {
+  color: $green;
+  
+  &:hover {    
+    color: #5C7C04;    
+    border: 1px solid $green;
+  }
+}
+
+#save  {  
+  clear: none;
+  color: $med_blue;
+  display: none; // Enabled with JS
+  margin-left: 10px;
+  
+  &:hover {
+    border: 1px solid $blue;    
+  }
+}
+
+#cancel {
+  color: $cancel;
+  float: right; 
+  
+  &:hover {
+    border: 1px solid #FF8181;    
+  }
+}
