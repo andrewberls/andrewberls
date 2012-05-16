@@ -27,7 +27,7 @@
             <% end %> 
             
             <% if has_pagebreak? post.body %>
-              <%= link_to raw("Full Post &raquo;"), post_path(post.id), {:class => "read-more"} %>
+              <%= link_to raw("Full Post &raquo;"), post_path(post.url_alias), {:class => "read-more"} %>
             <% end %>
           </div>
         

@@ -12,7 +12,7 @@
           <a href="http://feeds.feedburner.com/andrewberls" class="icon rss-icon"></a>
         </div>
         
-        <p><strong>Latest blog post: </strong><%= link_to Post.last.title, post_path(Post.last) %></p>
+        <p><strong>Latest blog post: </strong><%= link_to Post.last.title, post_path(Post.last.url_alias) %></p>
       </div>
 
       <div class="span-6 offset-4 column">
