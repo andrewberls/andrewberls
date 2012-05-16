@@ -30,10 +30,15 @@ class PostsController < ApplicationController
       @post = Post.find_by_url_alias(params[:slug])
     else
       # TODO (LEGACY):Slug is an ID - redirect to aliased post
-      @post = Post.find(params[:slug])
+      begin
+        @post = Post.find(params[:slug])
+      rescue
+        render 'home/not_found' and return
+      end
+
       redirect_to post_path(@post.url_alias), status: 301
     end
-    
+
   end
   
   def feed

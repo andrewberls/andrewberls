@@ -16,5 +16,9 @@ table {
 
   td {
     padding: 15px;
+
+    &.column-small {
+      font-size: 0.9em;
+    }
   }
 }
