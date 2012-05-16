@@ -20,8 +20,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id      
       redirect_to admin_posts_path
     else
-      # Authentication failed - render the form again      
-      flash[:error] = "Invalid email or password."
+      # Authentication failed - render the form again
+      flash.now[:error] = "Invalid email or password."
       render :new
     end
   end
