@@ -4,13 +4,11 @@
 	#container {background-image: none !important;}
 </style>
 
-<% if flash[:msg] %>
-	<div class="flash"><%= flash[:msg] %></div>	
-<% end %>
-
 <div id="login" class="wrapper">
 	<%= form_tag sessions_path do %>
 	<h2>Log In</h2>
+
+  <%= render 'shared/flashes' %>
 	
 	<%= label_tag :email %>
 	<%= text_field_tag :email, params[:email] %>
