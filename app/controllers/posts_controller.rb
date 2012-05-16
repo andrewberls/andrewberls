@@ -32,11 +32,16 @@ class PostsController < ApplicationController
       # TODO (LEGACY):Slug is an ID - redirect to aliased post
       begin
         @post = Post.find(params[:slug])
+        if @post.url_alias.blank?
+          return
+        else
+          redirect_to post_path(@post.url_alias), status: 301
+        end
       rescue
         render 'home/not_found' and return
       end
 
-      redirect_to post_path(@post.url_alias), status: 301
+      
     end
 
   end
