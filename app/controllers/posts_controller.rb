@@ -28,6 +28,9 @@ class PostsController < ApplicationController
     if params[:slug].to_i == 0
       # Slug is a url alias
       @post = Post.find_by_url_alias(params[:slug])
+      unless !@post.blank?
+        render 'home/not_found' and return
+      end
     else
       # TODO (LEGACY):Slug is an ID - redirect to aliased post
       begin
