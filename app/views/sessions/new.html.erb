@@ -1,21 +1,24 @@
 <% provide(:title, "Log In") %>
 
-<style type="text/css" media="screen">
-	#container {background-image: none !important;}
-</style>
-
-<div id="login" class="wrapper">
-	<%= form_tag sessions_path do %>
-	<h2>Log In</h2>
-
-  <%= render 'shared/flashes' %>
-	
-	<%= label_tag :email %>
-	<%= text_field_tag :email, params[:email] %>
-	
-	<%= label_tag :password %>
-	<%= password_field_tag :password, params[:password] %>
-	
-	<%= submit_tag "Log In", :class => "cta submit" %>
+<% content_for :page_includes do %>
+  <%= stylesheet_link_tag "sutro/login" %>
 <% end %>
+
+
+<div id="login">
+
+  <%= content_tag :div, flash[:success], class: 'svtro-flash flash-blue' if  flash[:success] %>
+
+  <%= content_tag :div, flash[:error], class: 'svtro-flash flash-red' if  flash[:error] %>
+
+	<%= form_tag sessions_path do %>
+  	<h1>Welcome to Svtro<span class="blue">.</span></h1>
+	
+  	<%= text_field_tag :email, params[:email], placeholder: "Name" %>
+
+  	<%= password_field_tag :password, params[:password], placeholder: "Password" %>
+
+  	<%= submit_tag "Log In", class: "blackbutton", id: "submit-login" %>
+  <% end %>
+
 </div>
