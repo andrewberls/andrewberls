@@ -6,64 +6,11 @@
   <p class="action_success"><%= flash[:msg] %></p>
 <% end %>
 
-<!--<p style="color: red; margin: 20px 0;">I don't like how the current URL scheming works out here. Maybe this could show some user info up here in addition to the posts, or just change the URL to something like "/admin/posts/andrewberls" if it's just going to be a display of posts.</p>-->
+<%# 
+I don't like how the current URL scheming works out here. Maybe this could show some user info up here in addition to the posts, or just change the URL to something like "/admin/posts/andrewberls" if it's just going to be a display of posts.
+%>
 
-<table>
-  <% if !@posts || @posts.blank? %>
-    <td>This user has not added any content yet.</td>       
-  <% else %>  
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Date</th>
-      <th>Tags</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-    
-    <% @posts.each do |post| %>
-      <tr class="<%= cycle('odd', 'even') %>">
-        <td>
-          <%= raw post.title %>
-        </td>
-        <td>
-          <% if !post.user_id.nil? %>                 
-            <%= 
-              # Just a string here, no link
-              render_username(@user.id)
-            %>
-          <% else %>
-            nil id
-          <% end %>     
-        </td>
-        <td>
-          <%= render_sutro_time(post.created_at) %>
-        </td>
-        <td>
-          <% if post.tags.nil? || post.tags.blank? %>
-            -
-          <% else %>        
-            <%= render_tags(post.tags) %>
-          <% end %>                 
-        </td>
-        <td>
-          <%= render_status(post.status) %>
-        </td>
-        <td>
-          <% if current_user.id == @user.id || is_admin?(current_user) %>
-            <%= link_to "Edit", edit_admin_post_path(post.id) %>
-            &nbsp;
-            <%= link_to "Delete",
-              {:controller => "admin/posts", :action => 'destroy', :id => post.id}, 
-              {:method => :delete, confirm: "Are you sure you want to delete this post?"}
-            %>
-          <% end %>
-        </td>
-      </tr>
-    <% end %>
-  <% end %>
-  
-</table>
+<%= render 'admin/posts/posts_table' %>
 
 <%= 
   # Display pagination links
