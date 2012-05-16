@@ -6,7 +6,8 @@ class Notifier < ActionMailer::Base
 
   def new_message(message)
     @message = message # Set an instance variable for the view (text)
-    mail(:subject => "Message from andrewberls.com")
+    mail(:subject  => "Message from andrewberls.com"),
+      :reply_to => message.email)
   end
     
 end
