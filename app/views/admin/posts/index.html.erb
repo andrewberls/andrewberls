@@ -2,10 +2,10 @@
 
 <h2>Posts</h2>
 
-<%= render_flashes(flash) %>
+<%= render 'shared/flashes' %>
 
 <table>
-	<% if (!@posts or @posts.blank?) %>
+	<% if !@posts or @posts.blank? %>
 		<td>You haven't added any content yet! Click <%= link_to "here", new_admin_post_path %> to get started.</td>				
 	<% else %>	
 		<tr>

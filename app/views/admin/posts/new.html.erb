@@ -23,7 +23,7 @@
 		<%= f.hidden_field(:status) %>
 		<%= f.submit "Publish", :class => "cta submit" %>		
 		<%= f.submit "Save for later", {:class => "cta  submit", :id => "save"} %>					
-		<%= link_to "Cancel", dashboard_path, {:class => "cta", :id => "cancel"}%>
+		<%= link_to "Cancel", admin_posts_path, {:class => "cta", :id => "cancel"}%>
 	<% end %>
 </div>
 

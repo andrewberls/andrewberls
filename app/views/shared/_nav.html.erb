@@ -1,22 +1,10 @@
-<%
-=begin
-
-Description: This partial loads the Sutro sidebar. The conditional logic inspects the controller and and action from the params hash in order to determine whether or not to render a link styled as .current.
-
-=end
+<%# 
+This partial loads the Sutro sidebar. The conditional logic inspects the controller and and action from the params hash in order to determine whether or not to render a link styled as current.
 %>
 
 
 <% #----- BLOG -----# %>
 <li><%= link_to "Blog", blog_path %></li>
-
-
-<% #----- DASHBOARD -----# %>
-<% #if action_request == "admin/posts#dashboard" %>
-	<!-- <li><%= link_to "Dashboard", dashboard_path,  :class => "current"	%></li> -->
-<% #else %>
-	<!-- <li><%= link_to "Dashboard", dashboard_path	%></li> -->
-<% #end %>
 
 
 <% #-----  NEW POST -----# %>

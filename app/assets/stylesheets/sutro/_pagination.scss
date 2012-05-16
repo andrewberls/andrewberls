@@ -1,0 +1,39 @@
+//-- PAGINATION BUTTONS
+//------------------------------------
+.pagination {
+  margin: 30px auto; 
+  text-align: center;
+
+  a,
+  .current,
+  .disabled {
+    border: 1px solid darken(#ccc, 5);    
+    padding: 5px 8px;
+  }
+  
+  a {
+    background-color: white;
+    
+    &:hover {
+      background-color: $gray-text;
+      color: white;
+      text-decoration: none;
+    }
+    
+    &:active {      
+      font-weight: bold;
+    }
+  }
+
+  .current {      
+    background-color: #444;
+    color: white;
+    font-weight: bold;
+  }
+
+  .disabled {
+    background-color: #e7e7e7;
+    color: lighten($gray-text, 35);
+  }
+
+} // .pagination
