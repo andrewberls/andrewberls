@@ -12,23 +12,23 @@ class Admin::PostsController < ApplicationController
   end
   
   #----- CREATE  
-  def new # Display new record form
+  def new
     @post = Post.new
   end
   
-  def create # Process new record form              
+  def create           
     @post = Post.new(params[:post])
     @post.user_id = current_user.id
-     
     @post.status ||= 1
-    success_msg = @post.status == 1 ?
-      "Post saved successfully." :
-      "Post created successfully."    
 
     if @post.save
-      redirect_to(admin_posts_path, :flash => {:type => "success", :msg => success_msg})
+      flash[:success] = if @post.status == 1
+                          "Post published successfully."
+                        else
+                          "Post saved successfully."
+                        end
+      redirect_to admin_posts_path
     else
-      # Save failed - redisplay form for user
       render :new
     end
 
@@ -44,36 +44,29 @@ class Admin::PostsController < ApplicationController
   end  
     
   #----- UPDATE  
-  def edit # Display edit record form
-    # Form fields prefilled with values from instance variable passed to view
+  def edit
     @post = Post.find(params[:id])
   end
   
-  def update # Process edit record form
+  def update
+    # TODO: REFACTOR THIS METHOD. ALSO THE PARAMS LOOKS SKETCHY
     @post = Post.find(params[:id])
     new_post = params[:post]
-
-    # Bit of a hack here - can't use ||= as in create because
-    # field is already set. Hidden field in edit view defaults 
-    # to 1 as a workaround.
     new_post[:status] = 1 if params[:post][:status] == 1
-    success_msg = new_post[:status] == 1 ?
-      "Post marked as draft." :
-      "Post updated successfully." 
-   
-    if @post.update_attributes(new_post)   
-      #redirect_to(admin_posts_path, :flash => {:type => "success", :msg => success_msg})
-      redirect_to @post
+    
+    if @post.update_attributes(new_post)
+      flash[:success] = "Post updated successfully."
+      redirect_to admin_posts_path
     else
-      # Update fails - redisplay the form
       render :edit
     end
   end
   
   #----- DELETE  
-  def destroy # Destroy record
-    Post.find(params[:id]).destroy # Don't need an instance variable    
-    redirect_to(admin_posts_path, :flash => {:type => "success", :msg => "Post deleted succesfully."})
+  def destroy
+    Post.find(params[:id]).destroy
+    flash[:success] = "Post deleted successfully"
+    redirect_to admin_posts_path
   end
   
 end

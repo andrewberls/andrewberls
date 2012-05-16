@@ -6,7 +6,7 @@
 
       <% if logged_in? %>
         <div class="sutro-bar">
-          <%= link_to "Dashboard", dashboard_path, class: "sutro-action" %>
+          <%= link_to "Dashboard", admin_posts_path, class: "sutro-action" %>
           <%= link_to "Edit Post", edit_admin_post_path(@post), class: "sutro-action" %>
         </div>
       <% end %>
@@ -14,7 +14,7 @@
       <div class="post">
         <h2><%= raw @post.title %></h2>
         <p class="date"><%= render_sutro_time(@post.created_at) %></p>   
-        <p><%= render_full_post(@post.body) %></p> 
+        <p><%= render_full_post(@post.body) %></p>
             
         <% unless @post.tags.blank? %>           
           <%= render_tags(@post.tags, false) %>          

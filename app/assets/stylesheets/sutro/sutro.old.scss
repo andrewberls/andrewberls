@@ -89,6 +89,7 @@ h2 {
   font-size: 1.7em;  
   margin-bottom: 15px;
 }
+
 h3 {
   font-size: 1.2em;
 }
@@ -98,10 +99,8 @@ a, a:visited {
   text-decoration: none;   
 }
 
-a {
-  &:hover {
-    text-decoration: underline;
-  }
+a:hover {
+  text-decoration: underline;
 }
 
 #container {  
@@ -138,7 +137,6 @@ a {
         height: 30px;
         line-height: 30px;
         margin: 0;
-        //padding-left: 45px; // Left align the edge instead of centering
         text-align: center;
         text-decoration: none;
                        
@@ -159,13 +157,10 @@ a {
           border-top: 1px solid #666;
           color: white;         
         }
-        
-        &:active {          
-        }
                        
       }
-    }      
-  }
+    }
+  } // ul
   
   p {
     color: $gray_text;
@@ -173,7 +168,8 @@ a {
     margin-top: 15px;
     text-align: center;
   }
-}
+
+} // #sidebar
 
 #content {   
   overflow: hidden;  
@@ -181,13 +177,7 @@ a {
 }
 
 .flash {
-  background-color: $cancel_light;
-  border: 1px solid #FF8181;
-  color: $cancel;
-  padding: 7px 10px;
-  margin: 0 auto;
-  margin-bottom: 15px;
-  width: 578px;
+  padding: 10px;
 }
 
 .error_messages {
@@ -206,22 +196,22 @@ a {
     list-style: square;
     margin-left: 30px;
   }
-}
+
+} // .error-messages
 
 .wrapper {  
-  background-color: #F9F9F9;
   @include border-radius(10px);  
-  @include box-shadow(0px,0px,2px,0px,#222); // 0 0 6 0 #000
+  @include box-shadow(0px,0px,2px,0px,#222);
+  background-color: #F9F9F9;
   color: $gray_text;
   float: left;
-  //margin: 0 auto; overflow: auto; //Center the box on the screen if desired
   padding: 20px;
   padding-right: 25px;
   width: 768px;
 }
 
 .fieldDescription {  
-  color: #aaa; //THIS NEEDS TO BE DARKER-----------------------------------------------------
+  color: #aaa;
   float: left;
   font-size: 0.8em;
   font-style: italic;
@@ -229,7 +219,7 @@ a {
   margin-left: 5px;
 }
 
-.recommendations {  
+.recommendations {
   clear: both;
   font-size: 0.9em;
   line-height: 1.4;  
@@ -241,9 +231,9 @@ a {
   }
   
   ul {
-    background-color: #F9F9F9;
     @include border-radius(10px);  
-    @include box-shadow(0px,0px,2px,0px,#222); // 0 0 6 0 #000
+    @include box-shadow(0px,0px,2px,0px,#222);
+    background-color: #F9F9F9;
     display: inline-block;
     list-style: disc;
     margin-top: 15px;
@@ -253,7 +243,8 @@ a {
       margin-left: 25px;
     }
   }
-}
+
+} // .recommendations
 
 #login {
   // Using IDs to overwrite classes, oooh yeah
@@ -317,8 +308,6 @@ select {
   color: $green;
   
   &:hover {    
-    // $GREEN_LIGHT BACKGROUND IS TOO DARK
-    //background-color: $green_light;
     color: #5C7C04;    
     border: 1px solid $green;
   }
@@ -331,8 +320,6 @@ select {
   margin-left: 10px;
   
   &:hover {
-    // $LIGHT_BLUE BACKGROUND IS TOO DARK
-    //background-color: $light_blue;
     border: 1px solid $blue;    
   }
 }
@@ -342,10 +329,10 @@ select {
   float: right; 
   
   &:hover {
-    //Sbackground-color: $cancel_light;
     border: 1px solid #FF8181;    
   }
 }
+
 .status-pill {
   @include border-radius(2px);
   color: white;
@@ -354,12 +341,15 @@ select {
   padding: 2px 3px;
   text-transform: uppercase;
 }
+
 .status-published {
   background-color: #46A546;
 }
+
 .status-saved {
   background-color: #F89406;
 }
+
 table {
   background-color: #F9F9F9;
   border: 1px solid #CCC;
@@ -370,15 +360,12 @@ table {
 
 th {
   border: 1px solid #CCC;
-  //font-weight: normal;
   padding: 7px 10% 7px 12px; 
 }
 
-tr {
-  &.odd {
-    background-color: #f2f2f2;
-  }  
-}
+tr.odd {
+  background-color: #f2f2f2;
+}  
 
 td {
   padding: 15px;
@@ -435,7 +422,6 @@ td {
   }
   
   .compact {
-    //border: none;
     
     td {      
       padding: 3px 10px;

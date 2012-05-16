@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def new    
     # Redirect if already logged in
     if session[:user_id]
-      redirect_to dashboard_path
+      redirect_to admin_posts_path
     end
   end
 
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       redirect_to admin_posts_path
     else
       # Authentication failed - render the form again      
-      flash[:msg] = "Invalid email or password."
+      flash[:error] = "Invalid email or password."
       render :new
     end
   end
@@ -30,8 +30,9 @@ class SessionsController < ApplicationController
     if !session[:user_id]
       redirect_to blog_path   
     else
-      session[:user_id] = nil      
-      redirect_to(blog_path, :flash => {:type => "success", :msg => "Logged out!"})
+      session[:user_id] = nil
+      flash[:success] = "Logged out!"
+      redirect_to blog_path
     end
   end
   
