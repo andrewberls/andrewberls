@@ -1,12 +1,10 @@
 .wrapper {  
   @include border-radius(6px);
-  background-color: #F9F9F9;
+  background-color: $light_gray;
   border: 1px solid #bbb;
-  //color: $gray_text;
   color: #404040;
   float: left;
   padding: 20px;
-  padding-right: 25px;
   width: 768px;
 }
 
@@ -30,19 +28,14 @@ textarea,
 select {
   @include border-box;
   border: 1px solid #bbb;
-
   font-size: 1.1em;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 7px 5px;
   width: 100%;
   
   &:focus {
     outline: none;
   }
-}
-
-input {
-  //font-size: 1.2em;
 }
 
 textarea { 
