@@ -14,8 +14,7 @@
     
     <% @posts.each do |post| %>
       <tr class=<%= cycle("odd", "even") %>>
-        <td>          
-          <%= "#{post.id}: " %>
+        <td>
           <% if !post.url_alias.blank? %>
             <%= link_to post.title, post_path(post.url_alias), class: "plain" %>
           <% else %>
