@@ -18,14 +18,13 @@
   color: $green;
   
   &:hover {    
-    color: #5C7C04;    
+    color: #5C7C04;
     border: 1px solid lighten(#5C7C04, 10);
   }
 }
 
 #save  {  
   color: $med_blue;
-  display: none; // Enabled with JS
   margin-left: 10px;
   
   &:hover {
