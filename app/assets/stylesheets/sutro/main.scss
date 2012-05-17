@@ -2,8 +2,9 @@
 //------------------------------------
 body {  
   background-color: #EDEDED;
-  font-family: Arial, Verdana, Geneva, sans-serif;
+  font-family: $baseFontFamily;
   font-size: 16px;
+  color: $gray_text;
 }
 
 #container {
@@ -14,18 +15,17 @@ body {
 
 #content {   
   overflow: hidden;  
-  padding: 30px 15px 30px 15px;
+  padding: 30px 15px;
 }
 
 
 //-- TYPOGRAPHY
 //------------------------------------
- .plain  { color: $emphasis !important; }
+ .plain  { color: $gray_text !important; }
  .italic { font-style: italic; }
  .bold   { font-weight: bold; }
 
 h2 {
-  color: $emphasis;
   font-size: 1.7em;  
   margin-bottom: 15px;
 }

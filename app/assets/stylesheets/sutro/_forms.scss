@@ -1,8 +1,9 @@
 .wrapper {  
   @include border-radius(6px);
   background-color: #F9F9F9;
-  border: 1px solid #ccc;
-  color: $gray_text;
+  border: 1px solid #bbb;
+  //color: $gray_text;
+  color: #404040;
   float: left;
   padding: 20px;
   padding-right: 25px;
@@ -16,6 +17,44 @@
   font-style: italic;
   margin-top: 2px;
   margin-left: 5px;
+}
+
+label {
+  clear: both;
+  float: left;  
+  margin-bottom: 10px;
+}
+
+input:not([type="submit"]), 
+textarea,
+select {
+  @include border-box;
+  border: 1px solid #bbb;
+
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  padding: 7px 5px;
+  width: 100%;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+input {
+  //font-size: 1.2em;
+}
+
+textarea { 
+  font-family: $baseFontFamily;
+  font-size: 0.9em;
+  height: 200px; 
+  overflow: auto; // Remove scrollbar in IE
+  resize: vertical;
+}
+
+select {
+  height: 2.3em;
 }
 
 .recommendations {
@@ -42,40 +81,4 @@
       margin-left: 25px;
     }
   }
-
 } // .recommendations
-
-label {
-  clear: both;
-  float: left;  
-  margin-bottom: 10px;
-}
-
-input, textarea, select {
-  clear: both;
-  float: left;  
-  margin-bottom: 10px; 
-  width: 100%;
-  
-  &:focus {
-    outline: none;
-  }
-}
-
-input {
-  font-size: 1.2em;
-  height: 30px;
-}
-
-textarea { 
-  font-family: Arial;
-  height: 200px; 
-  overflow: auto; // Remove scrollbar in IE
-  resize: vertical;
-}
-
-select {
-  height: 2.3em;
-  margin-bottom: 15px;
-  width: 50%;  
-}

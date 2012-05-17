@@ -1,11 +1,13 @@
 .cta {
   background: #F0F0F0;
   border: 1px solid #CCC;
-  border-radius: 5px;  
-  font-size: 0.9em;  
+  border-radius: 5px;
+  float: left; 
+  font-size: 0.9em;
+  margin-top: 10px;
   padding: 7px 10px;
   text-decoration: none;
-  width: auto;   
+  //width: auto;   
   
   &:hover {    
     cursor: pointer;
