@@ -19,5 +19,9 @@ class Post < ActiveRecord::Base
       self.tags << tag
     end  
   end
+
+  def url_alias=(url_alias)
+    self[:url_alias] = url_alias.strip.chomp.gsub(" ", "-")
+  end
   
 end
