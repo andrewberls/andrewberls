@@ -1,24 +1,9 @@
-// TEMPORARY
-//------------------------------------
-//body { background-color: red; }
-//[class^="span-"] { outline: 1px solid blue; }
-//.container { outline: 1px solid red; }
-//------------------------------------------
-
-
-// ==============================================
-
-.row .row { margin-top: 5px; }
-
-// ==============================================
-
-
 //-- LAYOUT
 //------------------------------------
 body {
   background-color: lighten(#e2e2e2, 5);
   color: $gray-text;
-  font-family: 'Helvetiva Neue', Arial, sans-serif;
+  font-family: 'Helvetiva Neue', Helvetica, Arial, sans-serif;
   font-size: 13px;
   line-height: 1.4;
 }
@@ -30,6 +15,8 @@ section {
 .container {
   margin: 0 auto;
 }
+
+.row .row { margin-top: 5px; }
 
 
 //-- TYPOGRAPHY
@@ -71,7 +58,6 @@ strong { font-weight: bold; }
   padding: 20px 30px;
 }
 
-
 .separator {
   border-bottom: 1px dashed #888888;
   height: 0;
@@ -104,5 +90,4 @@ strong { font-weight: bold; }
       float: right;
     }
   }
-
 }
