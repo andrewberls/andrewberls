@@ -21,7 +21,7 @@ gem 'will_paginate'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '2.9.0'
+  gem 'rspec-rails'
 end
 
 # Gems used only for assets and not required

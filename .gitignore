@@ -36,6 +36,7 @@ intermediate
 publish
 .idea
 ._redcar
+.bundle
 
 # build script local files
 build/buildinfo.properties
