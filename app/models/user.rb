@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   
   has_many :posts, :dependent => :destroy
   
-  attr_accessible :full_name, :email, :password, :password_confirmation
+  attr_accessible :full_name, :email, :password, :password_confirmation, :permissions
   attr_accessor :password, :password_confirmation
   before_save :encrypt_password # callback calls encrypt method before password is saved
     
