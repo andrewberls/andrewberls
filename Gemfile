@@ -2,9 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 
-gem 'pg'
+#gem 'pg'
 
-gem 'sqlite3'
+#gem 'sqlite3'
 
 gem 'heroku'
 
@@ -18,7 +18,11 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 
 gem 'will_paginate'
 
-#gem 'closure-compiler'
+
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails', '2.9.0'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,4 +35,9 @@ end
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'capybara', '1.1.2'
+end
+
+group :production do
+  gem 'pg'
 end
