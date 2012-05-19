@@ -51,7 +51,7 @@ class Admin::PostsController < ApplicationController
     
     if @post.update_attributes(new_post)
       flash[:success] = "Post updated successfully."
-      redirect_to admin_posts_path
+      redirect_to @post
     else
       render :edit
     end
