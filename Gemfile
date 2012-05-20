@@ -22,6 +22,8 @@ gem 'will_paginate'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl'
 end
 
 # Gems used only for assets and not required
@@ -35,7 +37,6 @@ end
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
-  gem 'capybara', '1.1.2'
 end
 
 group :production do
