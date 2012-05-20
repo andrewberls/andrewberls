@@ -22,8 +22,16 @@ gem 'will_paginate'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  # Pretty printed test output
+  gem 'turn', :require => false
+  gem 'faker'
   gem 'capybara'
-  gem 'factory_girl'
+  gem 'guard-rspec'
+  gem 'launchy'
 end
 
 # Gems used only for assets and not required
@@ -32,11 +40,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
-end
-
-group :test do
-  # Pretty printed test output
-  gem 'turn', :require => false
 end
 
 group :production do

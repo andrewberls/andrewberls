@@ -58,7 +58,17 @@ GEM
       multi_json (~> 1.0)
     factory_girl (3.3.0)
       activesupport (>= 3.0.0)
+    factory_girl_rails (3.3.0)
+      factory_girl (~> 3.3.0)
+      railties (>= 3.0.0)
+    faker (1.0.1)
+      i18n (~> 0.4)
     ffi (1.0.11)
+    guard (1.0.3)
+      ffi (>= 0.5.0)
+      thor (>= 0.14.6)
+    guard-rspec (0.7.2)
+      guard (>= 0.10.0)
     heroku (2.25.0)
       launchy (>= 0.3.2)
       netrc (~> 0.7.1)
@@ -173,9 +183,12 @@ DEPENDENCIES
   bcrypt-ruby
   capybara
   coffee-rails (~> 3.1.1)
-  factory_girl
+  factory_girl_rails
+  faker
+  guard-rspec
   heroku
   jquery-rails
+  launchy
   pg
   rails (= 3.1.1)
   rspec-rails
