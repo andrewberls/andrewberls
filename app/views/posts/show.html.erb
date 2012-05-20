@@ -14,14 +14,14 @@
       <div class="post">
         <h2><%= raw @post.title %></h2>
         <p class="date"><%= render_sutro_time(@post.created_at) %></p>   
-        <p><%= render_full_post(@post.body) %></p>
+        <p><%= @post.render_full %></p>
             
         <% unless @post.tags.blank? %>           
           <%= render_tags(@post.tags, false) %>          
         <% end %>
       </div><!-- .post -->
 
-      <%= link_to raw("&laquo; Back to Blog"), blog_path, :id => "back" %>
+      <%= link_to raw("&laquo; Back to Blog"), blog_path, id: "back" %>
 
       <div class="row">
         <div class="span-11">

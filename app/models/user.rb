@@ -14,7 +14,6 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   validates_confirmation_of :password
   
-  
   def encrypt_password
     # Checks if password is present and generates hash and salt using BCrypt methods
     if password.present?

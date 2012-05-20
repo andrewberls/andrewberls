@@ -20,13 +20,13 @@
     
             <p class="date"><%= render_sutro_time(post.created_at) %></p>   
 
-            <p><%= render_teaser(post.body) %></p>    
+            <p><%= post.render_teaser %></p>    
                 
-            <% unless has_pagebreak? post.body || post.tags.blank? %>           
+            <% unless post.has_pagebreak? || post.tags.blank? %>           
               <%= render_tags(post.tags, false) %>          
             <% end %> 
             
-            <% if has_pagebreak? post.body %>
+            <% if post.has_pagebreak? %>
               <%= link_to raw("Full Post &raquo;"), post_path(post.url_alias), {:class => "read-more"} %>
             <% end %>
           </div>
@@ -41,7 +41,3 @@
 
   </div>
 </div><!-- .container -->
-
-
-
-<!-- <a href="#header" id="top">Back to top</a> -->
