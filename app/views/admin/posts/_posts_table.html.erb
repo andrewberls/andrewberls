@@ -23,7 +23,7 @@
         </td>
 
         <td>
-          <%= link_to render_username(post.user), admin_user_path(post.user) %>
+          <%= link_to post.user.full_name, admin_user_path(post.user) %>
         </td>
 
         <td>
@@ -42,7 +42,7 @@
           <% if post.tags.blank? %>
             -
           <% else %>
-            <%= render_tags(post.tags) %>                                                             
+            <%= render_tags(post.tags) %>                             
           <% end %>             
         </td>
 
