@@ -14,23 +14,6 @@ header nav li a {
 }
 
 
-// #PORTFOLIO
-//-------------------------
-#portfolio {
-  .portfolio-item {
-    border: none;
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  img {
-    margin: 5px auto 10px;
-  }
-}
-
-
 // FOOTER
 //-------------------------
 footer {
@@ -59,6 +42,36 @@ footer {
 
 } // @media (max-width: 480px)
 
+
+
+@media (max-width: 630px) {
+
+// #INTRO
+//-------------------------
+#intro .item-container .item {
+  min-height: 0;
+  margin-bottom: 15px;
+}
+
+// #PORTFOLIO
+//-------------------------
+#portfolio {
+  padding-top: 10px;
+
+  .portfolio-item {
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  img {
+    margin: 5px auto 10px;
+  }
+}
+
+} // @media (min-width: 480px) and (max-width: 630px)
 
 
 
