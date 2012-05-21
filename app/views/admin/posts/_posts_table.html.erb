@@ -39,11 +39,7 @@
         </td>
 
         <td class="column-small">
-          <% if post.tags.blank? %>
-            -
-          <% else %>
-            <%= render_tags(post.tags) %>                             
-          <% end %>             
+          <%= render_tags(post.tags) %>
         </td>
 
         <td>
