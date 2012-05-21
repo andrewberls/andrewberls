@@ -31,4 +31,11 @@
     margin-top: 15px;
   }
 
+  aside {
+    color: lighten($gray_text, 10);
+    font-size: 0.9em;
+    position: absolute;
+    left: 10px; bottom: 10px;
+  }
+
 } // #sidebar
