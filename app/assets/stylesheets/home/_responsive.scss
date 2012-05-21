@@ -62,7 +62,7 @@ footer {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 790px) {
 
 header nav li {
   padding: 0;
@@ -75,19 +75,21 @@ header nav li {
 
 // FIXED SIDEBAR
 //-------------------------
-@media (min-width: 768px) and (max-width: 980px) {
-  .sidebar { margin-left: 600px !important; }
-}
-
-@media (min-width: 480px) and (max-width: 768px) {
-  .sidebar { margin-left: 480px !important; }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 630px) {
   .sidebar {
     @include border-box;
     padding: 5px;
     position: static !important;
     margin-left: 0 !important;
   }
+}
+
+
+@media (min-width: 630px) and (max-width: 790px) {
+  .sidebar { margin-left: 480px !important; }
+}
+
+
+@media (min-width: 790px) and (max-width: 1100px) {
+  .sidebar { margin-left: 600px !important; }
 }
