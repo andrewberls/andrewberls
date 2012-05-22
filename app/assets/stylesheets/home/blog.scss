@@ -71,6 +71,10 @@
     margin-bottom: 15px;
   }
 
+  em {
+    font-style: italic;
+  }
+
   code, 
   pre {
     color: lighten($gray-header, 3);
