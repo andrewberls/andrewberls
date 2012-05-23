@@ -1,6 +1,9 @@
 .blue {
   color: #039ed6; }
 
+.invalid {
+  border: 1px solid red !important; }
+
 .whitebox {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

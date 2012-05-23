@@ -27,6 +27,17 @@ function hexToVal(h, start, end) {
 //------------------------------------
 function evaluate_rgb() {
 
+  $.each([$("#in_R"), $("#in_G"), $("#in_B")], function(i, field) {
+    // Validate fields and prevent bad conversion
+    
+    if (!field.val() || field.val().length > 3) {
+      field.addClass("invalid");
+      return false;
+    } else {
+      field.removeClass("invalid")
+    }
+  });
+
   var in_r = $("#in_R").val(), 
       in_g = $("#in_G").val(), 
       in_b = $("#in_B").val(),
@@ -42,6 +53,17 @@ function evaluate_rgb() {
 function evaluate_hex() {
   var in_h = $("#in_hex").val();
 
+  if (in_h.charAt(0) === "#") {
+    in_h = in_h.substr(1);
+  }
+
+  if (in_h.length == 3) {
+    // Dirty hack to coerce 3-digit number into 6
+    in_h = in_h[0] + in_h[0] +
+           in_h[1] + in_h[1] +
+           in_h[2] + in_h[2];
+  }
+
   $("#out_R").val(hexToVal(in_h, 0, 2));
   $("#out_G").val(hexToVal(in_h, 2, 4));
   $("#out_B").val(hexToVal(in_h, 4, 6));
@@ -54,14 +76,14 @@ function evaluate_hex() {
 //-- CLICK HANDLERS
 //------------------------------------
 $(function () { 
-  $("#convert-form").on('click', '#rgbConvert', function(e) {
-    e.preventDefault();
+  $("#convert-form").on('click', '#rgbConvert', function() {
     evaluate_rgb();
+    return false;
   });
 
-  $("#convert-form").on('click', '#hexConvert', function(e) {
-    e.preventDefault();
+  $("#convert-form").on('click', '#hexConvert', function() {
     evaluate_hex();
+    return false;
   });
     
   // $("#clone").click(function () {

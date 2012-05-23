@@ -35,6 +35,10 @@ $blue: #039ED6;
   color: $blue;
 }
 
+.invalid {
+  border: 1px solid red !important;
+}
+
 .whitebox {
   @include border-box;
   @include clearfix;
