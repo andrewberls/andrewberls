@@ -1,0 +1,213 @@
+//-- LIB
+//------------------------------------
+@mixin border-radius($rad: 5px) {
+  -webkit-border-radius: $rad;
+     -moz-border-radius: $rad;
+          border-radius: $rad;
+}
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@mixin clearfix {
+  // http://nicolasgallagher.com/micro-clearfix-hack/
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+$dark-gray: #666;
+$med-gray: #EAEAEA;
+$light-gray: #ccc;
+$gray-text: #404040;
+$blue: #039ED6;
+
+.blue {
+  color: $blue;
+}
+
+.whitebox {
+  @include border-box;
+  @include clearfix;
+  background-color: white;
+  border: 2px solid #E0E0E0;
+  margin: 10px auto;
+  padding: 15px;
+  //padding-bottom: 24px;
+  width: 624px; 
+}
+
+
+//-- TYPOGRAPHY
+//------------------------------------
+h1 {
+  color: white;
+  font-size: 3em; 
+  margin-top: 5px;  
+}
+
+h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 15px; 
+}
+
+h3 {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.5; 
+  margin: 16px 16px 0 10px;
+
+  &.source {
+    float: right;
+    font-size: 0.7em; 
+  }
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+//-- LAYOUT
+//------------------------------------
+body {
+  background-color: black;
+  color: $dark-gray;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	text-align: center;
+}
+
+#container {	
+	font-size: 0.8em;
+	margin: 0 auto;	
+	text-align: left;	
+	width: 960px;
+}
+
+#header {
+  margin-bottom: 25px;
+}
+
+#navbar {
+  @include clearfix;
+  background-color: #3B3B3B;
+  border: 2px solid #1b1b1b;
+  border-bottom: none;
+
+  ul {
+    list-style: none;
+
+    li {
+      float: left;
+      margin: 0 16px;
+    }
+  }
+
+  a {
+    color: $med-gray;
+    display: inline-block;
+    padding: 15px 10px;
+
+    &:hover {
+      background-color: $blue;
+      color: white;
+      text-decoration: none;
+    }
+
+    &:active {
+      outline: none;
+    }
+
+    &.current {
+      background-color: $med-gray;  
+      color: #000;  
+    }
+  }
+}
+
+#content {
+  background-color: $light-gray;
+  border: 2px solid #767676;
+  border-top: none;
+  padding: 8px 0;
+}
+
+form {
+  @include clearfix;
+  margin-bottom: 20px;
+}
+
+.group {
+  clear: both;
+}
+
+input,label {
+  float: left;
+  margin-left: 10px;
+}
+
+label {
+  display: inline-block;
+  margin-top: 6px;
+
+  &:first-of-type {
+    margin-left: 0;
+  }
+}
+
+input[type="text"] {
+  @include border-box;
+  border: 1px solid lighten($dark-gray, 20);
+  margin-left: 5px;
+  margin-bottom: 15px;
+  padding: 4px;
+}
+
+input[type="submit"] {
+  @include border-radius(3px);
+  background-color: $blue;
+  border: none;
+  color: white;
+  display: inline-block;
+  padding: 7px 9px;
+
+  &:hover {
+    background-color: #08c;
+  }
+}
+
+#previewBox {
+  background-color: red;
+	border: 1px solid black;	
+	float: left;
+	margin-right: 15px;	
+	width: 100px; height: 100px;
+}
+
+#previewText {
+  color: red;
+}
+
+.credits {
+  color: $light-gray;
+  text-align: center;
+}
