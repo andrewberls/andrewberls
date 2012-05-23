@@ -130,13 +130,14 @@ input[type="text"] {
   padding: 4px; }
 
 input[type="submit"] {
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
   background-color: #039ed6;
   border: none;
   color: white;
   display: inline-block;
+  margin-bottom: 15px;
   padding: 7px 9px; }
   input[type="submit"]:hover {
     background-color: #08c; }

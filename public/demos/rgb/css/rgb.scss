@@ -187,11 +187,12 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-  @include border-radius(3px);
+  @include border-radius(4px);
   background-color: $blue;
   border: none;
   color: white;
   display: inline-block;
+  margin-bottom: 15px;
   padding: 7px 9px;
 
   &:hover {
