@@ -11,9 +11,6 @@ Andrewberls::Application.routes.draw do
   # CONTACT URLS
   match '/contact' => 'home#new', :as => 'contact', :via => :get
   match '/contact' => 'home#create', :as => 'contact', :via => :post
-  
-  # NON-RESOURCEFUL ADMIN PAGES
-  #match "/dashboard" => "admin/posts#dashboard", :as => "dashboard"  
     
   # USER URLS  
   get "/admin/users"        => redirect("/admin/users/manage")
