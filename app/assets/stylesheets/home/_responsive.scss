@@ -1,12 +1,5 @@
 @media (max-width: 480px) {
 
-// HEADER
-//-------------------------
-header nav li a {
-  // Prevent nav bar from splitting
-  padding: 9px;
-}
-
 // #INTRO
 //-------------------------
 #intro .item-container .item {
@@ -46,12 +39,42 @@ footer {
 
 @media (max-width: 630px) {
 
+// HEADER
+//-------------------------
+header {
+  h1,
+  nav {
+    text-align: center;
+  }
+
+  nav li {
+    float: none;
+    display: inline-block;
+    margin-left: -5px; // Hack for whitespace-sensitive inline-block behavior
+
+    &:first-child {
+      border-right: 1px dashed $gray-border;
+    }
+
+    &:last-child {
+      border: none;
+    }
+
+    a {
+      margin: 0 10px;
+      padding: 5px 10px;
+    }
+  }
+}
+
+
 // #INTRO
 //-------------------------
 #intro .item-container .item {
   min-height: 0;
   margin-bottom: 15px;
 }
+
 
 // #PORTFOLIO
 //-------------------------
@@ -71,17 +94,7 @@ footer {
   }
 }
 
-} // @media (min-width: 480px) and (max-width: 630px)
-
-
-
-@media (max-width: 790px) {
-
-header nav li {
-  padding: 0;
-}
-
-} // @media (max-width: 768px)
+} // @media (max-width: 630px)
 
 
 
