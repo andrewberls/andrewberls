@@ -7,7 +7,9 @@
 //= require laconic
 
 
-//-- VENDOR PLUGINS
+//-- PAGE SCRIPTS
 //------------------------------------
 //= require sutro/draft
 //= require sutro/login
+
+//= require sutro/alias
