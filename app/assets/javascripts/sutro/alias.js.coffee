@@ -1,7 +1,8 @@
 urlsafe = (url) ->
-  # First trim any punctuation
-  url = url.replace(/[\.,-\/#!$@%\^\*;&:\[\]{}=\-_`~()]/g, '')
+  url = $.trim url # First trim any trailing whitespace
   url = url.replace(/\s+/g, ' ')         # Remove duplicate spaces
+  # Trim any punctuation
+  url = url.replace(/[\.,-\/#!$@%\^\*;&:\[\]{}=\-_`~()]/g, '')
   url.split(' ').join('-').toLowerCase() # Remaining spaces to hyphens, lowercase everything
 
 $ ->
@@ -10,5 +11,5 @@ $ ->
 
   $title.bind "propertychange keyup input paste", ->
     # Automatically suggest values for the alias based on the title
-    url = $.trim $(@).val() # Trim leading whitespace
+    url = $(@).val()
     $alias.val urlsafe(url) # Fill the alias field with the cleaned url
