@@ -1,33 +1,9 @@
 @media (max-width: 480px) {
 
-// HEADER
-//-------------------------
-header nav li a {
-  // Prevent nav bar from splitting
-  padding: 9px;
-}
-
 // #INTRO
 //-------------------------
 #intro .item-container .item {
   border: none;
-}
-
-
-// #PORTFOLIO
-//-------------------------
-#portfolio {
-  .portfolio-item {
-    border: none;
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  img {
-    margin: 5px auto 10px;
-  }
 }
 
 
@@ -61,14 +37,64 @@ footer {
 
 
 
+@media (max-width: 630px) {
 
-@media (max-width: 790px) {
+// HEADER
+//-------------------------
+header {
+  h1,
+  nav {
+    text-align: center;
+  }
 
-header nav li {
-  padding: 0;
+  nav li {
+    float: none;
+    display: inline-block;
+    margin-left: -5px; // Hack for whitespace-sensitive inline-block behavior
+
+    &:first-child {
+      border-right: 1px dashed $gray-border;
+    }
+
+    &:last-child {
+      border: none;
+    }
+
+    a {
+      margin: 0 10px;
+      padding: 5px 10px;
+    }
+  }
 }
 
-} // @media (max-width: 768px)
+
+// #INTRO
+//-------------------------
+#intro .item-container .item {
+  min-height: 0;
+  margin-bottom: 15px;
+}
+
+
+// #PORTFOLIO
+//-------------------------
+#portfolio {
+  padding-top: 10px;
+
+  .portfolio-item {
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  img {
+    margin: 5px auto 10px;
+  }
+}
+
+} // @media (max-width: 630px)
 
 
 

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RGB/Hex Color Converter</title>
+
+<link href="css/reset.css" rel="stylesheet" type="text/css" />
+<link href="css/rgb.css" rel="stylesheet" type="text/css" />
+<!-- <link rel="icon" type="image/ico" href="/favicon.ico" /> -->
+
+</head>
+
+<body>
+  <div id="container">
+  
+    <div id="header">
+      <h1>RGB-Hex <span class="blue">Converter</span></h1>      
+    </div>
+    
+    <div id="navbar">
+      <ul>
+        <li><a href="#" id="loadRGB" class="current">RGB to Hex</a></li>
+        <li><a href="#" id="loadHex">Hex to RGB</a></li>
+      </ul>   
+    </div>
+    
+    <div id="content">
+      <div class="whitebox">  
+        <div id="convert-form"></div>
+
+        <h2>Sample of result:</h2>
+        <span id="previewBox"></span>
+        <p id="previewText">"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.&quot;</p>
+      </div>
+
+      <div class="whitebox">
+        <h3>About the App</h3>
+        <p>The RGB color model is an additive color model in which red, green, and blue are combined to produce a set representing 16.7 million color combinations. Each value is represented by a number from 0 to 255: for example, the RGB value for white would be the maximum of all combinations: 255, 255, 255. Hexadecimal is a positional numeral system of base 16 that denotes values using the symbols 0-9 and the letters A-F to represent the numbers 10-15. Hex codes are commonly used in CSS styles when creating web pages, and RGB color codes can be converted to a hexadecimal system by converting each color value to its corresponding hex string and concatenating the results. For example, white, represented as 255 255 255 in RGB, becomes #FFFFFF in hexadecimal.</p>
+        <p class="source">Source: Compiled from Wikipedia</p>
+      </div>
+    </div> <!-- #content -->
+
+    <p class="credits">Converter demo by <a href="http://www.andrewberls.com">Andrew Berls</a>. Source available on <a href="http://github.com/andrewberls/rgb">GitHub</a>.</p>
+
+  </div> <!-- #container -->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/rgb_hex.js"></script>
+  <script type="text/javascript" src="js/page_swap.js"></script>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9633739-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+</html>

@@ -71,6 +71,10 @@
     margin-bottom: 15px;
   }
 
+  em {
+    font-style: italic;
+  }
+
   code, 
   pre {
     color: lighten($gray-header, 3);
@@ -104,8 +108,7 @@
       display: inline-block;
       margin-bottom: 8px;
     }    
-
-  } // pre
+  }
   
   img {
     border: 1px solid $gray-border;
@@ -159,8 +162,7 @@
     line-height: 1.6;
     margin-bottom: 15px;
   }
-
-} // .sidebar
+}
 
 
 //-- PAGINATION BUTTONS
@@ -185,10 +187,6 @@
       color: white;
       text-decoration: none;
     }
-    
-    &:active {      
-      font-weight: bold;
-    }
 
   }
 
@@ -202,8 +200,7 @@
     background-color: #e7e7e7;
     color: lighten($gray-text, 35);
   }
-
-} // .pagination
+}
 
 
 //-- DISQUS COMMENTS
@@ -222,5 +219,4 @@
   .dsq-trackback-url {
     display: none;
   }
-
-} // #disqus_thread
+}
