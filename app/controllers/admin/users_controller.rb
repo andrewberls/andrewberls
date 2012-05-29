@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   layout 'sutro'    
   
   # Check authentication for on public-facing actions
-  before_filter :check_auth, :accept => [:new, :manage]  
+  before_filter :check_auth 
   
   
   #----- CREATE
@@ -18,8 +18,9 @@ class Admin::UsersController < ApplicationController
     # A little unsure of why this is explicitly necessary
     @user.permissions = params[:user][:permissions]
 
-    if @user.save          
-      redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User created succesfully."})      
+    if @user.save      
+      flash[:success] = "User created successfully"    
+      redirect_to manage_users_path     
     else      
       # Save failed - render the signup form again
       render :new
@@ -55,7 +56,8 @@ class Admin::UsersController < ApplicationController
     @user.permissions = params[:user][:permissions]
       
     if @user.update_attributes(params[:user])
-      redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User updated succesfully."})
+      flash[:success] = "User updated successfully"
+      redirect_to manage_users_path
     else
       # Update fails - redisplay the form
       render :edit
@@ -65,8 +67,9 @@ class Admin::UsersController < ApplicationController
   
   #----- DELETE
   def destroy # Destroy record
-    User.find(params[:id]).destroy # Don't need an instance variable    
-    redirect_to(manage_users_path, :flash => {:type => "action", :msg => "User deleted succesfully."})
+    User.find(params[:id]).destroy # Don't need an instance variable
+    flash[:success] = "User deleted succesfully" 
+    redirect_to manage_users_path
   end
   
 end

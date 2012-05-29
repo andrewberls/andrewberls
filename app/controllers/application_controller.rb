@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   def check_auth    
     unless session[:user_id]
-      redirect_to login_path  
+      redirect_to login_path and return
     end
     
     #redirect_to(blog_path, :flash => {:type => "action", :msg => "Good story brah"})  

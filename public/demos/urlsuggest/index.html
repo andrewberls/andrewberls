@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CoffeeScript URL Suggestions</title>
+
+<link href="../lib/css/reset.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      color: #404040;
+      padding: 0;
+    }
+
+    h1 {
+      font-size: 1.5em;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    a {
+      color: #08c;
+      text-decoration: none;
+    }
+      a:hover {
+        text-decoration: underline;
+      }
+
+    form {
+      border: 1px solid #ccc;
+      margin: 20px auto 40px;
+      overflow: auto;
+      padding: 25px 25px 15px;
+      width: 400px;
+    }
+
+    label {
+      margin-bottom: 7px;
+      float: left;
+    }
+
+    input {
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+
+      border: 1px solid #ccc;
+      font-size: 0.8em;
+      margin-bottom: 25px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    .credits {
+      font-size: 0.8em;
+      text-align: center;
+    }
+</style>
+
+</head>
+
+<body>
+  <div id="container">
+  
+    <h1>URL aliases by title</h1>
+
+    <form>
+     <label for="Name">Title</label>
+     <input type="text" id="title" placeholder="Start typing...">
+     <textarea placeholder="Body"></textarea>
+     <label for="Name">URL Alias</label>
+     <input type="text" id="url_alias">
+    </form>
+
+    <p class="credits">Demo by <a href="http://www.andrewberls.com">Andrew Berls</a>. Source available on <a href="http://github.com/andrewberls/">GitHub</a>.</p>
+
+  </div> <!-- #container -->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      var urlsafe;
+
+      urlsafe = function(url) {
+        url = $.trim(url);
+        url = url.replace(/\s+/g, ' ');
+        url = url.replace(/[\.,-\/#!$@%\^\*;&:\[\]{}=\-_`~()]/g, '');
+        return url.split(' ').join('-').toLowerCase();
+      };
+
+      $(function() {
+        return $("#title").bind("propertychange keyup input paste", function() {
+          var url;
+          url = $(this).val();
+          return $("#url_alias").val(urlsafe(url));
+        });
+      });
+
+    }).call(this);
+  </script>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-9633739-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+</body>
+</html>

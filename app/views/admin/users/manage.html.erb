@@ -4,9 +4,7 @@
 
 <%= link_to "+ Add New User", new_admin_user_path unless is_author?(current_user) %>
 
-<% if flash[:type] == "action" %>
-  <p class="action_success"><%= flash[:msg] %></p>
-<% end %>
+<%= render 'shared/flashes' %>
 
 <table>
   

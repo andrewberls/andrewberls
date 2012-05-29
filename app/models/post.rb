@@ -12,25 +12,23 @@ class Post < ActiveRecord::Base
   
   def tag_list=(tag_list)
     self.tags.clear
-    tags = tag_list.split(",").collect { |s| s.strip.downcase }
+    tags = tag_list.split(",").sort.collect { |s| s.strip.downcase }
 
-    tags.each do |tag_name|
-      tag = Tag.find_or_create_by_name(tag_name)
-      tag.name = tag_name      
-      self.tags << tag
+    tags.each do |tag|
+      self.tags << Tag.find_or_create_by_name(tag)
     end
 
   end
 
   def url_alias=(url_alias)
-    self[:url_alias] = url_alias.strip.chomp.gsub(" ", "-")
-  end
-
-  def has_pagebreak?
-    self[:body].include? '<break />'
+    self[:url_alias] = url_alias.strip.chomp.downcase.gsub(" ", "-")
   end
 
   BREAK_TAG = '<break />'
+
+  def has_pagebreak?
+    self[:body].include? BREAK_TAG
+  end
 
   def render_teaser
     # Render body until a break tag or the end
