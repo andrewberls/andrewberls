@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
   end
 
   def url_alias=(url_alias)
-    self[:url_alias] = url_alias.strip.chomp.gsub(" ", "-")
+    self[:url_alias] = url_alias.strip.chomp.downcase.gsub(" ", "-")
   end
 
   BREAK_TAG = '<break />'
