@@ -24,11 +24,11 @@ class Post < ActiveRecord::Base
     self[:url_alias] = url_alias.strip.chomp.gsub(" ", "-")
   end
 
-  def has_pagebreak?
-    self[:body].include? '<break />'
-  end
-
   BREAK_TAG = '<break />'
+
+  def has_pagebreak?
+    self[:body].include? BREAK_TAG
+  end
 
   def render_teaser
     # Render body until a break tag or the end
