@@ -83,6 +83,10 @@ header {
 //-------------------------
 footer {
   padding: 5px;
+
+  .column {
+    padding: 10px 0 0;
+  }
 }
 
 } // @media (max-width: 630px)
