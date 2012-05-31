@@ -3,16 +3,7 @@
 <div class="wrapper">
 	<h2>Edit User</h2>
 	
-	<% if @user && @user.errors.any? %>
-		<div class="error_messages">
-			<h2>Invalid Submission</h2>
-			<ul>
-				<% for message in @user.errors.full_messages %>
-					<li><%= message %></li>
-				<% end %>
-			</ul>
-		</div>	
-	<% end %>
+	<%= render 'user_errors' %>
 	
 	<%= form_for(:user, :url=>{:action => 'update', :id => @user.id}, :method => :put) do |f| %>
 	
