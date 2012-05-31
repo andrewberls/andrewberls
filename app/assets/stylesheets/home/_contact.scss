@@ -52,7 +52,7 @@
   } // .contact-form
 
   .submit {
-    @include bluebutton;
+    @extend .bluebutton;
     float: right;
     font-size: 0.9em;
     margin-top: 15px;

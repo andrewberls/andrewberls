@@ -50,7 +50,7 @@ strong { font-weight: bold; }
 //-- LIB CLASSES
 //------------------------------------
 .btn {
-  @include bluebutton;
+  @extend .bluebutton;
 }
 
 .btn-huge {
@@ -69,7 +69,7 @@ strong { font-weight: bold; }
 //-- PAGE NOT FOUND
 //------------------------------------
 .error-box {
-  @include whitebox;
+  @extend .whitebox;
   margin-top: 50px;
   margin-bottom: 50px;
 

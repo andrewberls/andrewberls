@@ -23,7 +23,7 @@
     margin-top: 10px;
 
     .item {
-      @include whitebox;
+      @extend .whitebox;
       min-height: 170px;
 
       h3 {

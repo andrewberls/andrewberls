@@ -35,7 +35,7 @@
 }
 
 .post {
-  @include whitebox;
+  @extend .whitebox;
   @include border-radius(5px);
   font-size: 1.1em;
   line-height: 1.6;
@@ -130,14 +130,14 @@
 } // .post
 
 .read-more {
-  @include bluebutton;
+  @extend .bluebutton;
   float: right;
   margin-bottom: 5px;
 }
 
 #back {
   // "Back to Blog"
-  @include bluebutton;
+  @extend .bluebutton;
   font-size: 1.1em;
   margin-bottom: 15px;
   padding: 8px;
