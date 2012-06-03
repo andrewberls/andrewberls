@@ -1,6 +1,6 @@
 urlsafe = (url) ->
-  url = $.trim url # First trim any trailing whitespace
-  url = url.replace(/\s+/g, ' ')         # Remove duplicate spaces
+  url = $.trim url               # First trim any trailing whitespace
+  url = url.replace(/\s+/g, ' ') # Remove duplicate spaces
   # Trim any punctuation
   url = url.replace(/[\.,-\/#!$@%\^\*;&:\[\]{}=\-_`~()]/g, '')
   url.split(' ').join('-').toLowerCase() # Remaining spaces to hyphens, lowercase everything

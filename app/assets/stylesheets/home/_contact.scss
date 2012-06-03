@@ -1,6 +1,6 @@
 #contact {
   background-color: $blue;
-  border-top: 1px solid lighten($gray-border, 13); // white
+  border-top: 1px solid lighten($gray-border, 13);
   border-bottom: 1px solid $gray-border;
   font-size: 1.2em;
 
@@ -35,7 +35,7 @@
     textarea {
       @include border-box;
       @include ease-out(0.2s);
-      border: 1px dashed darken($gray-border, 3); // b4b4b4
+      border: 1px dashed darken($gray-border, 3);
       color: $gray-text;
       font-family: inherit;
       font-size: 1em;
@@ -44,7 +44,7 @@
       width: 100%;
       
       &:focus {
-        border: 1px solid $blue-light; // 5EC4F0
+        border: 1px solid $blue-light;
         outline: none;
       } 
     }
@@ -52,7 +52,7 @@
   } // .contact-form
 
   .submit {
-    @include bluebutton;
+    @extend .bluebutton;
     float: right;
     font-size: 0.9em;
     margin-top: 15px;

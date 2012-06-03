@@ -21,9 +21,9 @@ body {
 
 //-- TYPOGRAPHY
 //------------------------------------
- .plain  { color: $gray_text !important; }
- .italic { font-style: italic; }
- .bold   { font-weight: bold; }
+.plain  { color: $gray_text !important; }
+.italic { font-style: italic; }
+.bold   { font-weight: bold; }
 
 h2 {
   font-size: 1.7em;  
@@ -34,13 +34,28 @@ h3 {
   font-size: 1.2em;
 }
 
-a, a:visited {
+a:link, a:visited {
   color: $med_blue;  
   text-decoration: none;   
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+
+//-- NOTIFICATIONS/BADGES
+//------------------------------------
+.flash {
+  padding: 10px;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  ul > li:before {
+    content: "- ";
+  }
 }
 
 .status-pill {

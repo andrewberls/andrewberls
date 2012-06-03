@@ -1,29 +1,13 @@
 @media (max-width: 480px) {
 
-// #INTRO
-//-------------------------
-#intro .item-container .item {
-  border: none;
-}
-
-
-// FOOTER
-//-------------------------
-footer {
-  padding: 5px;
-}
-
-
 // CONTACT
 //-------------------------
 #contact {
-
   .contact-form {
     padding: 30px 15px;
     width: auto;
 
-    input, textarea {
-      @include border-box;
+    input[type="submit"] {
       width: 100%;
     }
   }
@@ -91,6 +75,31 @@ header {
 
   img {
     margin: 5px auto 10px;
+  }
+}
+
+
+// FOOTER
+//-------------------------
+footer {
+  padding: 5px;
+
+  .column {
+    padding: 10px 0 0;
+  }
+}
+
+
+// MODALS
+//-------------------------
+.modal {
+  padding: 10px;
+  width: 100%;
+
+  img {
+    display: block;
+    float: none;
+    margin: 0 auto 10px;
   }
 }
 

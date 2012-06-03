@@ -1,10 +1,10 @@
-<% if @post.errors.any? %>
+<% if @user.errors.any? %>
   <div class="flash flash-error">
     <h2>Invalid Submission</h2>
     <ul>
-      <% for message in @post.errors.full_messages %>
+      <% for message in @user.errors.full_messages %>
         <li><%= message %></li>
       <% end %>
     </ul>
-  </div>
+  </div>  
 <% end %>
