@@ -43,4 +43,50 @@ describe Post do
     end
   end
 
+  context "url aliases" do
+    before do
+      @post = FactoryGirl.build(:post)
+    end
+
+    it "should lowercase all urls" do
+      @post.url_alias = "TEST"
+      @post.url_alias.should == "test"
+    end
+
+    it "should strip trailing whitespace" do
+      @post.url_alias = "  test  \t"
+      @post.url_alias.should == "test"
+    end
+
+    it "should chomp the alias" do
+      @post.url_alias = "test\r\n"
+      @post.url_alias.should == "test"
+    end
+
+    it "should replace spaces with hyphens correctly" do
+      @post.url_alias = "this  is the title"
+      @post.url_alias.should == "this-is-the-title"
+    end
+
+    it "should not replace numbers" do
+      @post.url_alias = "1234-ways-to-be-cool"
+      @post.url_alias.should == "1234-ways-to-be-cool"
+    end
+
+    it "should handle malformed urls correctly" do
+      @post.url_alias = "This is   the  !   \t TITLE@\#$%^&*("
+      @post.url_alias.should == "this-is-the-title"
+    end
+
+    it "should not change correct urls" do
+      @post.url_alias = "this-is-the-title"
+      @post.url_alias.should == "this-is-the-title"
+    end
+
+    it "should handle completely average use cases" do
+      @post.url_alias = "Suggesting URL aliases with Coffeescript"
+      @post.url_alias.should == "suggesting-url-aliases-with-coffeescript"
+    end
+  end
+
 end
