@@ -41,13 +41,12 @@ class Post < ActiveRecord::Base
       body = body[0..endchar]    
     end
     
-    body.html_safe
+    body.strip.html_safe
   end
 
   def render_full
     # Remove break tag and return full post
-    self[:body].slice BREAK_TAG
-    body.html_safe
+    self[:body].gsub(BREAK_TAG, "").html_safe
   end
   
 end
