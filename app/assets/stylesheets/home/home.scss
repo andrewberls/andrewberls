@@ -61,8 +61,10 @@ strong { font-weight: bold; }
 .separator {
   border-bottom: 1px dashed #888;
   height: 0;
-  margin: 20px auto;
+  margin: 25px auto;
   width: 75%;
+
+  @media (max-width: 630px) { margin: 20px auto; }
 }
 
 
