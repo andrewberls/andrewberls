@@ -167,6 +167,25 @@
   }
 }
 
+@media (max-width: 630px) {
+  .sidebar {
+    @include border-box;
+    padding: 5px;
+    position: static !important;
+    margin-left: 0 !important;
+  }
+}
+
+
+@media (min-width: 630px) and (max-width: 790px) {
+  .sidebar { margin-left: 480px !important; }
+}
+
+
+@media (min-width: 790px) and (max-width: 1100px) {
+  .sidebar { margin-left: 600px !important; }
+}
+
 
 //-- PAGINATION BUTTONS
 //------------------------------------

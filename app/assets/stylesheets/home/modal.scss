@@ -12,15 +12,24 @@
   padding: 15px;
   width: 700px;
 
+  @media (max-width: 630px) {
+    padding: 10px;
+    width: 100%;
+  }
+
   img {
     float: left;
     margin-right: 15px;
+
+    @media (max-width: 630px) {
+      display: block;
+      float: none;
+      margin: 0 auto 10px;
+    }
   }
 
-  a {
-    &:hover {
-      text-decoration: underline;
-    }
+  a:hover {
+    text-decoration: underline;
   }
 
 } // .modal

@@ -50,3 +50,33 @@ header {
   } // nav
 
 }
+
+
+@media (max-width: 630px) {
+
+header {
+  h1, nav {
+    text-align: center;
+  }
+
+  nav li {
+    float: none;
+    display: inline-block;
+    margin-left: -5px; // Hack for whitespace-sensitive inline-block behavior
+
+    &:first-child {
+      border-right: 1px dashed $gray-border;
+    }
+
+    &:last-child {
+      border: none;
+    }
+
+    a {
+      margin: 0 10px;
+      padding: 5px 10px;
+    }
+  }
+}
+
+}

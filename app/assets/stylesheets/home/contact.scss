@@ -72,3 +72,20 @@
     text-decoration: underline;
   }
 }
+
+
+@media (max-width: 480px) {
+
+#contact {
+  .contact-form {
+    padding: 30px 15px;
+    width: auto;
+  }
+
+  input[type="submit"] {
+    padding: 10px 0;
+    width: 100%;
+  }
+}
+
+}

@@ -28,3 +28,18 @@
   }
 
 } // #portfolio
+
+
+@media (max-width: 630px) {
+
+#portfolio {
+  padding-top: 10px;
+
+  .portfolio-item { margin-bottom: 15px; }
+
+  h2 { text-align: center; }
+
+  img { margin: 5px auto 10px; }
+}
+
+}

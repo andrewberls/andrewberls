@@ -30,6 +30,11 @@
         font-size: 1.1em;
         line-height: 1.6;
       }
+
+      @media (max-width: 630px) {
+        min-height: 0;
+        margin-bottom: 15px;
+      }
     } 
   }
 
