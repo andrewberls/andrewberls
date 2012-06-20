@@ -23,7 +23,7 @@ This partial loads the Sutro sidebar. The conditional logic inspects the control
 <% end %>
 
 <% #----- MANAGE USERS (Admins only) -----# %>
-<% if is_admin?(current_user) %>
+<% if current_user.is_admin? %>
 	<% if action_request == "admin/users#manage" %>
 		<li><%= link_to "Manage Users", manage_users_path, :class => "current" %></li>
 	<% else %>

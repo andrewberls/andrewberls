@@ -15,12 +15,12 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
   
   def check_admin_privileges(path)
-    # Triggered by user attempting forbidden permission action
-    # Redirects to specified path unless user is an admin
-    redirect_to path unless is_admin?(current_user)
+      # Triggered by user attempting forbidden action
+    redirect_to path unless current_user.is_admin?
   end
     
   private
+  
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end

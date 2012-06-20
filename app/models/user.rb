@@ -13,6 +13,30 @@ class User < ActiveRecord::Base
     
   validates_presence_of :password, :on => :create
   validates_confirmation_of :password
+
+  # Permission utility methods 
+
+  def is_admin?
+    self[:permissions] == 0
+  end
+  
+  def is_developer?
+    self[:permissions] == 1
+  end
+  
+  def is_author?
+    self[:permissions] == 2
+  end
+
+  def permissions
+    # Return the permission string associated with the users permission number.
+    
+    case self[:permissions]
+      when 0 then "Adminstrator"
+      when 1 then "Developer"     
+      when 2 then "Author"
+    end
+  end
   
   def encrypt_password
     # Checks if password is present and generates hash and salt using BCrypt methods

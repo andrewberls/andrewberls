@@ -47,10 +47,12 @@
         </td>
 
         <td>
-          <%= link_to "Edit", edit_admin_post_path(post.id) %>
-          &nbsp;
-          <%= link_to "Delete", {:action => 'destroy', :id => post.id}, 
-            {:method => :delete, confirm: "Are you sure you want to delete this post?"} %> 
+          <% unless current_user.is_author? %>
+            <%= link_to "Edit", edit_admin_post_path(post.id) %>
+            &nbsp;
+            <%= link_to "Delete", {:action => 'destroy', :id => post.id}, 
+              {:method => :delete, confirm: "Are you sure you want to delete this post?"} %>
+          <% end %>
         </td>
       </tr>
     <% end %>

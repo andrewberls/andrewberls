@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
     if !logged_in?
       return redirect_to login_path   
     else
-      reset_sessionc
+      reset_session
       flash[:success] = "Logged out!"
       return redirect_to login_path
     end
