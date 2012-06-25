@@ -9,7 +9,7 @@ class PostsController < ApplicationController
     if !params[:tag].nil?
       @tag = Tag.find_by_name(params[:tag])
       if @tag.nil?
-        redirect_to blog_path
+        return redirect_to blog_path
       else            
         @posts = @tag.posts
                      .where(:status => 1)
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
       # Slug is a url alias
       @post = Post.find_by_url_alias(params[:slug])
       unless !@post.blank?
-        render 'home/not_found' and return
+        return render 'home/not_found'
       end
     else
       # TODO (LEGACY):Slug is an ID - redirect to aliased post
@@ -38,10 +38,10 @@ class PostsController < ApplicationController
         if @post.url_alias.blank?
           return
         else
-          redirect_to post_path(@post.url_alias), status: 301
+          return redirect_to post_path(@post.url_alias), status: 301
         end
       rescue
-        render 'home/not_found' and return
+        return render 'home/not_found'
       end
 
       

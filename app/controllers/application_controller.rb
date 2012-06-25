@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   
   def check_auth    
     respond_to do |format|
-      format.html { redirect_to login_path unless logged_in? }
-      format.json { render json: {} unless logged_in? }
+      format.html { return redirect_to login_path unless logged_in? }
+      format.json { return render json: {} unless logged_in? }
     end
   end
 
@@ -15,8 +15,8 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?
   
   def check_admin_privileges(path)
-      # Triggered by user attempting forbidden action
-    redirect_to path unless current_user.is_admin?
+    # Triggered by user attempting forbidden action
+    return redirect_to path unless current_user.is_admin?
   end
     
   private

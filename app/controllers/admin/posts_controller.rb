@@ -22,9 +22,9 @@ class Admin::PostsController < ApplicationController
                         else
                           "Post saved successfully."
                         end
-      redirect_to admin_posts_path
+      return redirect_to admin_posts_path
     else
-      render :new
+      return render :new
     end
 
   end
@@ -51,9 +51,9 @@ class Admin::PostsController < ApplicationController
     
     if @post.update_attributes(new_post)
       flash[:success] = "Post updated successfully."
-      redirect_to @post
+      return redirect_to @post
     else
-      render :edit
+      return render :edit
     end
   end
   
@@ -61,7 +61,7 @@ class Admin::PostsController < ApplicationController
   def destroy
     Post.find(params[:id]).destroy
     flash[:success] = "Post deleted successfully"
-    redirect_to admin_posts_path
+    return redirect_to admin_posts_path
   end
   
 end

@@ -13,10 +13,10 @@ class HomeController < ApplicationController
     if @message.valid?      
       Notifier.new_message(@message).deliver
       flash[:success] = "Thanks! I'll get back to you as soon as possible." 
-      redirect_to "/#contact"    
+      return redirect_to "/#contact"    
     else
       flash[:error] = "Please check your fields and try again!"
-      redirect_to "/#contact"
+      return redirect_to "/#contact"
     end
   end
   
