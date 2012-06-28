@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery
   
-  def check_auth    
+  def must_be_logged_in
     respond_to do |format|
       format.html { return redirect_to login_path unless logged_in? }
       format.json { return render json: {} unless logged_in? }
