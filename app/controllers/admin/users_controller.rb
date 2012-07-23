@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   layout 'sutro'    
   
   # Check authentication for on public-facing actions
-  before_filter :check_auth 
+  before_filter :must_be_logged_in
   
   
   #----- CREATE

@@ -3,7 +3,7 @@ class Admin::PostsController < ApplicationController
   layout 'sutro'
   
   # Check authentication for on public-accessible actions
-  before_filter :check_auth
+  before_filter :must_be_logged_in
   
   
   #----- CREATE  
