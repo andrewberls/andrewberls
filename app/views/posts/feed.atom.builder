@@ -4,7 +4,7 @@ atom_feed :language => 'en-US' do |feed|
   @posts.each do |post|
 
     feed.entry( post ) do |entry|
-      entry.url post_url(post.url_alias)
+      entry.url post_url(post)
       entry.title post.title
       entry.content post.body, :type => 'html'
 

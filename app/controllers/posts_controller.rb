@@ -23,8 +23,21 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_url_alias(params[:slug])
-    return render 'home/not_found' if @post.blank?
+    if params[:slug].to_i == 0
+      # Slug is a URL alias
+      @post = Post.find_by_url_alias(params[:slug])
+      return render 'home/not_found' if @post.blank?
+    else
+      # Slug is an ID. Kept around for the feed
+      @post = Post.find_by_id(params[:slug])
+
+      if @post.blank?
+        return render 'home/not_found'
+      else
+        return redirect_to post_path(@post.url_alias), status: 301
+      end
+
+    end
   end
 
   def feed
