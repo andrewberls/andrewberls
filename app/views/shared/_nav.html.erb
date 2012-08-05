@@ -1,38 +1,35 @@
-<%# 
-This partial loads the Sutro sidebar. The conditional logic inspects the controller and and action from the params hash in order to determine whether or not to render a link styled as current.
-%>
-
-
-<% #----- BLOG -----# %>
+<% #----- Blog -----# %>
 <li><%= link_to "Blog", blog_path %></li>
 
 
-<% #-----  NEW POST -----# %>
-<% if action_request == "admin/posts#new" %>
-	<li><%= link_to "New Post", new_admin_post_path,  :class => "current" %></li>
+<% #-----  New Post -----# %>
+<% if current_page? new_admin_post_path %>
+  <li><%= link_to "New Post", new_admin_post_path, class: 'current' %></li>
 <% else %>
-	<li><%= link_to "New Post", new_admin_post_path %></li>
+  <li><%= link_to "New Post", new_admin_post_path %></li>
 <% end %>
 
 
-<% #----- MANAGE POSTS -----# %>
-<% if action_request == "admin/posts#index" %>
-	<li><%= link_to "Manage Posts", admin_posts_path, :class => "current" %></li>
+<% #----- Manage Posts -----# %>
+<% if current_page? admin_posts_path %>
+  <li><%= link_to "Manage Posts", admin_posts_path, class: 'current' %></li>
 <% else %>
-	<li><%= link_to "Manage Posts", admin_posts_path %></li>
+  <li><%= link_to "Manage Posts", admin_posts_path %></li>
 <% end %>
 
-<% #----- MANAGE USERS (Admins only) -----# %>
+
+<% #----- Manage Users (Admin only) -----# %>
 <% if current_user.is_admin? %>
-	<% if action_request == "admin/users#manage" %>
-		<li><%= link_to "Manage Users", manage_users_path, :class => "current" %></li>
-	<% else %>
-		<li><%= link_to "Manage Users", manage_users_path %></li>
-	<% end %>
+  <% if current_page? manage_users_path %>
+    <li><%= link_to "Manage Users", manage_users_path, class: 'current' %></li>
+  <% else %>
+    <li><%= link_to "Manage Users", manage_users_path %></li>
+  <% end %>
 <% end %>
 
-<% #----- LOGGED IN AS "USERNAME" -----# %>
+
+<% #----- Logged in as <username> -----# %>
 <% if current_user %>
-	<p>Logged in as <%= link_to current_user.full_name, admin_user_path(:id => current_user.id)  %></p>	
-	<p><%= link_to "Log Out", logout_path %></p>
+  <p>Logged in as <%= link_to current_user.full_name, admin_user_path(current_user)  %></p>
+  <p><%= link_to "Log Out", logout_path %></p>
 <% end %>
