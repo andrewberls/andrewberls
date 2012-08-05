@@ -1,5 +1,5 @@
-.wrapper {  
-  @include border-radius(6px);
+.wrapper {
+  @include border-radius($radius);
   background-color: $light_gray;
   border: 1px solid #bbb;
   color: #404040;
@@ -8,7 +8,7 @@
   width: 768px;
 }
 
-.fieldDescription {  
+.help-text {
   color: #aaa;
   float: left;
   font-size: 0.8em;
@@ -19,11 +19,11 @@
 
 label {
   clear: both;
-  float: left;  
+  float: left;
   margin-bottom: 10px;
 }
 
-input:not([type="submit"]), 
+input:not([type="submit"]),
 textarea,
 select {
   @include border-box;
@@ -32,16 +32,16 @@ select {
   margin-bottom: 15px;
   padding: 7px 5px;
   width: 100%;
-  
+
   &:focus {
     outline: none;
   }
 }
 
-textarea { 
+textarea {
   font-family: $baseFontFamily;
   font-size: 0.9em;
-  height: 200px; 
+  height: 200px;
   overflow: auto; // Remove scrollbar in IE
   resize: vertical;
 }
@@ -53,25 +53,25 @@ select {
 .recommendations {
   clear: both;
   font-size: 0.9em;
-  line-height: 1.4;  
-  
+  line-height: 1.4;
+
   h4 {
     color: #393335;
     font-weight: bold;
     margin-bottom: 5px;
   }
-  
+
   ul {
-    @include border-radius(6px);  
+    @include border-radius($radius);
     @include box-shadow(0px,0px,2px,0px,#222);
     background-color: #F9F9F9;
     display: inline-block;
     list-style: disc;
     margin-top: 15px;
     padding: 10px;
-    
+
     li {
       margin-left: 25px;
     }
   }
-} // .recommendations
+}

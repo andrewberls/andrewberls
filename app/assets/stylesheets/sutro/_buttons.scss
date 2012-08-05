@@ -1,14 +1,14 @@
 .cta {
-  @include border-radius(3px);
+  @include border-radius($radius);
   background: #F0F0F0;
   border: 1px solid $med_gray;
-  float: left; 
+  float: left;
   font-size: 0.9em;
   margin-top: 10px;
   padding: 7px 10px;
-  text-decoration: none; 
-  
-  &:hover {    
+  text-decoration: none;
+
+  &:hover {
     cursor: pointer;
     text-decoration: none;
   }
@@ -16,27 +16,27 @@
 
 .submit {
   color: $green;
-  
-  &:hover {    
+
+  &:hover {
     color: #5C7C04;
     border: 1px solid lighten(#5C7C04, 10);
   }
 }
 
-#save  {  
+#save  {
   color: $med_blue;
   margin-left: 10px;
-  
+
   &:hover {
-    border: 1px solid $blue;    
+    border: 1px solid $blue;
   }
 }
 
 #cancel {
   color: $cancel;
-  float: right; 
-  
+  float: right;
+
   &:hover {
-    border: 1px solid #FF8181;    
+    border: 1px solid #FF8181;
   }
 }
