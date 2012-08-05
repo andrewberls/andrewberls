@@ -1,14 +1,14 @@
 #sidebar {
   background-color: #C4C4C4;
   clear: none;
-  float: left;   
+  float: left;
   min-height: 500px;
-  text-align: center; 
+  text-align: center;
   width: 12.5em;
-  
+
   ul {
-    margin-top: 30px;     
-    
+    margin-top: 30px;
+
     li a {
       background-color: $light_gray;
       border-bottom: 1px solid $med_gray;
@@ -18,14 +18,15 @@
       padding: 7px 0;
 
       &:hover,
-      &.current {          
-        background-color: $med_blue;      
+      &.current {
+        background-color: $med_blue;
+        border-top-color: $med-blue;
         color: white;
-        text-decoration: none;        
-      }        
+        text-decoration: none;
+      }
     }
   }
-  
+
   p {
     font-size: 0.8em;
     margin-top: 15px;
@@ -38,4 +39,4 @@
     left: 10px; bottom: 10px;
   }
 
-} // #sidebar
+}
