@@ -1,37 +1,37 @@
 <% provide(:title, "Edit Post: #{@post.title}") %>
 
 <div class="wrapper">
-	<h2>Edit Post</h2>
-	
-	<%= render "post_errors" %>
-		
+  <h2>Edit Post</h2>
+
+  <%= render "post_errors" %>
+
   <%= form_for @post, url: admin_post_path , :method => :put do |f| %>
-  
-		<%= f.label :title %>
-		<%= f.text_field :title %>
-		<%= f.label :body, "Post" %>
-		<%= f.text_area :body %>
-		
-		<%= f.label :tag_list, "Tags (optional)" %>		
-		<p class="fieldDescription">Enter a comma separated list of tags.</p>
-		<%= f.text_field :tag_list %>
-    
-    <%= f.label :url_alias, "Post URL"%>
-    <p class="fieldDescription">Separate words with hyphens.</p>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :body, "Post" %>
+    <%= f.text_area :body %>
+
+    <%= f.label :tag_list, "Tags (optional)" %>
+    <p class="help-text">Enter a comma separated list of tags.</p>
+    <%= f.text_field :tag_list %>
+
+    <%= f.label :url_alias, "Post URL" %>
+    <p class="help-text">Separate words with hyphens.</p>
     <%= f.text_field :url_alias %>
-		
-		<%= f.hidden_field :status, :value => 1 %>
-		
-		<% if @post.status == 0 %>
-			<%= f.submit "Publish", :class => "cta submit" %>
-		<% else %>
-			<%= f.submit "Update", :class => "cta submit" %>
-		<% end %>
-		
-		<%= f.submit "Save for later", {:class => "cta  submit", :id => "save"} %>						
-		<%= link_to "Cancel", admin_posts_path, {:class => "cta", :id => "cancel"}%>
-		
-	<% end %>	
+
+    <%= f.hidden_field :status, :value => 1 %>
+
+    <% if @post.status == 0 %>
+      <%= f.submit "Publish", :class => "cta submit" %>
+    <% else %>
+      <%= f.submit "Update", :class => "cta submit" %>
+    <% end %>
+
+    <%= f.submit "Save for later", class: "cta submit", id: "save" %>
+    <%= link_to "Cancel", admin_posts_path, class: "cta", id: "cancel" %>
+
+  <% end %>
 </div>
 
 <%= render 'recommendations' %>
