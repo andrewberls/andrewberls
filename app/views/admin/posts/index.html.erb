@@ -1,12 +1,9 @@
 <% provide(:title, "All Posts") %>
 
-<h2>Posts</h2>
+<h2>All Posts</h2>
 
 <%= render 'shared/flashes' %>
 
 <%= render 'posts_table' %>
 
-<%= 
-	# Display pagination links
-	will_paginate @posts 
-%>
+<%= will_paginate @posts %>
