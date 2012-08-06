@@ -23,13 +23,13 @@
     <%= f.hidden_field :status, :value => 1 %>
 
     <% if @post.status == 0 %>
-      <%= f.submit "Publish", :class => "cta submit" %>
+      <%= f.submit "Publish", class: "btn btn-green" %>
     <% else %>
-      <%= f.submit "Update", :class => "cta submit" %>
+      <%= f.submit "Update", class: "btn btn-green" %>
     <% end %>
 
-    <%= f.submit "Save for later", class: "cta submit", id: "save" %>
-    <%= link_to "Cancel", admin_posts_path, class: "cta", id: "cancel" %>
+    <%= f.submit "Save for later", class: "btn btn-blue", id: "save" %>
+    <%= link_to "Cancel", admin_posts_path, class: "btn btn-red", id: "cancel" %>
 
   <% end %>
 </div>

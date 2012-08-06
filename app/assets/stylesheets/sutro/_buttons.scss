@@ -1,4 +1,4 @@
-.cta {
+.btn {
   @include border-radius($radius);
   background: #F0F0F0;
   border: 1px solid $med_gray;
@@ -14,7 +14,7 @@
   }
 }
 
-.submit {
+.btn-green {
   color: $green;
 
   &:hover {
@@ -23,20 +23,28 @@
   }
 }
 
-#save  {
+
+.btn-blue  {
   color: $med_blue;
-  margin-left: 10px;
 
   &:hover {
     border: 1px solid $blue;
   }
 }
 
-#cancel {
-  color: $cancel;
-  float: right;
+
+.btn-red {
+  color: $cancel !important; // ?????
 
   &:hover {
     border: 1px solid #FF8181;
   }
+}
+
+#save {
+  margin-left: 10px;
+}
+
+#cancel {
+  float: right;
 }

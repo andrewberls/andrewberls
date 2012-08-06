@@ -1,35 +1,35 @@
 <% provide(:title, "Edit User: #{@user.full_name}") %>
 
 <div class="wrapper">
-	<h2>Edit User</h2>
-	
-	<%= render 'user_errors' %>
-	
-	<%= form_for(:user, :url=>{:action => 'update', :id => @user.id}, :method => :put) do |f| %>
-	
-		<%= f.label :full_name %>
-		<%= f.text_field :full_name %>
-		
-		<%= f.label :email %>
-		<%= f.text_field :email %>
-		
-		<%= f.label :password, "New Password" %>
-		<%= f.password_field :password %>
-		
-		<%= f.label :password_confirmation %>
-		<%= f.password_field :password_confirmation %>
-				
-		<%= f.label :permissions %>
-		<%= 
-			f.select(:permissions, options_for_select([
-				['Administrator', 0], 
-				['Developer', 1],
-				['Author', 2]
-			],@user.permissions)) # Determines which field to mark preselected 
-		%>
-		
-		<%= f.submit "Update User", :class => "cta submit" %>		
-		<%= link_to "Cancel", manage_users_path, {:class => "cta", :id => "cancel"} %>	
-		
-	<% end %>	
+  <h2>Edit User</h2>
+
+  <%= render 'user_errors' %>
+
+  <%= form_for(:user, :url=>{:action => 'update', :id => @user.id}, :method => :put) do |f| %>
+
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password, "New Password" %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.label :permissions %>
+    <%=
+      f.select(:permissions, options_for_select([
+        ['Administrator', 0],
+        ['Developer', 1],
+        ['Author', 2]
+      ],@user.permissions)) # Determines which field to mark preselected
+    %>
+
+    <%= f.submit "Update User", class: "btn btn-green" %>
+    <%= link_to "Cancel", manage_users_path, class: "btn btn-red", id: "cancel" %>
+
+  <% end %>
 </div>

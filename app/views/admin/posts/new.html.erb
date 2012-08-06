@@ -23,9 +23,9 @@
 
     <%= f.hidden_field :status %>
 
-    <%= f.submit "Publish", class: "cta submit" %>
-    <%= f.submit "Save for later", class: "cta  submit", id: "save" %>
-    <%= link_to "Cancel", admin_posts_path, class: "cta", id: "cancel" %>
+    <%= f.submit "Publish", class: "btn btn-green" %>
+    <%= f.submit "Save for later", class: "btn btn-blue", id: "save" %>
+    <%= link_to "Cancel", admin_posts_path, class: "btn btn-red", id: "cancel" %>
   <% end %>
 
 </div>
