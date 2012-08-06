@@ -1,18 +1,18 @@
 table {
-  background-color: #F9F9F9;
-  border: 1px solid #CCC;
+  background-color: $light_gray;
+  border: 1px solid $med_gray;
   margin-top: 10px;
   text-align: left;
   width: 100%;
 
   th {
-    border: 1px solid #CCC;
-    padding: 7px 10% 7px 12px; 
+    border: 1px solid $med_gray;
+    padding: 7px 10% 7px 12px;
   }
 
   tr.odd {
     background-color: #f2f2f2;
-  }  
+  }
 
   td {
     padding: 15px;
