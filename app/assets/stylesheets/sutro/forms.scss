@@ -1,5 +1,5 @@
 .wrapper {
-  @include border-radius($radius);
+  @include border-radius;
   background-color: $light_gray;
   border: 1px solid #bbb;
   color: #404040;
@@ -63,7 +63,7 @@ select {
   }
 
   ul {
-    @include border-radius($radius);
+    @include border-radius;
     @include box-shadow(0px,0px,2px,0px,#222);
     background-color: #F9F9F9;
     display: inline-block;

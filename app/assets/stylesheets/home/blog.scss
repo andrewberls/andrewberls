@@ -1,7 +1,7 @@
 //-- SUTRO BAR
 //------------------------------------
 .sutro-bar {
-  @include border-radius(3px);
+  @include border-radius;
   border: 1px solid $gray-border;
   display: inline-block;
   font-size: 1.1em;
@@ -36,7 +36,7 @@
 
 .post {
   @extend .whitebox;
-  @include border-radius(5px);
+  @include border-radius;
   font-size: 1.1em;
   line-height: 1.6;
   margin-bottom: 25px;
@@ -79,7 +79,7 @@
     font-style: italic;
   }
 
-  code, 
+  code,
   pre {
     color: $gray-header;
     font-family: $codeFontFamily;
@@ -88,20 +88,20 @@
 
   code {
     // Inline code snippets
-    background-color: darken($gray-light, 3);   
+    background-color: darken($gray-light, 3);
     border: 1px solid $gray-border;
-    padding: 3px;        
+    padding: 3px;
   }
 
   pre {
     // Code blocks
-    @include border_radius(4px);
+    @include border_radius;
     background-color: darken($gray-light, 4);
     border: 1px solid #ddd;
     line-height: 1.4;
     margin-bottom: 15px;
     padding: 10px 15px;
-    
+
     .label,
     .comment {
       color: #797979;
@@ -110,19 +110,19 @@
     .label {
       display: inline-block;
       margin-bottom: 8px;
-    }    
+    }
   }
-  
+
   img {
     border: 1px solid $gray-border;
     display: block;
     margin: 0 auto 15px;
     max-width: 95%;
-    padding: 5px;  
+    padding: 5px;
   }
 
   .tag {
-    @include border_radius(3px);
+    @include border_radius;
     background-color: #D3D3D3;
     color: #666;
     display: inline-block;
@@ -196,19 +196,19 @@
 //------------------------------------
 .pagination {
   font-size: 1.1em;
-  margin: 30px auto; 
+  margin: 30px auto;
   text-align: center;
 
   a,
   .current,
   .disabled {
-    border: 1px solid $gray-border;    
+    border: 1px solid $gray-border;
     padding: 5px 8px;
   }
-  
+
   a {
     background-color: white;
-    
+
     &:hover {
       background-color: $gray-text;
       color: white;
@@ -217,7 +217,7 @@
 
   }
 
-  .current {      
+  .current {
     background-color: #444;
     color: white;
     font-weight: bold;
@@ -234,15 +234,15 @@
 //------------------------------------
 #disqus_thread {
   margin: 10px auto 20px;
-  
-  h3 {    
+
+  h3 {
     font-size: 1.3em;
   }
 
   a {
     font-size: 0.9em;
   }
-  
+
   .dsq-trackback-url {
     display: none;
   }

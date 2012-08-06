@@ -1,5 +1,5 @@
 .btn {
-  @include border-radius($radius);
+  @include border-radius;
   background: #F0F0F0;
   border: 1px solid $med_gray;
   float: left;
