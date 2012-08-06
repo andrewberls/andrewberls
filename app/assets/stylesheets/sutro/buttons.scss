@@ -12,34 +12,34 @@
     cursor: pointer;
     text-decoration: none;
   }
-}
 
-.btn-green {
-  color: $green;
+  &.btn-green {
+    color: $green;
 
-  &:hover {
-    color: #5C7C04;
-    border: 1px solid lighten(#5C7C04, 10);
+    &:hover {
+      color: #5C7C04;
+      border: 1px solid lighten(#5C7C04, 10);
+    }
   }
-}
 
+  &.btn-blue  {
+    color: $med_blue;
 
-.btn-blue  {
-  color: $med_blue;
-
-  &:hover {
-    border: 1px solid $blue;
+    &:hover {
+      border: 1px solid $blue;
+    }
   }
-}
 
+  &.btn-red {
+    color: $cancel;
 
-.btn-red {
-  color: $cancel !important; // ?????
-
-  &:hover {
-    border: 1px solid #FF8181;
+    &:hover {
+      border: 1px solid #FF8181;
+    }
   }
+
 }
+
 
 #save {
   margin-left: 10px;
