@@ -24,8 +24,7 @@ label {
 }
 
 input:not([type="submit"]),
-textarea,
-select {
+textarea {
   @include border-box;
   border: 1px solid #bbb;
   font-size: 1.1em;
@@ -48,6 +47,8 @@ textarea {
 
 select {
   height: 2.3em;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 .recommendations {
