@@ -7,3 +7,5 @@ This is the source code of my portfolio site, [andrewberls.com](http://www.andre
 * Add tags to posts and filter display by tag
 * Sort posts by author
 * Comments on posts via Disqus
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/7911a0cf4e1f43fa96fdb60919cce8e3 "githalytics.com")](http://githalytics.com/andrewberls/andrewberls)
