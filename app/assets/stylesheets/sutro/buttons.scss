@@ -1,6 +1,6 @@
 .btn {
   @include border-radius;
-  background: #F0F0F0;
+  background-color: $light_gray;
   border: 1px solid $med_gray;
   float: left;
   font-size: 0.9em;
@@ -9,6 +9,7 @@
   text-decoration: none;
 
   &:hover {
+    background-color: darken($light_gray, 2);
     cursor: pointer;
     text-decoration: none;
   }

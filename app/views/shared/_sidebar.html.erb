@@ -28,8 +28,10 @@
 <% end %>
 
 
-<% #----- Logged in as <username> -----# %>
-<% if current_user %>
-  <p>Logged in as <%= link_to current_user.full_name, admin_user_path(current_user)  %></p>
-  <p><%= link_to "Log Out", logout_path %></p>
-<% end %>
+<div class="sidebar-content">
+  <% #----- Logged in as <username> -----# %>
+  <% if current_user %>
+    <p>Logged in as <%= link_to current_user.full_name, admin_user_path(current_user)  %></p>
+    <p><%= link_to "Log Out", logout_path %></p>
+  <% end %>
+</div>

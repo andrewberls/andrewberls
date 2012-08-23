@@ -1,24 +1,22 @@
-<% provide(:title, "All Users") %>
+<% provide(:title, "Manage Users") %>
 
-<h2>Manage Users</h2>
-
-<%= link_to "+ Add New User", new_admin_user_path unless current_user.is_author? %>
+<%= link_to "+ Add New User", new_admin_user_path, class: 'btn', style: 'margin: 0 0 20px;' unless current_user.is_author? %>
 
 <%= render 'shared/flashes' %>
 
 <table>
-  
-  <% if !@users || @users.length == 0 %>  
-    <td>That's weird, there doesn't appear to be any existing users. This is an error that should probably be fixed by an installation script. Anyways, click <%= link_to "here", new_admin_user_path %> to add a new user!</td>    
+
+  <% if !@users || @users.length == 0 %>
+    <td>That's weird, there doesn't appear to be any existing users. This is an error that should probably be fixed by an installation script. Anyways, click <%= link_to "here", new_admin_user_path %> to add a new user!</td>
   <% else %>
-  
+
     <tr>
       <th>Name</th>
       <th>Email</th>
       <th>Permission Level</th>
       <th>Actions</th>
     </tr>
-    
+
     <% @users.each do |user| %>
       <tr class="<%= cycle('odd', 'even') %>">
         <td><%= link_to user.full_name, admin_user_path(user) %></td>
@@ -26,15 +24,15 @@
         <td><%= user.permissions %></td>
         <td>
           <%= link_to("Edit", edit_admin_user_path(user)) %>
-          &nbsp;          
-          <%=               
-            link_to "Delete", {:action => 'destroy', :id => user.id}, 
+          &nbsp;
+          <%=
+            link_to "Delete", {:action => 'destroy', :id => user.id},
               {:method => :delete, confirm: "This will completely remove the user! Are you sure?"}
-          %>          
+          %>
         </td>
       </tr>
     <% end %>
-    
-  <% end %>     
-  
+
+  <% end %>
+
 </table>

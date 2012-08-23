@@ -3,29 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width">
-  <title>Sutro | <%= yield(:title) %></title> 
+  <title>Sutro | <%= yield(:title) %></title>
   <%= stylesheet_link_tag "sutro" %>
-  <link rel="icon" type="image/gif" href="/favicon.gif" />  
+  <link rel="icon" type="image/gif" href="/favicon.gif" />
   <%= csrf_meta_tag %>
 </head>
 <body>
-  
+
   <div id="container">
-    
+
     <% unless params[:controller] == "sessions" %>
-      <div id="sidebar">
+      <div id="page-left">
         <ul class="nav">
-          <%= render "shared/nav" %>            
+          <%= render "shared/sidebar" %>
         </ul>
 
         <aside>Powered by Sutro</aside>
       </div>
     <% end %>
-    
-    <div id="content">      
-      <%= yield %>
-    </div>  
-    
+
+    <div id="page-right">
+      <div class="content-header">
+        <h2><%= yield(:title) %></h2>
+      </div>
+
+      <div class="content-container">
+        <%= yield %>
+      </div>
+    </div>
+
   </div><!-- .container -->
 
   <%= javascript_include_tag :sutro %>

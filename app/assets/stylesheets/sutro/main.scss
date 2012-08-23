@@ -1,7 +1,7 @@
 //-- LAYOUT
 //------------------------------------
 body {
-  background: #EDEDED url('/images/sutro_bg.jpg') repeat-y;
+  //background: #EDEDED url('/images/sutro_bg.jpg') repeat-y;
   font-family: $baseFontFamily;
   font-size: 16px;
   color: $gray_text;
@@ -10,13 +10,25 @@ body {
 #container {
   clear: none;
   min-height: 100%;
-  overflow: auto;  
+  overflow: auto;
 }
 
-#content {
-  overflow: hidden;  
-  padding: 30px 15px;
+#page-right {
+  margin-left: 12.5em;
+  overflow: hidden;
+  //padding: 30px 15px;
 }
+
+
+.content-header {
+  border-bottom: 1px dotted $med-gray;
+  padding: 25px;
+}
+
+.content-container {
+  padding: 20px;
+}
+
 
 
 //-- TYPOGRAPHY
@@ -26,8 +38,8 @@ body {
 .bold   { font-weight: bold; }
 
 h2 {
-  font-size: 1.7em;  
-  margin-bottom: 15px;
+  font-size: 1.7em;
+  //margin-bottom: 15px;
 }
 
 h3 {
@@ -35,8 +47,8 @@ h3 {
 }
 
 a:link, a:visited {
-  color: $med_blue;  
-  text-decoration: none;   
+  color: $med_blue;
+  text-decoration: none;
 }
 
 a:hover {
