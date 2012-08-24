@@ -2,32 +2,21 @@
 
 <div class="wrapper">
 
-  <h2>New Post</h2>
-
   <%= render "post_errors" %>
 
   <%= form_for @post, url: admin_posts_path do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-
-    <%= f.label :body, "Post" %>
-    <%= f.text_area :body %>
-
-    <%= f.label :tag_list, "Tags (optional)" %>
-    <p class="help-text">Enter a comma separated list of tags.</p>
-    <%= f.text_field :tag_list %>
-
-    <%= f.label :url_alias, "Post URL" %>
-    <p class="help-text">Separate words with hyphens</p>
-    <%= f.text_field :url_alias %>
+    <%= render 'form_fields', f: f %>
 
     <%= f.hidden_field :status %>
 
-    <%= f.submit "Publish", class: "btn btn-green" %>
-    <%= f.submit "Save for later", class: "btn btn-blue", id: "save" %>
     <%= link_to "Cancel", admin_posts_path, class: "btn btn-red", id: "cancel" %>
+
+    <div class="btn-group right">
+      <%= f.submit "Save for later", class: "btn btn-blue", id: "save" %>
+      <%= f.submit "Publish", class: "btn btn-green" %>
+    </div>
   <% end %>
 
 </div>
 
-<%= render 'recommendations' %>
+<%#= render 'recommendations' %>

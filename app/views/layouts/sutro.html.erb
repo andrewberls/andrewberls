@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width">
   <title>Sutro | <%= yield(:title) %></title>
-  <%= stylesheet_link_tag "sutro" %>
+  <%= stylesheet_link_tag :sutro %>
   <link rel="icon" type="image/gif" href="/favicon.gif" />
   <%= csrf_meta_tag %>
 </head>
@@ -12,10 +12,10 @@
 
   <div id="container">
 
-    <% unless params[:controller] == "sessions" %>
-      <div id="page-left">
+    <% unless params[:controller] == 'sessions' %>
+      <div id="page-left" class="sidebar">
         <ul class="nav">
-          <%= render "shared/sidebar" %>
+          <%= render 'shared/sidebar' %>
         </ul>
 
         <aside>Powered by Sutro</aside>
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-  </div><!-- .container -->
+  </div><!-- #container -->
 
   <%= javascript_include_tag :sutro %>
 

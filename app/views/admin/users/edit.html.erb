@@ -1,7 +1,6 @@
 <% provide(:title, "Edit User: #{@user.full_name}") %>
 
 <div class="wrapper">
-  <h2>Edit User</h2>
 
   <%= render 'user_errors' %>
 
@@ -28,8 +27,11 @@
       ],@user.permissions)) # Determines which field to mark preselected
     %>
 
-    <%= f.submit "Update User", class: "btn btn-green" %>
-    <%= link_to "Cancel", manage_users_path, class: "btn btn-red", id: "cancel" %>
+    <%= link_to "Cancel", manage_users_path, class: "btn btn-red" %>
+
+    <div class="right">
+      <%= f.submit "Update User", class: "btn btn-green" %>
+    </div>
 
   <% end %>
 </div>

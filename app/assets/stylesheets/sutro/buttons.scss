@@ -4,14 +4,17 @@
   border: 1px solid $med_gray;
   float: left;
   font-size: 0.9em;
-  margin-top: 10px;
   padding: 7px 10px;
   text-decoration: none;
 
   &:hover {
-    background-color: darken($light_gray, 2);
+    background-color: darken($light_gray, 4);
     cursor: pointer;
     text-decoration: none;
+  }
+
+  &:active {
+    background-color: darken($light-gray, 6);
   }
 
   &.btn-green {
@@ -32,7 +35,7 @@
   }
 
   &.btn-red {
-    color: $cancel;
+    color: $red;
 
     &:hover {
       border: 1px solid #FF8181;
@@ -41,11 +44,14 @@
 
 }
 
+.btn-group {
+  @include clearfix;
 
-#save {
-  margin-left: 10px;
-}
+  .btn {
+    margin-right: 10px;
 
-#cancel {
-  float: right;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }

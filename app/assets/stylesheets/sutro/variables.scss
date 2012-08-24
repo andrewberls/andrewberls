@@ -2,6 +2,8 @@ $baseFontFamily: Arial, Verdana, Geneva, sans-serif;
 
 $radius: 3px;
 
+// TODO: Clean this up. Half of these aren't even being used.
+
 $dark_gray:  #222;
 $emphasis:   #393335;
 $gray_text:  #404040;
@@ -11,9 +13,6 @@ $light_gray: #f9f9f9;
 $blue:       #5EC4F0;
 $med_blue:   #08c;
 $light_blue: #65C3EC;
-$dark_blue:  #1f769c;
 
-$green:        #6F9606;
-$green_light:  #d3e5a3;
-$cancel:       #FF1919;
-$cancel_light: #FFEDED;
+$green: #6F9606;
+$red:   #FF1919;

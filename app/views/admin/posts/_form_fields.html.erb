@@ -1,0 +1,13 @@
+<%= f.label :title %>
+<%= f.text_field :title %>
+
+<%= f.label :body, "Post" %>
+<%= f.text_area :body, cols: nil, rows: nil %>
+
+<%= f.label :tag_list, "Tags (optional)" %>
+<p class="help-text">Enter a comma separated list of tags.</p>
+<%= f.text_field :tag_list %>
+
+<%= f.label :url_alias, "Post URL" %>
+<p class="help-text">Separate words with hyphens</p>
+<%= f.text_field :url_alias %>

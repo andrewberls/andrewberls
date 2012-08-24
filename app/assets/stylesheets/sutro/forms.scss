@@ -1,20 +1,7 @@
 .wrapper {
   @include border-radius;
-  background-color: $light_gray;
-  border: 1px solid #bbb;
-  color: #404040;
   float: left;
-  padding: 20px;
-  width: 768px;
-}
-
-.help-text {
-  color: #aaa;
-  float: left;
-  font-size: 0.8em;
-  font-style: italic;
-  margin-top: 2px;
-  margin-left: 5px;
+  max-width: 768px;
 }
 
 label {
@@ -23,10 +10,19 @@ label {
   margin-bottom: 10px;
 }
 
+.help-text {
+  color: #aaa;
+  float: left;
+  font-size: 0.8em;
+  font-style: italic;
+  margin: 2px 0 0 5px;
+}
+
+
 input:not([type="submit"]),
 textarea {
   @include border-box;
-  border: 1px solid #bbb;
+  border: 1px solid $med_gray;
   font-size: 1.1em;
   margin-bottom: 15px;
   padding: 7px 5px;
@@ -51,6 +47,7 @@ select {
   width: 100%;
 }
 
+
 .recommendations {
   clear: both;
   font-size: 0.9em;
@@ -65,7 +62,7 @@ select {
   ul {
     @include border-radius;
     @include box-shadow(0px,0px,2px,0px,#222);
-    background-color: #F9F9F9;
+    background-color: $light_gray;
     display: inline-block;
     list-style: disc;
     margin-top: 15px;

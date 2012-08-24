@@ -13,15 +13,21 @@ body {
   overflow: auto;
 }
 
+#page-left {
+  border-right: 1px dotted $med_gray;
+  height: 100%;
+  position: fixed;
+  left: 0; top: 0;
+  width: 12.5em;
+}
+
 #page-right {
   margin-left: 12.5em;
   overflow: hidden;
-  //padding: 30px 15px;
 }
 
-
 .content-header {
-  border-bottom: 1px dotted $med-gray;
+  border-bottom: 1px dotted $med_gray;
   padding: 25px;
 }
 
@@ -30,6 +36,9 @@ body {
 }
 
 
+
+.left { float: left }
+.right { float: right }
 
 //-- TYPOGRAPHY
 //------------------------------------

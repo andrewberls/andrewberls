@@ -1,7 +1,7 @@
 <table>
   <% if !@posts or @posts.blank? %>
-    <td>You haven't added any content yet! Click <%= link_to "here", new_admin_post_path %> to get started.</td>        
-  <% else %>  
+    <td>You haven't added any content yet! Click <%= link_to "here", new_admin_post_path %> to get started.</td>
+  <% else %>
     <tr>
       <th>Title</th>
       <th>Author</th>
@@ -11,7 +11,7 @@
       <th>Status</th>
       <th>Actions</th>
     </tr>
-    
+
     <% @posts.each do |post| %>
       <tr class=<%= cycle("odd", "even") %>>
         <td>
@@ -50,12 +50,12 @@
           <% unless current_user.is_author? %>
             <%= link_to "Edit", edit_admin_post_path(post.id) %>
             &nbsp;
-            <%= link_to "Delete", {:action => 'destroy', :id => post.id}, 
+            <%= link_to "Delete", {:action => 'destroy', :id => post.id},
               {:method => :delete, confirm: "Are you sure you want to delete this post?"} %>
           <% end %>
         </td>
       </tr>
     <% end %>
   <% end %>
-  
+
 </table>
