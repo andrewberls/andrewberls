@@ -1,37 +1,14 @@
-<% #----- Blog -----# %>
-<li><%= link_to "Blog", blog_path %></li>
+<li><%= link_to raw("Blog &raquo;"), blog_path %></li>
 
+<li><%= link_to "New Post", new_admin_post_path, class: (current_page? new_admin_post_path) ? 'current' : '' %></li>
 
-<% #-----  New Post -----# %>
-<% if current_page? new_admin_post_path %>
-  <li><%= link_to "New Post", new_admin_post_path, class: 'current' %></li>
-<% else %>
-  <li><%= link_to "New Post", new_admin_post_path %></li>
-<% end %>
+<li><%= link_to "Manage Posts", admin_posts_path, class: (current_page? admin_posts_path) ? 'current' : '' %></li>
 
-
-<% #----- Manage Posts -----# %>
-<% if current_page? admin_posts_path %>
-  <li><%= link_to "Manage Posts", admin_posts_path, class: 'current' %></li>
-<% else %>
-  <li><%= link_to "Manage Posts", admin_posts_path %></li>
-<% end %>
-
-
-<% #----- Manage Users (Admin only) -----# %>
 <% if current_user.is_admin? %>
-  <% if current_page? manage_users_path %>
-    <li><%= link_to "Manage Users", manage_users_path, class: 'current' %></li>
-  <% else %>
-    <li><%= link_to "Manage Users", manage_users_path %></li>
-  <% end %>
+  <li><%= link_to "Manage Users", manage_users_path, class: (current_page? manage_users_path) ? 'current' : '' %></li>
 <% end %>
-
 
 <div class="sidebar-content">
-  <% #----- Logged in as <username> -----# %>
-  <% if current_user %>
-    <p>Logged in as <%= link_to current_user.full_name, admin_user_path(current_user)  %></p>
-    <p><%= link_to "Log Out", logout_path %></p>
-  <% end %>
+  <p>Logged in as <%= link_to current_user.full_name, admin_user_path(current_user)  %></p>
+  <p><%= link_to "Log Out", logout_path %></p>
 </div>
