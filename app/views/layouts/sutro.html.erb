@@ -12,7 +12,12 @@
 
   <div id="container">
 
-    <% unless params[:controller] == 'sessions' %>
+    <% if params[:controller] == 'sessions' %>
+
+      <%= yield %>
+
+    <% else %>
+
       <div id="page-left" class="sidebar">
         <ul class="nav">
           <%= render 'shared/sidebar' %>
@@ -20,17 +25,18 @@
 
         <aside>Powered by Sutro</aside>
       </div>
+
+      <div id="page-right">
+        <div class="content-header">
+          <h2><%= yield(:title) %></h2>
+        </div>
+
+        <div class="content-container">
+          <%= yield %>
+        </div>
+      </div>
+
     <% end %>
-
-    <div id="page-right">
-      <div class="content-header">
-        <h2><%= yield(:title) %></h2>
-      </div>
-
-      <div class="content-container">
-        <%= yield %>
-      </div>
-    </div>
 
   </div><!-- #container -->
 
