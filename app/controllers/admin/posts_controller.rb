@@ -1,67 +1,61 @@
 class Admin::PostsController < ApplicationController
-  
+
   layout 'sutro'
-  
-  # Check authentication for on public-accessible actions
+
   before_filter :must_be_logged_in
-  
-  
-  #----- CREATE  
+
+
+  #----- CREATE
   def new
     @post = Post.new
   end
-  
-  def create           
-    @post = Post.new(params[:post])
-    @post.user_id = current_user.id
-    @post.status ||= 1
+
+  def create
+    @post = Post.new(params[:post]) do |p|
+      p.user   = current_user
+      p.status ||= 1
+    end
 
     if @post.save
-      flash[:success] = if @post.status == 1
-                          "Post published successfully."
-                        else
-                          "Post saved successfully."
-                        end
+      action = (@post.status == 1) ? 'published' : 'saved'
+      flash[:success] = "Post #{action} successfully"
       return redirect_to admin_posts_path
     else
       return render :new
     end
-
   end
-  
+
+
   #----- READ
-  # posts controller has public list and show methods
-  # admin/posts provides only backend management
-  
-  def index # Administrative list of posts    
+  # Administrative dashboard
+  def index
     @posts = Post.paginate(:page => params[:page], :per_page => 10)
                  .order("id DESC")
-  end  
-    
-  #----- UPDATE  
+  end
+
+
+  #----- UPDATE
   def edit
     @post = Post.find(params[:id])
   end
-  
+
   def update
-    # TODO: REFACTOR THIS METHOD. ALSO THE PARAMS LOOKS SKETCHY
     @post = Post.find(params[:id])
-    new_post = params[:post]
-    new_post[:status] = 1 if params[:post][:status] == 1
-    
-    if @post.update_attributes(new_post)
+
+    if @post.update_attributes(params[:post])
       flash[:success] = "Post updated successfully."
       return redirect_to @post
     else
       return render :edit
     end
   end
-  
-  #----- DELETE  
+
+
+  #----- DELETE
   def destroy
     Post.find(params[:id]).destroy
     flash[:success] = "Post deleted successfully"
     return redirect_to admin_posts_path
   end
-  
+
 end

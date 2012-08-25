@@ -3,11 +3,11 @@ class Admin::UsersController < ApplicationController
   layout 'sutro'
 
   before_filter :must_be_logged_in
+  before_filter :must_be_admin, only: [:new, :manage]
 
 
   #----- CREATE
   def new
-    check_admin_privileges(admin_posts_path)
     @user = User.new
   end
 
@@ -28,7 +28,6 @@ class Admin::UsersController < ApplicationController
 
   #----- READ
   def manage
-    check_admin_privileges(admin_posts_path)
     # Sort all users for Admin/Dev/Author list order
     @users = User.order("permissions ASC")
   end
@@ -65,6 +64,12 @@ class Admin::UsersController < ApplicationController
     User.find(params[:id]).destroy
     flash[:success] = "User deleted succesfully"
     redirect_to manage_users_path
+  end
+
+  private
+
+  def must_be_admin
+    reject_unauthorized(current_user.is_admin?, admin_posts_path)
   end
 
 end
