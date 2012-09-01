@@ -1,15 +1,15 @@
 class Post < ActiveRecord::Base
-  
+
   has_and_belongs_to_many :tags
   belongs_to :user
-  
+
   validates_presence_of :title
   validates_presence_of :body
-  
+
   def tag_list
-    self.tags.collect { |t| t.name }.join(", ")
+    self.tags.map(&:name).join(", ")
   end
-  
+
   def tag_list=(tag_list)
     self.tags.clear
     tags = tag_list.split(",").sort.collect { |s| s.strip.downcase }
@@ -29,26 +29,25 @@ class Post < ActiveRecord::Base
   BREAK_TAG = '<break />'
 
   def has_pagebreak?
-    self[:body].include? BREAK_TAG
+    body.include? BREAK_TAG
   end
 
   def render_teaser
     # Render body until a break tag or the end
+    teaser = body
 
-    body = self[:body]
-
-    if self.has_pagebreak?               
+    if has_pagebreak?
       # Slice up until the start of the break tag
-      endchar = body.index(BREAK_TAG) - 1         
-      body = body[0..endchar]    
+      endchar = teaser.index(BREAK_TAG) - 1
+      teaser  = teaser[0..endchar]
     end
-    
-    body.strip.html_safe
+
+    teaser.strip.html_safe
   end
 
   def render_full
     # Remove break tag and return full post
-    self[:body].gsub(BREAK_TAG, "").html_safe
+    body.gsub(BREAK_TAG, "").html_safe
   end
-  
+
 end
