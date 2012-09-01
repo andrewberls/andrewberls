@@ -1,8 +1,8 @@
 <% provide(:title, "Manage Users") %>
 
-<%= link_to "+ Add New User", new_admin_user_path, class: 'btn', style: 'margin: 0 0 20px;' unless current_user.is_author? %>
-
 <%= render 'shared/flashes' %>
+
+<%= link_to "+ Add New User", new_admin_user_path, class: 'btn', style: 'margin: 0 0 20px;' unless current_user.is_author? %>
 
 <table>
 
@@ -21,7 +21,7 @@
       <tr class="<%= cycle('odd', 'even') %>">
         <td><%= link_to user.full_name, admin_user_path(user) %></td>
         <td><%= user.email %></td>
-        <td><%= user.permissions %></td>
+        <td><%= user.permission_str %></td>
         <td>
           <%= link_to("Edit", edit_admin_user_path(user)) %>
           &nbsp;
