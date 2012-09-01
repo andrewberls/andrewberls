@@ -14,7 +14,7 @@
   }
 }
 
-@mixin border-radius($rad: $radius) {
+@mixin border-radius($rad: 3px) {
   -webkit-border-radius: $rad;
      -moz-border-radius: $rad;
           border-radius: $rad;
@@ -43,6 +43,7 @@
 
 //-- PRESENTATIONAL
 //------------------------------------
+// TODO: MAKE THESE INTO CONTENT PLACEHOLDERS
 
 .whitebox {
   @include border-box;
