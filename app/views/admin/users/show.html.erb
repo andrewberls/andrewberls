@@ -1,18 +1,13 @@
-<% provide(:title, "User: #{@user.full_name}") %>
-
-<h2>Posts by <%= @user.full_name %></h2>
+<% provide(:title, "Posts by: #{@user.full_name}") %>
 
 <% if flash[:type] == "action" %>
   <p class="action_success"><%= flash[:msg] %></p>
 <% end %>
 
-<%# 
+<%#
 I don't like how the current URL scheming works out here. Maybe this could show some user info up here in addition to the posts, or just change the URL to something like "/admin/posts/andrewberls" if it's just going to be a display of posts.
 %>
 
 <%= render 'admin/posts/posts_table' %>
 
-<%= 
-  # Display pagination links
-  will_paginate @posts 
-%>
+<%= will_paginate @posts %>
