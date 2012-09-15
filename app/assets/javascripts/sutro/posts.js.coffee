@@ -6,10 +6,14 @@ urlsafe = (url) ->
   url.split(' ').join('-').toLowerCase() # Remaining spaces to hyphens, lowercase everything
 
 $ ->
+  $('#save').click ->
+    # Fill hidden status field to mark post as draft
+    $('#post_status').val('0')
+
   $title = $("#post_title")
   $alias = $("#post_url_alias")
 
   $title.bind "propertychange keyup input paste", ->
     # Automatically suggest values for the alias based on the title
     url = $(@).val()
-    $alias.val urlsafe(url) # Fill the alias field with the cleaned url
+    $alias.val urlsafe(url)

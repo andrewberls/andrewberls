@@ -4,18 +4,17 @@ validate = (fields) ->
   return false
 
 $ ->
+  # Create and insert an alert error box if blank fields present
+  # Only if an alert doesn't already exist
 
-  # On submit, show an error box if blank fields present
-  
   $("#submit-login").click ->
-    form = $(this).parent()[0]
+    form   = $(@).parent()[0]
     fields = form.getElementsByTagName('input')
     errors = validate(fields)
-    
-    if errors && !$('#login').find('.svtro-flash').size() 
-      # Only if an alert doesn't already exist
-      alertBox = $.el.div({'class' : 'svtro-flash flash-red'}, 'Invalid email or password.')
+
+    if errors && !$('#login').find('.svtro-flash').size()
+      alertBox = $.el.div { 'class' : 'svtro-flash flash-red' }, 'Invalid email or password.'
       form.parentNode.insertBefore(alertBox, form)
       $('.svtro-flash').hide().slideDown(125)
-      
+
     return false if errors

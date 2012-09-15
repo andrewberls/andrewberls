@@ -3,7 +3,7 @@
 #------------------------------
 # Utility Methods
 #------------------------------
-insertAfter = (refNode, newNode) -> 
+insertAfter = (refNode, newNode) ->
   refNode.parentNode.insertBefore(newNode, refNode.nextSibling)
 
 validate = (fields) ->
@@ -26,7 +26,7 @@ $ ->
           suggestion = "Yikes! Did you mean <span class='suggestion'>" +
                         "<span class='address'>#{suggestion.address}</span>" +
                         "@<a href='#' class='domain'>#{suggestion.domain}</a></span>?";
-                            
+
           $hint.html(suggestion).fadeIn(150)
         else
           # Subsequent errors
@@ -39,22 +39,22 @@ $ ->
     $email.val($(".suggestion").text());
     $hint.fadeOut(200, -> $(this).empty())
     return false
-    
+
 
   # On submit, show an error box if blank fields present
 
   $('#submit-contact').click ->
-    $form = $(this).parent()
+    $form  = $(this).parent()
     fields = $form.find(':text, textarea')
     errors = validate(fields)
 
-    if errors && !$form.find('.flash').size() 
+    if errors && !$form.find('.flash').size()
       # Only if an alert doesn't already exist
-      alertBox = $.el.div({'class' : 'flash flash-error'}, 'Please check your fields and try again!')
-      $title = $form.find('h2')[0]
-      insertAfter($title, alertBox)      
+      alertBox = $.el.div { 'class' : 'flash flash-error' }, 'Please check your fields and try again!'
+      $title   = $form.find('h2')[0]
+      insertAfter($title, alertBox)
       $('.flash').hide().slideDown('fast')
-    
+
     return false if errors
 
-  
+

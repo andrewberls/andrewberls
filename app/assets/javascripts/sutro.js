@@ -9,6 +9,5 @@
 
 //-- PAGE SCRIPTS
 //------------------------------------
-//= require sutro/draft
 //= require sutro/login
-//= require sutro/alias
+//= require sutro/posts
