@@ -27,6 +27,26 @@
     }
   }
 
+  .github-link {
+    color: $gray-text;
+    display: block;
+    float: right;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-top: 25px;
+
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+
+    @media (max-width: 630px) {
+      float: none;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+
 } // #portfolio
 
 
