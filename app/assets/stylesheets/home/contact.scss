@@ -13,13 +13,13 @@
     padding: 20px 35px 25px;
     width: 425px;
 
-    p {
-      line-height: 1.3;
-    }
-
     h2 {
       font-size: 2em;
       font-weight: normal;
+    }
+
+    p {
+      line-height: 1.3;
     }
 
     label {
@@ -40,13 +40,13 @@
       font-family: inherit;
       font-size: 1em;
       margin-top: 15px;
-      padding: 5px;        
+      padding: 8px 5px;
       width: 100%;
-      
+
       &:focus {
         border: 1px solid $blue-light;
         outline: none;
-      } 
+      }
     }
 
   } // .contact-form
@@ -56,6 +56,7 @@
     float: right;
     font-size: 0.9em;
     margin-top: 15px;
+    padding: 7px 10px;
   }
 
 } // # contact
@@ -80,11 +81,16 @@
   .contact-form {
     padding: 30px 15px;
     width: auto;
-  }
 
-  input[type="submit"] {
-    padding: 10px 0;
-    width: 100%;
+    input:not([type=submit]),
+    textarea {
+      padding: 5px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 0;
+      width: 100%;
+    }
   }
 }
 
