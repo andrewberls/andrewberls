@@ -1,8 +1,3 @@
-# Validate contact form before submission
-
-#------------------------------
-# Utility Methods
-#------------------------------
 insertAfter = (refNode, newNode) ->
   refNode.parentNode.insertBefore(newNode, refNode.nextSibling)
 
@@ -12,37 +7,34 @@ validate = (fields) ->
   return false
 
 $ ->
-  # Mailcheck the email field
-
   $email = $('#message_email')
-  $hint = $("#hint")
+  $hint  = $("#hint")
 
   $email.on 'blur', ->
-    $hint.css('display', 'none').empty()
-    $(this).mailcheck {
-      suggested: (element, suggestion) ->
+    $(@).mailcheck {
+      suggested: (elem, suggestion) ->
+        address = suggestion.address
+        domain  = suggestion.domain
+
         if !$hint.html()
           # First error - fill in/show entire hint element
-          suggestion = "Yikes! Did you mean <span class='suggestion'>" +
-                        "<span class='address'>#{suggestion.address}</span>" +
-                        "@<a href='#' class='domain'>#{suggestion.domain}</a></span>?";
-
+          suggestion = """
+            Yikes! Did you mean <span class='suggestion'>#{address}@<a href='#' class='domain'>#{domain}</a></span>?
+          """
           $hint.html(suggestion).fadeIn(150)
         else
-          # Subsequent errors
-          $(".address").html(suggestion.address)
-          $(".domain").html(suggestion.domain)
+          # Subsequent errors - modify domain only
+          $(".domain").html(domain)
     }
 
-  $hint.on 'click', '.domain', ->
+  $(document.body).delegate '.domain', 'click', ->
     # On click, fill in the field with the suggestion and remove the hint
-    $email.val($(".suggestion").text());
-    $hint.fadeOut(200, -> $(this).empty())
+    $email.val $(".suggestion").text()
+    $hint.fadeOut 200, -> $(@).empty()
     return false
 
 
   # On submit, show an error box if blank fields present
-
   $('#submit-contact').click ->
     $form  = $(this).parent()
     fields = $form.find(':text, textarea')
@@ -56,5 +48,6 @@ $ ->
       $('.flash').hide().slideDown('fast')
 
     return false if errors
+
 
 

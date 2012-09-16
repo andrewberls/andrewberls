@@ -3,9 +3,8 @@ class PostsController < ApplicationController
   # Public-facing actions only.
   # Administrative actions are handled by admin/posts_controller
 
-  #----- READ
   def list
-    if !params[:tag].nil?
+    if params[:tag].present?
       @tag = Tag.find_by_name(params[:tag])
       if @tag.nil?
         return redirect_to blog_path
@@ -41,17 +40,12 @@ class PostsController < ApplicationController
   end
 
   def feed
-    # this will be the name of the feed displayed on the feed reader
     @title = "Andrew Berls"
-
-    # the news items
     @posts = Post.where(:status => 1).order("created_at DESC")
 
     respond_to do |format|
       format.atom { render :layout => false }
-
-      # we want the RSS feed to redirect permanently to the ATOM feed
-      format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+      format.rss  { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
     end
   end
 

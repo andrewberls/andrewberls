@@ -52,7 +52,7 @@ class Admin::UsersController < ApplicationController
 
     if @user.update_attributes(params[:user])
       flash[:success] = "User updated successfully"
-      redirect_to manage_users_path
+      return redirect_to manage_users_path
     else
       render :edit
     end
@@ -63,7 +63,7 @@ class Admin::UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted succesfully"
-    redirect_to manage_users_path
+    return redirect_to manage_users_path
   end
 
   private
