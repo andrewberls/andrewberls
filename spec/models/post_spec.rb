@@ -35,11 +35,11 @@ describe Post do
     end
 
     it "should render the teaser correctly" do
-      @post.render_teaser.should == "<p>This is before the break.</p>"
+      @post.teaser.should == "<p>This is before the break.</p>"
     end
 
     it "should render the full post without a break tag" do
-      @post.render_full.should_not include BREAK_TAG
+      @post.full_text.should_not include BREAK_TAG
     end
   end
 

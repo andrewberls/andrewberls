@@ -13,11 +13,11 @@
 
       <div class="post">
         <h2><%= raw @post.title %></h2>
-        <p class="date"><%= render_sutro_time(@post.created_at) %></p>   
-        <p><%= @post.render_full %></p>
-            
-        <% unless @post.tags.blank? %>           
-          <%= render_tags(@post.tags, false) %>          
+        <p class="date"><%= render_sutro_time(@post.created_at) %></p>
+        <p><%= markdown @post.full_text  %></p>
+
+        <% unless @post.tags.blank? %>
+          <%= render_tags(@post.tags, false) %>
         <% end %>
 
         <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>

@@ -1,22 +1,13 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
-
-#gem 'pg'
-
-#gem 'sqlite3'
-
 gem 'heroku'
-
 gem 'thin'
-
 gem 'therubyracer', :platforms => :ruby
-
 gem 'jquery-rails'
-
 gem 'bcrypt-ruby', :require => 'bcrypt'
-
 gem 'will_paginate'
+gem 'redcarpet'
 
 
 group :development, :test do
@@ -26,7 +17,6 @@ group :development, :test do
 end
 
 group :test do
-  # Pretty printed test output
   gem 'turn', :require => false
   gem 'faker'
   gem 'capybara'
@@ -34,8 +24,6 @@ group :test do
   gem 'launchy'
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
   gem 'coffee-rails', '~> 3.1.1'

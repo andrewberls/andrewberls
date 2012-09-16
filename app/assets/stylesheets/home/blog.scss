@@ -111,6 +111,13 @@
       display: inline-block;
       margin-bottom: 8px;
     }
+
+    code {
+      // Undo extra code stylings in markdown-fenced blocks
+      background: none;
+      border: none;
+      padding: 0;
+    }
   }
 
   img {

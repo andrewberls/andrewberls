@@ -2,6 +2,7 @@
 <%= f.text_field :title %>
 
 <%= f.label :body, "Post" %>
+<p class="help-text"><a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> supported</p>
 <%= f.text_area :body, cols: nil, rows: nil %>
 
 <%= f.label :tag_list, "Tags (optional)" %>
@@ -9,5 +10,4 @@
 <%= f.text_field :tag_list %>
 
 <%= f.label :url_alias, "Post URL" %>
-<p class="help-text">Separate words with hyphens</p>
 <%= f.text_field :url_alias %>

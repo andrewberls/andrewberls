@@ -9,11 +9,17 @@ class Post < ActiveRecord::Base
     self.tags.map(&:name).join(", ")
   end
 
+  def extract_tags(tag_str)
+    # Collect a tag list from a string delimited by spaces or commas
+    spaces_or_commas = /,|\ /
+    tag_str.split(spaces_or_commas).reject { |t| t.blank? }.sort.collect { |t| t.strip.downcase }
+  end
+
   def tag_list=(tag_list)
     self.tags.clear
-    tags = tag_list.split(",").sort.collect { |s| s.strip.downcase }
+    tag_list = extract_tags(tag_list)
 
-    tags.each do |tag|
+    tag_list.each do |tag|
       self.tags << Tag.find_or_create_by_name(tag)
     end
 
@@ -31,22 +37,22 @@ class Post < ActiveRecord::Base
     body.include? BREAK_TAG
   end
 
-  def render_teaser
+  def teaser
     # Render body until a break tag or the end
-    teaser = body
+    text = body
 
     if has_pagebreak?
       # Slice up until the start of the break tag
-      endchar = teaser.index(BREAK_TAG) - 1
-      teaser  = teaser[0..endchar]
+      endchar = text.index(BREAK_TAG) - 1
+      text    = text[0..endchar]
     end
 
-    teaser.strip.html_safe
+    text.strip.html_safe
   end
 
-  def render_full
+  def full_text
     # Remove break tag and return full post
-    body.gsub(BREAK_TAG, "").html_safe
+    body.gsub(BREAK_TAG, '').html_safe
   end
 
 end
