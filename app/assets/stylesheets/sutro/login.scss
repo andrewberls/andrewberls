@@ -15,7 +15,7 @@
   }
 }
 
-@mixin border-radius($rad: 5px) {
+@mixin border-radius($rad: 3px) {
   -webkit-border-radius: $rad;
      -moz-border-radius: $rad;
           border-radius: $rad;
@@ -63,7 +63,7 @@ body {
     background-color: white;
     border: 6px solid black;
     padding: 17px;
-    
+
   }
 
   h1 {
@@ -103,7 +103,7 @@ body {
   }
 
   .blackbutton {
-    @include border-radius(5px);
+    @include border-radius;
     background-color: black;
     border: none;
     color: white;
