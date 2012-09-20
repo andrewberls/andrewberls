@@ -3,8 +3,7 @@ class Post < ActiveRecord::Base
   has_and_belongs_to_many :tags
   belongs_to :user
 
-  validates_presence_of :title
-  validates_presence_of :body
+  validates_presence_of :title, :body, :url_alias
 
   def tag_list
     self.tags.map(&:name).join(", ")
