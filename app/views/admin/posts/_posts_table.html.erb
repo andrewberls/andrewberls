@@ -15,7 +15,7 @@
     <% @posts.each do |post| %>
       <tr class=<%= cycle("odd", "even") %>>
         <td>
-          <% if !post.url_alias.blank? %>
+          <% if post.url_alias.present? %>
             <%= link_to post.title, post_path(post.url_alias), class: "plain" %>
           <% else %>
             <%= link_to post.title, post_path(post), class: "plain" %>
@@ -31,7 +31,7 @@
         </td>
 
         <td class="column-small">
-          <% if !post.url_alias.blank? %>
+          <% if post.url_alias.present? %>
             <%= link_to post.url_alias, post_path(post.url_alias) %>
           <% else %>
             -
