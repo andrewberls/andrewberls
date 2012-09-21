@@ -16,7 +16,9 @@ section {
   margin: 0 auto;
 }
 
-.row .row { margin-top: 5px; }
+.row .row {
+  margin-top: 5px;
+}
 
 
 //-- TYPOGRAPHY
@@ -71,7 +73,7 @@ strong { font-weight: bold; }
 //-- PAGE NOT FOUND
 //------------------------------------
 .error-box {
-  @extend .whitebox;
+  @extend %whitebox;
   margin-top: 50px;
   margin-bottom: 50px;
 

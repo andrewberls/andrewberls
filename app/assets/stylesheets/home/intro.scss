@@ -23,7 +23,7 @@
     margin-top: 10px;
 
     .item {
-      @extend .whitebox;
+      @extend %whitebox;
       min-height: 170px;
 
       p {

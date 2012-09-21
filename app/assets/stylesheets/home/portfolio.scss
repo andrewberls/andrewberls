@@ -5,7 +5,7 @@
   padding-bottom: 60px;
 
   .portfolio-item {
-    @extend .whitebox;
+    @extend %whitebox;
   }
 
   h2 > a:hover {

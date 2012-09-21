@@ -35,7 +35,7 @@
 }
 
 .post {
-  @extend .whitebox;
+  @extend %whitebox;
   @include border-radius;
   font-size: 1.1em;
   line-height: 1.6;

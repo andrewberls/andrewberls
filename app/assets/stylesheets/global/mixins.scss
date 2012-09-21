@@ -43,9 +43,7 @@
 
 //-- PRESENTATIONAL
 //------------------------------------
-// TODO: MAKE THESE INTO CONTENT PLACEHOLDERS
-
-.whitebox {
+%whitebox {
   @include border-box;
   @include clearfix;
   background-color: white;
