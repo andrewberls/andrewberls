@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
   def extract_tags(tag_str)
     # Collect a tag list from a string delimited by spaces or commas
     spaces_or_commas = /,|\ /
-    tag_str.split(spaces_or_commas).reject { |t| t.blank? }.sort.collect { |t| t.strip.downcase }
+    tag_str.split(spaces_or_commas).reject(&:blank?).sort.map { |t| t.strip.downcase }
   end
 
   def tag_list=(tag_list)
