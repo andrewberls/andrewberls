@@ -19,7 +19,7 @@
     }
 
     &:hover {
-      background-color: $blue;
+      background-color: #08c;
       color: white;
       text-decoration: none;
     }
@@ -130,13 +130,12 @@
 
   .tag {
     @include border_radius;
-    background-color: #D3D3D3;
-    color: #666;
+    background-color: #E0E0E0;
+    color: #6B6B6B;
     display: inline-block;
     font-weight: bold;
-    margin-bottom: 10px;
-    margin-right: 10px;
-    padding: 2px 8px;
+    margin: 0 10px 10px 0;
+    padding: 1px 8px;
   }
 
   .twitter-share-button {
