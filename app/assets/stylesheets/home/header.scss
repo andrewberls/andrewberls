@@ -80,3 +80,15 @@ header {
 }
 
 }
+
+@media (max-width: 480px) {
+
+header nav li {
+  border: none !important;
+  display: block;
+  padding: 0;
+
+  a { margin: 0; }
+}
+
+}
