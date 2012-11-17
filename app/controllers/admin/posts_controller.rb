@@ -4,8 +4,6 @@ class Admin::PostsController < ApplicationController
 
   before_filter :must_be_logged_in
 
-
-  #----- CREATE
   def new
     @post = Post.new
   end
@@ -25,16 +23,11 @@ class Admin::PostsController < ApplicationController
     end
   end
 
-
-  #----- READ
-  # Administrative dashboard
   def index
     @posts = Post.paginate(:page => params[:page], :per_page => 10)
                  .order("id DESC")
   end
 
-
-  #----- UPDATE
   def edit
     @post = Post.find(params[:id])
   end
@@ -50,8 +43,6 @@ class Admin::PostsController < ApplicationController
     end
   end
 
-
-  #----- DELETE
   def destroy
     Post.find(params[:id]).destroy
     flash[:success] = "Post deleted successfully"

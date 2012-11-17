@@ -6,7 +6,6 @@ class Admin::UsersController < ApplicationController
   before_filter :must_be_admin, only: [:new, :manage]
 
 
-  #----- CREATE
   def new
     @user = User.new
   end
@@ -26,7 +25,6 @@ class Admin::UsersController < ApplicationController
   end
 
 
-  #----- READ
   def manage
     # Sort all users for Admin/Dev/Author list order
     @users = User.order("permissions ASC")
@@ -39,7 +37,6 @@ class Admin::UsersController < ApplicationController
   end
 
 
-  #----- UPDATE
   def edit
     @user = User.find(params[:id])
   end
@@ -59,7 +56,6 @@ class Admin::UsersController < ApplicationController
   end
 
 
-  #----- DELETE
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User deleted succesfully"
