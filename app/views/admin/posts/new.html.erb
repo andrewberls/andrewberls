@@ -1,7 +1,6 @@
 <% provide(:title, "New Post") %>
 
 <div class="wrapper">
-
   <%= render "post_errors" %>
 
   <%= form_for @post, url: admin_posts_path do |f| %>
@@ -18,5 +17,3 @@
   <% end %>
 
 </div>
-
-<%#= render 'recommendations' %>

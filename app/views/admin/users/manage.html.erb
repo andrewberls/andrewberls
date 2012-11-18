@@ -6,7 +6,7 @@
 
 <table>
 
-  <% if !@users || @users.length == 0 %>
+  <% if @users.blank? %>
     <td>That's weird, there doesn't appear to be any existing users. This is an error that should probably be fixed by an installation script. Anyways, click <%= link_to "here", new_admin_user_path %> to add a new user!</td>
   <% else %>
 

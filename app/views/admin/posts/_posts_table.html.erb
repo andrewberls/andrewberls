@@ -1,5 +1,5 @@
 <table>
-  <% if !@posts or @posts.blank? %>
+  <% if @posts.blank? %>
     <td>You haven't added any content yet! Click <%= link_to "here", new_admin_post_path %> to get started.</td>
   <% else %>
     <tr>
@@ -14,21 +14,13 @@
 
     <% @posts.each do |post| %>
       <tr class=<%= cycle("odd", "even") %>>
-        <td>
-          <% if post.url_alias.present? %>
-            <%= link_to post.title, post_path(post.url_alias), class: "plain" %>
-          <% else %>
-            <%= link_to post.title, post_path(post), class: "plain" %>
-          <% end %>
-        </td>
 
-        <td>
-          <%= link_to post.user.full_name, admin_user_path(post.user) %>
-        </td>
+        <% path = post.url_alias.present? ? post_path(post.url_alias) : post_path(post) %>
+        <%= content_tag :td, (link_to post.title, path, class: "plain") %>
 
-        <td>
-          <%= render_sutro_time(post.created_at) %>
-        </td>
+        <%= content_tag :td, link_to(post.user.full_name, admin_user_path(post.user)) %>
+
+        <%= content_tag :td, render_sutro_time(post.created_at) %>
 
         <td class="column-small">
           <% if post.url_alias.present? %>
@@ -38,20 +30,16 @@
           <% end %>
         </td>
 
-        <td class="column-small">
-          <%= render_tags(post.tags) %>
-        </td>
+        <%= content_tag :td, render_tags(post.tags), class: 'column-small' %>
 
-        <td>
-          <%= render_status_pill(post.status) %>
-        </td>
+        <%= content_tag :td, render_status_pill(post.status) %>
 
         <td>
           <% unless current_user.is_author? %>
             <%= link_to "Edit", edit_admin_post_path(post.id) %>
             &nbsp;
-            <%= link_to "Delete", {:action => 'destroy', :id => post.id},
-              {:method => :delete, confirm: "Are you sure you want to delete this post?"} %>
+            <%= link_to "Delete", { :action => 'destroy', :id => post.id },
+              :method => :delete, confirm: "Are you sure you want to delete this post?" %>
           <% end %>
         </td>
       </tr>

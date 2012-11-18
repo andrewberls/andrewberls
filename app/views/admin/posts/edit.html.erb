@@ -4,25 +4,19 @@
   <%= render "post_errors" %>
 
   <%= form_for @post, url: admin_post_path , :method => :put do |f| %>
-
     <%= render 'form_fields', f: f %>
 
     <%= f.hidden_field :status, :value => 1 %>
 
     <%= link_to "Cancel", admin_posts_path, class: "btn btn-red", id: "cancel" %>
 
-
     <div class="btn-group right">
       <%= f.submit "Save for later", class: "btn btn-blue", id: "save" %>
 
-      <% if @post.status == 0 %>
-        <%= f.submit "Publish", class: "btn btn-green" %>
-      <% else %>
-        <%= f.submit "Update", class: "btn btn-green" %>
-      <% end %>
+      <% action = (@post.status == 0) ? "Publish" : "Update" %>
+      <%= f.submit action, class: "btn btn-green" %>
     </div>
-
   <% end %>
-</div>
 
-<%#= render 'recommendations' %>
+
+</div>
