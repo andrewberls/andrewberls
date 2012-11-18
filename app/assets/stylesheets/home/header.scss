@@ -52,7 +52,7 @@ header {
 }
 
 
-@media (max-width: 630px) {
+@include mobile {
 
 header {
   h1, nav {

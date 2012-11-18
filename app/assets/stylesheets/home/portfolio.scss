@@ -40,7 +40,7 @@
       text-decoration: none;
     }
 
-    @media (max-width: 630px) {
+    @include mobile {
       float: none;
       margin-top: 10px;
       text-align: center;
@@ -50,7 +50,7 @@
 } // #portfolio
 
 
-@media (max-width: 630px) {
+@include mobile {
 
 #portfolio {
   padding-top: 10px;

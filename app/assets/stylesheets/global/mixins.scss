@@ -64,3 +64,14 @@
     text-decoration: none;
   }
 }
+
+@mixin mobile {
+  @media (max-width: 630px) {
+    @content;
+  }
+}
+
+@mixin bold($font_size: 1em) {
+  font-size: $font_size;
+  font-weight: bold;
+}

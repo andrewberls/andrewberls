@@ -185,7 +185,7 @@
   }
 }
 
-@media (max-width: 630px) {
+@include mobile {
   .sidebar {
     @include border-box;
     padding: 5px;
