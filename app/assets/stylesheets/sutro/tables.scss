@@ -1,23 +1,37 @@
+
 table {
+  $border_gray: lighten($med_gray, 8);
+  $table_text: lighten($gray_text, 15);
+
+  color: $table_text;
   border: 1px solid $med_gray;
   text-align: left;
   width: 100%;
 
   th {
+    color: lighten($gray_text, 15);
     border: 1px solid $med_gray;
     font-weight: bold;
-    padding: 7px 10% 7px 12px;
+    padding: 10px 10% 10px 12px;
   }
 
-  tr.odd {
-    background-color: darken($light_gray, 1);
+  tr {
+    border-bottom: 1px solid $border_gray;
+    &:last-child { border-bottom: none; }
   }
+
+  tr.odd { background-color: $light_gray; }
 
   td {
+    border-right: 1px solid $border_gray;
     padding: 15px;
 
     &.column-small {
       font-size: 0.9em;
     }
+
+    &:last-child { border-right: none; }
   }
+
+  .plain  { color: $table_text; }
 }

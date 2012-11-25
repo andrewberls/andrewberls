@@ -11,8 +11,8 @@
 
 	<%= form_tag sessions_path do %>
   	<h1>Welcome to Svtro<span class="blue">.</span></h1>
-	
-  	<%= text_field_tag :email, params[:email], placeholder: "Name" %>
+
+  	<%= email_field_tag :email, '', placeholder: 'Email', autofocus: true %>
 
   	<%= password_field_tag :password, params[:password], placeholder: "Password" %>
 
