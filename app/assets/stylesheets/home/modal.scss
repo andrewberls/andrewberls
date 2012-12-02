@@ -17,6 +17,19 @@
     width: 100%;
   }
 
+  .simplemodal-close {
+    @include bold(1.2em);
+    color: darken($gray-border, 5);
+    float: right;
+    margin-top: -5px;
+
+    &:hover {
+      color: lighten($gray-text, 10);
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
   img {
     float: left;
     margin-right: 15px;

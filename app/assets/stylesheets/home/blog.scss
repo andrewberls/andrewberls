@@ -14,12 +14,10 @@
     float: left;
     padding: 5px 10px;
 
-    &:last-child {
-      border-right: none;
-    }
+    &:last-child { border-right: none; }
 
     &:hover {
-      background-color: #08c;
+      background-color: $blue;
       color: white;
       text-decoration: none;
     }
@@ -35,27 +33,38 @@
 }
 
 .post {
+  $light-border: lighten($gray-border, 2);
+
   @extend %whitebox;
-  @include border-radius;
+  border-color: $light-border;
   font-size: 1.1em;
   line-height: 1.6;
   margin-bottom: 25px;
-  padding: 10px 15px;
+  padding: 0;
   word-wrap: break-word;
 
-  h2 {
-    // Post titles
-    font-size: 1.5em;
-    margin-bottom: 0;
+  .post-title {
+    border-bottom: 1px solid $light-border;
+    padding: 10px 15px 0px;
 
-    a {
-      color: inherit;
+    h2 {
+      font-size: 1.8em;
+      margin-bottom: 0;
 
-      &:hover {
-        color: $blue;
-        text-decoration: none;
+      a {
+        color: inherit;
+
+        &:hover {
+          color: $blue;
+          text-decoration: none;
+        }
       }
     }
+  }
+
+  .post-content {
+    @include clearfix;
+    padding: 0px 15px 10px;
   }
 
   .date {
@@ -71,13 +80,9 @@
     margin-bottom: 5px;
   }
 
-  p {
-    margin-bottom: 15px;
-  }
+  p { margin-bottom: 15px; }
 
-  em {
-    font-style: italic;
-  }
+  em { font-style: italic; }
 
   code,
   pre {
@@ -95,7 +100,6 @@
 
   pre {
     // Code blocks
-    @include border_radius;
     background-color: darken($gray-light, 4);
     border: 1px solid #ddd;
     line-height: 1.4;
@@ -136,7 +140,6 @@
   }
 
   .tag {
-    @include border_radius;
     background-color: #E0E0E0;
     color: #6B6B6B;
     display: inline-block;
@@ -153,16 +156,13 @@
 } // .post
 
 .read-more {
-  @extend .bluebutton;
   float: right;
   margin-bottom: 5px;
 }
 
-#back {
-  // "Back to Blog"
-  @extend .bluebutton;
+.back {
   font-size: 1.1em;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   padding: 8px;
 }
 
@@ -170,38 +170,37 @@
 //-- SIDEBAR
 //------------------------------------
 .sidebar {
-  position: fixed;
-  margin-left: 840px;
-
   h2 {
-    border-bottom: 1px dashed darken($gray-border, 10);
-    margin-bottom: 10px;
-    padding-bottom: 5px;
+    border-bottom: 1px solid darken($gray-border, 0);
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+
+    &:first-child { margin-top: 0; }
   }
 
   p {
     line-height: 1.6;
     margin-bottom: 15px;
+    font-size: 1.1em;
   }
-}
 
-@include mobile {
-  .sidebar {
-    @include border-box;
-    padding: 5px;
-    position: static !important;
-    margin-left: 0 !important;
+  .social { @include clearfix; }
+
+  .icon {
+    background-image: url('/assets/social.png');
+    float: left;
+    margin-right: 45px;
+    height: 64px;
+    width: 64px;
+
+    @media (max-width: 790px) { margin-right: 10px; }
   }
-}
 
+  .twitter-icon  { background-position: 0px 64px; }
+  .github-icon   { background-position: 0px 192px; }
+  .rss-icon      { background-position: 0px 0px; }
 
-@media (min-width: 630px) and (max-width: 790px) {
-  .sidebar { margin-left: 480px !important; }
-}
-
-
-@media (min-width: 790px) and (max-width: 1100px) {
-  .sidebar { margin-left: 600px !important; }
+  @include mobile { padding: 0 10px 20px; }
 }
 
 
@@ -245,18 +244,18 @@
 
 //-- DISQUS COMMENTS
 //------------------------------------
+.comments-container {
+  border-top: 1px solid $gray-border;
+  background-color: white;
+  padding-top: 10px;
+}
+
 #disqus_thread {
   margin: 10px auto 20px;
 
-  h3 {
-    font-size: 1.3em;
-  }
+  h3 { font-size: 1.3em; }
 
-  a {
-    font-size: 0.9em;
-  }
+  a { font-size: 0.9em; }
 
-  .dsq-trackback-url {
-    display: none;
-  }
+  .dsq-trackback-url { display: none; }
 }

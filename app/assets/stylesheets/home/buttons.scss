@@ -1,0 +1,25 @@
+.btn {
+  @include border-radius;
+  color: white;
+  display: inline-block;
+  padding: 5px 10px;
+
+  &:hover { text-decoration: none; }
+
+  &.btn-huge {
+    font-size: 1.2em;
+    padding: 20px 30px;
+  }
+
+  &.btn-blue {
+    background-color: #119EE7;
+    border: 1px solid #0099E6;
+
+    &:hover {
+      background-color: #08c;
+    }
+  }
+}
+
+
+

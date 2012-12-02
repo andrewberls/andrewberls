@@ -12,25 +12,22 @@
       <% end %>
 
       <div class="post">
-        <h2><%= raw @post.title %></h2>
-        <p class="date"><%= render_sutro_time(@post.created_at) %></p>
-        <p><%= markdown @post.full_text  %></p>
+        <div class="post-title">
+          <h2><%= raw @post.title %></h2>
+          <p class="date"><%= render_sutro_time(@post.created_at) %></p>
+        </div>
 
-        <% unless @post.tags.blank? %>
-          <%= render_tags(@post.tags, false) %>
-        <% end %>
+        <div class="post-content">
+          <p><%= markdown @post.full_text  %></p>
 
-        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          <%= render_tags(@post.tags, false) unless @post.tags.blank? %>
+
+          <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
       </div><!-- .post -->
 
-      <%= link_to raw("&laquo; Back to Blog"), blog_path, id: "back" %>
-
-      <div class="row">
-        <div class="span-11">
-          <%= render 'disqus' %>
-        </div>
-      </div>
+      <%= link_to raw("&laquo; Back to Blog"), blog_path, class: "btn btn-blue back" %>
 
     </div>
 
@@ -38,3 +35,15 @@
 
   </div>
 </div><!-- .blog-container -->
+
+<div class="comments-container">
+  <div class="container">
+
+    <div class="row">
+      <div class="span-11">
+        <%= render 'disqus' %>
+      </div>
+    </div>
+
+  </div>
+</div>

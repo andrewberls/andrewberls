@@ -1,7 +1,7 @@
 #contact {
   background-color: $blue;
   border-top: 1px solid lighten($gray-border, 13);
-  border-bottom: 1px solid $gray-border;
+  // border-bottom: 1px solid $gray-border;
   font-size: 1.2em;
 
   .contact-form {
@@ -48,7 +48,6 @@
   } // .contact-form
 
   .submit {
-    @extend .bluebutton;
     float: right;
     font-size: 0.9em;
     margin-top: 15px;

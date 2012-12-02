@@ -1,94 +1,38 @@
 header {
-  background-color: $blue;
-  border-bottom: 1px solid $gray-border;
-  padding: 15px 0;
+  @include clearfix;
+  background-color: #222;
+
+  a {
+    color: white;
+    &:hover { text-decoration: none; }
+  }
 
   h1 {
-    color: white;
     font-family: 'Cabin', Arial, sans-serif;
-    font-size: 3.3em;
+    font-size: 3.5em;
     font-weight: normal;
+  }
 
-    a {
-      color: white;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
+  .header-title {
+    padding: 15px 0 5px;
   }
 
   nav {
-    margin-top: 20px;
-
-    li {
-      border-right: 1px dashed $gray-border;
-      float: right;
-      font-size: 1.1em;
-      padding: 2px 10px;
-
-      &:first-child {
-        border: none;
-      }
-
-      a {
-        @include ease-out(0.12s);
-        color: white;
-        font-size: 1.1em;
-        display: block;
-        text-decoration: none;
-        padding: 3px 5px;
-
-        &:hover {
-          @include border-radius;
-          background-color: $blue-light;
-          text-decoration: none;
-        }
-      }
-    }
-
-  } // nav
-
-}
+    @include clearfix;
+    border-bottom: 5px solid #08c;
+    background-color: #010101;
+    padding: 5px 0;
 
 
-@include mobile {
-
-header {
-  h1, nav {
-    text-align: center;
-  }
-
-  nav li {
-    float: none;
-    display: inline-block;
-    margin-left: -5px; // Hack for whitespace-sensitive inline-block behavior
-
-    &:first-child {
-      border-right: 1px dashed $gray-border;
-    }
-
-    &:last-child {
-      border: none;
-    }
+    li { float: left; }
 
     a {
-      margin: 0 10px;
-      padding: 5px 10px;
+      @include bold(1em);
+      display: inline-block;
+      padding: 10px;
+      text-transform: uppercase;
+
+      &:hover { color: #08c; }
     }
   }
-}
-
-}
-
-@media (max-width: 480px) {
-
-header nav li {
-  border: none !important;
-  display: block;
-  padding: 0;
-
-  a { margin: 0; }
-}
-
 }

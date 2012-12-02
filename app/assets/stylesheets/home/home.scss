@@ -51,13 +51,12 @@ strong { font-weight: bold; }
 
 //-- LIB CLASSES
 //------------------------------------
-.btn {
-  @extend .bluebutton;
-}
-
-.btn-huge {
-  font-size: 1.2em;
-  padding: 20px 30px;
+%whitebox {
+  @include border-box;
+  @include clearfix;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
 }
 
 .separator {
@@ -68,6 +67,9 @@ strong { font-weight: bold; }
 
   @media (max-width: 630px) { margin: 20px auto; }
 }
+
+.left  { float: left; }
+.right { float: right; }
 
 
 //-- PAGE NOT FOUND

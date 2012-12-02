@@ -4,13 +4,9 @@
   padding-top: 30px;
   padding-bottom: 60px;
 
-  .portfolio-item {
-    @extend %whitebox;
-  }
+  .portfolio-item { @extend %whitebox; }
 
-  h2 > a:hover {
-    text-decoration: none;
-  }
+  h2 > a:hover { text-decoration: none; }
 
   img {
     display: block;
@@ -22,17 +18,14 @@
     border-color: lighten($gray-border, 7);
     margin: 7px auto;
 
-    & + a {
-      float: right;
-    }
+    & + a { float: right; }
   }
 
   .github-link {
+    @include bold(1.3em);
     color: $gray-text;
     display: block;
     float: right;
-    font-size: 1.3em;
-    font-weight: bold;
     margin-top: 25px;
 
     &:hover {
@@ -46,22 +39,19 @@
       text-align: center;
     }
   }
-
-} // #portfolio
+}
 
 
 @include mobile {
+  #portfolio {
+    padding-top: 10px;
 
-#portfolio {
-  padding-top: 10px;
+    h1 { text-align: center; }
 
-  h1 { text-align: center; }
+    .portfolio-item { margin-bottom: 15px; }
 
-  .portfolio-item { margin-bottom: 15px; }
+    h2 { text-align: center; }
 
-  h2 { text-align: center; }
-
-  img { margin: 5px auto 10px; }
-}
-
+    img { margin: 5px auto 10px; }
+  }
 }

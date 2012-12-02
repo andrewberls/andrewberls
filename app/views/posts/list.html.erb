@@ -2,39 +2,31 @@
 
 <div class="container blog-container">
   <div class="row">
-    <% unless @tag.nil? %>
-      <h1>Tagged: <%= @tag.name %></h1>
-    <% end %>
+    <%= content_tag :h1, "Tagged: #{@tag.name}" unless @tag.blank? %>
 
     <div class="span-11">
       <%= render 'shared/flashes' %>
 
       <% @posts.each do |post| %>
-
-          <div class="post">
-            <% if post.url_alias.blank? %>
-              <h2><%= link_to raw(post.title), post_path(post) %></h2>
-            <% else %>
-              <h2><%= link_to raw(post.title), post_path(post.url_alias) %></h2>
-            <%  end %>
-
+        <div class="post">
+          <div class="post-title">
+            <h2><%= link_to raw(post.title), post_path(post.url_alias) %></h2>
             <p class="date"><%= render_sutro_time(post.created_at) %></p>
-
-            <p><%= markdown post.teaser %></p>
-
-            <% unless post.has_pagebreak? || post.tags.blank? %>
-              <%= render_tags(post.tags, false) %>
-            <% end %>
-
-            <% if post.has_pagebreak? %>
-              <%= link_to raw("Full Post &raquo;"), post_path(post.url_alias), {:class => "read-more"} %>
-            <% end %>
           </div>
 
+          <div class="post-content">
+            <p><%= markdown post.teaser %></p>
+
+            <%= render_tags(post.tags, false) unless post.has_pagebreak? || post.tags.blank? %>
+
+            <% if post.has_pagebreak? %>
+              <%= link_to raw("Full Post &raquo;"), post_path(post.url_alias), class: 'btn btn-blue read-more' %>
+            <% end %>
+          </div>
+        </div>
       <% end %>
 
       <%= will_paginate @posts %>
-
     </div>
 
     <%= render 'sidebar' %>

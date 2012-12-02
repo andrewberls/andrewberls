@@ -12,7 +12,7 @@
 
 //-- SITE SCRIPTS
 //------------------------------------
-//= require home/greet
+//x require home/greet
 //= require home/scroll
 //= require home/contact
 //= require home/modal

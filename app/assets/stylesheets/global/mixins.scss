@@ -40,31 +40,6 @@
               filter: progid:DXImageTransform.Microsoft.Shadow(strength=2, direction=225, color='#{$color}');
 }
 
-
-//-- PRESENTATIONAL
-//------------------------------------
-%whitebox {
-  @include border-box;
-  @include clearfix;
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-.bluebutton {
-  @include border-radius;
-  background-color: #119EE7;
-  border: 1px solid #0099E6;
-  color: white;
-  display: inline-block;
-  padding: 5px 10px;
-
-  &:hover {
-    background-color: #08c;
-    text-decoration: none;
-  }
-}
-
 @mixin mobile {
   @media (max-width: 630px) {
     @content;

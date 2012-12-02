@@ -1,51 +1,14 @@
 footer {
-  background-color: $gray-light;
-  border-top: 1px solid white;
-  padding: 15px 0 25px;
+  background-color: #222;
+  border-top: 3px solid $blue;
+  color: lighten(#2c2c2c, 30);
+  padding: 15px 0;
+  text-align: right;
+
+  a {
+    color: inherit;
+    &:hover { color: $blue; }
+  }
 
   @include mobile { padding: 5px; }
-
-  h3 { margin-bottom: 7px; }
-
-  .social {
-    @include clearfix;
-    margin-bottom: 10px;
-
-    & + p {
-      clear: both;
-    }
-  }
-
-  .column {
-    @include border-box;
-    @include border-radius;
-    background-color: white;
-    padding: 5px;
-
-    @include mobile { padding: 10px 0 0; }
-
-    .description {
-      color: darken($gray-border, 10);
-      display: inline-block;
-      font-size: 0.7em;
-      font-weight: normal;
-      margin-left: 5px;
-    }
-
-    p {   margin-bottom: 5px;   }
-  }
-
-  .icon {
-    // TODO: sprite these
-    float: left;
-    margin-right: 10px;
-    height: 32px;
-    width: 32px;
-  }
-
-  .github-icon   { background-image: url('/assets/github_cat.png'); }
-  .linkedin-icon { background-image: url('/assets/linkedin.png'); }
-  .twitter-icon  { background-image: url('/assets/twitter.png'); }
-  .rss-icon      { background-image: url('/assets/rss.png'); }
-
 }
