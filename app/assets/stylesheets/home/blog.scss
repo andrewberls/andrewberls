@@ -80,9 +80,19 @@
     margin-bottom: 5px;
   }
 
-  p { margin-bottom: 15px; }
+  p {
+    margin-bottom: 15px;
+
+    &.list-head { margin-bottom: 5px; }
+  }
 
   em { font-style: italic; }
+
+  ul {
+    list-style: disc;
+
+    li { margin-left: 20px; }
+  }
 
   code,
   pre {
