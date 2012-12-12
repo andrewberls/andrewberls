@@ -175,6 +175,8 @@
   font-size: 1.1em;
   margin-bottom: 25px;
   padding: 8px;
+
+  @include mobile { margin-left: 10px; }
 }
 
 
@@ -259,6 +261,8 @@
   border-top: 1px solid $gray-border;
   background-color: white;
   padding-top: 10px;
+
+  @include mobile { padding: 5px 10px; }
 }
 
 #disqus_thread {

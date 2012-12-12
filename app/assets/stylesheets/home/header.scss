@@ -23,6 +23,7 @@ header {
     background-color: #010101;
     padding: 5px 0;
 
+    ul { display: inline-block; }
 
     li { float: left; }
 
@@ -35,4 +36,6 @@ header {
       &:hover { color: #08c; }
     }
   }
+
+  @include mobile { text-align: center; }
 }
