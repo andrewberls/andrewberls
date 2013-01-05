@@ -228,14 +228,14 @@
   .current,
   .disabled {
     border: 1px solid $gray-border;
-    padding: 5px 8px;
+    padding: 8px 13px;
   }
 
   a {
     background-color: white;
 
     &:hover {
-      background-color: $gray-text;
+      background-color: $blue;
       color: white;
       text-decoration: none;
     }

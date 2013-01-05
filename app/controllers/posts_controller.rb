@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def list
     if params[:tag].present?
       @tag = Tag.find_by_name(params[:tag])
-      if @tag.nil?
+      if @tag.blank?
         return redirect_to blog_path
       else
         @posts = @tag.posts
