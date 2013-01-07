@@ -104,9 +104,12 @@
 
   code {
     // Inline code snippets
+    @include border-radius(2px);
     background-color: darken($gray-light, 3);
     border: 1px solid $gray-border;
-    padding: 3px;
+    color: #222;
+    font-size: 0.9em;
+    padding: 1px 2px;
   }
 
   pre {
@@ -131,6 +134,7 @@
       // Undo extra code stylings in markdown-fenced blocks
       background: none;
       border: none;
+      font-size: 13px;
       padding: 0;
     }
   }
