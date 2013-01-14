@@ -114,6 +114,7 @@
 
   pre {
     // Code blocks
+    @include border-radius(2px);
     background-color: darken($gray-light, 4);
     border: 1px solid #ddd;
     line-height: 1.4;
@@ -155,7 +156,8 @@
   }
 
   .tag {
-    background-color: #E0E0E0;
+    @include border-radius(2px);
+    background-color: #E3E3E3;
     color: #6B6B6B;
     display: inline-block;
     font-weight: bold;
