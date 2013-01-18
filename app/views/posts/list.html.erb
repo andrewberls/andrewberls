@@ -15,7 +15,7 @@
           </div>
 
           <div class="post-content">
-            <p><%= markdown post.teaser %></p>
+            <%= markdown post.teaser %>
 
             <%= render_tags(post.tags, false) unless post.has_pagebreak? || post.tags.blank? %>
 

@@ -18,7 +18,7 @@
         </div>
 
         <div class="post-content">
-          <p><%= markdown @post.full_text  %></p>
+          <%= markdown @post.full_text  %>
 
           <%= render_tags(@post.tags, false) unless @post.tags.blank? %>
 
