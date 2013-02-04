@@ -45,3 +45,4 @@ build/config/buildinfo.properties
 # Various development directories
 tmp/
 public/assets/*
+public/*.pdf
