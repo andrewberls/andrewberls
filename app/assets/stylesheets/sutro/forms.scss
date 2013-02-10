@@ -1,7 +1,14 @@
 .wrapper {
   @include border-radius;
   float: left;
-  max-width: 768px;
+  width: 45%;
+  min-width: 250px;
+}
+
+.post-preview {
+  float: left;
+  margin-left: 5%;
+  width: 50%
 }
 
 label {

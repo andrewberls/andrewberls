@@ -28,6 +28,14 @@ class Admin::PostsController < ApplicationController
                  .order("id DESC")
   end
 
+  def preview
+    respond_to do |format|
+      format.json {
+        return render json: { html: markdown(params[:markdown]) }
+      }
+    end
+  end
+
   def edit
     @post = Post.find(params[:id])
   end
@@ -47,6 +55,14 @@ class Admin::PostsController < ApplicationController
     Post.find(params[:id]).destroy
     flash[:success] = "Post deleted successfully"
     return redirect_to admin_posts_path
+  end
+
+  private
+
+  def markdown(text)
+    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+      autolink: true, no_intra_emphasis: true, fenced_code_blocks: true)
+    @markdown.render(text).html_safe
   end
 
 end

@@ -1,0 +1,78 @@
+$mainFontFamily: 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+$codeFontFamily: Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+$blue:       #08c;
+$blue-light: #00b4ff;
+
+$gray-header: #393335;
+$gray-text:   #525252;
+$gray-border: #ccc;
+$gray-light:  #F9F9F9;
+
+
+.post-preview {
+  h1, h2, h3 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+  }
+
+  h2 { font-size: 1.5em; }
+
+  h3 { font-size: 1.2em; }
+
+  strong { font-weight: bold; }
+
+  p {
+    margin-bottom: 15px;
+    &.list-head { margin-bottom: 5px; }
+  }
+
+  em { font-style: italic; }
+
+  ul {
+    list-style: disc;
+    margin-bottom: 15px;
+
+    li { margin-left: 20px; }
+  }
+
+  code,
+  pre {
+    color: $gray-header;
+    font-family: $codeFontFamily;
+    font-size: 0.9em;
+  }
+
+  code {
+    // Inline code snippets
+    @include border-radius(2px);
+    background-color: darken($gray-light, 3);
+    border: 1px solid $gray-border;
+    color: #222;
+    font-size: 0.9em;
+    padding: 1px 2px;
+  }
+
+  pre {
+    // Code blocks
+    @include border-radius(2px);
+    background-color: darken($gray-light, 4);
+    border: 1px solid #ddd;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+
+    code {
+      // Undo extra code stylings in markdown-fenced blocks
+      background: none;
+      border: none;
+      font-size: 13px;
+      padding: 0;
+    }
+  }
+}
