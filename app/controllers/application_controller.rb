@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
 
   protect_from_forgery
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :markdown
 
   def logged_in?
     current_user.present?
@@ -22,6 +22,12 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def markdown(text)
+    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+      autolink: true, no_intra_emphasis: true, fenced_code_blocks: true)
+    @markdown.render(text).html_safe
   end
 
 end

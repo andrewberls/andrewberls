@@ -6,10 +6,4 @@ module ApplicationHelper
     time.strftime("%-d %b %Y")
   end
 
-  def markdown(text)
-    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-      autolink: true, no_intra_emphasis: true, fenced_code_blocks: true)
-    @markdown.render(text).html_safe
-  end
-
 end
