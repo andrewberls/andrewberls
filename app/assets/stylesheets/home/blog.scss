@@ -116,10 +116,10 @@
     // Code blocks
     @include border-radius(2px);
     background-color: darken($gray-light, 4);
-    border: 1px solid #ddd;
+    border: 1px solid #ddd !important;
     line-height: 1.4;
     margin-bottom: 15px;
-    padding: 10px 15px;
+    padding: 10px 15px !important;
 
     .label,
     .comment {
