@@ -2,4 +2,14 @@
 
 <%= render "portfolio" %>
 
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="span-16">
+        <h2>Latest blog post: <%= link_to Post.last.title, Post.last %></h2>
+      </div>
+    </div>
+  </div>
+</section>
+
 <%= render "contact" %>
