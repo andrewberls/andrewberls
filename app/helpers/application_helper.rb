@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def render_sutro_time(time)
+  def render_time(time)
     # Format a string timestamp for overviews and public blog posts
     # Ex: 7 Oct 2011
     time.strftime("%-d %b %Y")

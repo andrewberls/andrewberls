@@ -1,6 +1,10 @@
 <table>
   <% if @posts.blank? %>
-    <td>You haven't added any content yet! Click <%= link_to "here", new_admin_post_path %> to get started.</td>
+    <% if current_page? admin_user_path %>
+      <td>This user hasn't added any content yet!</td>
+    <% else %>
+      <td>You haven't added any content yet! Click <%= link_to "here", new_admin_post_path %> to get started.</td>
+    <% end %>
   <% else %>
     <tr>
       <th>Title</th>
@@ -19,7 +23,7 @@
 
         <%= content_tag :td, link_to(post.user.full_name, admin_user_path(post.user)) %>
 
-        <%= content_tag :td, render_sutro_time(post.created_at) %>
+        <%= content_tag :td, render_time(post.created_at) %>
 
         <%= content_tag :td, link_to(post.url_alias, post_path(post.url_alias)), class: 'column-small' %>
 
