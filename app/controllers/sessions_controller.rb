@@ -2,10 +2,6 @@ class SessionsController < ApplicationController
 
   layout 'sutro'
 
-  def index
-    return redirect_to login_path
-  end
-
   def new
     return redirect_to admin_posts_path if logged_in?
   end
