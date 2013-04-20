@@ -15,7 +15,7 @@
     <% @posts.each do |post| %>
       <tr class=<%= cycle("odd", "even") %>>
 
-        <%= content_tag :td, (link_to post.title, post_path(post.url_alias), class: "plain") %>
+        <%= content_tag :td, post_link(post, class: "plain") %>
 
         <%= content_tag :td, link_to(post.user.full_name, admin_user_path(post.user)) %>
 
@@ -23,7 +23,7 @@
 
         <%= content_tag :td, link_to(post.url_alias, post_path(post.url_alias)), class: 'column-small' %>
 
-        <%= content_tag :td, render_tags(post.tags), class: 'column-small' %>
+        <%= content_tag :td, render_tags(post.tags, commas: true), class: 'column-small' %>
 
         <%= content_tag :td, render_status_pill(post.status) %>
 
