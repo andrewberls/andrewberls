@@ -14,14 +14,23 @@
 
 <body>
 
-  <%= render "shared/header" %>
+  <%= render "home/header" %>
 
   <%= yield %>
 
-  <%= render "shared/footer" %>
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+
+        <p>Powered by <a href="http://github.com/andrewberls/andrewberls">Sutro</a></p>
+
+      </div>
+    </div>
+  </footer><!-- footer -->
 
 
   <%= javascript_include_tag :application %>
+
   <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
   <script type="text/javascript">
