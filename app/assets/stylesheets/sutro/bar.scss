@@ -1,0 +1,25 @@
+// Dashboard | Edit Post
+
+.sutro-bar {
+  @include border-radius;
+  border: 1px solid $gray-border;
+  display: inline-block;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+
+  .sutro-action {
+    background-color: white;
+    border-right: 1px solid lighten($gray-border, 3);
+    display: inline-block;
+    float: left;
+    padding: 5px 10px;
+
+    &:last-child { border-right: none; }
+
+    &:hover {
+      background-color: $blue;
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
