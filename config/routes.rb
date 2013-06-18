@@ -1,6 +1,6 @@
 Andrewberls::Application.routes.draw do
 
-  match "/blog"            => "posts#list", :as => "blog"
+  match "/blog"            => "posts#index", :as => "blog"
   match "/blog/tag/:tag"   => "posts#list", :as => "tag"
   match "/blog/post/:slug" => "posts#show", :as => "post"
 

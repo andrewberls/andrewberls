@@ -3,32 +3,26 @@ class PostsController < ApplicationController
   # Public-facing actions only.
   # Administrative actions are handled by admin/posts_controller
 
-  def list
+  def index
     if params[:tag].present?
       @tag = Tag.find_by_name(params[:tag])
-      if @tag.blank?
-        return redirect_to blog_path
-      else
-        @posts = @tag.posts
-                     .where(:status => 1)
-                     .paginate(:page => params[:page], :per_page => 5)
-                     .order("id DESC")
-      end
+      return redirect_to blog_path if @tag.blank?
+
+      @posts = page_sort @tag.active_posts
     else
-      @posts = Post.where(:status => 1)
-                   .paginate(:page => params[:page], :per_page => 5)
-                   .order("id DESC")
+      @posts = page_sort Post.active
     end
   end
 
   def show
-    if params[:slug].to_i == 0
+    slug = params[:slug]
+    if slug.to_i == 0
       # Slug is a URL alias
-      @post = Post.find_by_url_alias(params[:slug])
+      @post = Post.find_by_url_alias(slug)
       return render 'home/not_found' if @post.blank?
     else
       # Slug is an ID. Kept around for the feed
-      @post = Post.find_by_id(params[:slug])
+      @post = Post.find_by_id(slug)
 
       if @post.blank?
         return render 'home/not_found'
@@ -47,6 +41,12 @@ class PostsController < ApplicationController
       format.atom { render :layout => false }
       format.rss  { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
     end
+  end
+
+  private
+
+  def page_sort(posts)
+    posts.paginate(page: params[:page], per_page: 5).order('id DESC')
   end
 
 end

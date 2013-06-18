@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title, :body, :url_alias
 
+  scope :active, -> { where(status: 1) }
+
   def tag_list
     self.tags.map(&:name).join(", ")
   end
