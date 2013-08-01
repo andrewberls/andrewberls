@@ -1,7 +1,7 @@
 Andrewberls::Application.routes.draw do
 
   match "/blog"            => "posts#index", :as => "blog"
-  match "/blog/tag/:tag"   => "posts#list", :as => "tag"
+  match "/blog/tag/:tag"   => "posts#index", :as => "tag"
   match "/blog/post/:slug" => "posts#show", :as => "post"
 
   match '/feed' => 'posts#feed', :as => "feed", :defaults => { :format => 'atom' }
