@@ -1,16 +1,23 @@
 #intro {
-  // background-color: #EFEFEF
   border-bottom: 1px solid $gray-border;
 
   .welcome {
     color: $gray-text;
-    font-size: 2.5em;
+    font-size: 2.6em;
     font-weight: bold;
     margin-bottom: 30px;
     text-align: center;
 
     .highlight { color: $blue; }
     .greeting { color: $gray-header; }
+  }
+
+  .ampersand {
+    color: $gray-header;
+    font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: normal;
   }
 
   .item-container {
