@@ -14,10 +14,12 @@
 
   .ampersand {
     color: $gray-header;
+    display: inline-block;
     font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
     font-size: 1.1em;
     font-style: italic;
     font-weight: normal;
+    margin: 0 2px;
   }
 
   .item-container {
