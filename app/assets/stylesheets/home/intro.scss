@@ -3,13 +3,18 @@
 
   .welcome {
     color: $gray-text;
-    font-size: 3em;
+    font-size: 2.8em;
     font-family: 'Open Sans', $mainFontFamily;
     margin-bottom: 35px;
     text-align: center;
 
     .highlight { color: $blue; }
     .greeting { color: $gray-header; }
+
+    @include mobile {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
   }
 
   .ampersand {
