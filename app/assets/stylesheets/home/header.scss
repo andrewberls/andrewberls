@@ -7,15 +7,7 @@ header {
     &:hover { text-decoration: none; }
   }
 
-  h1 {
-    font-family: 'Cabin', Arial, sans-serif;
-    font-size: 3.5em;
-    font-weight: normal;
-  }
-
-  .header-title {
-    padding: 15px 0 5px;
-  }
+  .header-title { padding: 15px 0 5px; }
 
   nav {
     @include clearfix;

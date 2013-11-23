@@ -1,13 +1,5 @@
 <header>
 
-  <div class="container">
-    <div class="row">
-      <div class="span-8 header-title">
-        <h1><%= link_to "Andrew Berls", root_url %></h1>
-      </div>
-    </div>
-  </div>
-
   <nav>
     <div class="container">
       <div class="row">
@@ -15,13 +7,14 @@
 
           <ul>
             <%
-              root        = params[:controller] == 'posts' ? '/' : ''      # Link to the root on the blog
-              scrollClass = params[:controller] == 'home'  ? 'scroll' : '' # Section scrolling on homepage
+              controller  = params[:controller]
+              root        = controller == 'posts' ? '/' : ''      # Link to the root on the blog
+              scrollClass = controller == 'home'  ? 'scroll' : '' # Section scrolling on homepage
             %>
 
             <li><%= link_to "Blog", blog_path %></li>
-            <li><%= link_to "Portfolio", "#{root}#portfolio", class: scrollClass %></li>
-            <li><%= link_to "Get in touch", "#{root}#contact", class: scrollClass %></li>
+            <li><%= link_to "Portfolio",    "#{root}#portfolio", class: scrollClass %></li>
+            <li><%= link_to "Get in touch", "#{root}#contact",   class: scrollClass %></li>
           </ul>
 
         </div>
