@@ -57,4 +57,8 @@ class Post < ActiveRecord::Base
     body.gsub(BREAK_TAG, '').html_safe
   end
 
+  def draft?
+    status == 0
+  end
+
 end

@@ -1,10 +1,11 @@
 .flash {
   @include border-box;
   @include border-radius;
+  @include clearfix;
   border: 1px solid white;
   font-size: 0.9em;
   margin: 5px 0 10px;
-  padding: 5px;
+  padding: 10px;
 
   &.flash-success {
     background-color: #DFF0D8;
@@ -16,6 +17,19 @@
     background-color: #F2DEDE;
     border-color: #EED3D7;
     color: #B94A48;
+  }
+
+  &.flash-notice {
+    background-color: #e1f3fd;
+    border-color: #52bcf2;
+    color: #0f8ecf;
+
+    a {
+      color: #0f8ecf;
+      font-weight: bold;
+
+      &:hover { color: #0d77ae; }
+    }
   }
 
 }
