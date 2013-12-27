@@ -152,6 +152,34 @@
   margin-bottom: 5px;
 }
 
+.series-next-container {
+  @include clearfix;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  padding: 8px 10px;
+  border: 1px solid $gray-border;
+
+  span {
+    display: inline-block;
+    margin-top: 2px;
+  }
+
+  .arrow { color: $gray-border; }
+
+  .btn {
+    display: inline-block;
+    float: right;
+    padding: 3px 15px;
+
+    @include mobile {
+      display: block;
+      float: none;
+      margin-top: 5px;
+      text-align: center;
+    }
+  }
+}
+
 .back {
   font-size: 1.1em;
   margin-bottom: 25px;
