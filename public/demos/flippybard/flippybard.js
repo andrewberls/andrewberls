@@ -106,6 +106,10 @@
 
   Game.tryNum = 0;
 
+  Game.scoreInterval = null;
+
+  Game.jumpInterval = null;
+
   Game.initAll = function() {
     this.player = new Player({
       x: 200,
@@ -130,7 +134,12 @@
 
   Game.trackScore = function() {
     var _this = this;
-    clearInterval(Game.scoreInterval);
+    if (!Game.player.isAlive) {
+      return;
+    }
+    if (Game.scoreInterval != null) {
+      clearInterval(Game.scoreInterval);
+    }
     return Game.scoreInterval = setInterval(function() {
       return Game.player.score += 1;
     }, 2000);
@@ -245,6 +254,10 @@
 
   Kona.ready(function() {
     Kona.Canvas.init('gameCanvas');
+    Kona.Sounds.play('audio/getlucky.ogg', {
+      autoplay: true,
+      loop: true
+    });
     return Game.initAll();
   });
 

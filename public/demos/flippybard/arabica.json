@@ -1,8 +1,0 @@
-{
-  "paths": [
-      "src/player.coffee",
-      "src/flippybard.coffee"
-  ],
-  "out": "flippybard.js",
-  "uglify": false
-}
