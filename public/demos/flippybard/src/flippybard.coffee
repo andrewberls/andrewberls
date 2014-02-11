@@ -97,5 +97,4 @@ Game.start = ->
 
 Kona.ready ->
   Kona.Canvas.init('gameCanvas')
-  Kona.Sounds.play('audio/getlucky.mp3', { autoplay: true, loop: true })
   Game.initAll()

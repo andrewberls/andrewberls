@@ -245,10 +245,6 @@
 
   Kona.ready(function() {
     Kona.Canvas.init('gameCanvas');
-    Kona.Sounds.play('audio/getlucky.mp3', {
-      autoplay: true,
-      loop: true
-    });
     return Game.initAll();
   });
 
