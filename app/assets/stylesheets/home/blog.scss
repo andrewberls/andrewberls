@@ -1,66 +1,65 @@
 //-- POSTS
 //------------------------------------
 .blog-container {
-  margin-top: 50px !important;
+  margin-top: 90px !important;
   position: relative;
+
+  @include mobile { margin-top: 25px!important; }
 }
 
 .post {
-  $light-border: lighten($gray-border, 2);
-
   @extend %whitebox;
-  border-color: $light-border;
-  font-size: 1.1em;
+  border: 0;
   line-height: 1.6;
   margin-bottom: 25px;
   padding: 0;
   word-wrap: break-word;
 
-  .post-title {
-    border-bottom: 1px solid $light-border;
+  .post-title-container {
+    margin-bottom: 15px;
     padding: 10px 15px 0px;
-
-    h2 {
-      font-size: 1.8em;
+    @include mobile {
       margin-bottom: 0;
+      text-align: center; }
 
-      a {
-        color: inherit;
+  }
 
-        &:hover {
-          color: $blue;
-          text-decoration: none;
-        }
+  .post-title {
+    font-size: 1.8em; // TODO: why so big on index?
+    margin-bottom: 3px;
+
+    a {
+      color: inherit;
+      &:hover {
+        color: $blue;
+        text-decoration: none;
       }
     }
   }
 
+  .post-date {
+    color: darken($gray-border, 10);
+    margin-bottom: 0;
+  }
+
   .post-content {
     @include clearfix;
+    font-size: 1.1em;
     padding: 15px 15px 10px;
   }
 
-  .date {
-    color: $gray-border;
-    font-weight: bold;
-    margin-bottom: 15px;
-  }
-
   h5 {
-    // Legacy support for section titles - use h3!
+    // Legacy headers
     font-size: 1.2em;
-    font-weight: bold;
     margin-bottom: 5px;
   }
 
   p {
     margin-bottom: 15px;
-
     &.list-head { margin-bottom: 5px; }
   }
 
   em { font-style: italic; }
-
   .bold { font-weight: bold; }
 
   ul {
@@ -82,24 +81,24 @@
     @include border-radius(2px);
     background-color: darken($gray-light, 3);
     border: 1px solid $gray-border;
-    color: #222;
+    color: #404040;
     font-size: 0.9em;
     padding: 1px 2px;
+
+    a { color: lighten($blue, 8); }
   }
 
   pre {
     // Code blocks
     @include border-radius(2px);
-    background-color: darken($gray-light, 4);
+    background-color: darken($gray-light, 2);
     border: 1px solid #ddd !important;
     line-height: 1.4;
     margin-bottom: 15px;
     padding: 10px 15px !important;
 
     .label,
-    .comment {
-      color: #797979;
-    }
+    .comment { color: #797979; }
 
     .label {
       display: inline-block;
@@ -133,19 +132,30 @@
   .tag {
     @include border-radius(2px);
     background-color: #E3E3E3;
-    color: #6B6B6B;
+    color: darken(#6B6B6B, 10);
     display: inline-block;
-    font-weight: bold;
     margin: 0 10px 10px 0;
-    padding: 1px 8px;
+    padding: 2px 8px;
   }
 
   .twitter-share-button {
     float: right;
     margin: 2px 0px 5px;
   }
+}
 
-} // .post
+// Listings on index page
+.post-teaser {
+  .post-title-container { margin-bottom: 0; }
+  .post-content { padding-top: 0px; }
+
+  border-bottom: 1px dashed lighten($light-border, 2);
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+
+  &:last-of-type { border-bottom: 0; }
+}
+
 
 .read-more {
   float: right;
@@ -154,10 +164,11 @@
 
 .series-next-container {
   @include clearfix;
+  @include border-radius(2px);
+  border: 1px solid $gray-border;
   font-size: 1.2em;
   margin-bottom: 20px;
   padding: 8px 10px;
-  border: 1px solid $gray-border;
 
   span {
     display: inline-block;
@@ -192,12 +203,16 @@
 //-- SIDEBAR
 //------------------------------------
 .sidebar {
-  h2 {
-    border-bottom: 1px solid darken($gray-border, 0);
-    margin: 20px 0 10px;
-    text-transform: uppercase;
+  text-align: center;
 
-    &:first-child { margin-top: 0; }
+  .avatar {
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #d1d1d1;
+    display: block;
+    margin: 0 auto 15px;
+    transition: box-shadow 0.2s ease-out;
+
+    &:hover { box-shadow: 0px 0px 10px lighten($blue, 30); }
   }
 
   p {
@@ -206,6 +221,7 @@
     font-size: 1.1em;
   }
 
+  // TODO: make icons way smaller
   .social { @include clearfix; }
 
   .icon {
@@ -283,3 +299,7 @@
 
   .dsq-trackback-url { display: none; }
 }
+
+
+
+

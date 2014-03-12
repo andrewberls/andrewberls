@@ -2,28 +2,22 @@
 
 <div class="container blog-container">
   <div class="row">
+    <%= render 'sidebar' %>
+
     <div class="span-11">
-
-      <% if logged_in? %>
-        <div class="sutro-bar">
-          <%= link_to "Dashboard", admin_posts_path, class: "sutro-action" %>
-          <%= link_to "Edit Post", edit_admin_post_path(@post), class: "sutro-action" %>
-        </div>
-
-        <% if @post.draft? %>
-          <div class="flash flash-notice" style="margin: 0 0 25px;">This post is a draft</div>
-        <% end %>
-      <% end %>
+      <%= render 'admin_controls' if logged_in? %>
 
       <div class="post">
-        <div class="post-title">
-          <h2><%= raw @post.title %></h2>
-          <p class="date"><%= render_time(@post.created_at) %></p>
+        <div class="post-title-container">
+          <h2 class="post-title"><%= raw @post.title %></h2>
+          <p class="post-date"><%= render_time(@post.created_at) %></p>
         </div>
 
         <div class="post-content">
           <%= markdown @post.full_text  %>
 
+
+          <span style="display:inline-block;margin-right:5px;">Tags:</span>
           <%= render_tags @post.tags %>
 
           <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
@@ -34,17 +28,15 @@
       <%= link_to raw("&laquo; Back to Blog"), blog_path, class: "btn btn-blue back" %>
 
     </div>
-
-    <%= render 'sidebar' %>
-
   </div>
 </div><!-- .blog-container -->
+
 
 <div class="comments-container">
   <div class="container">
 
     <div class="row">
-      <div class="span-11">
+      <div class="span-10 offset-4">
         <%= render 'disqus' %>
       </div>
     </div>

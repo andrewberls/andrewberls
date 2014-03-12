@@ -1,7 +1,7 @@
 //-- LAYOUT
 //------------------------------------
 body {
-  background-color: #F8F5F3; //lighten(#e2e2e2, 5);
+  background-color: white;
   color: $gray-text;
   font-family: $mainFontFamily;
   font-size: 13px;
@@ -33,7 +33,6 @@ a {
 }
 
 h1, h2, h3 {
-  font-weight: bold;
   margin-bottom: 5px;
 }
 
@@ -96,4 +95,132 @@ strong { font-weight: bold; }
       float: right;
     }
   }
+}
+
+
+//-- INTRO
+//------------------------------------
+.intro-container,
+.portfolio-container {
+  h1 {
+    color: $gray-text;
+    font-weight: 300;
+    font-family: 'Open Sans', $mainFontFamily;
+    text-align: center;
+  }
+}
+
+.intro-container {
+  // TODO: temporary
+  background: #fff url('/images/graph2.png');
+  background-position: right;
+  border-bottom: 1px solid darken(#f9f9f9, 2);
+
+  padding: 90px 0;
+
+  h1 {
+    font-size: 2.9em;
+
+    .highlight { color: $blue; }
+    .greeting { color: $gray-header; }
+
+    @include mobile {
+      font-size: 2.5em;
+      max-width: 75%;
+      margin: 0 auto;
+    }
+  }
+
+  .ampersand {
+    color: $gray-header;
+    display: inline-block;
+    font-family: Baskerville, 'Goudy Old Style', Palatino, 'Book Antiqua', serif;
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: normal;
+    margin: 0 3px;
+  }
+}
+
+
+//-- PORTFOLIO
+//------------------------------------
+.portfolio-container {
+  background-color: #f9f9f9;
+  text-align: center;
+  padding-top: 60px;
+
+  h1 {
+    font-size: 2.3em;
+    margin-bottom: 25px;
+  }
+
+  .subhead {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+
+    &:last-child { margin-bottom: 40px; }
+  }
+
+  .project-container {
+    margin-bottom: 55px;
+
+    img {
+      display: block;
+      margin-bottom: 15px;
+      max-width: 100%;
+    }
+
+    .project-title { font-size: 1.9em; }
+
+    .project-description { font-size: 1.2em; }
+  }
+
+
+  .github {
+    font-size: 1.8em;
+    display: inline-block;
+    margin-bottom: 40px;
+    color: $gray-text;
+
+    &:hover { color: $blue; }
+  }
+
+}
+
+
+//-- LATEST POST
+//------------------------------------
+.latest-post-container {
+  background-color: $blue;
+  color: white;
+  padding: 60px 0 55px;
+  text-align: center;
+
+  h2 {
+    font-size: 1.8em;
+    margin-bottom: 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+
+    &:hover { color: darken(white, 7); }
+  }
+}
+
+
+//-- CONTACT INFO
+//------------------------------------
+.contact-container {
+  text-align: center;
+
+  h2, p { margin-bottom: 25px; }
+
+  h2 { font-size: 2.3em; }
+
+  .contact { font-size: 1.3em; }
+  .resume  { font-size: 1.2em; }
 }

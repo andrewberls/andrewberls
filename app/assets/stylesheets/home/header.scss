@@ -1,33 +1,70 @@
 header {
   @include clearfix;
-  background-color: #222;
+  position: fixed;
+  margin-bottom: 40px;
+  top: 0;
+  width: 100%;
 
-  a {
-    color: white;
-    &:hover { text-decoration: none; }
-  }
+  @include mobile { text-align: center; }
 
-  .header-title { padding: 15px 0 5px; }
+  &.down {
+    @include box-shadow(0, 1px, 10px, -2px, darken(#eee, 20%));
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 500ms ease-out;
+    z-index: 999;
 
-  nav {
-    @include clearfix;
-    border-bottom: 5px solid #08c;
-    background-color: #010101;
-    padding-top: 5px;
-
-    ul { display: inline-block; }
-
-    li { float: left; }
-
-    a {
-      @include bold(1em);
-      display: inline-block;
-      padding: 10px;
-      text-transform: uppercase;
-
-      &:hover { color: #08c; }
+    nav {
+      background-color: white;
+      padding-top: 10px;
     }
   }
 
-  @include mobile { text-align: center; }
+
+  nav {
+    @include clearfix;
+    padding-top: 30px;
+
+    @include mobile { padding-top: 10px; }
+
+    ul {
+      float: right;
+      display: inline-block;
+
+      @include mobile {
+        float: none;
+        margin: 0 auto;
+      }
+    }
+
+    li {
+      float: left;
+      margin-right: 15px;
+
+      &:last-of-type { margin-right: 0; }
+
+      &.active a {
+        border-bottom: 2px solid $light-blue;
+        color: $blue;
+      }
+    }
+
+    a {
+      border-bottom: 2px solid white;
+      color: $gray-text;
+      display: inline-block;
+      font-family: 'Open Sans', $mainFontFamily;
+      font-size: 1.1em;
+      padding: 10px 10px 8px;
+      text-transform: uppercase;
+
+      &:hover {
+        border-bottom: 2px solid $light-blue;
+        color: $blue;
+        text-decoration: none;
+      }
+    }
+  }
+
 }

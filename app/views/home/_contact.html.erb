@@ -1,7 +1,6 @@
 <section id="contact">
 
   <%= form_for @message, url: contact_path, html: { class: "contact-form" } do |f| %>
-
     <h2>Get in Touch</h2>
 
    <%= render 'shared/flashes' %>
@@ -9,15 +8,11 @@
     <p>If you're interested in working together on a project, or just want to say hello, I'd love to hear from you!</p>
 
     <%= f.text_field :name, placeholder: "Name" %>
-
     <%= f.email_field :email, placeholder: "Email" %>
-
     <div id="hint"></div>
-
     <%= f.text_area :message, placeholder: "Message" %>
 
     <%= f.submit "Submit", class: "btn btn-blue submit", id: "submit-contact" %>
-
   <% end %>
 
-</section><!-- #contact -->
+</section>

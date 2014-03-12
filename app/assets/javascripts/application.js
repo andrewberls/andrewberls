@@ -1,18 +1,10 @@
 //= require jquery
 //= require jquery_ujs
-
-
-//-- VENDOR PLUGINS
-//------------------------------------
+//
 //= require jquery.scrollTo.1.4.2.min
 //= require jquery.simplemodal.1.4.2.min
 //= require jquery.mailcheck.min
 //= require laconic
-
-
-//-- SITE SCRIPTS
-//------------------------------------
-//x require home/greet
-//= require home/scroll
+//
+//= require home/home
 //= require home/contact
-//= require home/modal

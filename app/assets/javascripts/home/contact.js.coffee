@@ -7,6 +7,7 @@ validate = (fields) ->
   return false
 
 $ ->
+
   $email = $('#message_email')
   $hint  = $("#hint")
 

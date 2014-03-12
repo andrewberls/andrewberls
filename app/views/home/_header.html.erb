@@ -7,14 +7,24 @@
 
           <ul>
             <%
-              controller  = params[:controller]
-              root        = controller == 'posts' ? '/' : ''      # Link to the root on the blog
-              scrollClass = controller == 'home'  ? 'scroll' : '' # Section scrolling on homepage
+              controller = params[:controller]
+              root = controller == 'posts' ? '/' : '' # Link to the root on the blog
+              scroll_class      = controller == 'home'  ? 'scroll' : '' # Section scrolling on homepage
+              active_blog_class = controller == 'posts' ? 'active' : ''
             %>
 
-            <li><%= link_to "Blog", blog_path %></li>
-            <li><%= link_to "Portfolio",    "#{root}#portfolio", class: scrollClass %></li>
-            <li><%= link_to "Get in touch", "#{root}#contact",   class: scrollClass %></li>
+            <li class='<%= active_class(root_path) %>'>
+              <%= link_to 'Work', "#{root}#portfolio", class: scroll_class %>
+              </li>
+
+            <li class='<%= active_blog_class %>'>
+              <%= link_to 'Blog', blog_path %>
+              </li>
+
+              <!-- TODO: figure out active class here. Scrollspy? -->
+              <li class='<%= active_class('/#contact') %>'>
+              <%= link_to 'Contact', "#{root}#contact", class: scroll_class %>
+              </li>
           </ul>
 
         </div>

@@ -1,15 +1,119 @@
-<%= render "intro" %>
-
-<%= render "portfolio" %>
-
-<section>
-  <div class="container">
-    <div class="row">
-      <div class="span-16">
-        <h2>Latest blog post: <%= link_to Post.last.title, Post.last %></h2>
-      </div>
-    </div>
-  </div>
+<section class="intro-container">
+  <h1>
+    Hello! My name is <span class="highlight">Andrew Berls</span>
+    <span class="ampersand">&amp;</span> I
+    <span class="greeting">build things for the web</span>.
+  </p>
 </section>
 
-<%= render "contact" %>
+
+
+<section class="portfolio-container" id="portfolio">
+  <div class="container">
+
+    <div class="row">
+      <div class="span-12 offset-2">
+        <h1>I design and develop full-stack web applications using Ruby, Rails, and JavaScript.</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span-10 offset-3">
+        <p class="subhead">I love everything from sketching mockups and building features to tinkering with servers and scaling servers up and out.</p>
+        <p class="subhead">Here are some things I've hacked on recently:</p>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="span-10 offset-3">
+        <div class="project-container">
+          <img src="http://placehold.it/680x300" alt="" />
+          <h3 class="project-title"><a href="#">Payback</a></h3>
+          <p class="project-description">
+            Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+            lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+            lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="span-10 offset-3">
+        <div class="project-container">
+          <img src="http://placehold.it/680x300" alt="" />
+          <h3 class="project-title"><a href="#">notes-cli</a></h3>
+          <p class="project-description">
+            Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+            lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+            lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="span-10 offset-3">
+        <div class="project-container">
+          <img src="http://placehold.it/680x300" alt="" />
+          <h3 class="project-title"><a href="#">Geocodr</a></h3>
+          <p class="project-description">
+            Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+            lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+            lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="span-10 offset-3">
+        <div class="project-container">
+          <img src="http://placehold.it/680x300" alt="" />
+          <h3 class="project-title"><a href="#">Which one here?</a></h3>
+          <p class="project-description">
+            Lorem ipsum dolor sit amet, lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+            lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+            lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- .container -->
+
+
+  <a href="https://github.com/andrewberls/" class="github">More projects on GitHub →</a>
+</section>
+
+
+
+<section class="latest-post-container">
+  <h2>Latest blog post: <%= link_to Post.last.title, Post.last %></h2>
+</section>
+
+
+
+<section class="contact-container" id="contact">
+  <h2>Get in Touch</h2>
+
+  <p class="contact">
+    Send me an email at <a href="mailto:andrew.berls@gmail.com" target="_blank">andrew.berls@gmail.com</a> or
+    say hello on <a href="http://www.linkedin.com/pub/andrew-berls/2b/1a6/aa8/">LinkedIn</a> or
+    <a href="https://twitter.com/aberls">Twitter</a>.
+  </p>
+
+  <p class="resume">
+    Looking for paperwork?
+    <a href="/AndrewBerls_Resume.pdf" target="_blank">Here's my resumé</a> (PDF).
+  </p>
+</section>
+
+
+
+
+<%#= render "contact" %>
