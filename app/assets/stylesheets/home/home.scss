@@ -120,6 +120,7 @@ strong { font-weight: bold; }
   background-position: right;
   border-bottom: 1px solid darken(#f9f9f9, 5);
   padding: 90px 0;
+  position: relative;
 
   @media (max-width: 790px) {
     height: auto !important;
@@ -149,6 +150,23 @@ strong { font-weight: bold; }
     font-style: italic;
     font-weight: normal;
     margin: 0 3px;
+  }
+
+  .scroll-icon-container {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+
+    a {
+      color: #999;
+      font-size: 6em;
+
+      &:hover {
+        color: $blue;
+        text-decoration: none;
+    }
+    }
   }
 }
 
