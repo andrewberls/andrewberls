@@ -252,7 +252,8 @@
   a,
   .current,
   .disabled {
-    border: 1px solid $gray-border;
+    @include border-radius(2px);
+    border: 1px solid $light-border;
     padding: 8px 13px;
   }
 
@@ -261,6 +262,7 @@
 
     &:hover {
       background-color: $blue;
+      border-color: darken($blue, 2);
       color: white;
       text-decoration: none;
     }
@@ -268,7 +270,8 @@
   }
 
   .current {
-    background-color: #444;
+    background-color: $blue;
+    border-color: darken($blue, 2);
     color: white;
     font-weight: bold;
   }
@@ -299,7 +302,3 @@
 
   .dsq-trackback-url { display: none; }
 }
-
-
-
-
