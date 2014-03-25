@@ -157,6 +157,8 @@ strong { font-weight: bold; }
     text-align: center;
     width: 100%;
 
+    @media (max-width: 790px) { display: none; }
+
     a {
       color: #999;
       font-size: 6em;
@@ -164,7 +166,7 @@ strong { font-weight: bold; }
       &:hover {
         color: $blue;
         text-decoration: none;
-    }
+      }
     }
   }
 }
