@@ -119,6 +119,7 @@ strong { font-weight: bold; }
   background: #fff url('/images/graph.png');
   background-position: right;
   border-bottom: 1px solid darken(#f9f9f9, 5);
+  position: relative;
   padding: 90px 0;
 
   @media (max-width: 790px) {
