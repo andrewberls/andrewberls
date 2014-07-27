@@ -118,7 +118,6 @@ strong { font-weight: bold; }
 .intro-container {
   background: #fff url('/images/graph.png');
   background-position: right;
-  border-bottom: 1px solid darken(#f9f9f9, 5);
   position: relative;
   padding: 90px 0;
 
@@ -173,6 +172,33 @@ strong { font-weight: bold; }
 }
 
 
+
+//-- Sutro
+//------------------------------------
+.sutro-container {
+  border-bottom: 1px solid darken(#f9f9f9, 5);
+  padding: 0 0 60px;
+  text-align: center;
+
+  .sutro-stripe {
+    background: url("/images/bg-triangles.svg") no-repeat center center fixed;
+    background-size: cover;
+    height: 10px;
+    width: 100%;
+  }
+
+  h1 {
+    margin: 50px 0 20px;
+  }
+
+  p {
+    color: lighten($gray-text, 20);
+    font-size: 1.4em;
+  }
+}
+
+
+
 //-- PORTFOLIO
 //------------------------------------
 .portfolio-container {
@@ -180,10 +206,9 @@ strong { font-weight: bold; }
   text-align: center;
   padding-top: 60px;
 
-  h1 {
-    font-size: 2.3em;
-    margin-bottom: 25px;
-  }
+  h1, h2 { margin-bottom: 25px; }
+
+  h1 { font-size: 2.1em; }
 
   .subhead {
     font-size: 1.2em;
