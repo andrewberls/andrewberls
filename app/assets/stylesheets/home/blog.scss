@@ -11,7 +11,7 @@
   @extend %whitebox;
   border: 0;
   line-height: 1.6;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
   padding: 0;
   word-wrap: break-word;
 
@@ -283,6 +283,27 @@
   .disabled {
     background-color: #e7e7e7;
     color: lighten($gray-text, 35);
+  }
+}
+
+
+//-- MAILCHIMP SIGNUP
+//------------------------------------
+#mc_embed_signup {
+  @include border-radius(2px);
+  border: 1px solid #ccc;
+  clear: left;
+  margin-bottom: 20px;
+
+  h3 {
+    font-size: 1.3em;
+    margin-bottom: 13px;
+    padding-top: 5px;
+  }
+
+  .email {
+    @include border-radius(2px);
+    border-color: #ccc;
   }
 }
 
