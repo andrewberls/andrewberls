@@ -1,6 +1,6 @@
-.pagination {
-  $border_color: darken($med_gray, 2);
+$pagination-border-color: darken(#ccc, 2);
 
+.pagination {
   margin: 40px auto;
   text-align: center;
 
@@ -9,7 +9,7 @@
   a,
   .current,
   .disabled {
-    border: 1px solid $border_color;
+    border: 1px solid $pagination-border-color;
     border-right: none;
     padding: 10px 14px;
   }
@@ -47,7 +47,7 @@
 
   // Right
   .next_page {
-    border-right: 1px solid $border_color;
+    border-right: 1px solid $pagination-border-color;
 
     -webkit-border-top-right-radius: $radius;
         -moz-border-radius-topright: $radius;
