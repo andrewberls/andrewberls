@@ -1,47 +1,28 @@
+@mixin sutro-btn($color) {
+  background-color: $color;
+  color: white;
+
+  &:hover { background-color: darken($color, 10); }
+}
+
+
 .btn {
   @include border-radius;
-  background-color: $light_gray;
-  border: 1px solid $med_gray;
+  border: 0;
   float: left;
-  font-size: 0.9em;
-  padding: 7px 10px;
+  padding: 10px 15px;
   text-decoration: none;
 
-  &:hover {
-    background-color: darken($light_gray, 4);
-    cursor: pointer;
-    text-decoration: none;
+  &:hover { text-decoration: none; }
+
+  &.btn-green { @include sutro-btn($bootflat-green); }
+  &.btn-blue  { @include sutro-btn($bootflat-blue); }
+  &.btn-red   { @include sutro-btn($bootflat-red); }
+  &.btn-gray  {
+    @include sutro-btn($light_gray);
+    color: $med-blue;
+    border: 1px solid darken($light_gray, 10);
   }
-
-  &:active {
-    background-color: darken($light-gray, 6);
-  }
-
-  &.btn-green {
-    color: $green;
-
-    &:hover {
-      color: #5C7C04;
-      border: 1px solid lighten(#5C7C04, 10);
-    }
-  }
-
-  &.btn-blue  {
-    color: $med_blue;
-
-    &:hover {
-      border: 1px solid $blue;
-    }
-  }
-
-  &.btn-red {
-    color: $red;
-
-    &:hover {
-      border: 1px solid #FF8181;
-    }
-  }
-
 }
 
 .btn-group {
@@ -50,8 +31,6 @@
   .btn {
     margin-right: 10px;
 
-    &:last-child {
-      margin-right: 0;
-    }
+    &:last-child { margin-right: 0; }
   }
 }

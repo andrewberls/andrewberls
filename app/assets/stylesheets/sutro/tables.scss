@@ -1,29 +1,28 @@
+$table-border-color: #dedede;
+$table-text-color: lighten($gray_text, 15);
 
 table {
-  $border_gray: lighten($med_gray, 8);
-  $table_text: lighten($gray_text, 15);
-
-  color: $table_text;
-  border: 1px solid $med_gray;
+  border: 1px solid $table-border-color;
+  color: $table-text-color;
   text-align: left;
   width: 100%;
 
   th {
+    border: 1px solid $table-border-color;
     color: lighten($gray_text, 15);
-    border: 1px solid $med_gray;
     font-weight: bold;
     padding: 10px 10% 10px 12px;
   }
 
   tr {
-    border-bottom: 1px solid $border_gray;
+    border-bottom: 1px solid $table-border-color;
     &:last-child { border-bottom: none; }
   }
 
   tr.odd { background-color: $light_gray; }
 
   td {
-    border-right: 1px solid $border_gray;
+    border-right: 1px solid $table-border-color;
     padding: 15px;
 
     &.column-small {
@@ -33,5 +32,5 @@ table {
     &:last-child { border-right: none; }
   }
 
-  .plain  { color: $table_text; }
+  .plain  { color: $table-text-color; }
 }

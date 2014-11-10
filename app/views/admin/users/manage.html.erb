@@ -2,7 +2,7 @@
 
 <%= render 'shared/flashes' %>
 
-<%= link_to "+ Add New User", new_admin_user_path, class: 'btn', style: 'margin: 0 0 20px;' unless current_user.is_author? %>
+<%= link_to "+ Add New User", new_admin_user_path, class: 'btn btn-gray', style: 'margin: 0 0 20px;' unless current_user.is_author? %>
 
 <table>
 
