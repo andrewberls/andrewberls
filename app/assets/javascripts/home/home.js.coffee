@@ -1,22 +1,5 @@
 $ ->
 
-  # Make intro pane full-height
-  $intro     = $('.intro-container')
-  introPaddingTop    = parseInt($intro.css('padding-top'))
-  introPaddingBottom = parseInt($intro.css('padding-bottom'))
-
-  # TODO: inner or outer height here?
-  $intro.css {
-    'height': window.outerHeight - introPaddingTop - introPaddingBottom
-    'padding-bottom': '0px'
-  }
-
-  # Vertically center intro header
-  $welcome = $intro.find('h1')
-  margin   = (window.innerHeight / 3) - $welcome.outerHeight()
-  $welcome.css { 'margin-top': margin + 'px' }
-
-
   # Sticky nav
   $header = $('header')
   headerHeight  = $header.outerHeight()
