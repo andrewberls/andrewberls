@@ -118,7 +118,7 @@ strong { font-weight: bold; }
 .intro-container {
   background: #fefefe url('/images/graph.png');
   background-position: right;
-  height: 80vh;
+  min-height: 80vh;
   position: relative;
 
   h1 {
@@ -136,7 +136,7 @@ strong { font-weight: bold; }
   }
 
   @media (max-width: 790px) {
-    height: 20vh;
+    min-height: 20vh;
 
     h1 { margin-top: 5vh; }
   }
