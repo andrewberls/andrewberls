@@ -1,11 +1,11 @@
 $ ->
 
   # Sticky nav
-  $header = $('header')
-  headerHeight  = $header.outerHeight()
-  $(window).on 'scroll', ->
-    scrollTop = $(window).scrollTop()
-    $header.toggleClass('down', (scrollTop > headerHeight))
+  # $header = $('header')
+  # headerHeight  = $header.outerHeight() - 200
+  # $(window).on 'scroll', ->
+  #   scrollTop = $(window).scrollTop()
+  #   $header.toggleClass('down', (scrollTop > headerHeight))
 
 
   # Set up modals

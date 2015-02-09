@@ -1,12 +1,12 @@
 <% provide(:title, "Blog") %>
 
 <div class="container blog-container">
+  <%= render 'bio' %>
+
   <div class="row">
     <%= content_tag :h1, "Tagged: #{@tag.name}" unless @tag.blank? %>
 
-    <%= render 'sidebar' %>
-
-    <div class="span-11">
+    <div class="span-12 offset-2">
       <%= render 'shared/flashes' %>
 
       <% @posts.each do |post| %>
@@ -21,7 +21,9 @@
             <%= render_tags(post.tags) unless post.has_pagebreak? %>
 
             <% if post.has_pagebreak? %>
-              <%= link_to raw("Full Post &raquo;"), post_path(post.url_alias), class: 'btn btn-blue read-more' %>
+              <div style="text-align: center">
+                <%= link_to raw("Full Post &raquo;"), post_path(post.url_alias), class: 'btn btn-blue read-more' %>
+              </div>
             <% end %>
           </div>
         </div>
