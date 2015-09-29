@@ -61,7 +61,7 @@
   }
 
   p {
-    font-size: 1.3em;
+    font-size: 1.2em;
     line-height: 1.7;
     margin-bottom: 25px;
     &.list-head { margin-bottom: 5px; }
@@ -212,9 +212,10 @@
 //-- BIO
 //------------------------------------
 .bio-container {
-  text-align: center;
+  font-weight: 300;
   margin-top: 50px;
   margin-bottom: 30px;
+  text-align: center;
 
   .avatar {
     border-radius: 50%;
