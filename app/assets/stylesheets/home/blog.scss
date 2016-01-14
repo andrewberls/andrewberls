@@ -10,6 +10,7 @@
 .post {
   @extend %whitebox;
   border: 0;
+  font-family: 'Lora', $mainFontFamily;
   line-height: 1.6;
   margin-bottom: 10px;
   padding: 0;
@@ -27,7 +28,10 @@
   }
 
   .post-title {
-    font-size: 2.2em;
+    color: $blog-header;
+    font-family: 'Open Sans', $mainFontFamily;
+    font-size: 36px;
+    font-weight: bold;
     margin-bottom: 3px;
 
     a {
@@ -50,9 +54,10 @@
     padding: 15px 15px 10px;
   }
 
-  h3,h4,h5,h6 { font-family: 'Helvetica Neue', $mainFontFamily; }
-
-  h3 { font-size: 1.5em; }
+  h2,h3,h4,h5,h6 {
+    color: $blog-header;
+    font-weight: bold;
+  }
 
   h5 {
     // Legacy headers
@@ -61,14 +66,34 @@
   }
 
   p {
-    font-size: 1.2em;
-    line-height: 1.7;
-    margin-bottom: 25px;
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 35px;
     &.list-head { margin-bottom: 5px; }
   }
 
   em { font-style: italic; }
   .bold { font-weight: bold; }
+
+  .subtle {
+    color: $gray-text-light;
+    font-size: 17px;
+    font-style: italic;
+    margin-bottom: 25px;
+  }
+
+  blockquote {
+    border-left: 4px solid $blue;
+    color: $gray-text-light;
+    margin: 2em 0 2em -1.5em;
+    padding-left: 1.5em;
+
+    p {
+      font-family: 'Open Sans', $mainFontFamily;
+      font-size: 22px;
+      font-weight: 300;
+    }
+  }
 
   ul {
     list-style: disc;
@@ -81,7 +106,6 @@
   pre {
     color: $gray-header;
     font-family: $codeFontFamily;
-    font-size: 0.9em;
   }
 
   code {
@@ -90,7 +114,7 @@
     background-color: darken($gray-light, 3);
     border: 1px solid $gray-border;
     color: #404040;
-    font-size: 0.9em;
+    font-size: 0.8em;
     padding: 1px 2px;
 
     a { color: lighten($blue, 8); }
@@ -102,7 +126,7 @@
     background-color: #f6f6f6;
     border: 1px solid #ddd !important;
     line-height: 1.4;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
     padding: 10px 15px !important;
 
     .label,
@@ -117,7 +141,7 @@
       // Undo extra code stylings in markdown-fenced blocks
       background: none;
       border: none;
-      font-size: 13px;
+      font-size: 1.1em;
       padding: 0;
     }
   }
