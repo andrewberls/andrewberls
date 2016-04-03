@@ -1,8 +1,0 @@
-<div class="sutro-bar">
-  <%= link_to "Dashboard", admin_posts_path, class: "sutro-action" %>
-  <%= link_to "Edit Post", edit_admin_post_path(@post), class: "sutro-action" %>
-</div>
-
-<% if @post.draft? %>
-  <div class="flash flash-notice" style="margin: 0 0 25px;">This post is a draft</div>
-<% end %>
