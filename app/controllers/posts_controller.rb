@@ -20,7 +20,9 @@ class PostsController < ApplicationController
       # Slug is a URL alias
       @post = Post.find_by_url_alias(slug)
       return render 'home/not_found' if @post.blank?
-      return redirect_to blog_path if @post.draft? && !logged_in?
+      if @post.draft? && !(logged_in? || params[:share].present?)
+        return redirect_to blog_path
+      end
     else
       # Slug is an ID. Kept around for the feed
       @post = Post.find_by_id(slug)
