@@ -34,6 +34,17 @@ $gray-light:  #F9F9F9;
 
   em { font-style: italic; }
 
+  .subtle {
+    color: $gray-text-light;
+    font-style: italic;
+  }
+
+  blockquote {
+    background-color: #ededed;
+    border-left: 3px solid $blue;
+    padding-left: 5px;
+  }
+
   ul {
     list-style: disc;
     margin-bottom: 15px;
