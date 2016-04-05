@@ -102,3 +102,25 @@ $gray-light:  #F9F9F9;
     text-align: center;
   }
 }
+
+.series-next-container {
+  @include clearfix;
+  border-radius: 2px;
+  border: 1px solid $gray-border;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  padding: 8px 10px;
+
+  span {
+    display: inline-block;
+    margin-top: 2px;
+  }
+
+  .arrow { color: $gray-border; }
+
+  .btn {
+    display: inline-block;
+    float: right;
+    padding: 3px 15px;
+  }
+}
