@@ -117,7 +117,8 @@
 
 
 <section class="latest-post-container">
-  <h2>Latest blog post: <%= link_to Post.last.title, Post.last %></h2>
+  <% post = Post.order("published_at desc").first %>
+  <h2>Latest blog post: <%= link_to post.title, post %></h2>
 </section>
 
 
