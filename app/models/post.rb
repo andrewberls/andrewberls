@@ -5,6 +5,10 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title, :body, :url_alias
 
+  # Status:
+  # 0 = draft
+  # 1 = published
+
   scope :active, -> { where(status: 1) }
 
   def tag_list
@@ -59,6 +63,10 @@ class Post < ActiveRecord::Base
 
   def draft?
     status == 0
+  end
+
+  def published?
+    status == 1
   end
 
 end

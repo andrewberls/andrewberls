@@ -49,7 +49,7 @@ class PostsController < ApplicationController
   private
 
   def page_sort(posts)
-    posts.paginate(page: params[:page], per_page: 5).order('id DESC')
+    posts.paginate(page: params[:page], per_page: 5).order('published_at DESC')
   end
 
 end

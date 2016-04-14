@@ -13,7 +13,7 @@
     <div class="btn-group right">
       <%= f.submit "Save for later", class: "btn btn-blue", id: "save" %>
 
-      <% action = (@post.status == 0) ? "Publish" : "Update" %>
+      <% action = @post.draft? ? "Publish" : "Update" %>
       <%= f.submit action, class: "btn btn-green" %>
     </div>
   <% end %>

@@ -58,9 +58,9 @@ $email.on('blur',function() {
         <span class="comment">// First error - fill in/show entire hint element</span>
         var suggestion = &quot;Yikes! Did you mean &lt;span class='suggestion'&gt;&quot; +
                           &quot;&lt;span class='address'&gt;&quot; + suggestion.address + &quot;&lt;/span&gt;&quot;
-                          + &quot;@&lt;a href='#' class='domain'&gt;&quot; + suggestion.domain + 
+                          + &quot;@&lt;a href='#' class='domain'&gt;&quot; + suggestion.domain +
                           &quot;&lt;/a&gt;&lt;/span&gt;?&quot;;
-                          
+
         $hint.html(suggestion).fadeIn(150);
       } else {
         <span class="comment">// Subsequent errors</span>
@@ -147,7 +147,7 @@ I learned a great deal about grid-based design and CSS media queries writing Che
 </pre>
 
 <p>
-This went on and on for spans and offsets in all of the various media queries, creating a ton of repetitive code. Then I discovered that it's a perfect candidate for refactoring using a Sass loop, which reduces the example above to something like this: 
+This went on and on for spans and offsets in all of the various media queries, creating a ton of repetitive code. Then I discovered that it's a perfect candidate for refactoring using a Sass loop, which reduces the example above to something like this:
 </p>
 
 <pre>
@@ -176,17 +176,17 @@ User.create(
 )
 
 Post.create(
-  title: "Reducing bad signup emails with mailcheck.js", 
-  body: POST_MAILCHECK, 
-  status: 1, 
-  url_alias: "reducing-bad-signup-emails-with-mailcheck-js", 
+  title: "Reducing bad signup emails with mailcheck.js",
+  body: POST_MAILCHECK,
+  status: 1,
+  url_alias: "reducing-bad-signup-emails-with-mailcheck-js",
   user_id: 1
 )
 
 Post.create(
-  title: "Introducing Cheeky: The responsive grid with Sass", 
-  body: POST_CHEEKY, 
-  status: 1, 
-  url_alias: "introducing-cheeky-the-responsive-grid-with-sass", 
+  title: "Introducing Cheeky: The responsive grid with Sass",
+  body: POST_CHEEKY,
+  status: 1,
+  url_alias: "introducing-cheeky-the-responsive-grid-with-sass",
   user_id: 1
 )
