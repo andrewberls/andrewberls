@@ -15,8 +15,11 @@ class Admin::PostsController < ApplicationController
     end
 
     if @post.save
+      if @post.published?
+        @post.published_at = Time.now
+        @post.save!
+      end
       action = @post.published? ? 'published' : 'saved'
-      maybe_set_published_at!
       flash[:success] = "Post #{action} successfully"
       return redirect_to admin_posts_path
     else
@@ -26,7 +29,7 @@ class Admin::PostsController < ApplicationController
 
   def index
     @posts = Post.paginate(:page => params[:page], :per_page => 10)
-                 .order('published_at DESC')
+                 .order('id DESC')
   end
 
   def preview
@@ -44,8 +47,13 @@ class Admin::PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
+    was_draft = @post.draft?
+
     if @post.update_attributes(params[:post])
-      maybe_set_published_at!
+      if was_draft && @post.published?
+        @post.published_at = Time.now
+        @post.save!
+      end
       flash[:success] = "Post updated successfully."
       return redirect_to @post
     else
@@ -57,15 +65,6 @@ class Admin::PostsController < ApplicationController
     Post.find(params[:id]).destroy
     flash[:success] = "Post deleted successfully"
     return redirect_to admin_posts_path
-  end
-
-  private
-
-  def maybe_set_published_at!
-    if @post.published?
-      @post.published_at = Time.now
-      @post.save!
-    end
   end
 
 end
