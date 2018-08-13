@@ -9,4 +9,3 @@
 //= require laconic
 //
 //= require home/home
-//= require home/contact

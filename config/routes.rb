@@ -5,9 +5,6 @@ Andrewberls::Application.routes.draw do
 
   get '/feed' => 'posts#feed', :as => 'feed', :defaults => { :format => 'atom' }
 
-  get  '/contact' => 'home#new'
-  post '/contact' => 'home#create', :as => 'submit_contact'
-
   get '/admin/users'          => redirect('/admin/users/manage')
   get '/admin/users/manage' => 'admin/users#manage', :as => 'manage_users'
   post '/admin/users/manage' => 'admin/users#manage'
