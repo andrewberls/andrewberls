@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
-
   # Public-facing actions only.
   # Administrative actions are handled by admin/posts_controller
 
   def index
     if params[:tag].present?
-      @tag = Tag.find_by_name(params[:tag])
+      @tag = Tag.find_by(name: params[:tag])
       return redirect_to blog_path if @tag.blank?
 
       @posts = page_sort @tag.active_posts
@@ -18,14 +17,14 @@ class PostsController < ApplicationController
     slug = params[:slug]
     if slug.to_i == 0
       # Slug is a URL alias
-      @post = Post.find_by_url_alias(slug)
+      @post = Post.find_by(url_alias: slug)
       return render 'home/not_found' if @post.blank?
       if @post.draft? && !(logged_in? || params[:share].present?)
         return redirect_to blog_path
       end
     else
       # Slug is an ID. Kept around for the feed
-      @post = Post.find_by_id(slug)
+      @post = Post.find(slug)
 
       if @post.blank?
         return render 'home/not_found'
@@ -51,5 +50,4 @@ class PostsController < ApplicationController
   def page_sort(posts)
     posts.paginate(page: params[:page], per_page: 5).order('published_at DESC')
   end
-
 end

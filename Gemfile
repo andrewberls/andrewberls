@@ -1,19 +1,33 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.10'
-gem 'heroku'
-gem 'thin'
-gem 'therubyracer', :platforms => :ruby
+ruby '2.3.1'
+
+gem 'rails', '~> 4.2.0'
+
+gem 'puma'
+
+gem 'pg', '~> 0.20'
+
+gem 'rails_12factor'
+
+gem 'therubyracer', platforms: :ruby
+
 gem 'jquery-rails'
-gem 'bcrypt-ruby', :require => 'bcrypt'
+
+gem 'bcrypt', '~> 3.1.2'
+
 gem 'will_paginate'
+
 gem 'redcarpet'
 
+gem 'annotate'
+
+gem 'pry'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_bot_rails'
 end
 
 group :test do
@@ -25,11 +39,12 @@ group :test do
 end
 
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails', '~> 4.0.0'
+
+  gem 'uglifier', '>= 1.3.0'
+
+  gem 'coffee-rails', '~> 4.0.0'
 end
 
 group :production do
-  gem 'pg'
 end

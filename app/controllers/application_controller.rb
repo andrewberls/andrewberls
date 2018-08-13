@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   protect_from_forgery
   helper_method :current_user, :logged_in?, :markdown
 
@@ -29,5 +28,4 @@ class ApplicationController < ActionController::Base
       autolink: true, no_intra_emphasis: true, fenced_code_blocks: true)
     @markdown.render(text).html_safe
   end
-
 end

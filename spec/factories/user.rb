@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :user do
     full_name "Test User"
@@ -7,7 +7,7 @@ FactoryGirl.define do
 
     factory :user_with_post do
       after(:build) do |user|
-        user.posts << FactoryGirl.build(:post, user: user)
+        user.posts << FactoryBot.build(:post, user: user)
       end
     end
   end

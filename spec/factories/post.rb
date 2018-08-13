@@ -1,5 +1,5 @@
-FactoryGirl.define do
-  
+FactoryBot.define do
+
   factory :post do
     sequence(:title) { |i| "post #{i}" }
     sequence(:body) { |i| "this is post #{i}" }
@@ -9,7 +9,7 @@ FactoryGirl.define do
     # association :tag
 
     # after(:build) do |post|
-    #   post.tags << FactoryGirl.build(:tag, name: "alpha")
+    #   post.tags << FactoryBot.build(:tag, name: "alpha")
     # end
 
     factory :post_with_pagebreak do

@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   layout 'sutro'
 
   def new
@@ -7,13 +6,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user  = User.authenticate(params[:email], params[:password])
+    user = User.find_by(email: params[:email])
 
-    if user
+    if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
       return redirect_to admin_posts_path
     else
-      flash.now[:error] = "Invalid email or password."
+      flash.now[:error] = 'Invalid email or password.'
       return render :new
     end
   end
@@ -23,9 +22,8 @@ class SessionsController < ApplicationController
       return redirect_to login_path
     else
       reset_session
-      flash[:success] = "Logged out!"
+      flash[:success] = 'Logged out!'
       return redirect_to login_path
     end
   end
-
 end

@@ -1,5 +1,4 @@
 class Admin::PostsController < ApplicationController
-
   layout 'sutro'
 
   before_filter :must_be_logged_in
@@ -9,7 +8,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post]) do |p|
+    @post = Post.new(post_params) do |p|
       p.user   = current_user
       p.status ||= 1
     end
@@ -49,7 +48,7 @@ class Admin::PostsController < ApplicationController
 
     was_draft = @post.draft?
 
-    if @post.update_attributes(params[:post])
+    if @post.update_attributes(post_params)
       if was_draft && @post.published?
         @post.published_at = Time.now
         @post.save!
@@ -67,4 +66,9 @@ class Admin::PostsController < ApplicationController
     return redirect_to admin_posts_path
   end
 
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body, :tag_list, :url_alias, :status)
+  end
 end

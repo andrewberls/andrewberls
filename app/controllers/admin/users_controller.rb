@@ -1,5 +1,4 @@
 class Admin::UsersController < ApplicationController
-
   layout 'sutro'
 
   before_filter :must_be_logged_in
@@ -10,7 +9,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
 
     if @user.save
       flash[:success] = "User created successfully"
@@ -38,7 +37,7 @@ class Admin::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(user_params)
       flash[:success] = "User updated successfully"
       return redirect_to manage_users_path
     else
@@ -58,4 +57,7 @@ class Admin::UsersController < ApplicationController
     reject_unauthorized(current_user.is_admin?, admin_posts_path)
   end
 
+  def user_params
+    params.require(:user).permit(:full_name, :email, :password, :password_confirmation, :permissions)
+  end
 end

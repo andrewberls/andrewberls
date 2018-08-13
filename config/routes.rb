@@ -1,21 +1,22 @@
 Andrewberls::Application.routes.draw do
+  get '/blog'            => 'posts#index', :as => 'blog'
+  get '/blog/tag/:tag'   => 'posts#index', :as => 'tag'
+  get '/blog/post/:slug' => 'posts#show', :as => 'post'
 
-  match "/blog"            => "posts#index", :as => "blog"
-  match "/blog/tag/:tag"   => "posts#index", :as => "tag"
-  match "/blog/post/:slug" => "posts#show", :as => "post"
+  get '/feed' => 'posts#feed', :as => 'feed', :defaults => { :format => 'atom' }
 
-  match '/feed' => 'posts#feed', :as => "feed", :defaults => { :format => 'atom' }
+  get  '/contact' => 'home#new'
+  post '/contact' => 'home#create', :as => 'submit_contact'
 
-  get  '/contact' => 'home#new',    :as => 'contact'
-  post '/contact' => 'home#create', :as => 'contact'
+  get '/admin/users'          => redirect('/admin/users/manage')
+  get '/admin/users/manage' => 'admin/users#manage', :as => 'manage_users'
+  post '/admin/users/manage' => 'admin/users#manage'
 
-  get "/admin/users"          => redirect("/admin/users/manage")
-  match "/admin/users/manage" => "admin/users#manage", :as => "manage_users"
+  get '/login'  => 'sessions#new',     :as => 'login'
+  post '/login'  => 'sessions#new'
+  get '/logout' => 'sessions#destroy', :as => 'logout'
 
-  match "/login"  => "sessions#new",     :as => "login"
-  match "/logout" => "sessions#destroy", :as => "logout"
-
-  match "/preview" => "admin/posts#preview"
+  post '/preview' => 'admin/posts#preview'
 
   namespace :admin do
     resources :posts, :users
@@ -25,6 +26,5 @@ Andrewberls::Application.routes.draw do
 
   root :to => 'home#index'
 
-  match "*a" => "home#not_found"
-
+  get '*a' => 'home#not_found'
 end

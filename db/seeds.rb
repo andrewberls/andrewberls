@@ -169,24 +169,24 @@ With a large number of grid systems already available, one might ask why bother 
 
 
 User.create(
-  email: "user@gmail.com",
-  password: "password",
-  full_name: "Test User",
+  email: 'admin@admin.com',
+  password: 'admin',
+  full_name: 'Test User',
   permissions: 0
 )
 
 Post.create(
-  title: "Reducing bad signup emails with mailcheck.js",
+  title: 'Reducing bad signup emails with mailcheck.js',
   body: POST_MAILCHECK,
   status: 1,
-  url_alias: "reducing-bad-signup-emails-with-mailcheck-js",
+  url_alias: 'reducing-bad-signup-emails-with-mailcheck-js',
   user_id: 1
 )
 
 Post.create(
-  title: "Introducing Cheeky: The responsive grid with Sass",
+  title: 'Introducing Cheeky: The responsive grid with Sass',
   body: POST_CHEEKY,
   status: 1,
-  url_alias: "introducing-cheeky-the-responsive-grid-with-sass",
+  url_alias: 'introducing-cheeky-the-responsive-grid-with-sass',
   user_id: 1
 )

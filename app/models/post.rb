@@ -1,5 +1,19 @@
-class Post < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: posts
+#
+#  id           :integer          not null, primary key
+#  title        :string(255)      default(""), not null
+#  created_at   :datetime
+#  updated_at   :datetime
+#  body         :text
+#  status       :integer
+#  user_id      :integer
+#  url_alias    :string(255)
+#  published_at :datetime
+#
 
+class Post < ActiveRecord::Base
   has_and_belongs_to_many :tags
   belongs_to :user
 
@@ -26,7 +40,7 @@ class Post < ActiveRecord::Base
     tag_list = extract_tags(tag_list)
 
     tag_list.each do |tag|
-      self.tags << Tag.find_or_create_by_name(tag)
+      self.tags << Tag.find_or_create_by(name: tag)
     end
 
   end
@@ -68,5 +82,4 @@ class Post < ActiveRecord::Base
   def published?
     status == 1
   end
-
 end

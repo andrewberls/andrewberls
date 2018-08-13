@@ -8,9 +8,10 @@ urlsafe = (url) ->
 
 preview =  ->
   markdown = $('#post_body').val()
-  $.post("/preview", { markdown: markdown }).done (json) ->
-    html = JSON.parse(json).html
-    $('.post-preview').html(html)
+  if markdown
+    $.post('/preview', { markdown: markdown }).done (json) ->
+      html = JSON.parse(json).html
+      $('.post-preview').html(html)
 
 
 $ ->
