@@ -107,8 +107,7 @@ strong { font-weight: bold; }
 
 //-- INTRO
 //------------------------------------
-.intro-container,
-.portfolio-container {
+.intro-container {
   h1 {
     color: $gray-text;
     font-weight: 300;
@@ -201,56 +200,6 @@ strong { font-weight: bold; }
     color: lighten($gray-text, 20);
     font-size: 1.4em;
   }
-}
-
-
-
-//-- PORTFOLIO
-//------------------------------------
-.portfolio-container {
-  background-color: #fcfcfc;
-  text-align: center;
-  padding-top: 60px;
-
-  h1, h2 { margin-bottom: 25px; }
-
-  h1 { font-size: 2.1em; }
-
-  .subhead {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 10px;
-
-    &:last-child { margin-bottom: 40px; }
-  }
-
-  .project-container {
-    margin-bottom: 55px;
-
-    img {
-      @include border-radius(2px);
-      //border: 1px solid $gray-border;
-      border: 1px solid darken($gray-border, 3);
-      display: block;
-      margin-bottom: 15px;
-      max-width: 100%;
-    }
-
-    .project-title { font-size: 1.9em; }
-
-    .project-description { font-size: 1.2em; }
-  }
-
-
-  .github {
-    font-size: 1.8em;
-    display: inline-block;
-    margin-bottom: 40px;
-    color: $gray-text;
-
-    &:hover { color: $blue; }
-  }
-
 }
 
 
