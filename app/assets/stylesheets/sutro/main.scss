@@ -1,10 +1,7 @@
-//-- LAYOUT
-//------------------------------------
 body {
-  //background: #EDEDED url('/images/sutro_bg.jpg') repeat-y;
+  color: $gray_text;
   font-family: $baseFontFamily;
   font-size: 16px;
-  color: $gray_text;
 }
 
 #container {
@@ -35,13 +32,9 @@ body {
   padding: 20px;
 }
 
-
-
 .left { float: left }
 .right { float: right }
 
-//-- TYPOGRAPHY
-//------------------------------------
 .italic { font-style: italic; }
 .bold   { font-weight: bold; }
 
@@ -63,9 +56,6 @@ a:hover {
   text-decoration: underline;
 }
 
-
-//-- NOTIFICATIONS/BADGES
-//------------------------------------
 .flash {
   padding: 10px;
 

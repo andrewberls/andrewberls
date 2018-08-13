@@ -1,10 +1,9 @@
-//-- POSTS
-//------------------------------------
+@import 'blog/disqus';
+@import 'blog/mailchimp';
+
 .blog-container {
   margin-top: 90px !important;
   position: relative;
-
-  //@include mobile { margin-top: 60px !important; }
 }
 
 .post {
@@ -188,40 +187,10 @@
   &:last-of-type { border-bottom: 0; }
 }
 
-
 .read-more {
   font-size: 1.3em;
   padding: 12px 45px;
   margin-bottom: 5px;
-}
-
-.series-next-container {
-  @include clearfix;
-  @include border-radius(2px);
-  border: 1px solid $gray-border;
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  padding: 14px 10px;
-
-  span {
-    display: inline-block;
-    margin-top: 2px;
-  }
-
-  .arrow { color: $gray-border; }
-
-  .btn {
-    display: inline-block;
-    float: right;
-    padding: 3px 15px;
-
-    @include mobile {
-      display: block;
-      float: none;
-      margin-top: 5px;
-      text-align: center;
-    }
-  }
 }
 
 .back {
@@ -232,9 +201,6 @@
   @include mobile { margin-left: 10px; }
 }
 
-
-//-- BIO
-//------------------------------------
 .bio-container {
   font-weight: 300;
   margin-top: 50px;
@@ -278,9 +244,6 @@
   @include mobile { padding: 0 10px 20px; }
 }
 
-
-//-- PAGINATION BUTTONS
-//------------------------------------
 .pagination {
   font-size: 1.1em;
   margin: 30px auto;
@@ -317,46 +280,4 @@
     background-color: #e7e7e7;
     color: lighten($gray-text, 35);
   }
-}
-
-
-//-- MAILCHIMP SIGNUP
-//------------------------------------
-#mc_embed_signup {
-  @include border-radius(2px);
-  border: 1px solid #ccc;
-  clear: left;
-  margin-bottom: 20px;
-
-  h3 {
-    font-size: 1.3em;
-    margin-bottom: 13px;
-    padding-top: 5px;
-  }
-
-  .email {
-    @include border-radius(2px);
-    border-color: #ccc;
-  }
-}
-
-
-//-- DISQUS COMMENTS
-//------------------------------------
-.comments-container {
-  border-top: 1px solid $gray-border;
-  background-color: white;
-  padding-top: 10px;
-
-  @include mobile { padding: 5px 10px; }
-}
-
-#disqus_thread {
-  margin: 10px auto 20px;
-
-  h3 { font-size: 1.3em; }
-
-  a { font-size: 0.9em; }
-
-  .dsq-trackback-url { display: none; }
 }

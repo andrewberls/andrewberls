@@ -21,7 +21,6 @@ header {
     }
   }
 
-
   nav {
     @include clearfix;
     padding-top: 30px;
@@ -66,5 +65,18 @@ header {
       }
     }
   }
+}
 
+footer {
+  background-color: #222;
+  color: lighten(#2c2c2c, 30);
+  padding: 15px 0;
+  text-align: right;
+
+  a {
+    color: inherit;
+    &:hover { color: $blue; }
+  }
+
+  @include mobile { padding: 5px; }
 }

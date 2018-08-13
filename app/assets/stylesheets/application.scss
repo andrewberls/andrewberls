@@ -1,16 +1,15 @@
 //= require cheeky.min
 
 // Global
-@import "home/variables";
-@import "global/mixins";
-@import "global/flash";
+@import 'home/variables';
+@import 'global/mixins';
+@import 'global/flash';
 
 // Front page
-@import "home/home";
-@import "home/buttons";
-@import "home/header";
-@import "home/footer";
+@import 'home/home';
+@import 'home/buttons';
+@import 'home/nav';
 
 // Blog
-@import "home/blog";
-@import "sutro/bar";
+@import 'home/blog';
+@import 'sutro/bar';

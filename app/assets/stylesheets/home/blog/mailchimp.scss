@@ -1,0 +1,17 @@
+#mc_embed_signup {
+  @include border-radius(2px);
+  border: 1px solid #ccc;
+  clear: left;
+  margin-bottom: 20px;
+
+  h3 {
+    font-size: 1.3em;
+    margin-bottom: 13px;
+    padding-top: 5px;
+  }
+
+  .email {
+    @include border-radius(2px);
+    border-color: #ccc;
+  }
+}

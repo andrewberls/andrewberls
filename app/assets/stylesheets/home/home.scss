@@ -1,5 +1,3 @@
-//-- LAYOUT
-//------------------------------------
 body {
   background-color: white;
   color: $gray-text;
@@ -25,9 +23,6 @@ section {
   margin-top: 5px;
 }
 
-
-//-- TYPOGRAPHY
-//------------------------------------
 a {
   color: lighten($blue, 3);
   text-decoration: none;
@@ -54,9 +49,6 @@ h3 { font-size: 1.3em; }
 
 strong { font-weight: bold; }
 
-
-//-- LIB CLASSES
-//------------------------------------
 %whitebox {
   @include border-box;
   @include clearfix;
@@ -77,9 +69,6 @@ strong { font-weight: bold; }
 .left  { float: left; }
 .right { float: right; }
 
-
-//-- PAGE NOT FOUND
-//------------------------------------
 .error-box {
   @extend %whitebox;
   margin-top: 50px;
@@ -104,9 +93,6 @@ strong { font-weight: bold; }
   }
 }
 
-
-//-- INTRO
-//------------------------------------
 .intro-container {
   h1 {
     color: $gray-text;
@@ -176,10 +162,6 @@ strong { font-weight: bold; }
   }
 }
 
-
-
-//-- Sutro
-//------------------------------------
 .sutro-container {
   border-bottom: 1px solid darken(#f9f9f9, 5);
   padding: 0 0 60px;
@@ -202,9 +184,6 @@ strong { font-weight: bold; }
   }
 }
 
-
-//-- LATEST POST
-//------------------------------------
 .latest-post-container {
   background-color: $blue;
   color: white;
@@ -224,9 +203,6 @@ strong { font-weight: bold; }
   }
 }
 
-
-//-- CONTACT INFO
-//------------------------------------
 .contact-container {
   text-align: center;
 

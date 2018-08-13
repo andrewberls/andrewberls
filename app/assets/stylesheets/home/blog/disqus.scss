@@ -1,0 +1,17 @@
+.comments-container {
+  border-top: 1px solid $gray-border;
+  background-color: white;
+  padding-top: 10px;
+
+  @include mobile { padding: 5px 10px; }
+}
+
+#disqus_thread {
+  margin: 10px auto 20px;
+
+  h3 { font-size: 1.3em; }
+
+  a { font-size: 0.9em; }
+
+  .dsq-trackback-url { display: none; }
+}
